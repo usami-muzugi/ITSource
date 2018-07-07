@@ -43,6 +43,7 @@ public class HomeWork2 {
         System.out.println(linkedList);
     }
 }
+
 class LinkedList {
     /*
      *  链表实现，Node类，存放当前存储的数据和一个下一个Node的对象

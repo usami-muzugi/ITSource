@@ -37,15 +37,15 @@ public class HomeWork3 {
     public static void main(String[] args) {
         StudentList studentList = new StudentList();
         studentList.add(new StudentList().new Student());
-        studentList.add("usamimizugi",22);
-        studentList.add("usamimizugi",22);
-        studentList.add("usamimizugi",26);
-        studentList.add("usamimizugi",12);
-        studentList.add("usamimizugi",23);
-        studentList.add("usamimizugi",24);
-        studentList.add("usamimizugi",11);
-        studentList.add("usamimizugi",20);
-        studentList.add("usamimizugi",18);
+        studentList.add("usamimizugi", 22);
+        studentList.add("usamimizugi", 22);
+        studentList.add("usamimizugi", 26);
+        studentList.add("usamimizugi", 12);
+        studentList.add("usamimizugi", 23);
+        studentList.add("usamimizugi", 24);
+        studentList.add("usamimizugi", 11);
+        studentList.add("usamimizugi", 20);
+        studentList.add("usamimizugi", 18);
 
         System.out.println(studentList.getAvengeAge());
         System.out.println(studentList);
@@ -53,14 +53,15 @@ public class HomeWork3 {
 
 }
 
-class StudentList{
+class StudentList {
     private Student[] students;
     private int sum;
 
     public StudentList() {
         this(20);
     }
-    public StudentList(int length){
+
+    public StudentList(int length) {
         students = new Student[length];
     }
 
@@ -73,7 +74,8 @@ class StudentList{
         students[sum] = student;
         sum++;
     }
-    public void add(String name,int age) {
+
+    public void add(String name, int age) {
         if (sum == students.length) {
             Student[] temp = new Student[sum + 20];
             System.arraycopy(students, 0, temp, 0, sum);
@@ -82,6 +84,7 @@ class StudentList{
         students[sum] = new Student(name, age);
         sum++;
     }
+
     public int getAvengeAge() {
         int index = 0, avengeAge = 0;
         for (int i = 0; i < sum; i++) {
@@ -100,13 +103,14 @@ class StudentList{
         return Arrays.toString(students);
     }
 
-    class Student{
+    class Student {
         private String name;
         private int age;
 
-        public Student(){
+        public Student() {
 
         }
+
         public Student(String name, int age) {
             this.name = name;
             this.age = age;

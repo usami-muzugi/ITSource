@@ -1,9 +1,6 @@
 package cn.ximcloud.itsource.day15._07jframeDemo;
 
-import cn.ximcloud.itsource.day15._04CalcDemo.MyActionListener;
-
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -41,7 +38,6 @@ public class _07JFrameDemo {
 
         JFrame jFrame = new JFrame();
         jFrame.setLayout(null);
-
 
 
         jFrame.setSize(380, 540);

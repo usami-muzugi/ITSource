@@ -76,7 +76,7 @@ public class AdminController extends AdminControllerImpl {
     public Admin select(Admin admin) {
         Iterator<Admin> iterator = AdminList.getInstance().getAdminlist().iterator();
         while (iterator.hasNext()) {
-            if(iterator.next().equals(admin))
+            if (iterator.next().equals(admin))
                 return admin;
         }
         return null;

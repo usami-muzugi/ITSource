@@ -43,8 +43,8 @@ public class FrameDemo2 {
         frame.add(b1);
         Button b2 = new Button("取消");
         frame.add(b2);
-        frame.setSize(500,600);
-        frame.setLocation(200,100);
+        frame.setSize(500, 600);
+        frame.setLocation(200, 100);
         frame.setVisible(true);
 
     }

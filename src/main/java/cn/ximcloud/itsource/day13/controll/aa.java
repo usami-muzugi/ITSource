@@ -31,7 +31,7 @@ package cn.ximcloud.itsource.day13.controll;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class aa{
+public class aa {
     /*
         java中的接口:一个跟类很相似的结构
         语法：
@@ -54,34 +54,41 @@ public class aa{
             a)全局常量  ： 接口名.常量名 直接调用
             b)抽象方法  ： 类实现接口覆写接口中的方法
     */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(USB.name);//全局常量  ： 接口名.常量名 直接调用
         USB sb = new Usb();
         sb.code();
 
     }
 }
-interface USB{
+
+interface USB {
     String name = "你好";//字段,  默认public static final 修饰的全局常量 所以必须初始化值
+
     //void code(){}//_10Interface.java:20: 错误: 接口抽象方法不能带有主体
     abstract void code();//抽象方法没有方法主体
     //void run();//抽象方法，可以不加abstract，在接口默认的
     //USB(){}//没有构造方法
 }
-class Usb implements USB{
+
+class Usb implements USB {
     @Override
-    public void code(){
+    public void code() {
         System.out.println("类实现接口覆写接口中的方法");
     }
 }
 
-interface B{
+interface B {
 }
-interface C{
+
+interface C {
 }
-class A implements C{//类实现接口，
+
+class A implements C {//类实现接口，
 }
-class D implements B,C{//类可以实现多个接口
+
+class D implements B, C {//类可以实现多个接口
 }
-class H extends Object implements B,C{//类允许,实现接口的同时继承其他类。但是必须是继承在前，实际接口在后
+
+class H extends Object implements B, C {//类允许,实现接口的同时继承其他类。但是必须是继承在前，实际接口在后
 }

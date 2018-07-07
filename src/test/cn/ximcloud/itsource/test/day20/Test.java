@@ -24,9 +24,8 @@ public class Test {
         test.method();
 
 
-
-
     }
+
     public static void method() {
         System.out.println("666");
     }

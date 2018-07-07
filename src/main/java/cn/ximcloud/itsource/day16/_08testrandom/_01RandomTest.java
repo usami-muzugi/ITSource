@@ -38,11 +38,10 @@ public class _01RandomTest {
         Random random = new Random();
         for (; ; ) {
             //System.out.println(random.nextInt());
-            System.out.println((int)(Math.random()*11));
+            System.out.println((int) (Math.random() * 11));
             //Thread.sleep(1000);
 
         }
-
 
 
     }

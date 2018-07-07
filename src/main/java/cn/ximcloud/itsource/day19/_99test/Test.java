@@ -25,8 +25,9 @@ public class Test {
     }
 }
 
-class The{
+class The {
     public StringBuffer stringBuffer;
+
     public The(StringBuffer stringBuffer) {
         this.stringBuffer = stringBuffer;
     }

@@ -36,9 +36,9 @@ public class PiaochiDemo {
             但是常用的还是this】
          */
         Ticket ticket = new Ticket();
-        Thread thread1 = new Thread(ticket,"小弟弟窗口");
-        Thread thread2 = new Thread(ticket,"大姐姐窗口");
-        Thread thread3 = new Thread(ticket,"小阿姨窗口");
+        Thread thread1 = new Thread(ticket, "小弟弟窗口");
+        Thread thread2 = new Thread(ticket, "大姐姐窗口");
+        Thread thread3 = new Thread(ticket, "小阿姨窗口");
         thread1.start();
         thread2.start();
         thread3.start();

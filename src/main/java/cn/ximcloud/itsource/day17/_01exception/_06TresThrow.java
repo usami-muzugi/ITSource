@@ -43,7 +43,7 @@ public class _06TresThrow {
      *
      */
     public static void main(String[] args) {
-        User user = new User("usami","mizugi");
+        User user = new User("usami", "mizugi");
         User user1 = new User("usami", "mizugi");
         User user2 = new User("ourinsama", "ourinsama");
 

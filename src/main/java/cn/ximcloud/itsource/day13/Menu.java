@@ -1,12 +1,10 @@
 package cn.ximcloud.itsource.day13;
 
 import cn.ximcloud.itsource.day13.admin.Admin;
-import cn.ximcloud.itsource.day13.admin.AdminList;
 import cn.ximcloud.itsource.day13.controll.AdminController;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -55,28 +53,30 @@ public class Menu {
         }
     }
 
-    private static void mainMenu() throws InputMismatchException{
+    private static void mainMenu() throws InputMismatchException {
         String string = "********汽车租聘系统********\n******* 1 - 登录    ********\n******* 0 - 退出    ********\n****************************\n请输入操作数:";
         System.out.println(string);
         String[] userInfo = new String[2];
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextInt()) {
-            case 1 :
+            case 1:
                 System.out.print("请输入用户名:");
                 userInfo[0] = scanner.next();
                 System.out.print("请输入密码:");
                 userInfo[1] = scanner.next();
-                login(userInfo); break;
-            case 0 :
-                logout();break;
+                login(userInfo);
+                break;
+            case 0:
+                logout();
+                break;
             default:
                 System.out.println("\n输入的数字有误！重新输入");
                 break;
         }
 
 
-
     }
+
     private static void login(String[] strings) {
         if (new AdminController().select(new Admin(strings)) != null) {
             System.out.println(Arrays.toString(strings));

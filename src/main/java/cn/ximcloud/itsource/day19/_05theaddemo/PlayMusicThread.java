@@ -13,9 +13,10 @@ package cn.ximcloud.itsource.day19._05theaddemo;
 public class PlayMusicThread extends Thread {
     public PlayMusicThread() {
         for (int i = 1; i <= 100; i++) {
-            System.out.println(i+"----->吃音乐");
+            System.out.println(i + "----->吃音乐");
         }
     }
+
     public PlayMusicThread(String name) {
         super(name);
     }

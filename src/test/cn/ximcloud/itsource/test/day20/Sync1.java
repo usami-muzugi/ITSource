@@ -15,9 +15,11 @@ public class Sync1 {
     public synchronized static void method() {
 
     }
+
     public static void method1() {
 
     }
+
     public void method2() {
 
     }

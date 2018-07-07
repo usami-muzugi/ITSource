@@ -2,7 +2,6 @@ package cn.ximcloud.itsource.day19.homework;
 
 import javax.swing.*;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,10 +28,10 @@ public class HomeWork1 {
         jFrame.add(jButton);
         jFrame.setName("电子表");
         jFrame.setVisible(true);
-        jFrame.setSize(300,150);
+        jFrame.setSize(300, 150);
         jFrame.setLocationRelativeTo(null);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd HH时mm分ss秒 E");
-        for (;;) {
+        for (; ; ) {
             //jButton.setText(new SimpleDateFormat("yyyy年MM月dd HH时mm分ss秒 E").format(new Date()));
             jButton.setText(simpleDateFormat.format(System.currentTimeMillis()));
             Thread.sleep(999);

@@ -19,6 +19,7 @@ public class AllTypeArray {
 
     private Object[] data;    //Object[]也是一个类，也是Object的子类
     private int sum;    //数组的元素数
+
     public AllTypeArray() {
         this(5);
     }
@@ -30,8 +31,9 @@ public class AllTypeArray {
     public int getSum() {
         return sum;
     }
+
     public void add(Object i) {
-        if ( data.length == sum) {
+        if (data.length == sum) {
             Object[] temp = new Object[sum + 20];
             System.arraycopy(data, 0, temp, 0, sum);
             data = temp;
@@ -45,7 +47,7 @@ public class AllTypeArray {
         Object[] temp = new Object[sum];
         System.arraycopy(data, 0, temp, 0, sum);
 
-       return Arrays.toString(temp);
+        return Arrays.toString(temp);
 
     }
 
@@ -58,7 +60,7 @@ public class AllTypeArray {
 
     public int getIndexByElement(Object object) {
         if (!(object == null)) {
-            for (int i = 0; i <sum; i++) {
+            for (int i = 0; i < sum; i++) {
                 if (data[i].equals(object)) {
                     return i;
                 }

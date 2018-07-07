@@ -37,7 +37,8 @@ public class AdminList {
     private static AdminList instance = new AdminList();
     private ArrayList<Admin> adminlist;
 
-    private AdminList() { }
+    private AdminList() {
+    }
 
     public static AdminList getInstance() {
         return instance;

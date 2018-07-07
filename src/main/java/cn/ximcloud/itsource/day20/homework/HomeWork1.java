@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.day20.homework;
 
-import java.util.TreeMap;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
@@ -67,11 +65,12 @@ public class HomeWork1 {
 
 class TestThread extends Thread {
     private static int num = 50;
+
     @Override
     public void run() {
         if (num > 0) {
             synchronized (this.getClass().getName()) {  //可见性，原子性
-                System.out.println(Thread.currentThread().getName() + " : " + num );
+                System.out.println(Thread.currentThread().getName() + " : " + num);
                 num--;
             }
         }

@@ -32,7 +32,7 @@ package cn.ximcloud.itsource.day8;
  **/
 
 public class Son extends Father {
-    static{
+    static {
 
         System.out.println("我是子类的静态代码块儿");
     }
@@ -41,12 +41,12 @@ public class Son extends Father {
         System.out.println("我是子类的代码块儿");
     }
 
-    public Son(){
+    public Son() {
         System.out.println("我是子类的构造方法");
     }
 
 
-    public void method(){
+    public void method() {
         System.out.println("我是子类的普通方法");
     }
 }

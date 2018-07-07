@@ -16,8 +16,8 @@ public class AllTypeTest {
         allTypeArray.add(1);
         allTypeArray.add("1");
         allTypeArray.add("2313123");
-        allTypeArray.add(new Student("usami",22));
-        allTypeArray.add(new Student("ourinsama",22));
+        allTypeArray.add(new Student("usami", 22));
+        allTypeArray.add(new Student("ourinsama", 22));
         allTypeArray.add("\n");
         allTypeArray.add('卢');
         allTypeArray.add('本');

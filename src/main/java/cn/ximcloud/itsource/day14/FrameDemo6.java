@@ -49,16 +49,16 @@ public class FrameDemo6 {
         JButton jButton5 = new JButton("文国印牛逼！");
         JButton jButton6 = new JButton("文国印牛逼！");
 
-        jButton1.setPreferredSize(new Dimension(1000,100));
+        jButton1.setPreferredSize(new Dimension(1000, 100));
 
-        jFrame.add(jButton1,BorderLayout.EAST);
-        jFrame.add(jButton2,BorderLayout.NORTH);
-        jFrame.add(jButton3,BorderLayout.CENTER);
-        jFrame.add(jButton4,BorderLayout.SOUTH);
-        jFrame.add(jButton5,BorderLayout.WEST);
-        jFrame.add(jButton6,BorderLayout.NORTH);
+        jFrame.add(jButton1, BorderLayout.EAST);
+        jFrame.add(jButton2, BorderLayout.NORTH);
+        jFrame.add(jButton3, BorderLayout.CENTER);
+        jFrame.add(jButton4, BorderLayout.SOUTH);
+        jFrame.add(jButton5, BorderLayout.WEST);
+        jFrame.add(jButton6, BorderLayout.NORTH);
 
-        jFrame.setSize(500,500);
+        jFrame.setSize(500, 500);
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
 

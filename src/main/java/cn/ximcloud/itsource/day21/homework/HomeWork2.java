@@ -1,16 +1,49 @@
-package cn.ximcloud.itsource.day21._02chainList;
+package cn.ximcloud.itsource.day21.homework;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: Wizard
  * Date: 2018-07-07
- * Time: 14:26
- * ProjectName: ITSource
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * Time: 23:51
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
+ * <p>
+ * ////////////////////////////////////////////////////////////////////
+ * //                          _ooOoo_                               //
+ * //                         o8888888o                              //
+ * //                         88" . "88                              //
+ * //                         (| ^_^ |)                              //
+ * //                         O\  =  /O                              //
+ * //                      ____/`---'\____                           //
+ * //                    .'  \\|     |//  `.                         //
+ * //                   /  \\|||  :  |||//  \                        //
+ * //                  /  _||||| -:- |||||-  \                       //
+ * //                  |   | \\\  -  /// |   |                       //
+ * //                  | \_|  ''\---/''  |   |                       //
+ * //                  \  .-\__  `-`  ___/-. /                       //
+ * //                ___`. .'  /--.--\  `. . ___                     //
+ * //              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+ * //            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+ * //            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+ * //      ========`-.____`-.___\_____/___.-`____.-'========         //
+ * //                           `=---='                              //
+ * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
+public class HomeWork2 {
+    /*
+    第二题：基于链表方式实现的自定义容器类MyLinkedList代码：包含以下功能：(选做)
+	add(Integer  obj) 分析上述两种数据存储方式的优缺点。（面试题）
+     */
 
-public class LinkedList {
+    public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(Integer.valueOf("123123"));
+        System.out.println(linkedList);
+    }
+}
+class LinkedList {
     /*
      *  链表实现，Node类，存放当前存储的数据和一个下一个Node的对象
      * */
@@ -58,6 +91,24 @@ public class LinkedList {
      * @param object 传入一个对象
      */
     public void add(Object object) {
+        if (first == null) {
+            first = new Node(object);
+        } else {
+            Node temp = first;
+            while (temp.nextNode != null) {
+                temp = temp.nextNode;
+            }
+            temp.nextNode = new Node(object);
+        }
+        size++;
+    }
+
+    /**
+     * 在链表的末尾插入一个node
+     *
+     * @param object 传入一个对象
+     */
+    public void add(Integer object) {
         if (first == null) {
             first = new Node(object);
         } else {
@@ -153,4 +204,3 @@ public class LinkedList {
         }
     }
 }
-

@@ -1,8 +1,6 @@
 package cn.ximcloud.itsource.day14;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,10 +49,8 @@ public class FrameDemo {
         JButton button1 = new JButton("文国印牛逼!");
 
 
-        button1.setSize(10,20);
+        button1.setSize(10, 20);
         button1.getIcon();
-
-
 
 
         frame.add(button1); //添加button
@@ -62,7 +58,7 @@ public class FrameDemo {
         frame.add(button3);
         frame.add(button4);*/
 
-        frame.setSize(500,500);     //设置窗体大小
+        frame.setSize(500, 500);     //设置窗体大小
         //frame.setLocation(500,500);   //设置窗体位置
         frame.setLocationRelativeTo(null);  //设置窗体居中
         //    public void setLocationRelativeTo(Component c) {  component对象

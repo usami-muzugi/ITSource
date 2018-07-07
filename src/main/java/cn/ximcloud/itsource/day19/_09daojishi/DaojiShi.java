@@ -32,7 +32,7 @@ public class DaojiShi {
         });
 
         jFrame.add(jButton);
-        jButton.setFont(new Font("黑体",Font.BOLD,60));
+        jButton.setFont(new Font("黑体", Font.BOLD, 60));
         jFrame.setName("搞基倒时器");
         jFrame.setSize(700, 500);
         jFrame.setLocationRelativeTo(null);

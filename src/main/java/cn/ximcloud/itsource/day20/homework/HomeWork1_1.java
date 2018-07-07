@@ -51,7 +51,7 @@ public class HomeWork1_1 {
     }
 }
 
-class TestThread1 implements Runnable{
+class TestThread1 implements Runnable {
     private static int num = 50;
 
     public synchronized /*static*/ void method() {

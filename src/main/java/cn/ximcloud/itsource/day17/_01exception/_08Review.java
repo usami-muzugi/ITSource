@@ -31,7 +31,7 @@ public class _08Review {
       但是对checkedexception(检查异常)要求你必须要在方法里面或者捕获或者继续抛出。
       也就是说，直接继承Exception的就是检查异常，而直接继承了RunTimeException的就是运行时异常（非检查异常）
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //test1();
         test2();
     }
@@ -39,12 +39,13 @@ public class _08Review {
     public static void test1() throws TestException {
         throw new TestException();
     }
+
     public static void test2() {
         throw new TestRunTimeException();
     }
 }
 
-class TestException extends Exception{
+class TestException extends Exception {
 
 }
 

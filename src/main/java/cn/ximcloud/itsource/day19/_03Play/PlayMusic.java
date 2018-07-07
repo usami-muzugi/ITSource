@@ -13,7 +13,7 @@ package cn.ximcloud.itsource.day19._03Play;
 public class PlayMusic extends Thread {
     @Override
     public void run() {
-        for (int i = 0; i <100; i++) {
+        for (int i = 0; i < 100; i++) {
             System.out.println("抹茶抹茶摩擦" + i);
         }
     }

@@ -33,7 +33,7 @@ package cn.ximcloud.itsource.day6;
  **/
 
 public class JiuJiuMethod {
-    public static void method(int a ) {
+    public static void method(int a) {
         int length = a;    //初始化length用于控制九九乘法表行数
         for (int i = 1; i <= length; i++) {   //length用来控制九九乘法表的层数
             for (int j = 1; j <= i; j++) {    //内层循环j控制列第一个数的值

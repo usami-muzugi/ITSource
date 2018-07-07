@@ -10,11 +10,12 @@ package cn.ximcloud.itsource.day17._01exception;
  **/
 public class _07SelfException {
     /*
-           *自定义异常*
-           * 自定义运行时异常继承RuntimeException
-           * 自定义非检查异常继承Exception
+     *自定义异常*
+     * 自定义运行时异常继承RuntimeException
+     * 自定义非检查异常继承Exception
      */
-    private static String[] arr = {"ourinsama","usamimizugi"};
+    private static String[] arr = {"ourinsama", "usamimizugi"};
+
     public static void main(String[] args) throws UserHasFoundException {
         //throw new UserHasFoundException(); //这里直接继承的时Exception
         throw new UserHasFoundRunTimeException("用户已存在运行时异常");//继承了RunTimeException就可以不被强制要求处理
@@ -45,7 +46,8 @@ class UserHasFoundRunTimeException extends RuntimeException {
         super(msg);
     }
 
-    /**构造一个新的运行时异常包含一个msg信息和一个异常
+    /**
+     * 构造一个新的运行时异常包含一个msg信息和一个异常
      * Constructs a new runtime exception with the specified detail message and
      * cause.  <p>Note that the detail message associated with
      * {@code cause} is <i>not</i> automatically incorporated in

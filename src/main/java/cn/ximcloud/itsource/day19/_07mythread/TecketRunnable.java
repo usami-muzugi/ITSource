@@ -12,6 +12,7 @@ package cn.ximcloud.itsource.day19._07mythread;
 
 public class TecketRunnable implements Runnable {
     private int num = 5000000;
+
     @Override
     public void run() {
         while (num > 0) {

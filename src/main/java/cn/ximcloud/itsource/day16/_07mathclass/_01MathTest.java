@@ -33,7 +33,7 @@ package cn.ximcloud.itsource.day16._07mathclass;
 
 public class _01MathTest {
     public static void main(String[] args) {
-        double sum= 0;
+        double sum = 0;
 
         System.out.println(sum);
 

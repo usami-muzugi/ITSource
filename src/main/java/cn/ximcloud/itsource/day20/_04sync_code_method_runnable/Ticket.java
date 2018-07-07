@@ -22,9 +22,10 @@ public class Ticket implements Runnable {
 //                    num--;
 //                }
 //            }
-                saleOne();
+            saleOne();
         }
     }
+
     public synchronized void saleOne() {    //这个线程是实现Runnable，所以每个线程调用的这个方法都是这个实现Runnable类的对象的方法，每个线程都是使用的同一个对象，共享这个对象的所有数据。所以这里加不加不用static修饰，
         if (num > 0) {//卖一张票
             System.out.println(Thread.currentThread().getName() + "\t你的票号是" + num);

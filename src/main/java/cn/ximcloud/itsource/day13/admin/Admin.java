@@ -42,8 +42,7 @@ public class Admin {
     }
 
     /**
-     *
-     * @param strings   包含用户名或者是用户id和密码的数组
+     * @param strings 包含用户名或者是用户id和密码的数组
      */
     public Admin(String[] strings) {
         try {
@@ -57,9 +56,8 @@ public class Admin {
     }
 
     /**
-     *
-     * @param loginId   用户id
-     * @param password  用户密码
+     * @param loginId  用户id
+     * @param password 用户密码
      */
     public Admin(Integer loginId, String password) {
         this.loginId = loginId;
@@ -67,9 +65,8 @@ public class Admin {
     }
 
     /**
-     *
-     * @param name  用户名
-     * @param password  用户密码
+     * @param name     用户名
+     * @param password 用户密码
      */
     public Admin(String name, String password) {
         this.name = name;

@@ -33,10 +33,10 @@ package cn.ximcloud.itsource.day16._06stringclass;
 
 public class _04StringAllTest {
 
-        /*
-         * StringBuilder构造方法
-         *
-         */
+    /*
+     * StringBuilder构造方法
+     *
+     */
     public static void main(String[] args) {
         StringBuilder stringBuilder = new StringBuilder();// 创建了一个无参的stringBuilder对象
         /*

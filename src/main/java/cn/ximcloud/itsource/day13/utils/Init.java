@@ -58,7 +58,7 @@ public class Init {
 
 
     /**
-     *  检查文件
+     * 检查文件
      */
     private static void checkFile() {
 
@@ -70,7 +70,7 @@ public class Init {
     }
 
     /**
-     *  初始化管理员列表和管理员
+     * 初始化管理员列表和管理员
      */
     public static void initAdminListAndAdmins() {
         //初始化管理员列表

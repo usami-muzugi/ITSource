@@ -32,12 +32,12 @@ public class Ticket implements Runnable {
     public void run() {
         while (num > 0) {   //循环卖票
             lock.lock();
-                if (num > 0)
-                    System.out.println(Thread.currentThread().getName() + "\t你的票号是" + num--);
-            }
-
+            if (num > 0)
+                System.out.println(Thread.currentThread().getName() + "\t你的票号是" + num--);
         }
+
     }
+}
 //    @Override
 //    public void run() {
 //        while (num > 0) {   //循环卖票

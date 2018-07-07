@@ -1,9 +1,5 @@
 package cn.ximcloud.itsource.day20.homework;
 
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard

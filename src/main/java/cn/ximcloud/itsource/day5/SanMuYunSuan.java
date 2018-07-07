@@ -47,10 +47,10 @@ public class SanMuYunSuan {
         System.out.println(var1 % 2 == 0 ? "true" : "false");
 
         int score = 100;
-        String result = score==100 ?
-                "陈独秀同学请坐下": score >= 90 ? "陈独秀" : score >= 80 ?
-                "独秀" : score>=70 ? "优秀": score >= 60 ? "铁蛋" : score < 60 ?
-                "李时珍的皮" :"";
+        String result = score == 100 ?
+                "陈独秀同学请坐下" : score >= 90 ? "陈独秀" : score >= 80 ?
+                "独秀" : score >= 70 ? "优秀" : score >= 60 ? "铁蛋" : score < 60 ?
+                "李时珍的皮" : "";
         System.out.println(result);
 
         String response = score >= 60 ? (score >= 70 ? (score >= 80 ?
@@ -58,21 +58,6 @@ public class SanMuYunSuan {
                         : "独秀") : "优秀") : "铁蛋") : "李时珍的皮";
         System.out.println(response);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

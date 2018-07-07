@@ -64,7 +64,7 @@ public class Array {
         System.out.println("------------");
         for (int index : a
                 ) {
-            System.out.print(index+" ");
+            System.out.print(index + " ");
         }
 
         /*

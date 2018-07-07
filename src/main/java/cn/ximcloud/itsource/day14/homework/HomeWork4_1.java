@@ -55,7 +55,6 @@ public class HomeWork4_1 {
         jFrame.add(jButton4);
 
 
-
         jFrame.setSize(380, 100);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

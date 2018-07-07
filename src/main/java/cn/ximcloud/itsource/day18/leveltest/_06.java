@@ -17,7 +17,7 @@ public class _06 {  //这个是最后的修改的代码，抽象这个概念还�
     你能对上述问题给出一个较好解决方案来吗？请以计算圆形(πr2)、矩形（长*宽）和三角形（低*高/2）三种几何图形的面积为例，列出关键代码。
      */
     public static void main(String[] args) {
-        Juxin juxin = new Juxin(3,4);
+        Juxin juxin = new Juxin(3, 4);
         System.out.println(juxin.mj());
         Yuan yuan = new Yuan(5);
         System.out.println(yuan.mj());
@@ -28,6 +28,7 @@ public class _06 {  //这个是最后的修改的代码，抽象这个概念还�
 
 abstract class Graph {
     double mj;
+
     abstract double mj();
 
 }

@@ -2,7 +2,6 @@ package cn.ximcloud.itsource.day15._03listen;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,9 +50,9 @@ public class _03ListenTest {
 
         //②创建一个jbutton 和 TextFiled
         JButton jButton = new JButton("点我点我\nQAQ"); //创建button
-        jButton.setBounds(100,300,100,100); //设置位置
+        jButton.setBounds(100, 300, 100, 100); //设置位置
         TextField textField = new TextField();  //创建textfield
-        textField.setBounds(100,100,100,100);   //设置位置
+        textField.setBounds(100, 100, 100, 100);   //设置位置
 
         //③需要给按钮添加事件监听
 
@@ -66,7 +65,7 @@ public class _03ListenTest {
         //明确自己要做的功能，获取值，设置值！
         //已经实现了ActionListener接口的类，覆写的方法未必能够满足自己所有的方法功
         //最好自己实现接口覆写方法！
-        MyActionListener myActionListener = new MyActionListener(jButton,textField);    //创建自己的事件监听实现类，并传入jbutton，textfield
+        MyActionListener myActionListener = new MyActionListener(jButton, textField);    //创建自己的事件监听实现类，并传入jbutton，textfield
 
         jButton.addActionListener(myActionListener);    //添加事件监听的实现类的对象
         /*
@@ -74,8 +73,6 @@ public class _03ListenTest {
          */
         jFrame.add(textField);  //窗体添加textfield
         jFrame.add(jButton);    //窗体添加 jbutton
-
-
 
 
         jFrame.setSize(500, 500);

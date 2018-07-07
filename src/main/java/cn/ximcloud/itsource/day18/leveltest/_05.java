@@ -20,22 +20,21 @@ public class _05 {  //没问题，逻辑细节紧密
     public static void main(String[] args) {
         int[] src = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
         int[] dest = new int[20];
-        arrayCopy(src,0,dest,2,5);
+        arrayCopy(src, 0, dest, 2, 5);
         System.out.println(Arrays.toString(dest));
     }
 
 
     /**
-     *
-     * @param src       源数组
-     * @param srcPos    源数组起始位置
-     * @param dest      目标数组
-     * @param destPos   目标数组起始位置
-     * @param length    插入的元素个数
+     * @param src     源数组
+     * @param srcPos  源数组起始位置
+     * @param dest    目标数组
+     * @param destPos 目标数组起始位置
+     * @param length  插入的元素个数
      */
-    public static void arrayCopy(int[] src,  int srcPos,  int[] dest, int destPos, int length) {
+    public static void arrayCopy(int[] src, int srcPos, int[] dest, int destPos, int length) {
         //判断为空
-        if (src==null||dest==null) throw new ArrayCopyRunTimeException("有数组为null");
+        if (src == null || dest == null) throw new ArrayCopyRunTimeException("有数组为null");
         //判断数组下标越界
         if (srcPos < 0 || destPos < 0 || length < 0 || srcPos > src.length || destPos + length > dest.length) {
             throw new ArrayCopyRunTimeException("数组下标越界");

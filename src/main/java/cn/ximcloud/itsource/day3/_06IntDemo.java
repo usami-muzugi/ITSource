@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.day3;
 
-import java.math.BigDecimal;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -51,36 +49,11 @@ public class _06IntDemo {
         System.out.println();
         char c = 'A';
         String string = "65";
-        System.out.println(c+35);  //算术相加
-        System.out.println(string+35);  //字符串拼接
+        System.out.println(c + 35);  //算术相加
+        System.out.println(string + 35);  //字符串拼接
         Integer integer = 35;
-        System.out.println(string+integer.toString());
+        System.out.println(string + integer.toString());
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

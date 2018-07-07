@@ -37,8 +37,9 @@ interface Walkable {
     void walk();
 }
 
-abstract class Animal{  //abstract为啥要加上？这里应该是体现了抽象继承的概念，Animal描述了动物这一抽象的事物，然后他的子类来具体实现，生活中也是，动物是一个很大的范畴，不能具体来描述一类。
+abstract class Animal {  //abstract为啥要加上？这里应该是体现了抽象继承的概念，Animal描述了动物这一抽象的事物，然后他的子类来具体实现，生活中也是，动物是一个很大的范畴，不能具体来描述一类。
     private String name;
+
     public Animal() {
 
     }
@@ -71,9 +72,10 @@ class Fish extends Animal implements Swimmable {
     public Fish(String name) {
         super(name);
     }
+
     @Override
     public void swin() {
-        System.out.println(this.toString()+"，我在游泳");
+        System.out.println(this.toString() + "，我在游泳");
     }
 
     @Override
@@ -85,6 +87,7 @@ class Fish extends Animal implements Swimmable {
     public void setName(String name) {
         super.setName(name);
     }
+
     @Override
     public String toString() {
         return "我是:" + getName();
@@ -104,7 +107,7 @@ class Cat extends Animal implements Walkable {
 
     @Override
     public void walk() {
-        System.out.println(this.toString()+"，我在跑步");
+        System.out.println(this.toString() + "，我在跑步");
     }
 
     @Override
@@ -116,6 +119,7 @@ class Cat extends Animal implements Walkable {
     public void setName(String name) {
         super.setName(name);
     }
+
     @Override
     public String toString() {
         return "我是:" + getName();

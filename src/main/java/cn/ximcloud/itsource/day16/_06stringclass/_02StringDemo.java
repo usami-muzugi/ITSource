@@ -43,7 +43,7 @@ public class _02StringDemo {
     static void test(int sum) {
         long l = System.currentTimeMillis();
         String string = "";
-        for (int i = 0; i <sum; i++) {
+        for (int i = 0; i < sum; i++) {
             string += i;
         }
         System.out.println(string);

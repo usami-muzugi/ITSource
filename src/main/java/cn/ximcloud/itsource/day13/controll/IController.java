@@ -39,7 +39,7 @@ interface IController<T> {
     boolean delete(T t);
 
     //改
-    boolean alert(T a,T b);
+    boolean alert(T a, T b);
 
     //查
     T select(T t);

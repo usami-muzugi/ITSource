@@ -1,9 +1,5 @@
 package cn.ximcloud.itsource.day6;
 
-import java.io.ObjectInputStream;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard

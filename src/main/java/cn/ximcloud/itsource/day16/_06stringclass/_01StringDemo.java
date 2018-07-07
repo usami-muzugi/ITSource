@@ -47,7 +47,6 @@ public class _01StringDemo {
          */
 
 
-
         String str = "123";
         String ssr = "666";
         ssr = str;

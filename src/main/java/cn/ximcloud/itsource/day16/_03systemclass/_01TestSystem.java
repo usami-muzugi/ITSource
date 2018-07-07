@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.day16._03systemclass;
 
-import cn.ximcloud.itsource.day7.Array;
-
 import java.util.Arrays;
 import java.util.Map;
 
@@ -77,7 +75,7 @@ public class _01TestSystem {
 //            integers1[i] = i + 1;
 //        }
         System.out.println(Arrays.toString(integers1));
-        System.arraycopy(integers,0,integers1,10,10);
+        System.arraycopy(integers, 0, integers1, 10, 10);
         /*
             源数组 integers
             源数组起始位置
@@ -88,7 +86,7 @@ public class _01TestSystem {
         System.out.println(Arrays.toString(integers1));
 //        for (;;) {
 //            System.out.println(System.nanoTime());
-           System.gc();
+        System.gc();
 //        }
 
         /*

@@ -51,12 +51,11 @@ public class HomeWork4_2 {
         JButton jButton5 = new JButton("党中央");
 
 
-        jFrame.add(jButton1,BorderLayout.NORTH);
-        jFrame.add(jButton2,BorderLayout.EAST);
-        jFrame.add(jButton3,BorderLayout.WEST);
-        jFrame.add(jButton4,BorderLayout.SOUTH);
-        jFrame.add(jButton5,BorderLayout.CENTER);
-
+        jFrame.add(jButton1, BorderLayout.NORTH);
+        jFrame.add(jButton2, BorderLayout.EAST);
+        jFrame.add(jButton3, BorderLayout.WEST);
+        jFrame.add(jButton4, BorderLayout.SOUTH);
+        jFrame.add(jButton5, BorderLayout.CENTER);
 
 
         jFrame.setSize(550, 400);

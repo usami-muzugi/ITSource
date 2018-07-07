@@ -16,7 +16,7 @@ public class LinkedListTest {
         LinkedList linkedList = new LinkedList();
         linkedList.add("文国印");
         linkedList.add(1, "牛逼");
-        linkedList.arlert(0,"usamimizugi");
+        linkedList.arlert(0, "usamimizugi");
         linkedList.add(2);
         linkedList.add(3);
         linkedList.add(4);

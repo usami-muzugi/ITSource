@@ -26,7 +26,7 @@ public class _05finally {
         System.out.println(getInt());
     }
 
-    public static int getInt(){
+    public static int getInt() {
         int i = 10;
         try {
             System.out.println(1 / 0);

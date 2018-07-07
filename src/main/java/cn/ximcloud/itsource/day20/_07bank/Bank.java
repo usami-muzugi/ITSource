@@ -13,6 +13,7 @@ package cn.ximcloud.itsource.day20._07bank;
 public class Bank {
     double money;//用于存放钱
     boolean flag = true;    //用于线程通信 是否没钱？ 默认为没钱
+
     /*
     使用同步监听对象的方式
      */
@@ -30,9 +31,9 @@ public class Bank {
                 }
             }
             //存取操作
-            System.out.println("取钱之前:"+money);
+            System.out.println("取钱之前:" + money);
             money -= 1000;
-            System.out.println("取钱之前:"+money);
+            System.out.println("取钱之前:" + money);
             //设置标识
             flag = true;
             //唤醒操作
@@ -52,9 +53,9 @@ public class Bank {
                 }
             }
             //存取操作
-            System.out.println("存钱之前:"+money);
+            System.out.println("存钱之前:" + money);
             money += 1000;
-            System.out.println("存钱之前:"+money);
+            System.out.println("存钱之前:" + money);
             //设置标识
             flag = false;
             //唤醒操作

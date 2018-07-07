@@ -40,7 +40,7 @@ public class Bank {
 
     //存钱操作
     public synchronized void saveMoney() {
-            //是否没钱
+        //是否没钱
         if (!flag) {  //有钱
             try {
                 Bank.class.wait();

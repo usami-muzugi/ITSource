@@ -38,7 +38,7 @@ public class Ticket extends Thread {
                     System.out.println(Thread.currentThread().getName() + "\t你的票号是" + num);
                     num--;
                 }
-            }finally {
+            } finally {
                 lock.unlock();
             }
 

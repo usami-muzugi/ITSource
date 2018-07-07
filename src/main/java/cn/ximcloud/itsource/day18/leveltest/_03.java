@@ -17,12 +17,14 @@ public class _03 {  //第三题没问题
     }
 
 
-
 }
-class Score{
+
+class Score {
     private Integer[] arr;
 
-    /**Score对象实例化，并初始化arr数组
+    /**
+     * Score对象实例化，并初始化arr数组
+     *
      * @param num 学生人数
      */
     public Score(int num) {

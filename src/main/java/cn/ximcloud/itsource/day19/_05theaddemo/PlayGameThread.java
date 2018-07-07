@@ -10,7 +10,7 @@ package cn.ximcloud.itsource.day19._05theaddemo;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class PlayGameThread extends Thread{
+public class PlayGameThread extends Thread {
     @Override
     public void run() {
         for (int i = 1; i <= 100; i++) {

@@ -15,8 +15,8 @@ public class HomeWork3 {
       2.	以下最终打印的结果是多少
      */
     public static void main(String[] args) {
-        for(int i=0;i<3;i++){   //i: 0,1,2
-            switch(i){
+        for (int i = 0; i < 3; i++) {   //i: 0,1,2
+            switch (i) {
                 default:
                     System.out.println("D");
                 case 0:

@@ -44,8 +44,8 @@ public class _02BigInteger {
 
     private static BigInteger add(int a, int b) {
         System.out.println("几何学精确的计算");
-        BigInteger bigInteger = new BigInteger(a+"");
-        BigInteger bigInteger1 = new BigInteger(b+"");
+        BigInteger bigInteger = new BigInteger(a + "");
+        BigInteger bigInteger1 = new BigInteger(b + "");
         return bigInteger.multiply(bigInteger1);
     }
 }

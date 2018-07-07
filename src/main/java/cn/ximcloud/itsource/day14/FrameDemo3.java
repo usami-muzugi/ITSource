@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 
-
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -66,7 +64,7 @@ public class FrameDemo3 {
 
 
         //第二步，设置顶层窗体大小
-        jFrame.setSize(500,500);
+        jFrame.setSize(500, 500);
         //第三部，设置顶层窗体的位置
         jFrame.setLocationRelativeTo(null);
 

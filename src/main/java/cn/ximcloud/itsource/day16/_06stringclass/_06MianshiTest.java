@@ -59,7 +59,7 @@ a4		DDDZZZ
 
     }
 
-    static void change(String a ,String b ,StringBuilder c, StringBuilder d){
+    static void change(String a, String b, StringBuilder c, StringBuilder d) {
         a = "AAABBB";
         b = b.concat("CCCDDD");
         c.append("13123123");

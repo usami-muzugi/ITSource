@@ -39,7 +39,8 @@ import java.io.Serializable;
  */
 public class HelloWorld implements Serializable {
     /**
-     *  程序执行入口，main()方法，必须被public static void 修饰
+     * 程序执行入口，main()方法，必须被public static void 修饰
+     *
      * @param args void
      */
     public static void main(String[] args) {

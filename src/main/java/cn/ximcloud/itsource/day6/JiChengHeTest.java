@@ -50,13 +50,13 @@ public class JiChengHeTest {
 	*/
         long currentTime = System.currentTimeMillis();
         int sum = 0;//累积每一个阶乘的和
-        for(int j = 1;j<= 5;j++){
+        for (int j = 1; j <= 5; j++) {
             int ji = 1;//累计每一个数的阶乘[ 思考可以不可以把ji放到外面,自己看执行流程 ]
-            for(int i = 1;i<=j ;i++){//判断的值,决定了求的是哪个数的阶乘
-                ji*=i;
+            for (int i = 1; i <= j; i++) {//判断的值,决定了求的是哪个数的阶乘
+                ji *= i;
             }
             //System.out.println("ji="+ji);//拿到了指定了值的阶乘
-            sum+=ji;
+            sum += ji;
         }
         System.out.println(sum);
 
@@ -65,9 +65,9 @@ public class JiChengHeTest {
         currentTime = System.currentTimeMillis();
         sum = 0;
         //1*1 + 1*2 + 1*2*3 + 1*2*3*4 + 1*2*3*4*5
-        for(int i = 1,index =1;i<=5;i++){
-            index *= i;		//i!
-            sum += index;	//sum += i!
+        for (int i = 1, index = 1; i <= 5; i++) {
+            index *= i;        //i!
+            sum += index;    //sum += i!
         }
         System.out.println(sum);
 
@@ -84,7 +84,7 @@ public class JiChengHeTest {
         }
 
         sum = 0;
-        for (int i = 1; i <=5; i++) {
+        for (int i = 1; i <= 5; i++) {
             sum++; //这里就执行了5次加法
         }
 
@@ -98,7 +98,6 @@ public class JiChengHeTest {
             sum += index;   //累计index的值
         }
         System.out.println(sum);    //我的算法只循环了5次，谭老师的循环了5^2次，当求得数大于5之后。我的代码运行1ms，老师的21ms
-
 
 
     }

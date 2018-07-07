@@ -1,5 +1,6 @@
 package cn.ximcloud.itsource.day17._01exception;
- /**
+
+/**
  * Created by IntelliJ IDEA.
  * User: wzard
  * Date: 2018-07-01
@@ -14,6 +15,7 @@ public class _02TryCatchTest {
         System.out.println(test());
 
     }
+
     private static int test() {
 
         /*

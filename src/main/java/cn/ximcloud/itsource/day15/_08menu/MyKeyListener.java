@@ -37,6 +37,7 @@ import java.awt.event.KeyListener;
 
 public class MyKeyListener implements KeyListener {
     private TextArea textArea;
+
     public MyKeyListener(TextArea textArea) {
         this.textArea = textArea;
     }

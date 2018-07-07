@@ -34,7 +34,7 @@ package cn.ximcloud.itsource.day4;
 public class BiaoDaShi {
 
     public static void main(String[] args) {
-        int a = 3,b = 5;
+        int a = 3, b = 5;
         System.out.println("Before\n a=" + a + " b=" + b);
         int c;
         c = a;

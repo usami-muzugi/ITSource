@@ -42,13 +42,13 @@ public class HomeWork6 {
 
 
         JButton[] jButtons = new JButton[24];
-        String[] strings = new String[]{"±","0",".","=","1","2","3","+","4","5","6","-",
-                "7","8","9","×","CE","C","DEL","÷","%","√","x^2","1/x"};
+        String[] strings = new String[]{"±", "0", ".", "=", "1", "2", "3", "+", "4", "5", "6", "-",
+                "7", "8", "9", "×", "CE", "C", "DEL", "÷", "%", "√", "x^2", "1/x"};
 
         int x = 30;
         int y = 490;
 
-        for (int i = 0; i <jButtons.length; i++) {
+        for (int i = 0; i < jButtons.length; i++) {
             jButtons[i] = new JButton(strings[i]);
         }
 
@@ -101,7 +101,7 @@ public class HomeWork6 {
 
         TextField textField = new TextField();
         textField.setText("1 + 1 = 2");
-        textField.setBounds(0,0,380,100);
+        textField.setBounds(0, 0, 380, 100);
 
         jFrame.add(textField);
 

@@ -41,20 +41,18 @@ public class _03throws {
     }
 
 
-
     /**
-     *
      * @param a 被除数
      * @param b 除数，不能等于0
      */
     //这个代码可能是别人开发的，没有写明这个方法的操作
-    public static void print(int a, int b) throws ArithmeticException{
+    public static void print(int a, int b) throws ArithmeticException {
         System.out.println(a / b);//这个异常后面的代码如果遇到异常就不会执行，而且把异常这个锅丢给调用他的方法
         System.out.println("老子就是不处理异常!");
     }
 
 
-    public static void print(int a, int b,int c) throws ArithmeticException,Exception{
+    public static void print(int a, int b, int c) throws ArithmeticException, Exception {
         System.out.println(a / b);//这个异常后面的代码如果遇到异常就不会执行，而且把异常这个锅丢给调用他的方法
         System.out.println("老子就是不处理异常!");
     }

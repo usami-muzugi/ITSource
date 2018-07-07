@@ -1,10 +1,8 @@
 package cn.ximcloud.itsource.day20.homework;
 
-        import cn.ximcloud.itsource.day3.HomeWork;
-
-        import java.util.concurrent.locks.Condition;
-        import java.util.concurrent.locks.Lock;
-        import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by IntelliJ IDEA.
@@ -72,7 +70,7 @@ class HomeWork2 extends Thread {
                 flag = true;
                 condition.signalAll();
             }
-        }finally {
+        } finally {
             lock.unlock();
         }
     }

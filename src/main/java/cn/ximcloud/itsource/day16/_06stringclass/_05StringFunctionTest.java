@@ -51,7 +51,7 @@ public class _05StringFunctionTest {
         //返回的是自己自己对象
         stringBuilder.append("刘耀文").append("李冲").append("牛逼！");
         System.out.println(stringBuilder);
-        System.out.println("length = "+stringBuilder.length());
+        System.out.println("length = " + stringBuilder.length());
         System.out.println(stringBuilder.capacity());
 
         /*
@@ -72,7 +72,7 @@ public class _05StringFunctionTest {
             return this;
         }
          */
-        stringBuilder.delete(0,10);
+        stringBuilder.delete(0, 10);
         System.out.println(stringBuilder);
 
 

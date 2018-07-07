@@ -17,7 +17,8 @@ public class IntArray {
         实现可变长度，固定类型的一个Array
     */
     private int[] arr;
-    private int sum;
+    private int sum;    //sum是数据类存在的元素的个数
+
     public IntArray() {
         this(5);
     }
@@ -29,9 +30,10 @@ public class IntArray {
     public int getSum() {
         return sum;
     }
+
     public void add(int i) {
         if (arr.length == sum) {
-            int[] temp = new int[sum + 20];
+            int[] temp = new int[sum + 20]; //可变长度体现在这
             System.arraycopy(arr, 0, temp, 0, sum);
             arr = temp;
         }
@@ -44,7 +46,7 @@ public class IntArray {
         int[] temp = new int[sum];
         System.arraycopy(arr, 0, temp, 0, sum);
 
-       return Arrays.toString(temp);
+        return Arrays.toString(temp);
 
     }
 }

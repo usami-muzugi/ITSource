@@ -56,7 +56,7 @@ public class SeftDemo {
         //⑤将组件添加到顶层窗体中
 
         TextField textField = new TextField();
-        textField.setBounds(100,100,300,100);
+        textField.setBounds(100, 100, 300, 100);
 
         /*
          *  分析需求完成点击按钮将值传入文本框
@@ -66,20 +66,17 @@ public class SeftDemo {
 
         char ch = '1';
         for (int i = 0; i < jButtons.length; i++) {
-            (jButtons[i] = new JButton(ch+"")).setBounds(100,100,300,100);
+            (jButtons[i] = new JButton(ch + "")).setBounds(100, 100, 300, 100);
             ch++;
         }
 
         jFrame.add(textField);
 
-        for (JButton jb:jButtons
-             ) {
+        for (JButton jb : jButtons
+                ) {
             jFrame.add(jb);
         }
         //④设置组件的大小和位置
-
-
-
 
 
         jFrame.setSize(500, 500);

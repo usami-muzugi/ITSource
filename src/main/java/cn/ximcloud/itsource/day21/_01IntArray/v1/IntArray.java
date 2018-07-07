@@ -16,19 +16,21 @@ public class IntArray {
     /*
         实现固定长度，固定类型的一个Array
      */
-    private int[] arr;
+    private int[] arr;  //arr代表这个数组，
     private int sum;
+
     public IntArray() {
-        this(10);
+        this(10);   //无参构造器设置默认长度为10
     }
 
     public IntArray(int length) {
-        arr = new int[length];
+        arr = new int[length];  //有参构造方法可以设置默认长度
     }
 
     public int getSum() {
         return sum;
     }
+
     public void add(int i) {
         arr[sum] = i;
         sum++;

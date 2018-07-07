@@ -36,11 +36,12 @@ public class Method {
 
     /**
      * get the sum of a and b
+     *
      * @param a int type a
      * @param b int type b
      * @return sum of a and b
      */
-    public static int add(int a,int b) {
+    public static int add(int a, int b) {
         return a + b;
     }
 
@@ -48,11 +49,6 @@ public class Method {
     public static void main(String[] args) {
 
     }
-
-
-
-
-
 
 
 }

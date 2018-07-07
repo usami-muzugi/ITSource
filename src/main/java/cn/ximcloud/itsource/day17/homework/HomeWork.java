@@ -1,6 +1,8 @@
 package cn.ximcloud.itsource.day17.homework;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -67,7 +69,7 @@ public class HomeWork {
         main(null);
 
         //文件为找到异常 FileNotFoundException extends Exception，一个文件可能未被找到，编译时异常，需要捕获该异常或直接抛出，调用此方法的方法
-        FileInputStream fileInputStream = new FileInputStream( new File(""));
+        FileInputStream fileInputStream = new FileInputStream(new File(""));
 
 
     }

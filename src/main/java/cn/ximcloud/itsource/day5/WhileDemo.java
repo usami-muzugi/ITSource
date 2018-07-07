@@ -34,28 +34,27 @@ package cn.ximcloud.itsource.day5;
 public class WhileDemo {
 
 
+    public WhileDemo() {
+    }
 
-    public WhileDemo() {}
 
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //求出20以内3的倍数的数字和个数
-        int index = 1,sum = 0,count = 0;
-        do{
-            if(index%3==0){
-                sum +=index;
+        int index = 1, sum = 0, count = 0;
+        do {
+            if (index % 3 == 0) {
+                sum += index;
                 count++;
             }
             index++;
-        }while(index<=20);
-        System.out.println("0以内3的倍数的数字之和:"+sum+"\n0以内3的倍数的数字个数"+count);
-        add(1,1);
-        add(22,2);
+        } while (index <= 20);
+        System.out.println("0以内3的倍数的数字之和:" + sum + "\n0以内3的倍数的数字个数" + count);
+        add(1, 1);
+        add(22, 2);
     }
 
 
     /**
-     *
      * @param a
      * @param b
      */

@@ -1,7 +1,7 @@
 package cn.ximcloud.itsource.day18.leveltest;
 
 /**
- /**
+ * /**
  * Created by IntelliJ IDEA.
  * User: wzard
  * Date: 2018-07-03
@@ -20,14 +20,13 @@ public class _04 {  //没有审题，要求的是求字符串最后一个字符
 
     public static void main(String[] args) {
         System.out.println("abcdefg".indexOf('g'));
-        System.out.println(_04.lastIndexOf("abcdefg",'g'));
+        System.out.println(_04.lastIndexOf("abcdefg", 'g'));
     }
 
     /**
-     *
      * @param s 一串字符串
      * @param c 要找到的值
-     * @return  如果找到了返回这个字符串的char数组的对应的值的索引
+     * @return 如果找到了返回这个字符串的char数组的对应的值的索引
      */
     public static int lastIndexOf(String s, char c) {
         char[] chars = s.toCharArray();

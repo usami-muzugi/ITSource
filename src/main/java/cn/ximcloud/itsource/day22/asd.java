@@ -1,12 +1,13 @@
-package cn.ximcloud.itsource.day8;
+package cn.ximcloud.itsource.day22;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-06-17
- * Time: 15:58
- * ProjectName: ITSource
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * User: Wizard
+ * Date: 2018-07-07
+ * Time: 23:04
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -27,25 +28,8 @@ package cn.ximcloud.itsource.day8;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑        永无BUG      永不修改                  //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-
-public class Father {
-    static {
-        System.out.println("我是父类的静态代码块儿");
-    }
-
-    {
-        System.out.println("我是父类的代码块儿");
-    }
-
-    public Father() {
-        System.out.println("我是父类的构造方法");
-    }
-
-
-    public void method() {
-        System.out.println("我是父类的普通方法");
-    }
+public class asd {
 }

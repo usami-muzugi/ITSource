@@ -31,7 +31,7 @@ package cn.ximcloud.itsource.day20._99test;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-public class ConTest{
+public class ConTest {
     public static void main(String[] args) {
         /*
             构造方法是不能使用synchronized修饰的，但是可以使用lock

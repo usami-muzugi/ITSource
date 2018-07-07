@@ -1,4 +1,5 @@
 package cn.ximcloud.itsource.day20._12deadLock;
+
 public class DeadLock {
 
     /*
@@ -54,51 +55,54 @@ public class DeadLock {
      */
     public static String obj1 = "obj1"; //一个对象obj1 使用同步监听使用
     public static String obj2 = "obj2"; //一个对象obj2 使用同步监听使用
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Thread a = new Thread(new Lock1()); //创建两个使用Runnable实现的线程对象
         Thread b = new Thread(new Lock2());
         a.start();  //调用线程对象的.start方法启动线程
         b.start();
-    }    
+    }
 }
-class Lock1 implements Runnable{
+
+class Lock1 implements Runnable {
     @Override
-    public void run(){
-        try{
+    public void run() {
+        try {
             System.out.println("Lock1 running");
             System.out.println("打印后前");
-            while(true){
+            while (true) {
                 System.out.println("while之后");
-                synchronized(DeadLock.obj1){
+                synchronized (DeadLock.obj1) {
                     System.out.println("Lock1 lock obj1");
                     Thread.sleep(3000);//获取obj1后先等一会儿，让Lock2有足够的时间锁住obj2
-                    synchronized(DeadLock.obj2){
+                    synchronized (DeadLock.obj2) {
                         System.out.println("Lock1 lock obj2");
                     }
                 }
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-class Lock2 implements Runnable{
+
+class Lock2 implements Runnable {
     @Override
-    public void run(){
-        try{
+    public void run() {
+        try {
             System.out.println("Lock2 running");
             System.out.println("打印后前");
-            while(true){
+            while (true) {
                 System.out.println("while之后");
-                synchronized(DeadLock.obj2){
+                synchronized (DeadLock.obj2) {
                     System.out.println("Lock2 lock obj2");
                     Thread.sleep(3000);
-                    synchronized(DeadLock.obj1){
+                    synchronized (DeadLock.obj1) {
                         System.out.println("Lock2 lock obj1");
                     }
                 }
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

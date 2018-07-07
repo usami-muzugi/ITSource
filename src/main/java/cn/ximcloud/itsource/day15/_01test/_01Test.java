@@ -51,9 +51,9 @@ public class _01Test {
         JButton jButton3 = new JButton("C");
 
         //设置jpanel布局模式
-        JPanel jPanel = new JPanel(new GridLayout(2,2));
+        JPanel jPanel = new JPanel(new GridLayout(2, 2));
 
-        for (int i = 0; i <4; i++) {
+        for (int i = 0; i < 4; i++) {
             jPanel.add(new JButton(i + ""));
         }
 
@@ -62,9 +62,6 @@ public class _01Test {
 //        jFrame.add(jButton1,BorderLayout.EAST);
 //        jFrame.add(jButton2,BorderLayout.SOUTH);
 //        jFrame.add(jButton3,BorderLayout.CENTER);
-
-
-
 
 
         jFrame.setSize(500, 500);

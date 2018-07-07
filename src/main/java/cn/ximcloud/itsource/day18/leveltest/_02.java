@@ -20,7 +20,7 @@ public class _02 {  //第二题也没什么问题
             sum++;
             sum *= 2;
         }
-        System.out.println("第一天共摘了"+sum+"个桃子");
+        System.out.println("第一天共摘了" + sum + "个桃子");
 
 //        int index = 3070;
 //        for (int i = 0; i < 10; i++) {

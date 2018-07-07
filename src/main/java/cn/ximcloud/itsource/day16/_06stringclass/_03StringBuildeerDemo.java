@@ -33,16 +33,16 @@ package cn.ximcloud.itsource.day16._06stringclass;
 
 public class _03StringBuildeerDemo {
     /*
-    * CharSequence （字符序列）
-    *  CharSequence
-    *   |
-    *   |----String
-    *   |
-    *   |----StringBuilder
-    *   |
-    *   |----StringBuffer
-    *
-    * */
+     * CharSequence （字符序列）
+     *  CharSequence
+     *   |
+     *   |----String
+     *   |
+     *   |----StringBuilder
+     *   |
+     *   |----StringBuffer
+     *
+     * */
     public static void main(String[] args) {
         test(100000);
         test2(100000);
@@ -52,17 +52,18 @@ public class _03StringBuildeerDemo {
     static void test3(int sum) {
         long l = System.currentTimeMillis();
         StringBuffer stringBuffer = new StringBuffer();
-        for (int i = 0; i <sum; i++) {
+        for (int i = 0; i < sum; i++) {
             stringBuffer.append(i);
         }
         System.out.println(stringBuffer);
         System.out.println(System.currentTimeMillis() - l);
 
     }
+
     static void test2(int sum) {
         long l = System.currentTimeMillis();
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i <sum; i++) {
+        for (int i = 0; i < sum; i++) {
             stringBuilder.append(i);
         }
         System.out.println(stringBuilder);
@@ -72,7 +73,7 @@ public class _03StringBuildeerDemo {
     static void test(int sum) {
         long l = System.currentTimeMillis();
         String string = "";
-        for (int i = 0; i <sum; i++) {
+        for (int i = 0; i < sum; i++) {
             string += i;
         }
         System.out.println(string);

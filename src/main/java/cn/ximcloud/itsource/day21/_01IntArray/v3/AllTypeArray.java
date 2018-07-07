@@ -19,6 +19,7 @@ public class AllTypeArray {
 
     private Object data;    //Object[]也是一个类，也是Object的子类
     private int sum;
+
     public AllTypeArray() {
         this(5);
     }
@@ -30,9 +31,10 @@ public class AllTypeArray {
     public int getSum() {
         return sum;
     }
+
     public void add(Object i) {
         if (((Object[]) data).length == sum) {
-            Object[] temp = new Object[sum + 20];
+            Object[] temp = new Object[sum + 20];   //可变长度
             System.arraycopy(data, 0, temp, 0, sum);
             data = temp;
         }
@@ -45,7 +47,7 @@ public class AllTypeArray {
         Object[] temp = new Object[sum];
         System.arraycopy(data, 0, temp, 0, sum);
 
-       return Arrays.toString(temp);
+        return Arrays.toString(temp);
 
     }
 }

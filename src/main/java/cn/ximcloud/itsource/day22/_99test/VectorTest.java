@@ -14,7 +14,7 @@ import java.util.Vector;
 
 public class VectorTest {
     public static void main(String[] args) {
-//      Vector是ArrayList的线程安全的类
+//      Vector是List的线程安全的Array类,单线程可以不考虑线程安全的问题
 //        /**
 //         * Constructs an empty vector with the specified initial capacity and
 //         * with its capacity increment equal to zero.
@@ -37,6 +37,9 @@ public class VectorTest {
 //        }
         Vector vector = new Vector();
         vector.add("");
+        vector.add("123123");
+        vector.add(123412);
+        System.out.println(vector);
 
     }
 

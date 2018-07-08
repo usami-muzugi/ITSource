@@ -46,6 +46,26 @@ public class HomeWork3 {
     变量链表     快     快      慢      慢
 
     在1W之后，时间就呈指数级增加
+
+    所以，老老实实，选择MySQL
+
+    ArrayList
+添加add消耗的时间:25991977
+查消耗的时间:223409375
+改消耗的时间:336963409
+删除del消耗的时间:5304991186
+LinkedList
+添加add消耗的时间:2101467
+查消耗的时间:400177260
+改消耗的时间:645772421
+删除del消耗的时间:1051243938
+--------------------
+arr-link add : 23890510
+arr-link indexOf : -176767885
+arr-link set : -308809012
+arr-link del : 4253747248
+
+我选择I7-8700K
      */
     public static void main(String[] args) {
         System.out.println("ArrayList");

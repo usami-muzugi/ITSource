@@ -29,6 +29,8 @@ public class LinkedListTest {
         System.out.println(linkedList);
         System.out.println(linkedList.getSize());
 
+        LinkedList linkedList1 = new LinkedList();
+        System.out.println(linkedList1.toString());
 
     }
 }

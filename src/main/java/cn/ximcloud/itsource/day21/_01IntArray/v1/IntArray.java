@@ -31,6 +31,11 @@ public class IntArray {
         return sum;
     }
 
+    /**
+     * 固定长度固定类型数组添加一元素操作
+     *
+     * @param i 被添加的一个元素
+     */
     public void add(int i) {
         arr[sum] = i;
         sum++;

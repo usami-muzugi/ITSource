@@ -15,9 +15,9 @@ public class LinkedList {
      *  链表实现，Node类，存放当前存储的数据和一个下一个Node的对象
      * */
     private Node first; //LinkedList这个存放的是第一个节点
-    private int size;
+    private int size;   //链表的长度
 
-    public LinkedList() {
+    public LinkedList() {       //默认构造方法
 
     }
 
@@ -26,25 +26,26 @@ public class LinkedList {
      *
      * @param object 传入一个存储的对象
      */
-    public LinkedList(Object object) {
-        first = new Node();
-        first.object = object;
-        size++;
+    public LinkedList(Object object) {  //初始化链表传入一个对象，就可以创建链表了
+        first = new Node(); //初始化firstNode
+        first.object = object;  //这个FirstNode的objetc对象为传入的对象
+        size++; //自行自增
     }
 
     @Override
     public String toString() {
-        Node temp = first;
+        Node temp = first;  //当前首链为first
         StringBuilder stringBuilder = new StringBuilder("[");
-        while (temp != null) {
-            if (temp.nextNode != null) {
+        while (temp != null) {  //如果首链为null就是说还没有初始化，
+            if (temp.nextNode != null) {    //下一个指向的node如果不为空打印当前的objetc，再加个，
                 stringBuilder.append(temp.object + ",");
             } else {
-                stringBuilder.append(temp.object + "]");
+                stringBuilder.append(temp.object);//为空，就打印objetc
             }
             temp = temp.nextNode;
         }
-        return stringBuilder.toString();
+        return stringBuilder.append("]").toString();    //若果为空，打印不出来这个]
+        //解决了
     }
 
     public int getSize() {
@@ -59,7 +60,7 @@ public class LinkedList {
      */
     public void add(Object object) {
         if (first == null) {
-            first = new Node(object);
+            first = new Node(object);//使用构造方法新建一个node然后赋值给first
         } else {
             Node temp = first;
             while (temp.nextNode != null) {
@@ -143,13 +144,13 @@ public class LinkedList {
 
     protected class Node {
         protected Object object;
-        protected Node nextNode;
+        Node nextNode;
 
-        protected Node(Object object) {
+        Node(Object object) {
             this.object = object;
         }
 
-        protected Node() {
+        Node() {
         }
     }
 }

@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day21._01IntArray.v3;
+package cn.ximcloud.itsource.day21._01IntArray.v5;
 
 import java.util.Arrays;
 
@@ -17,8 +17,8 @@ public class AllTypeArray {
         实现可变长度，可变类型的一个Array
     */
 
-    private Object data;    //Object[]也是一个类，也是Object的子类
-    private int sum;
+    private Object[] data;    //Object[]也是一个类，也是Object的子类
+    private int sum;    //数组的元素数
 
     public AllTypeArray() {
         this(5);
@@ -32,28 +32,39 @@ public class AllTypeArray {
         return sum;
     }
 
-
-    /**
-     * Objetc类型可变长度添加一元素操作
-     *
-     * @param i 被添加的一个元素
-     */
-    public void add(Object i) {
-        if (((Object[]) data).length == sum) {
-            Object[] temp = new Object[sum + 20];   //可变长度
+    public AllTypeArray add(Object i) {
+        if (data.length == sum) {
+            Object[] temp = new Object[sum + 20];
             System.arraycopy(data, 0, temp, 0, sum);
             data = temp;
         }
-        ((Object[]) data)[sum] = i;
+        data[sum] = i;
         sum++;
+        return this;
     }
 
     @Override
     public String toString() {
         Object[] temp = new Object[sum];
         System.arraycopy(data, 0, temp, 0, sum);
-
         return Arrays.toString(temp);
+    }
 
+    public Object getElementByIndex(int index) {
+        if (index >= sum || index < 0) {
+            throw new IndexOutOfBoundsException("Indenx Value can't was" + index);
+        }
+        return data[index];
+    }
+
+    public int getIndexByElement(Object object) {
+        if (!(object == null)) {
+            for (int i = 0; i < sum; i++) {
+                if (data[i].equals(object)) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 }

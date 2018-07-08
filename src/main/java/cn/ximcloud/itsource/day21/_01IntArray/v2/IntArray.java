@@ -31,6 +31,11 @@ public class IntArray {
         return sum;
     }
 
+    /**
+     * 可变长度固定类型数组添加一元素操作
+     *
+     * @param i 被添加的一个元素
+     */
     public void add(int i) {
         if (arr.length == sum) {
             int[] temp = new int[sum + 20]; //可变长度体现在这

@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day23._0hashset.perviousTestOnly;
+package cn.ximcloud.itsource.day23._00pervioustestonly;
 
 
 /**

@@ -1,12 +1,10 @@
-package cn.ximcloud.itsource.day23._02treeset;
-
-import cn.ximcloud.itsource.day23._0hashset.Stundent;
+package cn.ximcloud.itsource.day23._02treeset.v1_Comparable;
 
 import java.util.TreeSet;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: wizard
  * Date: 2018-07-09
  * Time: 14:15
  * ProjectName: ITSource
@@ -15,6 +13,25 @@ import java.util.TreeSet;
  **/
 
 public class TreeSetTest {
+    /** public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>
+     * , Cloneable, java.io.Serializable
+     *
+     *  TreeSet继承了AbstractSet 并实现了NavigableSet 和cloneable和Serializable
+     *
+     *  TreeSet特点:
+     *  1.无序
+     *  2.不重复
+     *  3.可以存储任意类型任意个数
+     *  4.当第一个元素存储进来之后，这个容器只能存取这个第一个元素的类型的数据
+     *  5.线程不安全
+     *  6.继承TreeMap实现的
+     *  7.存入的元素必须具有排序能力，也就是实现Comparable 或者是 Comparator
+     *
+     *  自然排序:implements Comparable
+     *  客制化排序: implements Comparator    【定制器，需要放在TreeSet构造器中创建对象使用】
+     *
+     *  当前为使用Comparable实现自然排序
+     */
     public static void main(String[] args) {
         /**
          * Constructs a new, empty tree set, sorted according to the
@@ -53,19 +70,21 @@ public class TreeSetTest {
 //        public boolean add(E e) {
 //            return m.put(e, PRESENT)==null;
 //        }
-        treeSet.add(12312);
-        treeSet.add("12312");
+//        treeSet.add(12312);
+//        treeSet.add("12312");
         treeSet.add('1');
-
+        treeSet.add('1');
+        System.out.println(treeSet);
 
     }
 }
-class Student implements Comparable{
+
+class Student implements Comparable {   //实现Comparable 重写接口compareTo()方法
     String name;
     int age;
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Object o) {    //比较两个对象，大于返回1，等于返回0，小于返回-1
         Student stundent = (Student) o;
         if (age > stundent.age) {
             return 1;

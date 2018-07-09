@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day23._0hashset.perviousTestOnly;
+package cn.ximcloud.itsource.day23._00pervioustestonly;
 
 import java.util.Arrays;
 
@@ -15,6 +15,7 @@ import java.util.Arrays;
 public class AllTypeArray {
     /*
         实现可变长度，可变类型的一个Array
+        回顾仅测试
     */
 
     private Object[] data;    //Object[]也是一个类，也是Object的子类

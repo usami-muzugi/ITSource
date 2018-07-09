@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v1;
+package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v2;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,10 +12,13 @@ package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v1;
  * Version 0.0.1
  * 添加了三个Node，用于指向父节点，左节点，右节点。
  * 添加了add方法，实现了传入一个值，可以添加到正确的位置
+ * Vrsion 0.0.2
+ * 删除了父节点，无意义的父节点。
+ * 重写了add方法，方法优化。
+ *
  **/
 
 public class BinaryTree {
-
     BinaryNode firstNode;
     private int size;
 

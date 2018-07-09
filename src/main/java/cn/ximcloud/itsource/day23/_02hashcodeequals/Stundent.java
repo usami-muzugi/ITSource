@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day23._0hashset;
+package cn.ximcloud.itsource.day23._02hashcodeequals;
 
 import java.util.HashSet;
 
@@ -13,6 +13,15 @@ import java.util.HashSet;
  **/
 
 public class Stundent {
+
+    /*
+        HashSet传入自己写定的类的对象，需要重写Objetc类的hashCode() *和* equals()方法
+
+
+
+        测试:
+            只有正确重写了hashCode() 和 equals()方法，hashset才能正确识别这个元素的唯一性
+     */
     private String name;
     private int age;
 
@@ -30,7 +39,7 @@ public class Stundent {
 
         System.out.println(stundentHashSet);
         /*stundentHashSet.add();*/
-    }
+}
 
     public Stundent() {
 
@@ -38,6 +47,7 @@ public class Stundent {
 
     @Override
     public boolean equals(Object object) {
+        //return true;
         if (this == object) return true;   //判断两个对象饿引用是否相同
         if (object == null) return false;   //判断这个object对象是否为null
         if (!(object instanceof Stundent)) return false;    //判断obj是不是Student这个的实例
@@ -47,6 +57,7 @@ public class Stundent {
 
     @Override
     public int hashCode() {
+//        return 1;
         int result = name != null ? name.hashCode() : 0;
         return result = 31 * result + age;
 

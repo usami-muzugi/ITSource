@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day22._99test.doque;
+package cn.ximcloud.itsource.day23._99test.doque;
 
 /**
  * Created by IntelliJ IDEA.

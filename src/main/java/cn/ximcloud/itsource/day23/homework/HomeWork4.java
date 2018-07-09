@@ -1,12 +1,13 @@
-package cn.ximcloud.itsource.day4;
+package cn.ximcloud.itsource.day23.homework;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-06-11
- * Time: 15:41
- * ProjectName: ITSource
- * To change this template use FileDemo | Settings | Editor | FileDemo and Code Templates.
+ * User: Wizard
+ * Date: 2018-07-09
+ * Time: 23:35
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -27,19 +28,8 @@ package cn.ximcloud.itsource.day4;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑        永无BUG      永不修改                  //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-
-public class BiaoDaShi {
-
-    public static void main(String[] args) {
-        int a = 3, b = 5;
-        System.out.println("Before\n HashSetTest=" + a + " b=" + b);
-        int c;
-        c = a;
-        a = b;
-        b = c;
-        System.out.println("After\n HashSetTest= " + a + " b= " + b);
-    }
+public class HomeWork4 {
 }

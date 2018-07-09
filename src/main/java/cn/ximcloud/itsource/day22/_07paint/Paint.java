@@ -1,7 +1,6 @@
 package cn.ximcloud.itsource.day22._07paint;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -18,8 +17,9 @@ import java.util.Iterator;
  **/
 
 public class Paint extends JFrame {
-    private int x1,y1,x2,y2;        //一条线段的两个端点的x轴和y轴的值
+    private int x1, y1, x2, y2;        //一条线段的两个端点的x轴和y轴的值
     private ArrayList arrayList;
+
     //private Graphics graphics;
     public static void main(String[] args) {
         new Paint();
@@ -57,7 +57,7 @@ public class Paint extends JFrame {
                     Line temp = iterator.next();
                     //Paint.this.getGraphics().drawLine(temp.getX1(),temp.getY1(),temp.getX2(),temp.getY2());   //可以
 
-                    getGraphics().drawLine(temp.getX1(),temp.getY1(),temp.getX2(),temp.getY2());      //可以
+                    getGraphics().drawLine(temp.getX1(), temp.getY1(), temp.getX2(), temp.getY2());      //可以
 
                     //graphics.drawLine(temp.getX1(),temp.getY1(),temp.getX2(),temp.getY2());       //不可以
                     /*Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
@@ -90,8 +90,9 @@ public class Paint extends JFrame {
             }
         });
     }
-    class Line{
-        private int x1,y1,x2, y2;
+
+    class Line {
+        private int x1, y1, x2, y2;
 
         public Line(int x1, int y1, int x2, int y2) {
             this.x1 = x1;

@@ -27,17 +27,17 @@ public class PriorityTest {
      */
     public static void main(String[] args) {
         /**最低级别的优先级
-         * The minimum priority that a thread can have.
+         * The minimum priority that HashSetTest thread can have.
          */
         //public static final int MIN_PRIORITY = 1;
 
         /**标准级别的优先级
-         * The default priority that is assigned to a thread.
+         * The default priority that is assigned to HashSetTest thread.
          */
         //public static final int NORM_PRIORITY = 5;
 
         /**最高级别的优先级
-         * The maximum priority that a thread can have.
+         * The maximum priority that HashSetTest thread can have.
          */
         //public static final int MAX_PRIORITY = 10;
 

@@ -77,7 +77,7 @@ public class JiuJiuMethod {
 //        }
 //
 //
-//        //每个regine（a * b）的 a
+//        //每个regine（HashSetTest * b）的 HashSetTest
 //        for (int i = 1; i <= 9; i++) {   //length用来控制九九乘法表的层数
 //            for (int j = 1; j <= i; j++) {
 //                System.out.print(j+"\t");
@@ -97,7 +97,7 @@ public class JiuJiuMethod {
 1	2	3	4	5	6	7	8	9
          */
 
-//        //每个regine（a * b）的 b
+//        //每个regine（HashSetTest * b）的 b
 //        for (int i = 1; i <= 9; i++) {   //length用来控制九九乘法表的层数
 //            for (int j = 1; j <= i; j++) {
 //                System.out.print(" "+i+"\t");
@@ -116,7 +116,7 @@ public class JiuJiuMethod {
  9	 9	 9	 9	 9	 9	 9	 9	 9
          */
 
-//        //每个regine（a * b）的 ab
+//        //每个regine（HashSetTest * b）的 ab
 //        for (int i = 1; i <= 9; i++) {   //length用来控制九九乘法表的层数
 //            for (int j = 1; j <= i; j++) {
 //                System.out.print(j+"\t");

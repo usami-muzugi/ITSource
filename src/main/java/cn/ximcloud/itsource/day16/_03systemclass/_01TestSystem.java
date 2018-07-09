@@ -54,7 +54,7 @@ public class _01TestSystem {
          *               access of data outside array bounds.
          * @exception  ArrayStoreException  if an element in the <code>src</code>
          *               array could not be stored into the <code>dest</code> array
-         *               because of a type mismatch.
+         *               because of HashSetTest type mismatch.
          * @exception  NullPointerException if either <code>src</code> or
          *               <code>dest</code> is <code>null</code>.
 

@@ -12,7 +12,7 @@ package cn.ximcloud.itsource.day19._03Play;
 
 public class PlayGame extends Thread {
     /**
-     * If this thread was constructed using a separate
+     * If this thread was constructed using HashSetTest separate
      * <code>Runnable</code> run object, then that
      * <code>Runnable</code> object's <code>run</code> method is called;
      * otherwise, this method does nothing and returns.

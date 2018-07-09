@@ -1,7 +1,6 @@
 package cn.ximcloud.itsource.day23.homework;
 
 import java.util.HashSet;
-import java.util.Random;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,9 +11,9 @@ import java.util.Random;
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * 第二题：HashSet和TreeSet判断对象是否是同一个对象的依据是什么？
- *
+ * <p>
  * HashSet判断同是否为一个对象的依据是 hashCode值和equals结果，只当两个都不一样的时候hashSet才判断为非同一个对象
- *
+ * <p>
  * 如果我规定Person类中只要Long类型的id和String类型的username相同就表示同一个Person对象，此时代码如何书写？
  **/
 
@@ -30,8 +29,8 @@ public class HomeWork2 {
 //        for (int i = 0; i < 2; i++) {
 //            hashSet.add(new Person((long) (i + 1), "No." + random.nextInt(10000)));
 //        }
-        Person person1 = new Person((long) 10086,"移动客服");
-        Person person2 = new Person((long) 10000,"电信客服");
+        Person person1 = new Person((long) 10086, "移动客服");
+        Person person2 = new Person((long) 10000, "电信客服");
         hashSet.add(person1);
         hashSet.add(person2);
 

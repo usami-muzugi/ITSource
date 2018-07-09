@@ -15,10 +15,11 @@ import java.util.Comparator;
 public class StudntComparator implements Comparator/*<StudntComparator>泛型先放一边*/ {
 
     /**
-     *  比较两个对象的大小【顺序】，如果第一个比第二个大，返回1，第一个等于第二个，返回0，第一个小于第二个，返回-1
-     * @param o1    第一个对象
-     * @param o2    第二个对象
-     * @return  返回一个int类型的结果，1、0、-1
+     * 比较两个对象的大小【顺序】，如果第一个比第二个大，返回1，第一个等于第二个，返回0，第一个小于第二个，返回-1
+     *
+     * @param o1 第一个对象
+     * @param o2 第二个对象
+     * @return 返回一个int类型的结果，1、0、-1
      */
     @Override
     public int compare(Object o1, Object o2) {

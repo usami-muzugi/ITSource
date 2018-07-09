@@ -39,7 +39,7 @@ public class Stundent {
 
         System.out.println(stundentHashSet);
         /*stundentHashSet.add();*/
-}
+    }
 
     public Stundent() {
 

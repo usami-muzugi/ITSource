@@ -1,5 +1,7 @@
 package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v2;
 
+import java.util.Random;
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -13,7 +15,10 @@ package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v2;
 public class BinaryTreeDemo {
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
-        binaryTree.add(12313).add(31313);
+        Random random = new Random();
+        for (int i = 0; i < 200; i++) {
+            binaryTree.add(random.nextInt());
+        }
         System.out.println(binaryTree.firstNode);
         System.out.println(binaryTree.firstNode.getLeftNode());
         System.out.println(binaryTree.firstNode.getRightNode());

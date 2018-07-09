@@ -12,7 +12,7 @@ import java.util.TreeSet;
  * ProjectName: ITSource
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 第一题：自定义一个学生类，然后创建一组学生对象，
  * 使用TreeSet来存放这些学生对象,实现先按学生的成绩,若成绩相等再按年龄排序。
  **/
@@ -29,7 +29,6 @@ public class HomeWork1 {
         System.out.println(treeSet);
     }
 }
-
 
 
 class StudentComparator implements Comparator {
@@ -53,7 +52,8 @@ class StudentComparator implements Comparator {
     }
 
 }
-class Student{
+
+class Student {
     private String name;
     private int age;
     private int socre;

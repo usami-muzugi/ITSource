@@ -15,7 +15,6 @@ package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v2;
  * Vrsion 0.0.2
  * 删除了父节点，无意义的父节点。
  * 重写了add方法，方法优化。
- *
  **/
 
 public class BinaryTree {
@@ -37,22 +36,18 @@ public class BinaryTree {
             firstNode.number = number;
         } else {
             BinaryNode temp = firstNode;
-            BinaryNode fatherNode = null;
             while (true) {
-                fatherNode = temp;
                 if (temp.number > number) {
                     if (temp.leftNode == null) {
-                        temp.fathreNode = fatherNode;
                         temp.leftNode = new BinaryNode(number);
-                        return this;
+                        break;
                     } else {
                         temp = temp.leftNode;
                     }
                 } else {
                     if (temp.rightNode == null) {
-                        temp.fathreNode = fatherNode;
                         temp.rightNode = new BinaryNode(number);
-                        return this;
+                        break;
                     } else {
                         temp = temp.rightNode;
                     }
@@ -74,7 +69,6 @@ public class BinaryTree {
     }
 
     class BinaryNode {
-        private BinaryNode fathreNode;
         private BinaryNode leftNode;
         private BinaryNode rightNode;
         private int number;
@@ -91,14 +85,6 @@ public class BinaryTree {
         @Override
         public String toString() {
             return number + "";
-        }
-
-        public BinaryNode getFathreNode() {
-            return fathreNode;
-        }
-
-        public void setFathreNode(BinaryNode fathreNode) {
-            this.fathreNode = fathreNode;
         }
 
         public BinaryNode getLeftNode() {

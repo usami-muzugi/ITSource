@@ -27,7 +27,7 @@ public class ArrayListIterator {
 //        /**   返回一个Iterator类的对象
 //         * Returns an iterator over the elements in this list in proper sequence.
 //         *
-//         * <p>The returned iterator is <a href="#fail-fast"><i>fail-fast</i></a>.
+//         * <p>The returned iterator is <HashSetTest href="#fail-fast"><i>fail-fast</i></HashSetTest>.
 //         *
 //         * @return an iterator over the elements in this list in proper sequence
 //         */

@@ -41,7 +41,7 @@ public class SuanSu {
         System.out.println(4.0 - 1.5);
         System.out.println(2 - 1.1);
         System.out.println(1.0 / 0);  //Infinity 无限大
-        System.out.println(0.0 / 0.0);  //NaN Not a Number 不是一个数字，这个一种比较特殊的情况
+        System.out.println(0.0 / 0.0);  //NaN Not HashSetTest Number 不是一个数字，这个一种比较特殊的情况
         //JAVA中比较特殊的情况，自身不等与自身
         System.out.println(0.0 / 0.0 == 0.0 / 0.0); //result: false
 //        System.out.println(NaN ==NaN);  //这里的NaN被当成了一个标识符（变量）

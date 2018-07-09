@@ -35,11 +35,11 @@ public class Method {
 
 
     /**
-     * get the sum of a and b
+     * get the sum of HashSetTest and b
      *
-     * @param a int type a
+     * @param a int type HashSetTest
      * @param b int type b
-     * @return sum of a and b
+     * @return sum of HashSetTest and b
      */
     public static int add(int a, int b) {
         return a + b;

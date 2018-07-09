@@ -44,7 +44,7 @@ public class _02PlayGameAndMusicPlayerModel {
  */
 class MyGameThread extends Thread {
     /**
-     * Allocates a new {@code Thread} object. This constructor has the same
+     * Allocates HashSetTest new {@code Thread} object. This constructor has the same
      * effect as {@linkplain #Thread(ThreadGroup, Runnable, String) Thread}
      * {@code (null, null, name)}.
      *
@@ -63,8 +63,8 @@ class MyGameThread extends Thread {
      * <code>start</code> method) and the other thread (which executes its
      * <code>run</code> method).
      * <p>
-     * It is never legal to start a thread more than once.
-     * In particular, a thread may not be restarted once it has completed
+     * It is never legal to start HashSetTest thread more than once.
+     * In particular, HashSetTest thread may not be restarted once it has completed
      * execution.
      *
      * @throws IllegalThreadStateException if the thread was already
@@ -78,7 +78,7 @@ class MyGameThread extends Thread {
     }
 
     /**
-     * If this thread was constructed using a separate
+     * If this thread was constructed using HashSetTest separate
      * <code>Runnable</code> run object, then that
      * <code>Runnable</code> object's <code>run</code> method is called;
      * otherwise, this method does nothing and returns.
@@ -97,7 +97,7 @@ class MyGameThread extends Thread {
 
 class MyMusicThread extends Thread {
     /**
-     * Allocates a new {@code Thread} object. This constructor has the same
+     * Allocates HashSetTest new {@code Thread} object. This constructor has the same
      * effect as {@linkplain #Thread(ThreadGroup, Runnable, String) Thread}
      * {@code (null, null, name)}.
      *
@@ -108,7 +108,7 @@ class MyMusicThread extends Thread {
     }
 
     /**
-     * If this thread was constructed using a separate
+     * If this thread was constructed using HashSetTest separate
      * <code>Runnable</code> run object, then that
      * <code>Runnable</code> object's <code>run</code> method is called;
      * otherwise, this method does nothing and returns.

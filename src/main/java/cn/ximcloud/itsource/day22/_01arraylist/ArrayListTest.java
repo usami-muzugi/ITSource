@@ -72,14 +72,14 @@ public class ArrayListTest {
 
 
 //        /**   是在抽象的collition里面写好的
-//         * Returns a string representation of this collection.  The string
-//         * representation consists of a list of the collection's elements in the
+//         * Returns HashSetTest string representation of this collection.  The string
+//         * representation consists of HashSetTest list of the collection's elements in the
 //         * order they are returned by its iterator, enclosed in square brackets
 //         * ({@code "[]"}).  Adjacent elements are separated by the characters
 //         * {@code ", "} (comma and space).  Elements are converted to strings as
 //         * by {@link String#valueOf(Object)}.
 //         *
-//         * @return a string representation of this collection
+//         * @return HashSetTest string representation of this collection
 //         */
 //        public String toString() {
 //            Iterator<E> it = iterator();  //迭代器

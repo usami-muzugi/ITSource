@@ -48,7 +48,7 @@ class UserHasFoundRunTimeException extends RuntimeException {
 
     /**
      * 构造一个新的运行时异常包含一个msg信息和一个异常
-     * Constructs a new runtime exception with the specified detail message and
+     * Constructs HashSetTest new runtime exception with the specified detail message and
      * cause.  <p>Note that the detail message associated with
      * {@code cause} is <i>not</i> automatically incorporated in
      * this runtime exception's detail message.
@@ -66,7 +66,7 @@ class UserHasFoundRunTimeException extends RuntimeException {
     }
 
     /**
-     * Constructs a new runtime exception with the specified cause and a
+     * Constructs HashSetTest new runtime exception with the specified cause and HashSetTest
      * detail message of {@code (cause==null ? null : cause.toString())}
      * (which typically contains the class and detail message of
      * {@code cause}).  This constructor is useful for runtime exceptions
@@ -83,7 +83,7 @@ class UserHasFoundRunTimeException extends RuntimeException {
     }
 
     /**
-     * Constructs a new runtime exception with the specified detail
+     * Constructs HashSetTest new runtime exception with the specified detail
      * message, cause, suppression enabled or disabled, and writable
      * stack trace enabled or disabled.
      *

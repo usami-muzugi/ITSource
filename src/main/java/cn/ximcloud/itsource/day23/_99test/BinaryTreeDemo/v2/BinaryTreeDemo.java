@@ -16,11 +16,9 @@ public class BinaryTreeDemo {
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         Random random = new Random();
-        for (int i = 0; i < 200; i++) {
-            binaryTree.add(random.nextInt());
+        for (int i = 0; i < 200000; i++) {
+            binaryTree.add(random.nextInt(), "Value:" + i);
         }
         System.out.println(binaryTree.firstNode);
-        System.out.println(binaryTree.firstNode.getLeftNode());
-        System.out.println(binaryTree.firstNode.getRightNode());
     }
 }

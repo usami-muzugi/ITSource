@@ -1,8 +1,5 @@
 package cn.ximcloud.itsource.day23.understanding;
 
-import java.math.BigInteger;
-import java.util.Random;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -24,7 +21,7 @@ public class BinarySearchTest {
         for (int i = 0; i < sum; i++) {
             arr[i] += i;
         }
-        System.out.println(binarySearch(new int[]{4,5,9,9,12,13,14,15,15,18}, 10));
+        System.out.println(binarySearch(new int[]{4, 5, 9, 9, 12, 13, 14, 15, 15, 18}, 10));
     }
 
     public static int binarySearch(int[] nums, int target) {
@@ -32,15 +29,15 @@ public class BinarySearchTest {
         int maxIndex = nums.length - 1;
         int midIndex = (minIndex + maxIndex) / 2;
 
-        if(nums.length == 1) return nums[maxIndex] == target ? 0 : -1;
+        if (nums.length == 1) return nums[maxIndex] == target ? 0 : -1;
         if (nums[nums.length - 1] < target) return -1;
 
         while (true) {
-            if (minIndex>midIndex) return -1;
+            if (minIndex > midIndex) return -1;
             if (nums[midIndex] == target) {
-                while(true){
-                    if(--midIndex == -1) return 0;
-                    if(!(nums[midIndex] ==target) ) return ++midIndex;
+                while (true) {
+                    if (--midIndex == -1) return 0;
+                    if (!(nums[midIndex] == target)) return ++midIndex;
                 }
             } else if (nums[midIndex] > target) {
                 maxIndex = midIndex - 1;

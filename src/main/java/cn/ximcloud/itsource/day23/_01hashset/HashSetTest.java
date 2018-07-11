@@ -17,7 +17,7 @@ public class HashSetTest {
         /**
          *  HashSet 类，继承了AbstractSet类，实现了Set Cloneable ，Serializable
          *          public HashSet() {  //构造方法实质上创建了一个HashMap 并保存在自己的map字段里
-         *             map = new HashMap<>();
+         *             map = new HashMapTest<>();
          *         }
          *  HashSet特点:
          *  1.无序
@@ -36,16 +36,16 @@ public class HashSetTest {
 //                implements Set<E>, Cloneable, java.io.Serializable    实现Set 克隆    序列化
 
         /**   构造方法实质上创建了一个HashMap 并保存在自己的map字段里
-         * Constructs a new, empty set; the backing {@code HashMap} instance has
+         * Constructs a new, empty set; the backing {@code HashMapTest} instance has
          * default initial capacity (16) and load factor (0.75).
          */
 //    public HashSet() {
-//            map = new HashMap<>();
+//            map = new HashMapTest<>();
 //        }
 
         /**   传入一个集合实现的类的对象，调用addAll把所有的这个集合的元素都添加上
          * Constructs a new set containing the elements in the specified
-         * collection.  The {@code HashMap} is created with default load factor
+         * collection.  The {@code HashMapTest} is created with default load factor
          * (0.75) and an initial capacity sufficient to contain the elements in
          * the specified collection.
          *
@@ -53,12 +53,12 @@ public class HashSetTest {
          * @throws NullPointerException if the specified collection is null
          */
 //    public HashSet(Collection<? extends E> c) {
-//            map = new HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));
+//            map = new HashMapTest<>(Math.max((int) (c.size()/.75f) + 1, 16));
 //            addAll(c);
 //        }
 //
         /** 在JAVA1.8之后才是使用了红黑树实现    初始化容量？
-         * Constructs a new, empty set; the backing {@code HashMap} instance has
+         * Constructs a new, empty set; the backing {@code HashMapTest} instance has
          * the specified initial capacity and the specified load factor.
          *
          * @param      initialCapacity   the initial capacity of the hash map
@@ -67,11 +67,11 @@ public class HashSetTest {
          *             than zero, or if the load factor is nonpositive
          */
 //    public HashSet(int initialCapacity, float loadFactor) {
-//            map = new HashMap<>(initialCapacity, loadFactor);
+//            map = new HashMapTest<>(initialCapacity, loadFactor);
 //        }
 //
         /**     初始化容量...
-         * Constructs a new, empty set; the backing {@code HashMap} instance has
+         * Constructs a new, empty set; the backing {@code HashMapTest} instance has
          * the specified initial capacity and default load factor (0.75).
          *
          * @param      initialCapacity   the initial capacity of the hash table
@@ -79,7 +79,7 @@ public class HashSetTest {
          *             than zero
          */
 //    public HashSet(int initialCapacity) {
-//            map = new HashMap<>(initialCapacity);
+//            map = new HashMapTest<>(initialCapacity);
 //        }
 
         HashSet hashSet = new HashSet();
@@ -97,7 +97,7 @@ public class HashSetTest {
 //            return map.put(e, PRESENT)==null;
 //        }
 //        private static final Object PRESENT = new Object();   添加的这个PRESENT是一个private static final修饰的对象常量
-//        private transient HashMap<E,Object> map; 这个map是HashMap的里面的一个字段
+//        private transient HashMapTest<E,Object> map; 这个map是HashMap的里面的一个字段
 //
 //        public V put(K key, V value) {    ///key就是传入的这个要添加的对象，value是这个常量PRESENT
 //            return putVal(hash(key), key, value, false, true);

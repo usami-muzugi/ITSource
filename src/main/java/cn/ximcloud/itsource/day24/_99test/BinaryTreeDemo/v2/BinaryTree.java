@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day23._99test.BinaryTreeDemo.v2;
+package cn.ximcloud.itsource.day24._99test.BinaryTreeDemo.v2;
 
 /**
  * Created by IntelliJ IDEA.

@@ -8,17 +8,21 @@ import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: wizard
  * Date: 2018-07-11
  * Time: 18:25
  * ProjectName: ITSource
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
- * 	Map
- * 	|-TreeMap
- *  |-HashMap[线程不安全的Map]得到线程安全的Map m = Collections.synchronizedMap(new HashMap(...));
- * 	|-HashTable[线程安全的 Map]很少用,因为
- *  |-Properties[特殊的Map实现]一般是用于操作字符串值
+ * Map
+ * |-TreeMap
+ * |-HashMap[线程不安全的Map]得到线程安全的Map m = Collections.synchronizedMap(new HashMap(...));
+ * |-HashTable[线程安全的 Map]很少用,因为
+ * |-Properties[特殊的Map实现]一般是用于操作字符串值
+ * <p>
+ * Properties测试
+ * <p>
+ * Properties是实现了Map所以也有Map的特性，也就是put的方法
  **/
 
 public class PropertiesTest {

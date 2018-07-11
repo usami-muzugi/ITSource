@@ -49,7 +49,7 @@ public class GenericLimit {
         Integer integer = new Integer(5);
 
 
-
+        //这里开始准备复制创建对象，需要指明其类型
         ArrayList<? extends Number> arrayList = new ArrayList<>();
 //        arrayList.add(number);
 //        arrayList.add(object);
@@ -57,6 +57,7 @@ public class GenericLimit {
 //        arrayList.add(string);
 //        arrayList.add(integer);
 
+        //这样写虽然不会报错，但是原则上不推荐这样写
         ArrayList<? super Number> arrayList1 = new ArrayList<>();
         arrayList1.add(number);
 //        arrayList1.add(object);
@@ -65,13 +66,14 @@ public class GenericLimit {
         arrayList1.add(integer);
 
     }
+
     //上限
-    public static void limit1(ArrayList<?  extends Number> list){
+    public static void limit1(ArrayList<? extends Number> list) {
 
     }
 
     //下限
-    public static void limit2(ArrayList<?  super  Number> list){
+    public static void limit2(ArrayList<? super Number> list) {
 
     }
 

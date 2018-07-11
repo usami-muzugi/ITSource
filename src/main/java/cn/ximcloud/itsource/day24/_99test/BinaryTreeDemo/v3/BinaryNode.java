@@ -12,23 +12,25 @@ import java.io.Serializable;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
+public class BinaryNode<K extends Number, V> implements BinaryNodeInterface<V>, Serializable {
     /*
      *   字段仅需要三个就够了，一个是存放左子节点和一个存放右子节点，还有一个存放数据
      */
-    private BinaryNode leftNode;
+    private BinaryNode<K, V> leftNode;
     private BinaryNode rightNode;
-    private T data;
+    private K key;
+    private V data;
 
     public BinaryNode() {
-        this(null); //调用的是下面的这个构造方法
+        this(null, null); //调用的是下面的这个构造方法
     }
 
-    public BinaryNode(T data) {
-        this(null, null, data); //这个构造方法也是调用的下面的这个构造方法
+    BinaryNode(K key, V data) {
+        this(null, null, key, data); //这个构造方法也是调用的下面的这个构造方法
     }
 
-    public BinaryNode(BinaryNode leftNode, BinaryNode rightNode, T data) {
+    private BinaryNode(BinaryNode<K, V> leftNode, BinaryNode rightNode, K key, V data) {
+        this.key = key;
         this.leftNode = leftNode;
         this.rightNode = rightNode;
         this.data = data;
@@ -41,7 +43,7 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
      * @return 节点对象的数据部分的对象
      */
     @Override
-    public T getData() {
+    public V getData() {
         return data;
     }
 
@@ -51,7 +53,7 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
      * @param data 节点的数据部分的对象
      */
     @Override
-    public void setData(T data) {
+    public void setData(V data) {
         this.data = data;
     }
 
@@ -61,7 +63,7 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
      * @return 获取该节点的左子节点
      */
     @Override
-    public BinaryNodeInterface<T> getLeftChild() {
+    public BinaryNodeInterface<V> getLeftChild() {
         return leftNode;
     }
 
@@ -71,7 +73,7 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
      * @return 获取该节点的右子节点
      */
     @Override
-    public BinaryNodeInterface<T> getRightChild() {
+    public BinaryNodeInterface<V> getRightChild() {
         return rightNode;
     }
 
@@ -79,15 +81,15 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
      * @param leftChild
      */
     @Override
-    public void setLeftChild(BinaryNodeInterface<T> leftChild) {
-        leftNode = (BinaryNode<T>) leftChild;   //BinaryNode是BinaryNodeInterface的实现类所有可以强制类型转换
+    public void setLeftChild(BinaryNodeInterface<V> leftChild) {
+        leftNode = (BinaryNode<K, V>) leftChild;   //BinaryNode是BinaryNodeInterface的实现类所有可以强制类型转换
     }
 
     /**
      * @param rightChild
      */
     @Override
-    public void setRightChild(BinaryNodeInterface<T> rightChild) {
+    public void setRightChild(BinaryNodeInterface<V> rightChild) {
         rightNode = (BinaryNode) rightChild;
     }
 
@@ -137,10 +139,10 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
      * @return 返回以当前节点为根的子树
      */
     @Override
-    public BinaryNodeInterface<T> copy() {
-        BinaryNode<T> newNode = new BinaryNode<>(data);
+    public BinaryNodeInterface<V> copy() {
+        BinaryNode<K, V> newNode = new BinaryNode<K, V>(null, data);
         if (leftNode != null) {
-            newNode.leftNode = (BinaryNode<T>) leftNode.copy();
+            newNode.leftNode = (BinaryNode<K, V>) leftNode.copy();
         }
         if (rightNode != null) {
             newNode.rightNode = (BinaryNode) rightNode.copy();

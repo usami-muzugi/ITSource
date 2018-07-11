@@ -10,9 +10,32 @@ package cn.ximcloud.itsource.day24._99test.BinaryTreeDemo.v3;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class BinaryTree<T> {
-    private BinaryNode<T> firstNod;
-    private T object;
+public class BinaryTree<K extends Number, V> {
+    private BinaryNode<K, V> firstNode;
+    private V value;
+
+    public BinaryTree() {
+
+    }
+
+    public BinaryTree(K key, V value) {
+        firstNode = new BinaryNode<>(key, value);
+        firstNode.setData(value);
+    }
+
+    public BinaryTree put(K key, V value) {
+        if (firstNode == null) {
+            firstNode = new BinaryNode<>(key, value);
+            firstNode.setData(value);
+        } else {
+            if (key.compareTo()) {
+            } else if () {
+            } else {
+            }
 
 
+        }
+
+        return this;
+    }
 }

@@ -33,7 +33,7 @@ public class CollectionsTest {
         list2 = new ArrayList<>();
     }
 
-    //使用Collentions工具类对集合进行批量添加
+    //使用Collections工具类对集合进行批量添加
     @Test
     public void addMethod() {
         //1.传统的添加方法操作过程麻烦
@@ -74,5 +74,7 @@ public class CollectionsTest {
         System.out.println(arrayList);
         //Result:[钢丝床, 饼饼, 二荆条, 八万, 中原一点红, 眼镜, 幺鸡, 馍馍]
         //得到的顺序每次都不相同
+
+        //随机数的获取，可以是通过这个nanoTime，nanoTime每次都是不相同的，所以可以通过一定的算法来实现随机数
     }
 }

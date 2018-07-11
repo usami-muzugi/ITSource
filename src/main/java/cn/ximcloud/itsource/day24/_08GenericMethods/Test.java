@@ -21,6 +21,13 @@ public class Test {
 
     }
 
+    /**
+     * 泛型的声明再static和 返回值类型的中间声明，只能这样声明
+     *
+     * @param arr 源数组
+     * @param <T> 泛型类型
+     * @return 返回一个泛型类型的数组
+     */
     public static <T> T[] method(T[] arr) {
         Object[] object = Arrays.copyOf(arr, arr.length, arr.getClass());
         Arrays.sort(object);

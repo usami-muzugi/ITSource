@@ -12,6 +12,16 @@ import java.util.*;
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * HashMap 中获得Key 和Values 的方法
+ * 获取Key的方法，只能是获取Entry然后再获取Key
+ * 获取Values的方法有两种
+ * 一种是通过调用父类AbstactMap的values()方法来获取所有的values 该方法返回的对象是Collection 是一个集合，但是Collection<V>是一个接口，因为Collection是实现了It...(迭代器)的所以，可以使用迭代器把values的值获取
+ * 二一种是通过Entry然后获取 K V ， 然后再遍历V 得到
+ * <p>
+ * <p>
+ * 得到的集合，可以使用foreach来循环遍历，
+ * 也可以是使用得到的这个Key然后获取values，因为Key是唯一的，所以能找到。
+ * 还可以是通过迭代器来获取。
+ * for循环是不可以的，得不到这个索引。
  **/
 
 public class HashMapGetAll {

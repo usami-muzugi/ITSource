@@ -12,7 +12,7 @@ import java.io.Serializable;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class BinaryNode<T> implements BinaryNodeInterface<T>,Serializable {
+public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
     /*
      *   字段仅需要三个就够了，一个是存放左子节点和一个存放右子节点，还有一个存放数据
      */
@@ -46,7 +46,8 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>,Serializable {
     }
 
     /**
-     *  设置一个节点的数据部分的对象
+     * 设置一个节点的数据部分的对象
+     *
      * @param data 节点的数据部分的对象
      */
     @Override

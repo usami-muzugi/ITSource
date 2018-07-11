@@ -58,7 +58,7 @@ public class BinaryTree {
         return this;
     }
 
-    public BinaryTree add(int key,Object value) {
+    public BinaryTree add(int key, Object value) {
         if (firstNode.key == 0) {
             firstNode.key = key;
         } else {

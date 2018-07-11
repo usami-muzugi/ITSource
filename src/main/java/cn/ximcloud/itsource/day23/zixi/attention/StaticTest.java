@@ -24,6 +24,7 @@ public class StaticTest {
         anInt = 5;
         anStaticInt = 1;
     }
+
     private static int anStaticInt;
     private int anInt;
     private String string;

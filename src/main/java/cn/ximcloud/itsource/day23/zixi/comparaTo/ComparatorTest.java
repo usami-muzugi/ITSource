@@ -17,11 +17,11 @@ import java.util.TreeSet;
 public class ComparatorTest {
     public static void main(String[] args) {
         TreeSet<Student> treeSet = new TreeSet<>(new Studentimpl());
-        treeSet.add(new Student("usamimizugi",22));
-        treeSet.add(new Student("ourinsama",23));
-        treeSet.add(new Student("jestom",24));
-        treeSet.add(new Student("time",26));
-        treeSet.add(new Student("lu",27));
+        treeSet.add(new Student("usamimizugi", 22));
+        treeSet.add(new Student("ourinsama", 23));
+        treeSet.add(new Student("jestom", 24));
+        treeSet.add(new Student("time", 26));
+        treeSet.add(new Student("lu", 27));
         System.out.println(treeSet);
 
     }
@@ -45,7 +45,7 @@ class Studentimpl implements Comparator {
     }
 }
 
-class Student implements Comparable{
+class Student implements Comparable {
     private String name;
     private int age;
 
@@ -53,7 +53,6 @@ class Student implements Comparable{
         this.name = name;
         this.age = age;
     }
-
 
 
     @Override

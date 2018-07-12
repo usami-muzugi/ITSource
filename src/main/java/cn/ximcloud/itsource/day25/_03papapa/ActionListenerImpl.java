@@ -2,7 +2,6 @@ package cn.ximcloud.itsource.day25._03papapa;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.TreeSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,6 +16,7 @@ import java.util.TreeSet;
 public class ActionListenerImpl implements Runnable, ActionListener {
     private boolean flag = false;
     private static ActionEvent actionEvent;
+
     @Override
     public void actionPerformed(ActionEvent e) {
         flag = true;

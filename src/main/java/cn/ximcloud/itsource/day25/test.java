@@ -1,8 +1,9 @@
 package cn.ximcloud.itsource.day25;
 
-import cn.ximcloud.itsource.day25._99test.Test;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,7 +15,7 @@ import java.io.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class test{
+public class test {
     public static void main(String[] args) {
         String mulu = "C:\\Users\\wizard\\Desktop\\";   //文件夹
         String pic = "ohayou.jpg";    //图片
@@ -22,7 +23,7 @@ public class test{
         try {
             FileInputStream fileInputStream = new FileInputStream(new File(mulu + rar));
             FileInputStream fileInputStream1 = new FileInputStream(new File(mulu + pic));
-            FileOutputStream fileOutputStream = new FileOutputStream(mulu + rar+".jpg");
+            FileOutputStream fileOutputStream = new FileOutputStream(mulu + rar + ".jpg");
             int i = 0;
             byte[] bytes = new byte[1024];
             while ((i = fileInputStream1.read(bytes)) != -1) {

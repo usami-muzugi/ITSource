@@ -1,10 +1,5 @@
 package cn.ximcloud.itsource.day25._05;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Random;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wizard
@@ -26,9 +21,9 @@ public class GameDemo {
         Game game = new Game();
 
         //三个梭哈创建成功
-        Gamer gamer1 = new Gamer("李冲",24,1000000);
-        Gamer gamer2 = new Gamer("张桃",24,1000000);
-        Gamer gamer3 = new Gamer("彭睿",20,1000000);
+        Gamer gamer1 = new Gamer("李冲", 24, 1000000);
+        Gamer gamer2 = new Gamer("张桃", 24, 1000000);
+        Gamer gamer3 = new Gamer("彭睿", 20, 1000000);
 
 
         game.add(gamer1).add(gamer2).add(gamer3);

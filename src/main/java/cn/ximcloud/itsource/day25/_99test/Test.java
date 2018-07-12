@@ -10,31 +10,34 @@ package cn.ximcloud.itsource.day25._99test;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class Test extends B implements A{
+public class Test extends B implements A {
     int x;
-    public void pX(){
+
+    public void pX() {
         System.out.println(x);
     }
 
 
-
-    public  static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(test());
     }
-    static int test(){
+
+    static int test() {
         int x = 0;
         try {
-            return  x++;
+            return x++;
         } finally {
             x = 100;
         }
     }
 
 }
+
 class B {
     int x = 1;
 }
-interface A{
+
+interface A {
     int x = 0;
 
 }

@@ -16,9 +16,10 @@ import java.util.Collections;
 
 public class Pock {
     private ArrayList<String> arrayList;
+
     {
         final String[] huase = new String[]{"红桃", "黑桃", "方片", "梅花"};
-        final char[] paimian = new char[]{'A', '2', '3', '4', '5', '6', '7', '8', '9','0', 'J', 'Q', 'K'};
+        final char[] paimian = new char[]{'A', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'J', 'Q', 'K'};
         String[] strings = new String[54];
         int index = 0;
         for (int i = 0; i < 4; i++) {

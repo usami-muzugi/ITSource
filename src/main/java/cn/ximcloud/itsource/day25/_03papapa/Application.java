@@ -1,6 +1,6 @@
 package cn.ximcloud.itsource.day25._03papapa;
 
-import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,14 +19,9 @@ import java.awt.event.ActionListener;
  * 提示: 可能会用到多线程
  **/
 
-import java.awt.Button;
-import java.awt.Frame;
-import java.awt.TextArea;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class Application {
     static boolean b = false;
+
     public static void main(String[] args) {
         Frame jFrame = new Frame("计算器");
         jFrame.setLayout(null);

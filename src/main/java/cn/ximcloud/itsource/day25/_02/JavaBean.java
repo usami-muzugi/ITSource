@@ -20,11 +20,11 @@ import java.util.TreeSet;
 public class JavaBean {
     public static void main(String[] args) {
 
-        Student<String,Integer> stu1 = new Student<>("usami", 18,18);
-        Student<String,Integer> stu2 = new Student<>("mizugi", 17,50);
-        Student<String,Integer> stu3 = new Student<>("ourin", 18,64);
-        Student<String,Integer> stu4 = new Student<>("samacyann", 17,64);
-        Student<String,Integer> stu5 = new Student<>("time", 18,88);
+        Student<String, Integer> stu1 = new Student<>("usami", 18, 18);
+        Student<String, Integer> stu2 = new Student<>("mizugi", 17, 50);
+        Student<String, Integer> stu3 = new Student<>("ourin", 18, 64);
+        Student<String, Integer> stu4 = new Student<>("samacyann", 17, 64);
+        Student<String, Integer> stu5 = new Student<>("time", 18, 88);
 
 
         TreeSet<Student<String, Integer>> studentTreeSet = new TreeSet();
@@ -41,7 +41,7 @@ public class JavaBean {
 
 
         System.out.println("-------------------------------------------------------");
-        TreeSet<Student<String,Integer>> treeSet = new TreeSet<>(new StudentComparetorImpl());
+        TreeSet<Student<String, Integer>> treeSet = new TreeSet<>(new StudentComparetorImpl());
         treeSet.add(stu1);
         treeSet.add(stu2);
         treeSet.add(stu3);
@@ -80,7 +80,6 @@ class Student<T extends CharSequence, E extends Number> implements Comparable<St
     private T name;
     private E age;
     private E socre;
-
 
 
     public T getName() {

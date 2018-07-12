@@ -2,7 +2,6 @@ package cn.ximcloud.itsource.day24.homework;
 
 import org.junit.Test;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -26,7 +25,7 @@ import java.util.Set;
 public class HomeWork1 {
 
     @Test
-    public void  query() {
+    public void query() {
         String str = "ABCDEABCDABC";
         char[] chars = str.toCharArray();
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();

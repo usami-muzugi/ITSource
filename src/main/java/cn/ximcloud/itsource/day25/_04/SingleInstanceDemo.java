@@ -24,7 +24,7 @@ public class SingleInstanceDemo {
     }
 
     public static void main(String[] args) {
-        System.out.println(SingleInstanceDemo.getInstance()==SingleInstanceDemo.getInstance());
+        System.out.println(SingleInstanceDemo.getInstance() == SingleInstanceDemo.getInstance());
     }
 
 }

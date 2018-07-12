@@ -12,6 +12,6 @@ package cn.ximcloud.itsource.day24.homework;
 
 public class HomeWork2 {
     public static void main(String[] args) {
-        double[] doubles = new double[]{1,2,3,4};
+        double[] doubles = new double[]{1, 2, 3, 4};
     }
 }

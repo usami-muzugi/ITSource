@@ -13,7 +13,7 @@ import java.util.Random;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-class Game{
+class Game {
     private static Random random = new Random();
     private Gamer[] gamers;//斗地主
     private ArrayList<String> arrayList;  //一幅扑克

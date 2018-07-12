@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.day25._01;
 
-import org.junit.Test;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,8 +16,8 @@ import java.util.Date;
  * a)	判断一个字符串是否为空字符串；
  * b)	String和Date之间的相互转换；
  * c)	判断一个字符串是否以指定的后缀结尾；
- *
- *
+ * <p>
+ * <p>
  * 请完成其功能代码；
  * 并对每一个功能写上测试代码；
  * 给这个类 以及类中的每个方法加上文档注释，参考系统类
@@ -27,11 +25,13 @@ import java.util.Date;
 
 public class Tools {
     private static final String STRING = "";
+
     private Tools() {
     }
 
     /**
-     *  判断一个字符串是否为空字符串；
+     * 判断一个字符串是否为空字符串；
+     *
      * @param string stirng
      * @return true false
      */
@@ -41,18 +41,20 @@ public class Tools {
 
 
     /**
-     *  String和Date之间的相互转换；
+     * String和Date之间的相互转换；
+     *
      * @param date 被转换类型Date
-     * @return  返回值类型String
+     * @return 返回值类型String
      */
     public static String getDate(Date date) {
         return new SimpleDateFormat().format(date);
     }
 
     /**
-     *  String和Date之间的相互转换；
+     * String和Date之间的相互转换；
+     *
      * @param string 被转换的类型String
-     * @return  返回值类型Date
+     * @return 返回值类型Date
      */
     public static Date getDate(String string) throws ParseException {
         return new SimpleDateFormat().parse(string);
@@ -61,9 +63,10 @@ public class Tools {
 
     /**
      * 判断一个字符串是否以指定的后缀结尾
-     * @param string    被判断的字符串
-     * @param str       比较的字符串
-     * @return          返回比较结果
+     *
+     * @param string 被判断的字符串
+     * @param str    比较的字符串
+     * @return 返回比较结果
      */
     public static boolean isComp(String string, String str) {
         String[] temp = string.split(".");

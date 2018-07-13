@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day25._98review.Gaming;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 /**
@@ -13,7 +12,7 @@ import java.util.Collections;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class SexySister extends Hunman{
+public class SexySister extends Hunman {
     private Character cup;
     private Pock pock;
 
@@ -37,7 +36,6 @@ public class SexySister extends Hunman{
     }
 
     /**
-     *
      * @return
      */
     public Character getCup() {
@@ -45,8 +43,9 @@ public class SexySister extends Hunman{
     }
 
     /**
-     *  设置小姐姐的大小
-     * @param cup   字符类型的大小
+     * 设置小姐姐的大小
+     *
+     * @param cup 字符类型的大小
      */
     public void setCup(Character cup) {
         this.cup = Character.toUpperCase(cup);

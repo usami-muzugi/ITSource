@@ -29,38 +29,44 @@ public abstract class Hunman implements IHuman {
     abstract public void setFlag(boolean flag);
 
     /**
-     *  获取这个人的名字
-     * @return  返回这个人类的名字
+     * 获取这个人的名字
+     *
+     * @return 返回这个人类的名字
      */
     abstract public String getName();
 
     /**
-     *  设置这个人的名字
+     * 设置这个人的名字
+     *
      * @param name 传入一个人的名字
      */
     abstract public void setName(String name);
 
     /**
-     *  获得一个人的年龄
-     * @return  返回一个Integer类型的年龄
+     * 获得一个人的年龄
+     *
+     * @return 返回一个Integer类型的年龄
      */
     abstract public Integer getAge();
 
     /**
-     *  设置一个人的年龄
-     * @param age   传入一个人的年龄
+     * 设置一个人的年龄
+     *
+     * @param age 传入一个人的年龄
      */
     abstract public void setAge(Integer age);
 
     /**
      * 获得这个人的数字信息
-     * @return  返回这个人的数字信息
+     *
+     * @return 返回这个人的数字信息
      */
     abstract public Integer getId();
 
     /**
      * 设置设个人的数字信息
-     * @param id    传入一个人的数字信息
+     *
+     * @param id 传入一个人的数字信息
      */
     abstract public void setId(Integer id);
 }

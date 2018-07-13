@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.day25._98review;
 
-import org.junit.Test;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -10,7 +8,7 @@ import org.junit.Test;
  * ProjectName: ITSource
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 测试的结果是饿汉模式是不会出现线程安全的问题
  * 因为在线程调用SingleInstance类的时候，其静态私有字段singleInstance就已经被初始化了
  * 每一次调用，都是返回的同一个对象。
@@ -52,10 +50,10 @@ class SingleInstance {
 /**
  * 使用继承来操作
  */
-class MyThread extends Thread{
+class MyThread extends Thread {
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().toString() +"----"+ SingleInstance.getInstance());
+        System.out.println(Thread.currentThread().toString() + "----" + SingleInstance.getInstance());
     }
 }
 

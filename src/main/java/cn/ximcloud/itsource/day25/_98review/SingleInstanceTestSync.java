@@ -27,7 +27,7 @@ public class SingleInstanceTestSync {
     }
 }
 
-class SingleInstanceSync{
+class SingleInstanceSync {
     private volatile static SingleInstanceSync singleInstanceSync;
 
 
@@ -67,6 +67,7 @@ class SingleInstanceSync{
      * 这样就能保证字段在任意时刻任意位置对所有线程保持可见性。
      * 通俗的讲，就是一个线程修改了这个对象(数据)其他对象会同时得知这个对象被修改了。或保持被修改后的值。
      * 下面的方法是不会产生线程安全问题的。
+     *
      * @return 返回一个SingleInstanceSync 对象
      */
     public static SingleInstanceSync getInstance() {
@@ -75,7 +76,8 @@ class SingleInstanceSync{
     }
 
 }
-class MySyncThread extends Thread{
+
+class MySyncThread extends Thread {
     @Override
     public void run() {
         System.out.println(Thread.currentThread().toString() + "---" + SingleInstanceSync.getInstance());

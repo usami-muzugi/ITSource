@@ -16,7 +16,8 @@ public class Pock {
     private static final String[] huase;
     private static final String[] paimian;
     private static ArrayList<String> pock;
-    static  {
+
+    static {
         pock = new ArrayList<>();
         huase = new String[]{"♥", "♠", "♣", "♦"};
         paimian = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
@@ -26,10 +27,10 @@ public class Pock {
             }
         }
         pock.add("大王");
-        pock.add( "小王");
+        pock.add("小王");
     }
 
-    public  ArrayList<String> getPock() {
+    public ArrayList<String> getPock() {
         return pock;
     }
 }

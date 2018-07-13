@@ -40,7 +40,7 @@ public class DuChangTest {
 
         duChang.getDuZhuo(0).getSexySister().rush();
 
-        duChang.getDuZhuo(0).addGamers(gamer1,gamer2,gamer3);
+        duChang.getDuZhuo(0).addGamers(gamer1, gamer2, gamer3);
 
         System.out.println(duChang.getDuZhuo(0));
 

@@ -12,12 +12,12 @@ package cn.ximcloud.itsource.day25._98review.Gaming;
 
 interface IHuman {
     /**
-     *  开始赌博生涯不得好死
+     * 开始赌博生涯不得好死
      */
     void getIn();
 
     /**
-     *  死掉了
+     * 死掉了
      */
     void getOut();
 }

@@ -9,7 +9,7 @@ package cn.ximcloud.itsource.day25._98review;
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * 测试在多线程的情况下懒汉模式下是否会导致线程不安全
- *
+ * <p>
  * 测试结果:获取了不止一个对象
  * 冷静分析:
  * 每一个线程都是一个独立的对象，每一个线程不共享其他线程的数据，每一个线程不共享 singleInstanceBigBrother字段
@@ -21,7 +21,7 @@ package cn.ximcloud.itsource.day25._98review;
  * 其他线程判断字段为空，创建并返回字段。然后跳转到最开始的线程，该线程继续执行，创建一个实例对象。
  * 这就导致了线程不安全。
  * 不安全的本质是字段的可见性和执行的原子性
- *
+ * <p>
  * SingleInstanceTestSync自己给出解决办法
  **/
 
@@ -49,22 +49,23 @@ public class SingleInstanceTest2 {
 
 }
 
-class SingleInstanceBigBrother{
+class SingleInstanceBigBrother {
     //私有化静态字段仅声明，不初始化
     private static SingleInstanceBigBrother singleInstanceBigBrother;
 
 
     /**
-     *  单列模式，一个类仅可获取一个实例,如果实例并未初始化。
-     *  则创建一个实例，并赋值给字段singleInstanceBigbrother。
+     * 单列模式，一个类仅可获取一个实例,如果实例并未初始化。
+     * 则创建一个实例，并赋值给字段singleInstanceBigbrother。
+     * <p>
+     * *错误写法* return new SingleInstanceBigBrother();我这里仅仅是判断字段是否为空，为空就new一个实例返回
+     * 但是并未对字段赋值，下一次获取实例的时候还是会判断字段是否为空，然后又new一个对象返回出去。这样不可取
+     * 正确的做法是赋值给字段然后再返回
      *
-     *  *错误写法* return new SingleInstanceBigBrother();我这里仅仅是判断字段是否为空，为空就new一个实例返回
-     *  但是并未对字段赋值，下一次获取实例的时候还是会判断字段是否为空，然后又new一个对象返回出去。这样不可取
-     *  正确的做法是赋值给字段然后再返回
-     * @return  返回一个实例
+     * @return 返回一个实例
      */
     public static SingleInstanceBigBrother getInstance() {
-        if (singleInstanceBigBrother==null) return (singleInstanceBigBrother = new SingleInstanceBigBrother());
+        if (singleInstanceBigBrother == null) return (singleInstanceBigBrother = new SingleInstanceBigBrother());
         return singleInstanceBigBrother;
     }
 
@@ -73,7 +74,7 @@ class SingleInstanceBigBrother{
 class MyBigBrotherThread extends Thread {
 
     /**
-     *  继承线程父类之后，需要重写run方法。线程才能执行run方法内部的语句
+     * 继承线程父类之后，需要重写run方法。线程才能执行run方法内部的语句
      */
     @Override
     public void run() {

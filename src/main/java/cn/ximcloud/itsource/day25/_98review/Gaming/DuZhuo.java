@@ -32,7 +32,7 @@ public class DuZhuo {
     }
 
     public void addGamers(Gamer... gamers) {
-        if(gamers.length>3) throw new ArrayIndexOutOfBoundsException("只能添加三个");
+        if (gamers.length > 3) throw new ArrayIndexOutOfBoundsException("只能添加三个");
         else this.gamers = gamers;
     }
 

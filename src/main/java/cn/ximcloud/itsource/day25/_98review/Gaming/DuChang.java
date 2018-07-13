@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.day25._98review.Gaming;
 
-import cn.ximcloud.itsource.day7.Array;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard

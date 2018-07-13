@@ -9,7 +9,7 @@ package cn.ximcloud.itsource.day25._04;
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * 4 写一个单例模式，注意考虑线程安全问题
- * <p>
+ *
  * 饿汉
  **/
 

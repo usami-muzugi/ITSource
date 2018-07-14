@@ -1,16 +1,16 @@
-package cn.ximcloud.itsource.day26._03file_delete_learning;
-
-import org.junit.Test;
+package cn.ximcloud.itsource.day26.homework;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: Wizard
  * Date: 2018-07-14
- * Time: 11:23
- * ProjectName: ITSource.cn.ximcloud.itsource.day26._03file_delete_learning
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * Time: 22:29
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -33,33 +33,42 @@ import java.io.File;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ * TODO: 完成上课所提到的删除方法【高级部分】：撤销删除（撤销上面刚删除的目录）功能
  **/
+public class HomeWork2 {
+    public static final int RM_RF = 0;
+    public static final int RM_TRASHCAN = 1;
 
-public class FileDeleteTest {
+    //数据无价  谨慎操作
+    public static void delete(File file, int operation) throws FileNotFoundException {
+        if (file == null) throw new NullPointerException();     //递归循环不会throw这个错误
+        if (!file.exists()) throw new FileNotFoundException();  //递归循环不会搞这个骚操作
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File file1 : files) {
+                delete(file1, operation);
+            }
+            //删完文件再删除目录
+            file.delete();
+        }
+        if (file.isFile()) {    //不删非标准文件
+            if (operation == 0) {
+                //删就完事
+                file.delete();
+            } else if (operation == 1) {
 
-    /**
-     * delete()可以删除文件和目录
-     * 删除目录
-     * 如果删除的目录不存在返回false ，存在删除该文件夹并返回true
-     * 如果一个目录里面存在文件，不能直接删除。只有为空的目录才能直接删除
-     * <p>
-     * 删除文件
-     * 文件不和目录类似，文件存在直接删除并返回true。
-     * 文件不存在返回false
-     * public boolean delete() {
-     * SecurityManager security = System.getSecurityManager();
-     * if (security != null) {
-     * security.checkDelete(path);
-     * }
-     * if (isInvalid()) {
-     * return false;
-     * }
-     * return fs.delete(this);
-     * }
-     */
-    @Test
-    public void fileDeteleTest() {
-        File file = new File("");
-        file.delete();
+            } else {
+                throw new NumberFormatException("RM_RF = 0,RM_TRASHCAN = 1");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        File file = new File("E:/test");
+        try {
+            delete(file, HomeWork2.RM_RF);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

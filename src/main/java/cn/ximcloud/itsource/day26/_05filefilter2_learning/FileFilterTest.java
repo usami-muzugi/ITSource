@@ -1,6 +1,5 @@
-package cn.ximcloud.itsource.day26._08filefilter2_learning;
+package cn.ximcloud.itsource.day26._05filefilter2_learning;
 
-import cn.ximcloud.itsource.day7.Array;
 import org.junit.Test;
 
 import java.io.File;
@@ -13,7 +12,7 @@ import java.util.Arrays;
  * User: wzard
  * Date: 2018-07-14
  * Time: 15:17
- * ProjectName: ITSource.cn.ximcloud.itsource.day26._08filefilter2_learning
+ * ProjectName: ITSource.cn.ximcloud.itsource.day26._05filefilter2_learning
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -37,15 +36,15 @@ import java.util.Arrays;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 子目录过滤器
- *         String[] fileList, file.list();         //无参，直接返回子目录下仅一层目录的所有目录和文件
- *         String[] fileList, file.list(FilenameFilter f);     //传入类型 接口的实现对象（匿名对象），需要重写接口实现对象的accept(File dir,String name)方法,dir就是this，也就是这个文件对象，name为每一个文件、文件夹对象的名字
- *         File[] fileList, file.listFiles(FileFilter);      //于FilenameFilter相比，accept(File dir)方法少了String name。要实现拦截可以通过dir.getName()方法获取dir的文件\文件夹名字。获取路径方法为dir.getPath()；获取绝对路径方法为dir.getAbsolutePath();
- *         File[] fileList, file.listFiles();
- *         file.getName();
- *         file.getPath();
- *         file.getAbsolutePath();
+ * String[] fileList, file.list();                      //无参，直接返回子目录下仅一层目录的所有目录和文件
+ * String[] fileList, file.list(FilenameFilter f);      //传入类型 接口的实现对象（匿名对象），需要重写接口实现对象的accept(File dir,String name)方法,dir就是this，也就是这个文件对象，name为每一个文件、文件夹对象的名字
+ * File[] fileList, file.listFiles(FileFilter);         //于FilenameFilter相比，accept(File dir)方法少了String name。要实现拦截可以通过dir.getName()方法获取dir的文件\文件夹名字。获取路径方法为dir.getPath()；获取绝对路径方法为dir.getAbsolutePath();
+ * File[] fileList, file.listFiles();
+ * file.getName();
+ * file.getPath();
+ * file.getAbsolutePath();
  **/
 
 public class FileFilterTest {

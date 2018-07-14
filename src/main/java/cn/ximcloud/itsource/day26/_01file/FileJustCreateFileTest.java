@@ -33,26 +33,25 @@ import java.io.File;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * File 文件和目录路径的抽象表示形式
- *
- *      日志文件，游戏软件等希望保存再磁盘里的东西
- *
- *      文件和目录的特点:文件和目录是不能重名的。文件和文件也是，目录和目录也是
- *
- *
+ * <p>
+ * 日志文件，游戏软件等希望保存再磁盘里的东西
+ * <p>
+ * 文件和目录的特点:文件和目录是不能重名的。文件和文件也是，目录和目录也是
  **/
 
 public class FileJustCreateFileTest {
 
-    /** 传递一个String
-     *     public File(String pathname) {
-     *         if (pathname == null) {
-     *             throw new NullPointerException();
-     *         }
-     *         this.path = fs.normalize(pathname);
-     *         this.prefixLength = fs.prefixLength(this.path);
-     *     }
+    /**
+     * 传递一个String，可以是路径，也可以是文件名
+     * public File(String pathname) {
+     * if (pathname == null) {
+     * throw new NullPointerException();
+     * }
+     * this.path = fs.normalize(pathname);
+     * this.prefixLength = fs.prefixLength(this.path);
+     * }
      */
     @Test
     public void createFileTest() {
@@ -60,49 +59,50 @@ public class FileJustCreateFileTest {
         System.out.println(file);
     }
 
-    /**传递两个String 一个目录，一个文件名
-     *     public File(String parent, String child) {
-     *         if (child == null) {
-     *             throw new NullPointerException();
-     *         }
-     *         if (parent != null) {
-     *             if (parent.equals("")) {
-     *                 this.path = fs.resolve(fs.getDefaultParent(),
-     *                                        fs.normalize(child));
-     *             } else {
-     *                 this.path = fs.resolve(fs.normalize(parent),
-     *                                        fs.normalize(child));
-     *             }
-     *         } else {
-     *             this.path = fs.normalize(child);
-     *         }
-     *         this.prefixLength = fs.prefixLength(this.path);
-     *     }
+    /**
+     * 传递两个String 一个目录，一个文件名
+     * public File(String parent, String child) {
+     * if (child == null) {
+     * throw new NullPointerException();
+     * }
+     * if (parent != null) {
+     * if (parent.equals("")) {
+     * this.path = fs.resolve(fs.getDefaultParent(),
+     * fs.normalize(child));
+     * } else {
+     * this.path = fs.resolve(fs.normalize(parent),
+     * fs.normalize(child));
+     * }
+     * } else {
+     * this.path = fs.normalize(child);
+     * }
+     * this.prefixLength = fs.prefixLength(this.path);
+     * }
      */
     @Test
     public void createFileTest2() {
-        File file = new File("","");
+        File file = new File("", "");
     }
 
 
     /**
-     *     public File(File parent, String child) {
-     *         if (child == null) {
-     *             throw new NullPointerException();
-     *         }
-     *         if (parent != null) {
-     *             if (parent.path.equals("")) {
-     *                 this.path = fs.resolve(fs.getDefaultParent(),
-     *                                        fs.normalize(child));
-     *             } else {
-     *                 this.path = fs.resolve(parent.path,
-     *                                        fs.normalize(child));
-     *             }
-     *         } else {
-     *             this.path = fs.normalize(child);
-     *         }
-     *         this.prefixLength = fs.prefixLength(this.path);
-     *     }
+     * public File(File parent, String child) {
+     * if (child == null) {
+     * throw new NullPointerException();
+     * }
+     * if (parent != null) {
+     * if (parent.path.equals("")) {
+     * this.path = fs.resolve(fs.getDefaultParent(),
+     * fs.normalize(child));
+     * } else {
+     * this.path = fs.resolve(parent.path,
+     * fs.normalize(child));
+     * }
+     * } else {
+     * this.path = fs.normalize(child);
+     * }
+     * this.prefixLength = fs.prefixLength(this.path);
+     * }
      */
     @Test
     public void createFileTest3() {

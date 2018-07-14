@@ -1,16 +1,16 @@
-package cn.ximcloud.itsource.day26._03file_delete_learning;
-
-import org.junit.Test;
+package cn.ximcloud.itsource.day26._06my_filter;
 
 import java.io.File;
+import java.io.FileFilter;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: Wizard
  * Date: 2018-07-14
- * Time: 11:23
- * ProjectName: ITSource.cn.ximcloud.itsource.day26._03file_delete_learning
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * Time: 23:10
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -34,32 +34,9 @@ import java.io.File;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-
-public class FileDeleteTest {
-
-    /**
-     * delete()可以删除文件和目录
-     * 删除目录
-     * 如果删除的目录不存在返回false ，存在删除该文件夹并返回true
-     * 如果一个目录里面存在文件，不能直接删除。只有为空的目录才能直接删除
-     * <p>
-     * 删除文件
-     * 文件不和目录类似，文件存在直接删除并返回true。
-     * 文件不存在返回false
-     * public boolean delete() {
-     * SecurityManager security = System.getSecurityManager();
-     * if (security != null) {
-     * security.checkDelete(path);
-     * }
-     * if (isInvalid()) {
-     * return false;
-     * }
-     * return fs.delete(this);
-     * }
-     */
-    @Test
-    public void fileDeteleTest() {
-        File file = new File("");
-        file.delete();
+public class MyFilterImpl implements FileFilter {
+    @Override
+    public boolean accept(File pathname) {
+        return pathname.getName().endsWith(".avi");
     }
 }

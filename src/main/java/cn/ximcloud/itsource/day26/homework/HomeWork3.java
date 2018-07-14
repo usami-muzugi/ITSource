@@ -1,16 +1,19 @@
-package cn.ximcloud.itsource.day26._03file_delete_learning;
+package cn.ximcloud.itsource.day26.homework;
 
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: Wizard
  * Date: 2018-07-14
- * Time: 11:23
- * ProjectName: ITSource.cn.ximcloud.itsource.day26._03file_delete_learning
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * Time: 23:14
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -31,35 +34,40 @@ import java.io.File;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG        永不修改               //
  * ////////////////////////////////////////////////////////////////////
+ * TODO:写一段代码完成一下功能：以你们接受每天我发给你们的资料的根目录为准，
+ * 找出其中的所有的视频文件，然后再一个新的路径下面创建对应的文件，暂时不考虑内容，只要有文件就行
  **/
-
-public class FileDeleteTest {
+public class HomeWork3 {
 
     /**
-     * delete()可以删除文件和目录
-     * 删除目录
-     * 如果删除的目录不存在返回false ，存在删除该文件夹并返回true
-     * 如果一个目录里面存在文件，不能直接删除。只有为空的目录才能直接删除
-     * <p>
-     * 删除文件
-     * 文件不和目录类似，文件存在直接删除并返回true。
-     * 文件不存在返回false
-     * public boolean delete() {
-     * SecurityManager security = System.getSecurityManager();
-     * if (security != null) {
-     * security.checkDelete(path);
-     * }
-     * if (isInvalid()) {
-     * return false;
-     * }
-     * return fs.delete(this);
-     * }
+     * 昏睡代码蜜汁完成，不清楚内部结构
+     * @param path
+     * @param stuffix
+     * @param newPath
+     * @throws IOException
      */
+    public static void allInOne(File path, String stuffix, File newPath) throws IOException {
+        if (path == null || newPath == null || !path.exists()) throw new FileNotFoundException();
+        for (File file : path.listFiles()) {
+            File tempPath = null;
+            if (file.isDirectory()) {
+                (tempPath = new File(newPath, file.getName())).mkdirs();
+                allInOne(file, "avi", new File(newPath, tempPath.getName()));
+            } else {
+                if (file.getName().endsWith(stuffix)) new File(newPath, file.getName()).createNewFile();
+            }
+        }
+    }
+
     @Test
-    public void fileDeteleTest() {
-        File file = new File("");
-        file.delete();
+    public void test() {
+        File file = new File("E:\\test");
+        try {
+            allInOne(file, ".avi", new File("E:\\test2"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

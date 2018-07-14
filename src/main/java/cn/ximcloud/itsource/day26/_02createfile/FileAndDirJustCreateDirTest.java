@@ -36,19 +36,19 @@ import java.io.IOException;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class FileJustCreateDirTest {
+public class FileAndDirJustCreateDirTest {
 
 
     /**
-     *  创建一个文件 throws IOException
-     *     public boolean createNewFile() throws IOException {  //抛出一个IO异常可能文件未找到,父路径未找到等...
-     *         SecurityManager security = System.getSecurityManager();
-     *         if (security != null) security.checkWrite(path);
-     *         if (isInvalid()) {
-     *             throw new IOException("Invalid file path");
-     *         }
-     *         return fs.createFileExclusively(path);
-     *     }
+     * 创建一个文件 throws IOException
+     * public boolean createNewFile() throws IOException {  //抛出一个IO异常可能文件未找到,父路径未找到等...
+     * SecurityManager security = System.getSecurityManager();
+     * if (security != null) security.checkWrite(path);
+     * if (isInvalid()) {
+     * throw new IOException("Invalid file path");
+     * }
+     * return fs.createFileExclusively(path);
+     * }
      */
     @Test
     public void createFile() {
@@ -61,17 +61,18 @@ public class FileJustCreateDirTest {
     }
 
 
-    /**    创建一个文件夹，如果父路径不存在会报错
-     *     public boolean mkdir() {
-     *         SecurityManager security = System.getSecurityManager();  //获得系统安全管理对象
-     *         if (security != null) {
-     *             security.checkWrite(path);
-     *         }
-     *         if (isInvalid()) {
-     *             return false;
-     *         }
-     *         return fs.createDirectory(this);
-     *     }
+    /**
+     * 创建一个文件夹，如果父路径不存在会报错
+     * public boolean mkdir() {
+     * SecurityManager security = System.getSecurityManager();  //获得系统安全管理对象
+     * if (security != null) {
+     * security.checkWrite(path);
+     * }
+     * if (isInvalid()) {
+     * return false;
+     * }
+     * return fs.createDirectory(this);
+     * }
      */
     @Test
     public void createDir() {
@@ -81,25 +82,26 @@ public class FileJustCreateDirTest {
     }
 
 
-    /**     如果父路径不存在则自动创建
-     *     public boolean mkdirs() {
-     *         if (exists()) {      //如果存在则返回false
-     *             return false;
-     *         }
-     *         if (mkdir()) {       //如果不存在，且创建成功，就返回true
-     *             return true;
-     *         }
-     *         File canonFile = null;
-     *         try {
-     *             canonFile = getCanonicalFile();
-     *         } catch (IOException e) {
-     *             return false;
-     *         }
-     *
-     *         File parent = canonFile.getParentFile();
-     *         return (parent != null && (parent.mkdirs() || parent.exists()) &&
-     *                 canonFile.mkdir());
-     *     }
+    /**
+     * 如果父路径不存在则自动创建
+     * public boolean mkdirs() {
+     * if (exists()) {      //如果存在则返回false
+     * return false;
+     * }
+     * if (mkdir()) {       //如果不存在，且创建成功，就返回true
+     * return true;
+     * }
+     * File canonFile = null;
+     * try {
+     * canonFile = getCanonicalFile();
+     * } catch (IOException e) {
+     * return false;
+     * }
+     * <p>
+     * File parent = canonFile.getParentFile();
+     * return (parent != null && (parent.mkdirs() || parent.exists()) &&
+     * canonFile.mkdir());
+     * }
      */
     public void createDirs() {
         File dirs = new File("test Dir");

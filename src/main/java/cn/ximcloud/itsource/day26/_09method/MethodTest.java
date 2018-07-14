@@ -38,7 +38,7 @@ import org.junit.Test;
 public class MethodTest {
 
     public int methodTest(int n) {
-        if (n==1||n==2) return n;                           //如果n的值为0||1，直接返回结果n
+        if (n == 1 || n == 2) return n;                           //如果n的值为0||1，直接返回结果n
         return methodTest(n - 1) + methodTest(n - 2); //如果n的值不为零，递归调用自身
     }
 
@@ -56,11 +56,12 @@ public class MethodTest {
 
     /**
      * 溢出不会报错
+     *
      * @param n
      * @return
      */
     public byte intTest(byte n) {
-        return (byte) ( n * 3);
+        return (byte) (n * 3);
     }
 
 

@@ -1,5 +1,7 @@
 package cn.ximcloud.itsource.day26._03file_delete_learning;
 
+import org.junit.Test;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -35,28 +37,32 @@ import java.io.FileNotFoundException;
  **/
 
 public class FileAndDirDeleteTest {
+    public static final int RM_RF = 0;
+    public static final int RM_TRASHCAN = 1;
 
-    public void deleteAdd(File file) throws FileNotFoundException {
-        //1.判断传入的对象是否为null
-        if (file == null) throw new NullPointerException();
-        //2.判断文件是否存在
-        if (file.exists()) throw new FileNotFoundException("FileNotFound");
-        //3.判断是否是文件 是 删除 return，否 执行下一个判断
-        if (file.isFile()) {        //isFile()是判定文件对象是否为一个标准的文件（非隐藏文件...等等）
+    public static void delete(File file, int operation) throws FileNotFoundException {
+        if (file == null) throw new NullPointerException();     //递归循环不会throw这个错误
+        if (!file.exists()) throw new FileNotFoundException();  //递归循环不会搞这个骚操作
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File file1 : files) {
+                delete(file1, operation);
+            }
             file.delete();
-            return;
-        }
-        //4.判断是否为文件夹  是 判断是否有子目录和文件 是执行方法嵌套删除操作，否执行下一个操作
-        if (!file.isDirectory()) {
-            for (String s : file.list()) {
-                //...
-                deleteAdd(new File(s));
+        } else {
+            if (operation == 0) {
+                //删就完事
+                file.delete();
+            } else if (operation == 1) {
+                //什么事都不做
+            } else {
+                throw new NumberFormatException("RM_RF = 0,RM_TRASHCAN = 1");
             }
         }
-        //5.方法嵌套删除操作
-        //6.删除文件夹
-        //7.return
-        file.delete();
-        //8.
+    }
+
+    @Test
+    public void deleteAllTest() throws FileNotFoundException {
+        delete(new File("E:/test"), FileAndDirDeleteTest.RM_TRASHCAN);
     }
 }

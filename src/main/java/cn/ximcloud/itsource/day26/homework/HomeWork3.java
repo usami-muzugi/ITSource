@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Created by IntelliJ IDEA.
@@ -49,23 +50,23 @@ public class HomeWork3 {
      * @throws IOException
      */
     public static void allInOne(File path, String stuffix, File newPath) throws IOException {
-        if (path == null || newPath == null || !path.exists()) throw new FileNotFoundException();
-        for (File file : path.listFiles()) {
+        if (path == null || newPath == null || !path.exists()) return;
+        for (File file : Objects.requireNonNull(path.listFiles())) {
             File tempPath = null;
             if (file.isDirectory()) {
-                (tempPath = new File(newPath, file.getName())).mkdirs();
-                allInOne(file, "avi", new File(newPath, tempPath.getName()));
-            } else {
-                if (file.getName().endsWith(stuffix)) new File(newPath, file.getName()).createNewFile();
+                boolean mkdirs = (tempPath = new File(newPath, file.getName())).mkdirs();
+                allInOne(file, stuffix, new File(newPath, tempPath.getName()));
+            } else if (file.isFile() && file.getName().endsWith(stuffix)) {
+                boolean newFile = new File(newPath, file.getName()).createNewFile();
             }
         }
     }
 
     @Test
     public void test() {
-        File file = new File("E:\\test");
+        File file = new File("D:\\Java180606");
         try {
-            allInOne(file, ".avi", new File("E:\\test2"));
+            allInOne(file, "avi", new File("D:/test"));
         } catch (IOException e) {
             e.printStackTrace();
         }

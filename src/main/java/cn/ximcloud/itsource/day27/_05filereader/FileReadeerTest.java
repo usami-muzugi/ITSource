@@ -2,7 +2,10 @@ package cn.ximcloud.itsource.day27._05filereader;
 
 import org.junit.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,7 +45,7 @@ public class FileReadeerTest {
         FileReader fileReader = new FileReader(file);
         FileWriter fileWriter = new FileWriter(new File("D:/新建文本文档2.txt"));
         int read;
-        while ((read=fileReader.read()) != -1) {
+        while ((read = fileReader.read()) != -1) {
             fileWriter.write(read);
             fileWriter.flush();
         }

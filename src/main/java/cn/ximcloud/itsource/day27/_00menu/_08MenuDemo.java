@@ -7,9 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -48,6 +46,7 @@ import java.util.Date;
 
 public class _08MenuDemo {
     private static TextArea textArea;
+
     public static void main(String[] args) {
 
 
@@ -104,7 +103,9 @@ public class _08MenuDemo {
         menuBar.add(menu5);
 
 
-
+        /**
+         * 添加FileInputStream
+         */
         //给菜单明细添加监听
         menuItem1.addActionListener(new ActionListener() {
             @Override
@@ -114,10 +115,12 @@ public class _08MenuDemo {
                 fileDialog.setVisible(true);
                 fileDialog.setName("新建一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 try {
-                    if (fileDialog.getDirectory()==null||fileDialog.getName()==null) return;
+                    //判定文件目录是否为空，或者文件名是否为空。若为空则直接结束方法
+                    if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
                     FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
                     byte[] bytes = new byte[1024];
                     while ((fileInputStream.read(bytes)) != -1) {
+                        //采用追加的方式，将文件字节流追加到textArea
                         textArea.append(new String(bytes));
                     }
                 } catch (IOException e1) {
@@ -135,7 +138,7 @@ public class _08MenuDemo {
                 fileDialog.setName("打开一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 try {
                     textArea.setText("");
-                    if (fileDialog.getDirectory()==null||fileDialog.getName()==null) return;
+                    if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
                     FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
                     byte[] bytes = new byte[1024];
                     while ((fileInputStream.read(bytes)) != -1) {
@@ -158,7 +161,7 @@ public class _08MenuDemo {
                 fileDialog.setVisible(true);
                 fileDialog.setName("另存为一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 try {
-                    if (fileDialog.getDirectory()==null||fileDialog.getName()==null) return;
+                    if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
                     FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
                     //存储操作
                 } catch (IOException e1) {
@@ -183,12 +186,12 @@ public class _08MenuDemo {
             public void actionPerformed(ActionEvent e) {
                 JDialog dialog = new JDialog(jFrame);
                 dialog.setName("关于作者 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
-                dialog.setSize(new Dimension(400,225));
+                dialog.setSize(new Dimension(400, 225));
                 dialog.setLocationRelativeTo(null);
                 TextArea textArea = new TextArea();
                 textArea.setText("宇佐美ミズギ");
 
-                textArea.setFont(new Font("黑体",100,30));
+                textArea.setFont(new Font("黑体", 100, 30));
                 dialog.add(textArea);
                 jFrame.setVisible(false);
                 dialog.setVisible(true);

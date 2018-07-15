@@ -3,7 +3,10 @@ package cn.ximcloud.itsource.day15._08menu;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 
 /**
@@ -39,6 +42,7 @@ import java.awt.event.*;
 
 public class _08MenuDemo {
     private static TextArea textArea;
+
     public static void main(String[] args) {
 
 
@@ -118,7 +122,7 @@ public class _08MenuDemo {
         menuItem6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textArea.setText(textArea.getText()+System.currentTimeMillis()      );
+                textArea.setText(textArea.getText() + System.currentTimeMillis());
             }
         });
 
@@ -128,11 +132,11 @@ public class _08MenuDemo {
             public void actionPerformed(ActionEvent e) {
                 JDialog dialog = new JDialog(jFrame);
                 dialog.setName("关于作者 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
-                dialog.setSize(new Dimension(400,225));
+                dialog.setSize(new Dimension(400, 225));
                 dialog.setLocationRelativeTo(null);
                 TextArea textArea = new TextArea();
                 textArea.setText("宇佐美ミズギ");
-                textArea.setFont(new Font("黑体",100,50));
+                textArea.setFont(new Font("黑体", 100, 50));
                 dialog.add(textArea);
                 jFrame.setVisible(false);
                 dialog.setVisible(true);

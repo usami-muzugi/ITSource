@@ -33,14 +33,14 @@ import java.io.*;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *  文件输出流
+ * 文件输出流
  **/
 
 public class FileOutputStreamTest {
     /**
      * 构造方法
-     *          1. FileOutputStream(String fileName) throws FileNotFoundException
-     *          2. FileOutputStream(File file) throws FileNotFoundException
+     * 1. FileOutputStream(String fileName) throws FileNotFoundException
+     * 2. FileOutputStream(File file) throws FileNotFoundException
      */
     public void fileOutputStreamTest() throws FileNotFoundException {
 //        FileOutputStream fileOutputStream = new FileOutputStream("");
@@ -49,8 +49,8 @@ public class FileOutputStreamTest {
 
     /**
      * write（写）方法测试 1
-     *      创建临时数组Byte ，将fis读取的数据写入到数组中，将数组中的数据，通过fos写入到内存。
-     *      在通过fos flush  fos.close 操作，把缓冲在内存中的数据写入硬碟
+     * 创建临时数组Byte ，将fis读取的数据写入到数组中，将数组中的数据，通过fos写入到内存。
+     * 在通过fos flush  fos.close 操作，把缓冲在内存中的数据写入硬碟
      */
     public void fileOutputStreamWriteOne() throws IOException {
         File file = new File("D:/新建文本文档.txt"); //目标文件
@@ -71,8 +71,8 @@ public class FileOutputStreamTest {
 
     /**
      * write（写）方法测试 2
-     *      fileOutputStream.write(bytes, 0, bytes.length);   //读取数据Start
-     *                      // 目标数据数组，偏移量，写入长度
+     * fileOutputStream.write(bytes, 0, bytes.length);   //读取数据Start
+     * // 目标数据数组，偏移量，写入长度
      */
     public void fileOutputStreamWriteTwo() throws IOException {
         File file = new File("D:/新建文本文档.txt"); //目标文件
@@ -94,11 +94,10 @@ public class FileOutputStreamTest {
 
     /**
      * write（写）方法测试 3
-     *      每次写入一个int类型的字节， 是否追加
-     *      private native void write(int b, boolean append) throws IOException;
-     *      每次覆写该文件
-     *      private native void write(int b) throws IOException;
-     *
+     * 每次写入一个int类型的字节， 是否追加
+     * private native void write(int b, boolean append) throws IOException;
+     * 每次覆写该文件
+     * private native void write(int b) throws IOException;
      */
     public void fileOutputStreamWriteThree() throws IOException {
         File file = new File("D:/新建文本文档.txt"); //目标文件

@@ -1,5 +1,6 @@
-package cn.ximcloud.itsource.day27._00menu;
+package cn.ximcloud.itsource.day27.homework;
 
+import cn.ximcloud.itsource.day27._00menu.MyKeyListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,13 +15,12 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-06-28
- * Time: 16:39
- * ProjectName: ITSource
+ * Date: 2018-07-16
+ * Time: 14:42
+ * ProjectName: ITSource.cn.ximcloud.itsource.day27.homework
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -42,27 +42,22 @@ import java.util.Date;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑        永无BUG      永不修改                  //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ * 完成(完善)记事本的打开,保存,另存为功能,注意多多考虑一些细节,尽量做到和Windows自带的记事本功能一样
  **/
 
-public class _08MenuDemo {
-    private static TextArea textArea;
+public class HomeWork3 {
+    private TextArea textArea;
     private static File file;
+    private static final String string = "草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本";
+
 
     public static void main(String[] args) {
-        /*
-        菜单
-            文件      编辑       格式      查看      帮助
+        new HomeWork3();
+    }
 
-        菜单明细
-            新建      时间                          关于宇宙最叼草鸡厉害牛皮地飙水水地记事本作者
-            打开
-            保存
-            另存为
-            退出
-
-         */
+    private HomeWork3() {
         //创建顶层窗体
         JFrame jFrame = new JFrame();
 
@@ -103,7 +98,6 @@ public class _08MenuDemo {
         menuBar.add(menu4);
         menuBar.add(menu5);
 
-
         /**
          *   "New" 添加FileInputStream
          */
@@ -111,22 +105,16 @@ public class _08MenuDemo {
         menuItem1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (file != null) save(file, textArea); //不为空是已经打开了
                 //点击new的操作
                 FileDialog fileDialog = new FileDialog(jFrame);
-                fileDialog.setTitle("新建一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
+                fileDialog.setTitle("新建一个文档 - " + string);
                 fileDialog.setVisible(true);
-                try {
-                    //判定文件目录是否为空，或者文件名是否为空。若为空则直接结束方法
-                    if (fileDialog.getDirectory() == null || fileDialog.getFile() == null) return;
-                    FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
-                    byte[] bytes = new byte[1024];
-                    while ((fileInputStream.read(bytes)) != -1) {
-                        //采用追加的方式，将文件字节流追加到textArea
-                        textArea.append(new String(bytes));
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
+                textArea.setText("");
+                file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
+                get(file, textArea);
+                jFrame.setTitle(file.getAbsolutePath() + "--------------------------" + string);
             }
         });
 
@@ -140,18 +128,11 @@ public class _08MenuDemo {
                 FileDialog fileDialog = new FileDialog(jFrame);
                 fileDialog.setTitle("打开一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 fileDialog.setVisible(true);
-                try {
-                    if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
-                    textArea.setText("");
-                    file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
-                    FileInputStream fileInputStream = new FileInputStream(file);    //创建流，关联文件
-                    byte[] bytes = new byte[1024];
-                    while ((fileInputStream.read(bytes)) != -1) {
-                        textArea.append(new String(bytes));
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
+                textArea.setText("");
+                file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
+                get(file, textArea);
+                jFrame.setTitle(file.getAbsolutePath() + "--------------------------" + string);
             }
         });
 
@@ -165,18 +146,10 @@ public class _08MenuDemo {
                 FileDialog fileDialog = new FileDialog(jFrame);
                 fileDialog.setVisible(true);
                 fileDialog.setTitle("另存为一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
-                try {
-                    if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
-                    file = new File(fileDialog.getDirectory() + fileDialog.getName());
-                    FileInputStream fileInputStream = new FileInputStream(file);
-                    //存储操作
-                    byte[] bytes = new byte[1024];
-                    while ((fileInputStream.read(bytes)) != -1) {
-                        textArea.append(new String(bytes));
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
+                file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
+                save(file, textArea);
+                jFrame.setTitle(file.getAbsolutePath() + "--------------------------" + string);
             }
         });
 
@@ -188,20 +161,8 @@ public class _08MenuDemo {
         menuItem4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FileWriter fileWriter = null;
-                try {
-                    char[] chars = textArea.getText().toCharArray();
-                    fileWriter = new FileWriter(file);
-                    fileWriter.write(chars);
-                    fileWriter.flush();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                    try {
-                        fileWriter.close();
-                    } catch (IOException e2) {
-                        e2.printStackTrace();
-                    }
-                }
+                save(file, textArea);
+                jFrame.setTitle(file.getAbsolutePath() + "--------------------------" + string);
             }
         });
 
@@ -228,7 +189,6 @@ public class _08MenuDemo {
                 dialog.setLocationRelativeTo(null);
                 TextArea textArea = new TextArea();
                 textArea.setText("草鸡牛逼记事本作者:宇佐美ミズギ");
-
                 textArea.setFont(new Font("黑体", 100, 20));
                 dialog.add(textArea);
                 jFrame.setVisible(false);
@@ -236,7 +196,6 @@ public class _08MenuDemo {
                 dialog.addWindowListener(new WindowListener() {
                     @Override
                     public void windowOpened(WindowEvent e) {
-
                     }
 
                     @Override
@@ -246,40 +205,33 @@ public class _08MenuDemo {
 
                     @Override
                     public void windowClosed(WindowEvent e) {
-
                     }
 
                     @Override
                     public void windowIconified(WindowEvent e) {
-
                     }
 
                     @Override
                     public void windowDeiconified(WindowEvent e) {
-
                     }
 
                     @Override
                     public void windowActivated(WindowEvent e) {
-
                     }
 
                     @Override
                     public void windowDeactivated(WindowEvent e) {
-
                     }
                 });
-
             }
         });
-
 
         //创建一个TextArea
         textArea = new TextArea();
         textArea.setFont(new Font("黑体", 100, 20));
         //这里写匿名内部类不太好
         MyKeyListener myKeyListener = new MyKeyListener(textArea);
-        textArea.addKeyListener(myKeyListener);
+        jFrame.addKeyListener(myKeyListener);
 
 
         //把菜单栏添加到顶层窗体里
@@ -296,5 +248,36 @@ public class _08MenuDemo {
         jFrame.setTitle("草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
+    }
+
+    private static void save(File file, TextArea textArea) {
+        FileWriter fileWriter = null;
+        try {
+            char[] chars = textArea.getText().toCharArray();
+            fileWriter = new FileWriter(file);
+            fileWriter.write(chars);
+            fileWriter.flush();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+            try {
+                assert fileWriter != null;
+                fileWriter.close();
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            }
+        }
+    }
+
+    private static void get(File file, TextArea textArea) {
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            byte[] bytes = new byte[1024];
+            while ((fileInputStream.read(bytes)) != -1) {
+                //采用追加的方式，将文件字节流追加到textArea
+                textArea.append(new String(bytes));
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 }

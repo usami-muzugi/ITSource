@@ -1,14 +1,13 @@
-package cn.ximcloud.itsource.day27._00menu;
+package cn.ximcloud.itsource.day27._07inputstreamreader;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.*;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-06-28
- * Time: 19:30
- * ProjectName: ITSource
+ * Date: 2018-07-16
+ * Time: 14:10
+ * ProjectName: ITSource.cn.ximcloud.itsource.day27._07inputstreamreader
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -30,13 +29,30 @@ import java.awt.event.ActionListener;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑        永无BUG      永不修改                  //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class MyActionListener implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
+public class Test {
+
+    /**
+     * InputStreamReader(InputStream in)
+     * 创建一个使用默认字符集的 InputStreamReader。
+     * <p>
+     * 字节流转字符流,通过构造方法的方式
+     * <p>
+     * OutputStreamWriter(OutputStream out)
+     * 创建使用默认字符编码的 OutputStreamWriter。
+     *
+     * @throws FileNotFoundException
+     */
+    public void test() throws FileNotFoundException {
+        FileInputStream fileInputStream = new FileInputStream("D/");
+        InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+
+
+        FileOutputStream fileOutputStream = new FileOutputStream("");
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
 
     }
 }

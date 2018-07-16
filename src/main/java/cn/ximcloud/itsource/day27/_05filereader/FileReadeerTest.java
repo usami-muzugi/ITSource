@@ -2,7 +2,9 @@ package cn.ximcloud.itsource.day27._05filereader;
 
 import org.junit.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,20 +37,23 @@ import java.io.*;
  * ////////////////////////////////////////////////////////////////////
  * FileReader 测试
  * FileReader不同于FilInputStream的是，FileReader返回的是char类型的值或者是char[]类型的数组
- *
- *          构造方法:
- *                  FileReader(String fileName)
- *                      参数列表传递一个String类型的文件名，关联文件创建FileReader对象
- *               	FileReader(File file)
- *                      参数列表传递一个File类型的文件名，关联该文件并创建FileReader对象
- *          方法:
+ * <p>
+ * 构造方法:
+ * FileReader(String fileName)
+ * 参数列表传递一个String类型的文件名，关联文件创建FileReader对象
+ * FileReader(File file)
+ * 参数列表传递一个File类型的文件名，关联该文件并创建FileReader对象
+ * 方法:
+ * read()无参    返回值为当前读取的字符的字节，int返回，-1为读取到末尾
+ * read(char[] chars)  返回值为当前读取的字符的长度，并将读取的字符字节写入char[] 。int返回，-1为读取到末尾。
  **/
 
 public class FileReadeerTest {
 
     /**
-     *   通过每次读取一个字节来进行操作
-     *   读取操作read()无参，返回为该字节的int类型值
+     * 通过每次读取一个字节来进行操作
+     * 读取操作read()无参，返回为该字节的int类型值
+     *
      * @throws IOException 抛出文件未找到异常
      */
     public void fileReadTest() throws IOException {
@@ -58,7 +63,7 @@ public class FileReadeerTest {
         int read;   //设置读取的字节的阿斯克码
         StringBuffer stringBuffer = new StringBuffer("[");
         while ((read = fileReader.read()) != -1) {      //读取每一次返回值都是read
-            stringBuffer.append((char) read+" ");
+            stringBuffer.append((char) read + " ");
         }
         stringBuffer.append("]");
         char[] chars = stringBuffer.toString().toCharArray();
@@ -67,7 +72,7 @@ public class FileReadeerTest {
             bytes[i] = (byte) chars[i];
         }
         fileReader.close();
-        System.out.println(new String(bytes,"GBK"));
+        System.out.println(new String(bytes, "GBK"));
 
     }
 
@@ -78,10 +83,10 @@ public class FileReadeerTest {
 
 
     /**
-     *  使用正确方式处理流，try...finally
-     *  使用方法read(char[] chars)，返回值还是为当前次数，读取的字节数据的长度。
-     *  char类包含本次写入的数据，使用new String(char[],int offset,length)进行操作
-     *  传递该char[]类型数组，设置偏移量为0，长度为length
+     * 使用正确方式处理流，try...finally
+     * 使用方法read(char[] chars)，返回值还是为当前次数，读取的字节数据的长度。
+     * char类包含本次写入的数据，使用new String(char[],int offset,length)进行操作
+     * 传递该char[]类型数组，设置偏移量为0，长度为length
      */
     public void fileReadTestTwo() {
         FileReader fileReader = null;
@@ -89,8 +94,8 @@ public class FileReadeerTest {
             fileReader = new FileReader("D:/新建文本文档.txt");
             char[] chars = new char[1024];
             int length;
-            while ((length=fileReader.read(chars)) != -1) {
-                System.out.println(new String(chars,0,length));
+            while ((length = fileReader.read(chars)) != -1) {
+                System.out.println(new String(chars, 0, length));
             }
         } catch (IOException e) {
             e.printStackTrace();

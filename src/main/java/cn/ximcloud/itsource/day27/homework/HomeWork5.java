@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day26.homework;
+package cn.ximcloud.itsource.day27.homework;
 
 import org.junit.Test;
 
@@ -10,12 +10,11 @@ import java.util.Objects;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-07-14
- * Time: 23:14
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
- * <p>
+ * User: wzard
+ * Date: 2018-07-16
+ * Time: 15:37
+ * ProjectName: ITSource.cn.ximcloud.itsource.day27.homework
+ * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -36,34 +35,30 @@ import java.util.Objects;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG        永不修改               //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * TODO:写一段代码完成一下功能：以你们接受每天我发给你们的资料的根目录为准，
- * 找出其中的所有的视频文件，然后再一个新的路径下面创建对应的文件，暂时不考虑内容，只要有文件就行
  **/
-public class HomeWork3 {
 
+public class HomeWork5 {
     /**
-     * 昏睡代码蜜汁完成，不清楚内部结构
+     * 直接把源目录里面的所有东西，包含文件的数据内容一并复制到目标目录里
      *
-     * @param path    源目录
-     * @param stuffix 拦截字符串
-     * @param newPath 目标目录
-     * @throws IOException
+     * @param srcPath  源目录
+     * @param destPath 目标目录
+     * @throws IOException FileNotFoundException
      */
-    public static void allInOne(File path, String stuffix, File newPath) throws IOException {
-        if (path == null || newPath == null || !path.exists()) return;
-        for (File file : Objects.requireNonNull(path.listFiles())) {
-            File tempPath = null;
+    private static void allInOne(File srcPath, File destPath) throws IOException {
+        if (srcPath == null || destPath == null || !srcPath.exists()) return;
+        for (File file : Objects.requireNonNull(srcPath.listFiles())) {
+            File temp = null;
             if (file.isDirectory()) {
-                boolean mkdirs = (tempPath = new File(newPath, file.getName())).mkdirs();
-                allInOne(file, stuffix, new File(newPath, tempPath.getName()));
-            } else if (file.isFile() && file.getName().endsWith(stuffix)) {
-                File tempFile;
-                boolean newFile = (tempFile = new File(newPath, file.getName())).createNewFile();
+                (temp = new File(destPath, file.getName())).mkdirs();
+                allInOne(file, new File(destPath, temp.getName()));
+            } else {
+                (temp = new File(destPath, file.getName())).createNewFile();
                 FileInputStream fileInputStream = new FileInputStream(file);
                 //byte[] bytes = fileInputStream.readAllBytes();
-                FileOutputStream fileOutputStream = new FileOutputStream(tempFile);
+                FileOutputStream fileOutputStream = new FileOutputStream(temp);
                 byte[] bytes = new byte[1024];
                 int read;
                 while ((read = fileInputStream.read(bytes)) != -1) {
@@ -80,7 +75,7 @@ public class HomeWork3 {
     @Test
     public void test() {
         try {
-            allInOne(new File("D:\\Java180606"), "avi", new File("D:/test"));
+            allInOne(new File("D:\\Java180606"), new File("D:/test"));
         } catch (IOException e) {
             e.printStackTrace();
         }

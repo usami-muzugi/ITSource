@@ -46,7 +46,7 @@ public class PropertiesTest2 {
         //各种流
         PrintStream printStream = new PrintStream(
                 new FileOutputStream(new File(
-                        "FileOutputStream's File.txt")));
+                        "FileOutputStreamTest's File.txt")));
         properties.list(printStream);
 
 
@@ -70,7 +70,7 @@ public class PropertiesTest2 {
         properties = new Properties();
         //load方法的参数列表是一个InputStream的接口，所以这里传入他的实现类
         //load方法的所用是将硬盘上的存储的property可读的数据传入到property里面去
-        properties.load(new FileInputStream(new File("FileOutputStream's File.txt")));
+        properties.load(new FileInputStream(new File("FileOutputStreamTest's File.txt")));
         Set<Map.Entry<Object, Object>> entries = properties.entrySet();
         for (Map.Entry<Object, Object> entry : entries) {
             System.out.println(entry);

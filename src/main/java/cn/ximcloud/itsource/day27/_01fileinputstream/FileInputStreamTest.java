@@ -67,7 +67,7 @@ public class FileInputStreamTest {
         int read = 0;
         /**    每次读取一个byte的数据
          *     public int read() throws IOException {
-         *         return read0();
+         *         return read();
          *
          */
         //获得每一次读取的操作的值，并赋值给read，再判断是否为-1，为-1表示文件读取到末尾。
@@ -102,7 +102,6 @@ public class FileInputStreamTest {
         }
         //fileInputStream close
         fileInputStream.close();
-
     }
 
     @Test

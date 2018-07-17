@@ -53,7 +53,7 @@ public class HomeWork3 {
             try {
                 System.out.print("值的范围:");
                 initVar[0] = new Scanner(System.in).nextInt();
-                System.out.print("\n次数:");
+                System.out.print("\n一共竞猜的次数:");
                 initVar[1] = new Scanner(System.in).nextInt();
                 flag = false;
             } catch (InputMismatchException e) {

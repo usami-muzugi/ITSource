@@ -74,6 +74,5 @@ public class FileInputStreamTest {
         while (fileInputStream.read(b) != -1) {
             System.out.print(new String());
         }
-
     }
 }

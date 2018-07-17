@@ -2,10 +2,6 @@ package cn.ximcloud.itsource.day28._09objectstream;
 
 import org.junit.Test;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
 /**
  * Created by IntelliJ IDEA.
  * User: wzard

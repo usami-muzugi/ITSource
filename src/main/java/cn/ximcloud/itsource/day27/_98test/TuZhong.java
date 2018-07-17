@@ -36,7 +36,7 @@ import java.io.IOException;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class TuZhong{
+public class TuZhong {
     public static void main(String[] args) {
         String mulu = "C:\\Users\\wizard\\Desktop\\";   //文件夹
         String pic = "20141107180644974.jpg";    //图片
@@ -44,7 +44,7 @@ public class TuZhong{
         try {
             FileInputStream fileInputStream = new FileInputStream(new File(mulu + rar));
             FileInputStream fileInputStream1 = new FileInputStream(new File(mulu + pic));
-            FileOutputStream fileOutputStream = new FileOutputStream(mulu + rar+".jpg");
+            FileOutputStream fileOutputStream = new FileOutputStream(mulu + rar + ".jpg");
             int i;
             byte[] bytes = new byte[1024];
             while ((i = fileInputStream1.read(bytes)) != -1) {

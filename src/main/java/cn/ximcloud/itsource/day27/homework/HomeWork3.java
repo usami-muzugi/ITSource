@@ -188,7 +188,7 @@ public class HomeWork3 {
                 dialog.setSize(new Dimension(400, 225));
                 dialog.setLocationRelativeTo(null);
                 TextArea textArea = new TextArea();
-                textArea.setText("草鸡牛逼记事本作者:宇佐美ミズギ \nPowered by Java\n2018-07-17" );
+                textArea.setText("草鸡牛逼记事本作者:宇佐美ミズギ \nPowered by Java\n2018-07-17");
                 textArea.setFont(new Font("黑体", 100, 20));
                 dialog.add(textArea);
                 jFrame.setVisible(false);
@@ -253,8 +253,9 @@ public class HomeWork3 {
 
     /**
      * 把TextArea里面的内容写入到硬盘
-     * @param file  文件
-     * @param textArea  文本域
+     *
+     * @param file     文件
+     * @param textArea 文本域
      */
     private static void save(File file, TextArea textArea) {
         FileWriter fileWriter = null;
@@ -275,9 +276,10 @@ public class HomeWork3 {
     }
 
     /**
-     *  把file文件的内容显示到textarea里
-     * @param file  文件
-     * @param textArea  文本域
+     * 把file文件的内容显示到textarea里
+     *
+     * @param file     文件
+     * @param textArea 文本域
      */
     private static void get(File file, TextArea textArea) {
         try {

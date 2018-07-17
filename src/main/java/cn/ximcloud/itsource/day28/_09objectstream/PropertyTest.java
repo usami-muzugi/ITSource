@@ -1,12 +1,10 @@
 package cn.ximcloud.itsource.day28._09objectstream;
 
-import javafx.beans.property.Property;
 import org.junit.Test;
 
-import java.io.*;
-import java.util.Hashtable;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.Properties;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -40,12 +38,18 @@ import java.util.Set;
  **/
 
 public class PropertyTest {
+
+    /**
+     * 测试是否能通过properties来进行对象的读写操作
+     *
+     * @throws IOException
+     */
     @Test
     public void propertyTest() throws IOException {
         Properties properties = new Properties();
-        properties.put(new Student("usami", 10),"usamimizugi");
-        properties.put(new Student("usami", 10),"usamimizugi");
-        properties.put(new Student("usami", 10),"usamimizugi");
+        properties.put(new Student("usami", 10), "usamimizugi");
+        properties.put(new Student("usami", 10), "usamimizugi");
+        properties.put(new Student("usami", 10), "usamimizugi");
         System.out.println(properties);
         //测试不通过，对象的传输要使用ObjectI/0putStream
         //properties.list(new PrintStream(new FileOutputStream(new File("D:/abc.txt"))));

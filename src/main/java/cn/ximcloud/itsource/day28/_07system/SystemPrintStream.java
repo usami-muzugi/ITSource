@@ -1,8 +1,9 @@
 package cn.ximcloud.itsource.day28._07system;
 
-import org.junit.Test;
-
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,9 +34,9 @@ import java.io.*;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *         i. System.out  是一个特殊的 PrintStreamTest “标准”输出流 ： 输出结果到控制台
- *         ii.System.err  是一个特殊的 PrintStreamTest "标准"错误输出流 : 输出到控制台，在Eclipse中显示红色的
- *         iii.System.in  是一个特殊的InputStream "标准"输入流 ： 数据源来至控制台输入
+ * i. System.out  是一个特殊的 PrintStreamTest “标准”输出流 ： 输出结果到控制台
+ * ii.System.err  是一个特殊的 PrintStreamTest "标准"错误输出流 : 输出到控制台，在Eclipse中显示红色的
+ * iii.System.in  是一个特殊的InputStream "标准"输入流 ： 数据源来至控制台输入
  **/
 
 public class SystemPrintStream {
@@ -74,10 +75,10 @@ public class SystemPrintStream {
 
         System.setErr(new PrintStream(new File("D:/abc.txt")));
         err = System.err;
-        err.println("你可稍稍完后站");
-        err.println("你可稍稍完后站");
-        err.println("你可稍稍完后站");
-        err.println("你可稍稍完后站");
+        err.println("你可稍稍往后站");
+        err.println("你可稍稍往后站");
+        err.println("你可稍稍往后站");
+        err.println("你可稍稍往后站");
 
     }
 

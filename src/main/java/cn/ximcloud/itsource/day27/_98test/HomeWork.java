@@ -32,41 +32,38 @@ package cn.ximcloud.itsource.day27._98test;
  **/
 
 
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class HomeWork {
 
-    public static void main(String[] args) throws FileNotFoundException  {
+    public static void main(String[] args) throws FileNotFoundException {
         File file = new File("F:/java 视频/面向对象/新建");
-        getList(file,"F:/1/2/");
+        getList(file, "F:/1/2/");
 
 
     }
 
-    /**找出目录下面的指定的所有的视频文件
+    /**
+     * 找出目录下面的指定的所有的视频文件
+     *
      * @param file
      * @param str
      * @throws FileNotFoundException
      */
-    public static void getList(File file,String str) throws FileNotFoundException{
-        if(file == null || !file.exists())
+    public static void getList(File file, String str) throws FileNotFoundException {
+        if (file == null || !file.exists())
             return;
-        FileInputStream fileI= new FileInputStream(file);
+        FileInputStream fileI = new FileInputStream(file);
 
-        if(file.isFile()&&file.getName().endsWith("avi")){
+        if (file.isFile() && file.getName().endsWith("avi")) {
             String name = file.getName();
-            FileOutputStream fileO = new FileOutputStream(str+name,true);
+            FileOutputStream fileO = new FileOutputStream(str + name, true);
 
             byte[] by = new byte[1024];
             int len;
             try {
-                while((len = fileI.read(by)) !=-1){
-                    fileO.write(by,0,len);
+                while ((len = fileI.read(by)) != -1) {
+                    fileO.write(by, 0, len);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -78,11 +75,11 @@ public class HomeWork {
             }
         }
 
-        if(file.isDirectory()){
+        if (file.isDirectory()) {
             File[] listFiles = file.listFiles();
             for (File file2 : listFiles) {
                 //此处递归了,会查找每一个文件夹,
-                getList(file2,str);
+                getList(file2, str);
             }
         }
     }

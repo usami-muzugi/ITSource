@@ -37,24 +37,27 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  * 打印流测试
- *      构造方法:
- *          public PrintStream(File file) throws FileNotFoundException
- *              可以传入一个文件，抛出文件未找到异常
- *          public PrintStream(String fileName) throws FileNotFoundException
- *              可以传入一个文件名，抛出文件未找到异常
- *          public PrintStream(OutputStream out)
- *              可以传入一个输入流
- *
- *       只有输出！！
- *
+ * 构造方法:
+ * public PrintStream(File file) throws FileNotFoundException
+ * 可以传入一个文件，抛出文件未找到异常
+ * public PrintStream(String fileName) throws FileNotFoundException
+ * 可以传入一个文件名，抛出文件未找到异常
+ * public PrintStream(OutputStream out)
+ * 可以传入一个输入流
+ * <p>
+ * 只有输出！！
  **/
 
 public class PrintStreamTest {
-
+    /**
+     * 测试printStream使用构造方法传入文件类型
+     */
     @Test
     public void printStreamFileTest() {
+        //创建流
         PrintStream printStream = null;
         try {
+            //操作流
             printStream = new PrintStream("D:/abc.txt");
 
             //输出字符串
@@ -71,17 +74,24 @@ public class PrintStreamTest {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
+            //关闭流
             assert printStream != null;
             printStream.close();
         }
     }
 
+    /**
+     * 测试2
+     * 使用构造方法传入字符串类型然后进行操作
+     */
     @Test
     public void printStreamFileNameTest() {
+        //创建流
         PrintStream printStream = null;
         PrintWriter printWriter = null;
         try {
+            //操作流
             printStream = new PrintStream(new File("D:/abc.txt"));
 
             //输出字符串
@@ -100,7 +110,8 @@ public class PrintStreamTest {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
+            //关闭流
             assert printStream != null;
             printStream.close();
             assert printWriter != null;

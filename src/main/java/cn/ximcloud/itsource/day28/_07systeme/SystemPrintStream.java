@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day28._07system;
+package cn.ximcloud.itsource.day28._07systeme;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.io.PrintStream;
  * User: wzard
  * Date: 2018-07-17
  * Time: 11:48
- * ProjectName: ITSource.cn.ximcloud.itsource.day28._07system
+ * ProjectName: ITSource.cn.ximcloud.itsource.day28._07systeme
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //

@@ -1,11 +1,11 @@
-package cn.ximcloud.itsource.day28._07system;
+package cn.ximcloud.itsource.day28._07systeme;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
  * Date: 2018-07-17
  * Time: 11:42
- * ProjectName: ITSource.cn.ximcloud.itsource.day28._07system
+ * ProjectName: ITSource.cn.ximcloud.itsource.day28._07systeme
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //

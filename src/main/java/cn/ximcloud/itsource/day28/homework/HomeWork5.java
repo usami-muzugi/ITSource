@@ -1,5 +1,7 @@
 package cn.ximcloud.itsource.day28.homework;
 
+import org.junit.Test;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
@@ -32,4 +34,9 @@ package cn.ximcloud.itsource.day28.homework;
  * 5、通过正则表达式判断手机号码（第一位1第二位3589，后面随意，一共11位）
  **/
 public class HomeWork5 {
+
+    @Test
+    public void homeWork5Test() {
+
+    }
 }

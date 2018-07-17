@@ -44,18 +44,11 @@ public class MyKeyListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        //退格符 keyCode=8
-        String text = textArea.getText();
-        if (e.getKeyCode() == 8) {
-            textArea.setText(text.substring(0, text.length() - 1));
-        }
-        System.out.println(e);
-        textArea.setText(text + e.getKeyChar());
+
     }
 
     @Override

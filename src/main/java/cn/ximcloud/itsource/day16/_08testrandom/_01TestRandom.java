@@ -57,10 +57,10 @@ public class _01TestRandom {
 
              */
             code += string.charAt(random.nextInt(length));
-//            int nextInt = random.nextInt(length);
+//            int nextInt = _10random.nextInt(length);
 //            char ch = string.charAt(nextInt);
 //            code += ch;
-//            char ch = string.charAt((int) (Math.random() * (length + 1)));
+//            char ch = string.charAt((int) (Math._10random() * (length + 1)));
 //            code += ch;
         }
 

@@ -7,7 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -46,10 +48,9 @@ import java.util.Date;
 
 public class _08MenuDemo {
     private static TextArea textArea;
+    private static File file;
 
     public static void main(String[] args) {
-
-
         /*
         菜单
             文件      编辑       格式      查看      帮助
@@ -80,10 +81,10 @@ public class _08MenuDemo {
         //创建菜单明细
         MenuItem menuItem1 = new MenuItem("New");
         MenuItem menuItem2 = new MenuItem("Open");
-        MenuItem menuItem4 = new MenuItem("Save");
         MenuItem menuItem3 = new MenuItem("Save as");
+        MenuItem menuItem4 = new MenuItem("Save");
         MenuItem menuItem5 = new MenuItem("Exit");
-        MenuItem menuItem6 = new MenuItem("Time");
+        MenuItem menuItem6 = new MenuItem("get Time");
         MenuItem menuItem7 = new MenuItem("About me");
 
         //把菜单明细添加到菜单里面
@@ -104,7 +105,7 @@ public class _08MenuDemo {
 
 
         /**
-         * 添加FileInputStream
+         *   "New" 添加FileInputStream
          */
         //给菜单明细添加监听
         menuItem1.addActionListener(new ActionListener() {
@@ -112,11 +113,11 @@ public class _08MenuDemo {
             public void actionPerformed(ActionEvent e) {
                 //点击new的操作
                 FileDialog fileDialog = new FileDialog(jFrame);
+                fileDialog.setTitle("新建一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 fileDialog.setVisible(true);
-                fileDialog.setName("新建一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 try {
                     //判定文件目录是否为空，或者文件名是否为空。若为空则直接结束方法
-                    if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
+                    if (fileDialog.getDirectory() == null || fileDialog.getFile() == null) return;
                     FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
                     byte[] bytes = new byte[1024];
                     while ((fileInputStream.read(bytes)) != -1) {
@@ -129,17 +130,21 @@ public class _08MenuDemo {
             }
         });
 
+        /**
+         * "Open" 添加FileInputStream
+         */
         menuItem2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //点击new的操作
                 FileDialog fileDialog = new FileDialog(jFrame);
+                fileDialog.setTitle("打开一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 fileDialog.setVisible(true);
-                fileDialog.setName("打开一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 try {
-                    textArea.setText("");
                     if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
-                    FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
+                    textArea.setText("");
+                    file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
+                    FileInputStream fileInputStream = new FileInputStream(file);    //创建流，关联文件
                     byte[] bytes = new byte[1024];
                     while ((fileInputStream.read(bytes)) != -1) {
                         textArea.append(new String(bytes));
@@ -151,7 +156,7 @@ public class _08MenuDemo {
         });
 
         /**
-         *  save as
+         *  save as 添加FileInputStream
          */
         menuItem3.addActionListener(new ActionListener() {
             @Override
@@ -159,19 +164,49 @@ public class _08MenuDemo {
                 //点击new的操作
                 FileDialog fileDialog = new FileDialog(jFrame);
                 fileDialog.setVisible(true);
-                fileDialog.setName("另存为一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
+                fileDialog.setTitle("另存为一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
                 try {
                     if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
-                    FileInputStream fileInputStream = new FileInputStream(fileDialog.getDirectory() + fileDialog.getFile());
+                    file = new File(fileDialog.getDirectory() + fileDialog.getName());
+                    FileInputStream fileInputStream = new FileInputStream(file);
                     //存储操作
+                    byte[] bytes = new byte[1024];
+                    while ((fileInputStream.read(bytes)) != -1) {
+                        textArea.append(new String(bytes));
+                    }
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
         });
 
+
         /**
-         *
+         *  Save  添加FileWriter
+         *  如果file为null，表示没有文件在内存，save操作跳转到m3
+         */
+        menuItem4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FileWriter fileWriter = null;
+                try {
+                    char[] chars = textArea.getText().toCharArray();
+                    fileWriter = new FileWriter(file);
+                    fileWriter.write(chars);
+                    fileWriter.flush();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                    try {
+                        fileWriter.close();
+                    } catch (IOException e2) {
+                        e2.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        /**
+         * 添加FileInputStream
          */
         menuItem6.addActionListener(new ActionListener() {
             @Override
@@ -181,6 +216,9 @@ public class _08MenuDemo {
         });
 
 
+        /**
+         *  添加FileInputStream
+         */
         menuItem7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -189,9 +227,9 @@ public class _08MenuDemo {
                 dialog.setSize(new Dimension(400, 225));
                 dialog.setLocationRelativeTo(null);
                 TextArea textArea = new TextArea();
-                textArea.setText("宇佐美ミズギ");
+                textArea.setText("草鸡牛逼记事本作者:宇佐美ミズギ");
 
-                textArea.setFont(new Font("黑体", 100, 30));
+                textArea.setFont(new Font("黑体", 100, 20));
                 dialog.add(textArea);
                 jFrame.setVisible(false);
                 dialog.setVisible(true);
@@ -203,7 +241,6 @@ public class _08MenuDemo {
 
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        System.out.println("112313");
                         jFrame.setVisible(true);
                     }
 
@@ -242,7 +279,6 @@ public class _08MenuDemo {
         textArea.setFont(new Font("黑体", 100, 20));
         //这里写匿名内部类不太好
         MyKeyListener myKeyListener = new MyKeyListener(textArea);
-        MyActionListener myActionListener = new MyActionListener();
         textArea.addKeyListener(myKeyListener);
 
 

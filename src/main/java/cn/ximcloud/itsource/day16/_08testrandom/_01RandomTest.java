@@ -37,7 +37,7 @@ public class _01RandomTest {
     public static void main(String[] args) throws InterruptedException {
         Random random = new Random();
         for (; ; ) {
-            //System.out.println(random.nextInt());
+            //System.out.println(_10random.nextInt());
             System.out.println((int) (Math.random() * 11));
             //Thread.sleep(1000);
 

@@ -1,17 +1,12 @@
-package cn.ximcloud.itsource.day27._98test;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+package cn.ximcloud.itsource.day28.homework;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-07-16
- * Time: 16:15
- * ProjectName: ITSource.cn.ximcloud.itsource.day27._98test
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * User: Wizard
+ * Date: 2018-07-17
+ * Time: 23:40
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -32,32 +27,9 @@ import java.io.IOException;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
+ * 5、通过正则表达式判断手机号码（第一位1第二位3589，后面随意，一共11位）
  **/
-
-public class TuZhong {
-    public static void main(String[] args) {
-        String mulu = "C:\\Users\\wizard\\Desktop\\";   //文件夹
-        String pic = "20141107180644974.jpg";    //图片
-        String rar = "新建 WinRAR 压缩文件.zip";    //压缩包
-        try {
-            FileInputStream fileInputStream = new FileInputStream(new File(mulu + rar));
-            FileInputStream fileInputStream1 = new FileInputStream(new File(mulu + pic));
-            FileOutputStream fileOutputStream = new FileOutputStream(mulu + rar + ".jpg");
-            int i;
-            byte[] bytes = new byte[1024];
-            while ((i = fileInputStream1.read(bytes)) != -1) {
-                fileOutputStream.write(bytes, 0, i);
-            }
-            while ((i = fileInputStream.read(bytes)) != -1) {
-                fileOutputStream.write(bytes, 0, i);
-            }
-            fileInputStream.close();
-            fileOutputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+public class HomeWork5 {
 }
-

@@ -1,14 +1,16 @@
-package cn.ximcloud.itsource.day28._09objectstream;
+package cn.ximcloud.itsource.day28.homework;
 
 import org.junit.Test;
 
+import java.io.*;
+
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: Wizard
  * Date: 2018-07-17
- * Time: 15:17
- * ProjectName: ITSource.cn.ximcloud.itsource.day28._09objectstream
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * Time: 23:36
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -29,35 +31,59 @@ import org.junit.Test;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
+ * 4、使用对象流完成对自定义对象的序列化和重构测试
  **/
-
-public class SerializableTest {
+public class HomeWork4 {
+    @Test
+    public void objectWriteTest() {
+        try {
+            File file = new File("D:/abc");
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//            objectOutputStream.write(1);    //write 1
+//            objectOutputStream.writeChars("傻逼网友");
+//            objectOutputStream.writeBoolean(false);
+            objectOutputStream.writeObject(new Student());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Test
-    public void serializableTest() {
-        Person person1 = new Person("小老弟", 17);
-        Person person2 = new Person("大兄弟", 30);
-        Person person3 = new Person("傻逼网友彭睿", 20);
-
-//        ObjectInputStream objectInputStream;
-//        try {
-//            objectInputStream = new ObjectInputStream();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
+    public void objectReadTest() {
+        try {
+            File file = new File("D:/abc");
+            FileInputStream fileInputStream = new FileInputStream(file);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            //int i = objectInputStream.readInt();
+//            String string = objectInputStream.readLine();
+//            boolean b = objectInputStream.readBoolean();
+            Object o = objectInputStream.readObject();
+//            System.out.println(i);
+//            System.out.println(string);
+//            System.out.println(b);
+            System.out.println((Student)o);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
-
 }
 
-class Person {
+class Student implements Serializable{
     private String name;
     private int age;
-    private static final long serialVersionUID = -6633114470754667710L;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 
     public String getName() {
         return name;
@@ -75,10 +101,10 @@ class Person {
         this.age = age;
     }
 
-    public Person() {
+    public Student() {
     }
 
-    public Person(String name, int age) {
+    public Student(String name, int age) {
         this.name = name;
         this.age = age;
     }

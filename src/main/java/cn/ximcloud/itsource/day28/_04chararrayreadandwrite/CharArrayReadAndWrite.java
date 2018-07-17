@@ -36,13 +36,13 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  * 内存流之字符数组
- *      构造方法:    public CharArrayWriter(int initialSize)
- *                      自定义初始化容量
- *                  public CharArrayWriter()
- *      写入方法:
- *              write(char c)   可以直接写入一个字符
- *              write(String str) 可以直接写入一个字符串
- *              write(char[] chars) 可以直接写入一个字符数组
+ * 构造方法:    public CharArrayWriter(int initialSize)
+ * 自定义初始化容量
+ * public CharArrayWriter()
+ * 写入方法:
+ * write(char c)   可以直接写入一个字符
+ * write(String str) 可以直接写入一个字符串
+ * write(char[] chars) 可以直接写入一个字符数组
  **/
 
 public class CharArrayReadAndWrite {
@@ -56,7 +56,7 @@ public class CharArrayReadAndWrite {
             charArrayWriter.write((i + ""));    //write(String s)
         }
         charArrayWriter.write("???");
-        charArrayWriter.write(new char[]{1,2,3,4,5,});
+        charArrayWriter.write(new char[]{1, 2, 3, 4, 5,});
         charArrayWriter.write(65);  //写入int表示写入的是其对应的阿斯克码的char
         charArrayWriter.write('6'); //write(char c)
         charArrayWriter.write('6');
@@ -81,7 +81,7 @@ public class CharArrayReadAndWrite {
         int read;
         try {
             while ((read = charArrayReader.read(c)) != -1) {
-                System.out.println(new String(c,0,read));
+                System.out.println(new String(c, 0, read));
             }
         } catch (IOException e) {
             e.printStackTrace();

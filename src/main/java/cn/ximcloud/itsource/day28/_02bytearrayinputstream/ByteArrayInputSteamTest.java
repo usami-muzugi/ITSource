@@ -1,12 +1,9 @@
 package cn.ximcloud.itsource.day28._02bytearrayinputstream;
 
-import cn.ximcloud.itsource.day7.Array;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,14 +34,19 @@ import java.util.Arrays;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
  * 内存流之byte数组流
- *          构造方法:
- *                  public ByteArrayInputStream(byte buf[]) 方法参数传入一个byte[]类型数组
+ * 构造方法:
+ * public ByteArrayInputStream(byte buf[]) 方法参数传入一个byte[]类型数组
  **/
 
 public class ByteArrayInputSteamTest {
 
+    //ByteArrayI/OnputStream和CharArrayI/OnputStream都是在内存和程序当中进行操作
+
+    /**
+     * 测试输入操作
+     * 使用在构造方法传入byte[]数组进行初始化操作
+     */
     @Test
     public void byteArrayInputSteamTest() {
         try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(new byte[]{65, 66, 67, 68, 69, 70})) {
@@ -57,10 +59,13 @@ public class ByteArrayInputSteamTest {
         }
     }
 
+    /**
+     * 测试输入操作2
+     */
     @Test
     public void byteArrayInputStreamTest2() {
         ByteArrayInputStream byteArrayInputStream = null;
-        try  {
+        try {
             byte[] bytes1 = new byte[1024];
             for (int i = 0; i < 1024; i++) {
                 bytes1[i] = (byte) i;
@@ -71,7 +76,7 @@ public class ByteArrayInputSteamTest {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 assert byteArrayInputStream != null;
                 byteArrayInputStream.close();

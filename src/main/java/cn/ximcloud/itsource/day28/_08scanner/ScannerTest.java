@@ -2,9 +2,11 @@ package cn.ximcloud.itsource.day28._08scanner;
 
 import org.junit.Test;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -38,18 +40,18 @@ import java.util.Scanner;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  * Scanner测试
- *  Scanner主要是对文本文件进行操作
- *  Scanner实现了Iteratable接口
- *          构造方法:
- *              Scanner(File file)              文件对象
- *              Scanner(String string)          字符串
- *              scanner(PrintStream printStream)打印流
+ * Scanner主要是对文本文件进行操作
+ * Scanner实现了Iteratable接口
+ * 构造方法:
+ * Scanner(File file)              文件对象
+ * Scanner(String string)          字符串
+ * scanner(PrintStream printStream)打印流
  **/
 
 public class ScannerTest {
     /**
      * Scanner对文本进行操作
-     *      File对象
+     * File对象
      */
     @Test
     public void scannerFileTest() {
@@ -90,13 +92,13 @@ public class ScannerTest {
     }
 
     /**
-     *  使用Scanner对String进行操作
-     *      使用useDelimiter()对字符串进行正则分割
+     * 使用Scanner对String进行操作
+     * 使用useDelimiter()对字符串进行正则分割
      */
     @Test
     public void scnnerStringTest() {
         Scanner scanner = new Scanner("傻逼网友彭睿！");
-        scanner.useDelimiter("");       //string.split("");
+        scanner.useDelimiter("");       //string.split("");     传入的因该是一个正则表达式，而不是随便的点啊点，✳什么的
         //scanner.useDelimiter(".");      //使用什么把字符串分开
         //public Scanner useDelimiter(String pattern) {
         String string = "*";
@@ -106,7 +108,7 @@ public class ScannerTest {
     }
 
     /**
-     *      Scanner可以传入打印流
+     * Scanner可以传入打印流
      */
     @Test
     public void scannerPrintStreamTest() {

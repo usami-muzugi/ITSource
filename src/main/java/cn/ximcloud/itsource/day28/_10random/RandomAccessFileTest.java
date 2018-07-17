@@ -3,7 +3,6 @@ package cn.ximcloud.itsource.day28._10random;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
@@ -40,19 +39,24 @@ import java.io.RandomAccessFile;
 
 public class RandomAccessFileTest {
 
+    /**
+     * 这个有点东西
+     *
+     * @throws IOException
+     */
     @Test
     public void test() throws IOException {
         for (int i = 0; i < 100; i++) {
             RandomAccessFile randomAccessFile = new RandomAccessFile(new File("D:/abc.txt"), "rw");
-            randomAccessFile.writeChars("IOException");
-            long length = randomAccessFile.length();
-            long filePointer = randomAccessFile.getFilePointer();
-            randomAccessFile.seek(length);
+            randomAccessFile.writeChars("IOException"); //写一堆字符，其实就是写一个字符串
+            long length = randomAccessFile.length();    //获得长度
+            long filePointer = randomAccessFile.getFilePointer();   //获得文件的末尾
+            randomAccessFile.seek(length);  //设置下次写入的指针
             System.out.println(i + "\tlength:" + length + "filePointer:" + filePointer);
-            randomAccessFile.writeChars("IOException");
+            randomAccessFile.writeChars("IOException");//再写一个
 
 //        randomAccessFile.setLength(1024*1024*1024);
-            randomAccessFile.close();
+            randomAccessFile.close();   //基本操作关闭流
         }
     }
 }

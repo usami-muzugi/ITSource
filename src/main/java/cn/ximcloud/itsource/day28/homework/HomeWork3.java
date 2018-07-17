@@ -85,8 +85,6 @@ public class HomeWork3 {
                 }
             }
         }
-
-
         if (flag) System.out.println("程序结束，你没找到。建议使用二分查找感谢游玩!");    //最后给一个友情提示，完成小程序漂亮收场。
     }
 }

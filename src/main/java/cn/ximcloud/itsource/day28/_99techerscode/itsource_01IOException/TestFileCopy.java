@@ -67,7 +67,6 @@ public class TestFileCopy {
 				if(fis != null )
 					fis.close();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}*/

@@ -58,7 +58,6 @@ class Student implements java.io.Serializable {//对象需要序列化操作,永
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return name + "-" + age;
     }
 }

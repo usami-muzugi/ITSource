@@ -62,7 +62,7 @@ public class ThreadDeamon {
         thread.setDaemon(true);
         System.out.println(thread.isDaemon());
 
-        //CustonThread Test Utils
+        //CustonThread PropertyTest Utils
         CustomThread customThread = new CustomThread();
 
         customThread.setDaemon(true);//*这里设置了后台线程*

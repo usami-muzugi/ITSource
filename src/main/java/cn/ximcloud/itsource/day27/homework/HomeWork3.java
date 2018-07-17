@@ -50,7 +50,7 @@ import java.util.Date;
 public class HomeWork3 {
     private TextArea textArea;
     private static File file;
-    private static final String string = "草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本";
+    private static final String string = "草鸡无敌牛皮李时珍的皮的飙水水水乱流至尊宝记事本";
 
 
     public static void main(String[] args) {
@@ -126,7 +126,7 @@ public class HomeWork3 {
             public void actionPerformed(ActionEvent e) {
                 //点击new的操作
                 FileDialog fileDialog = new FileDialog(jFrame);
-                fileDialog.setTitle("打开一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
+                fileDialog.setTitle("打开一个文档 - " + string);
                 fileDialog.setVisible(true);
                 if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
                 textArea.setText("");
@@ -145,7 +145,7 @@ public class HomeWork3 {
                 //点击new的操作
                 FileDialog fileDialog = new FileDialog(jFrame);
                 fileDialog.setVisible(true);
-                fileDialog.setTitle("另存为一个文档 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
+                fileDialog.setTitle("另存为一个文档 - " + string);
                 if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
                 file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
                 save(file, textArea);
@@ -167,7 +167,7 @@ public class HomeWork3 {
         });
 
         /**
-         * 添加FileInputStream
+         *  get Time   添加FileInputStream
          */
         menuItem6.addActionListener(new ActionListener() {
             @Override
@@ -178,17 +178,17 @@ public class HomeWork3 {
 
 
         /**
-         *  添加FileInputStream
+         *  About me  添加FileInputStream
          */
         menuItem7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JDialog dialog = new JDialog(jFrame);
-                dialog.setName("关于作者 - 草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
+                dialog.setTitle("关于作者 - " + string);
                 dialog.setSize(new Dimension(400, 225));
                 dialog.setLocationRelativeTo(null);
                 TextArea textArea = new TextArea();
-                textArea.setText("草鸡牛逼记事本作者:宇佐美ミズギ");
+                textArea.setText("草鸡牛逼记事本作者:宇佐美ミズギ \nPowered by Java\n2018-07-17" );
                 textArea.setFont(new Font("黑体", 100, 20));
                 dialog.add(textArea);
                 jFrame.setVisible(false);
@@ -245,11 +245,17 @@ public class HomeWork3 {
 
 
         jFrame.setSize(900, 550);
-        jFrame.setTitle("草鸡无敌牛皮李时珍的皮的飙水水至尊宝记事本");
+        jFrame.setTitle(string);
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
     }
 
+
+    /**
+     * 把TextArea里面的内容写入到硬盘
+     * @param file  文件
+     * @param textArea  文本域
+     */
     private static void save(File file, TextArea textArea) {
         FileWriter fileWriter = null;
         try {
@@ -268,6 +274,11 @@ public class HomeWork3 {
         }
     }
 
+    /**
+     *  把file文件的内容显示到textarea里
+     * @param file  文件
+     * @param textArea  文本域
+     */
     private static void get(File file, TextArea textArea) {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);

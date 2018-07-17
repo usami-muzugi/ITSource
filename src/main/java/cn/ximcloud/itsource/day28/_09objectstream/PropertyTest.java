@@ -1,13 +1,19 @@
-package cn.ximcloud.itsource.day16._08testrandom;
+package cn.ximcloud.itsource.day28._09objectstream;
 
-import java.util.Random;
+import javafx.beans.property.Property;
+import org.junit.Test;
+
+import java.io.*;
+import java.util.Hashtable;
+import java.util.Properties;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-07-01
- * Time: 14:27
- * ProjectName: ITSource
+ * Date: 2018-07-17
+ * Time: 15:07
+ * ProjectName: ITSource.cn.ximcloud.itsource.day28._09objectstream
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -29,45 +35,47 @@ import java.util.Random;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑        永无BUG       永不修改                  //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class _01TestRandom {
-    public static void main(String[] args) {
-        for (; ; ) {
-            System.out.println(random(4));
-        }
+public class PropertyTest {
+    @Test
+    public void propertyTest() throws IOException {
+        Properties properties = new Properties();
+        properties.put(new Student("usami", 10),"usamimizugi");
+        properties.put(new Student("usami", 10),"usamimizugi");
+        properties.put(new Student("usami", 10),"usamimizugi");
+        System.out.println(properties);
+        //测试不通过，对象的传输要使用ObjectI/0putStream
+        //properties.list(new PrintStream(new FileOutputStream(new File("D:/abc.txt"))));
+//        properties.load(new FileInputStream(new File("D:/abc.txt")));
+//        System.out.println(properties);
+    }
+}
 
+class Student implements Serializable {
+    String name;
+    int age;
+
+    public String getName() {
+        return name;
     }
 
-    private static String random(int sum) {
-        final String string = "0123456789abcdefghijklmnopqrstuvwxxyzABCDEFGHIJKLNMOPQRSTUVWXYZ";
-        final int length = string.length();
-
-        long l = System.currentTimeMillis();
-
-        String code = "";
-        Random random = new Random();
-
-        for (int i = 0; i < sum; i++) {
-            /*
-             int nextInt() 返回下一个伪随机数，它是此随机数生成器的序列中均匀分布的 int 值。
-             int nextInt(int n) 返回一个伪随机数，它是取自此随机数生成器序列的、在 0（包括）和指定值（不包括）之间均匀分布的 int 值。
-
-             */
-            code += string.charAt(random.nextInt(length));
-//            int nextInt = _10random.nextInt(length);
-//            char ch = string.charAt(nextInt);
-//            code += ch;
-//            char ch = string.charAt((int) (Math._10random() * (length + 1)));
-//            code += ch;
-        }
-
-        //System.out.println(System.currentTimeMillis() - l);
-
-        return code;
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public int getAge() {
+        return age;
+    }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 }

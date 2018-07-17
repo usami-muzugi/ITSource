@@ -1,16 +1,19 @@
-package cn.ximcloud.itsource.day27._98test;
+package cn.ximcloud.itsource.day28._02bytearrayinputstream;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import cn.ximcloud.itsource.day7.Array;
+import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-07-16
- * Time: 16:15
- * ProjectName: ITSource.cn.ximcloud.itsource.day27._98test
+ * Date: 2018-07-17
+ * Time: 18:15
+ * ProjectName: ITSource.cn.ximcloud.itsource.day28._02bytearrayinputstream
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -34,30 +37,47 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ *
+ * 内存流之byte数组流
+ *          构造方法:
+ *                  public ByteArrayInputStream(byte buf[]) 方法参数传入一个byte[]类型数组
  **/
 
-public class TuZhong{
-    public static void main(String[] args) {
-        String mulu = "C:\\Users\\wizard\\Desktop\\";   //文件夹
-        String pic = "20141107180644974.jpg";    //图片
-        String rar = "新建 WinRAR 压缩文件.zip";    //压缩包
-        try {
-            FileInputStream fileInputStream = new FileInputStream(new File(mulu + rar));
-            FileInputStream fileInputStream1 = new FileInputStream(new File(mulu + pic));
-            FileOutputStream fileOutputStream = new FileOutputStream(mulu + rar+".jpg");
-            int i;
-            byte[] bytes = new byte[1024];
-            while ((i = fileInputStream1.read(bytes)) != -1) {
-                fileOutputStream.write(bytes, 0, i);
-            }
-            while ((i = fileInputStream.read(bytes)) != -1) {
-                fileOutputStream.write(bytes, 0, i);
-            }
-            fileInputStream.close();
-            fileOutputStream.close();
+public class ByteArrayInputSteamTest {
+
+    @Test
+    public void byteArrayInputSteamTest() {
+        try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(new byte[]{65, 66, 67, 68, 69, 70})) {
+            byte[] bytes = byteArrayInputStream.readAllBytes();
+            System.out.println(bytes);
+            System.out.println(new String(bytes));
+            System.out.println(new String(bytes, 0, bytes.length));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-}
 
+    @Test
+    public void byteArrayInputStreamTest2() {
+        ByteArrayInputStream byteArrayInputStream = null;
+        try  {
+            byte[] bytes1 = new byte[1024];
+            for (int i = 0; i < 1024; i++) {
+                bytes1[i] = (byte) i;
+            }
+            byteArrayInputStream = new ByteArrayInputStream(bytes1);
+            byte[] bytes = byteArrayInputStream.readAllBytes();
+            System.out.println(new String(bytes));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                assert byteArrayInputStream != null;
+                byteArrayInputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

@@ -47,7 +47,6 @@ public class TestMenu {
                         textArea.append(string);
                     }
                 } catch (Exception e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
             }

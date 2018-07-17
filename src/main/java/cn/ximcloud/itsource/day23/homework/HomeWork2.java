@@ -25,9 +25,9 @@ public class HomeWork2 {
          */
         HashSet<Person> hashSet = new HashSet<>();
 
-//        Random random = new Random();
+//        Random _10random = new Random();
 //        for (int i = 0; i < 2; i++) {
-//            hashSet.add(new Person((long) (i + 1), "No." + random.nextInt(10000)));
+//            hashSet.add(new Person((long) (i + 1), "No." + _10random.nextInt(10000)));
 //        }
         Person person1 = new Person((long) 10086, "移动客服");
         Person person2 = new Person((long) 10000, "电信客服");

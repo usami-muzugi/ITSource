@@ -4,7 +4,6 @@ public class Test {
     /*int i;
     String i;*/
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

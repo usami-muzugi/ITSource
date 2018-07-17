@@ -60,7 +60,7 @@ public class HomeWork1 {
 
     }
 
-//    @Test
+//    @PropertyTest
 //    public void  test() {
 //        String str = "ABCDEABCDABC";
 //        char[] chars = str.toCharArray();

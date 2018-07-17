@@ -1,13 +1,17 @@
-package cn.ximcloud.itsource.day16._08testrandom;
+package cn.ximcloud.itsource.day28._09objectstream;
 
-import java.util.Random;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-07-01
- * Time: 14:27
- * ProjectName: ITSource
+ * Date: 2018-07-17
+ * Time: 15:17
+ * ProjectName: ITSource.cn.ximcloud.itsource.day28._09objectstream
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -29,45 +33,58 @@ import java.util.Random;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑        永无BUG       永不修改                  //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class _01TestRandom {
-    public static void main(String[] args) {
-        for (; ; ) {
-            System.out.println(random(4));
-        }
+public class SerializableTest {
+
+
+    @Test
+    public void serializableTest() {
+        Person person1 = new Person("小老弟", 17);
+        Person person2 = new Person("大兄弟", 30);
+        Person person3 = new Person("傻逼网友彭睿", 20);
+
+//        ObjectInputStream objectInputStream;
+//        try {
+//            objectInputStream = new ObjectInputStream();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
 
     }
-
-    private static String random(int sum) {
-        final String string = "0123456789abcdefghijklmnopqrstuvwxxyzABCDEFGHIJKLNMOPQRSTUVWXYZ";
-        final int length = string.length();
-
-        long l = System.currentTimeMillis();
-
-        String code = "";
-        Random random = new Random();
-
-        for (int i = 0; i < sum; i++) {
-            /*
-             int nextInt() 返回下一个伪随机数，它是此随机数生成器的序列中均匀分布的 int 值。
-             int nextInt(int n) 返回一个伪随机数，它是取自此随机数生成器序列的、在 0（包括）和指定值（不包括）之间均匀分布的 int 值。
-
-             */
-            code += string.charAt(random.nextInt(length));
-//            int nextInt = _10random.nextInt(length);
-//            char ch = string.charAt(nextInt);
-//            code += ch;
-//            char ch = string.charAt((int) (Math._10random() * (length + 1)));
-//            code += ch;
-        }
-
-        //System.out.println(System.currentTimeMillis() - l);
-
-        return code;
-    }
-
 
 }
+
+class Person {
+    private String name;
+    private int age;
+    private static final long serialVersionUID = -6633114470754667710L;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Person() {
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+

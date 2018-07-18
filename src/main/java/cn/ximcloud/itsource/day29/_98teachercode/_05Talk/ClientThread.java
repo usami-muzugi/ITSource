@@ -16,7 +16,6 @@ public class ClientThread extends Thread {
                 String msg = this.client.dis.readUTF();
                 this.client.ta.append(msg);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

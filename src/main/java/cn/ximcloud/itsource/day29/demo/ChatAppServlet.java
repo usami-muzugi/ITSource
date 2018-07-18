@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
  * User: wzard
  * Date: 2018-07-18
  * Time: 11:56
- * ProjectName: ITSource.cn.ximcloud.itsource.day29.demo
+ * ProjectName: ITSource.cn.ximcloud.itsource.day29.GUI
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -42,27 +42,22 @@ import java.text.SimpleDateFormat;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ChatAppServlet extends JFrame {
+public class ChatAppServlet extends JFrame{
     TextArea textArea;
     TextField textField;
     DataInputStream dataInputStream;
     DataOutputStream dataOutputStream;
     int prot;
     String name;
-    Socket accept;
-    OutputStream outputStream = null;
-
     public static void main(String[] args) {
         new ChatAppServlet();
     }
-
     private ChatAppServlet() {
 
         init();
         connect();
         new ServletThread(this).start();
     }
-
     void init() {
         MenuBar menuBar = new MenuBar();
         Menu menu1 = new Menu("File");
@@ -83,7 +78,7 @@ public class ChatAppServlet extends JFrame {
 
 
         add(textArea, BorderLayout.CENTER);
-        add(jPanel, BorderLayout.SOUTH);
+        add(jPanel,BorderLayout.SOUTH);
 
         name = JOptionPane.showInputDialog("输入服务端用户名");
         prot = Integer.parseInt(JOptionPane.showInputDialog("输入端口号"));
@@ -97,28 +92,19 @@ public class ChatAppServlet extends JFrame {
                 fileDialog.setVisible(true);
                 fileDialog.setTitle("发送文件给人家");
                 if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
-                String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + fileDialog.getFile() + " 将传出给对方" + "\r\n";
                 File file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
-                textArea.append(string);
                 try {
-                    ServerSocket serverSocket = new ServerSocket(6666);
-                    Socket accept = serverSocket.accept();
-                    outputStream = accept.getOutputStream();
-                    outputStream.write(new FileInputStream(file).readAllBytes());
-                    outputStream.flush();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                } finally {
-                    try {
-                        assert outputStream != null;
-                        outputStream.flush();
-                        outputStream.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
+                    String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + file.getName() + "发送完成！" + "\r\n";
+                    textArea.append(string);
+                    FileReader fileReader = new FileReader(file);
+                    BufferedReader bufferedInputStream = new BufferedReader(fileReader);
+                    String str;
+                    StringBuffer stringBuffer = new StringBuffer();
+                    while ((str = bufferedInputStream.readLine()) != null) {
+                        stringBuffer.append(str);
                     }
-                }
-                try {
-                    dataOutputStream.writeUTF(string);
+                    dataOutputStream.write((stringBuffer.toString() +"EOF_ourinsama").getBytes());
+                    dataOutputStream.flush();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -132,7 +118,7 @@ public class ChatAppServlet extends JFrame {
                 String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + textField.getText() + "\r\n";
                 textArea.append(string);
                 try {
-                    dataOutputStream.writeUTF(string);
+                    dataOutputStream.write(string.getBytes());
                     dataOutputStream.flush();
                 } catch (IOException e1) {
                     e1.printStackTrace();
@@ -153,8 +139,8 @@ public class ChatAppServlet extends JFrame {
                     String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + textField.getText() + "\r\n";
                     textArea.append(string);
                     try {
-                        dataOutputStream.writeUTF(string);
-//                        dataOutputStream.flush();
+                        dataOutputStream.write(string.getBytes());
+                        dataOutputStream.flush();
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
@@ -170,15 +156,14 @@ public class ChatAppServlet extends JFrame {
 
 
         setTitle("Server  [服务端]");
-        setSize(500, 300);
+        setSize(500,300);
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
     void connect() {
         try {
             ServerSocket serverSocket = new ServerSocket(prot);
-            accept = serverSocket.accept();
+            Socket accept = serverSocket.accept();
 
             InputStream inputStream = accept.getInputStream();
             dataInputStream = new DataInputStream(inputStream);

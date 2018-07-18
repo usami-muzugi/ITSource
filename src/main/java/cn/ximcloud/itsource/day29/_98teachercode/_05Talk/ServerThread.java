@@ -16,7 +16,6 @@ public class ServerThread extends Thread {
                 String msg = this.server.dis.readUTF();
                 this.server.ta.append(msg);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

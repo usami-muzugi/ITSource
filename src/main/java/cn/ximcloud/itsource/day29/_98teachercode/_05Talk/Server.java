@@ -61,7 +61,6 @@ public class Server extends Frame {
                 try {
                     dos.writeUTF(msg);
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
             }
@@ -84,7 +83,6 @@ public class Server extends Frame {
             OutputStream os = socket.getOutputStream();
             dos = new DataOutputStream(os);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

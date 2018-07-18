@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day29.demo;
+package cn.ximcloud.itsource.day29._01InetAdress.GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.*;
-import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 
@@ -42,22 +42,21 @@ import java.text.SimpleDateFormat;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ChatAppClient extends JFrame{
+public class ChatAppServlet extends JFrame{
     TextArea textArea;
     TextField textField;
     DataInputStream dataInputStream;
     DataOutputStream dataOutputStream;
     int prot;
     String name;
-    String ip;
-
     public static void main(String[] args) {
-        new ChatAppClient();
+        new ChatAppServlet();
     }
-    private ChatAppClient() {
+    private ChatAppServlet() {
+
         init();
         connect();
-        new ClientAppThread(this).start();
+        new ServletThread(this).start();
     }
     void init() {
         MenuBar menuBar = new MenuBar();
@@ -81,17 +80,15 @@ public class ChatAppClient extends JFrame{
         add(textArea, BorderLayout.CENTER);
         add(jPanel,BorderLayout.SOUTH);
 
-
-        ip = JOptionPane.showInputDialog("输入客户端ip");
-        prot = Integer.parseInt(JOptionPane.showInputDialog("输入端端口号"));
-        name = JOptionPane.showInputDialog("输入用户端用户名");
+        name = JOptionPane.showInputDialog("输入服务端用户名");
+        prot = Integer.parseInt(JOptionPane.showInputDialog("输入端口号"));
 
 
         menuItem1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //点击new的操作
-                FileDialog fileDialog = new FileDialog(ChatAppClient.this);
+                FileDialog fileDialog = new FileDialog(ChatAppServlet.this);
                 fileDialog.setVisible(true);
                 fileDialog.setTitle("发送文件给人家");
                 if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
@@ -106,14 +103,14 @@ public class ChatAppClient extends JFrame{
                     while ((str = bufferedInputStream.readLine()) != null) {
                         stringBuffer.append(str);
                     }
-                    dataOutputStream.write((stringBuffer.toString() +"EOF_ourinsama").getBytes());
+                    dataOutputStream.writeUTF(stringBuffer.toString() +"EOF_ourinsama");
                     dataOutputStream.flush();
-                    
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
         });
+
 
         jButton.addActionListener(new ActionListener() {
             @Override
@@ -121,7 +118,7 @@ public class ChatAppClient extends JFrame{
                 String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + textField.getText() + "\r\n";
                 textArea.append(string);
                 try {
-                    dataOutputStream.write(string.getBytes());
+                    dataOutputStream.writeUTF(string);
                     dataOutputStream.flush();
                 } catch (IOException e1) {
                     e1.printStackTrace();
@@ -142,7 +139,7 @@ public class ChatAppClient extends JFrame{
                     String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + textField.getText() + "\r\n";
                     textArea.append(string);
                     try {
-                        dataOutputStream.write(string.getBytes());
+                        dataOutputStream.writeUTF(string);
                         dataOutputStream.flush();
                     } catch (IOException e1) {
                         e1.printStackTrace();
@@ -158,16 +155,23 @@ public class ChatAppClient extends JFrame{
         });
 
 
-        setTitle("Client  [客户端]");
+        setTitle("Server  [服务端]");
         setSize(500,300);
         setLocationRelativeTo(null);
         setVisible(true);
     }
     void connect() {
         try {
-            Socket socket = new Socket(InetAddress.getByName(ip),prot);
-            dataInputStream = new DataInputStream(socket.getInputStream());
-            dataOutputStream = new DataOutputStream(socket.getOutputStream());
+            ServerSocket serverSocket = new ServerSocket(prot);
+            Socket accept = serverSocket.accept();
+
+            InputStream inputStream = accept.getInputStream();
+            dataInputStream = new DataInputStream(inputStream);
+
+            OutputStream outputStream = accept.getOutputStream();
+            dataOutputStream = new DataOutputStream(outputStream);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

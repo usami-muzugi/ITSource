@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day29.demo;
+package cn.ximcloud.itsource.day29._01InetAdress.GUI;
 
 import java.awt.*;
 import java.io.File;
@@ -48,15 +48,7 @@ public class ClientAppThread extends Thread {
     public void run() {
         while (true) {
             try {
-                char[] chars = new char[1024];
-                int length;
-                StringBuffer stringBuffer = new StringBuffer();
-                while ((length = chatAppClient.dataInputStream.read()) != -1) {
-                    stringBuffer.append(String.valueOf(chars));
-                }
-                String s = stringBuffer.toString();
-                System.out.println(s);
-
+                String s = chatAppClient.dataInputStream.readUTF();
                 if (s.endsWith("EOF_ourinsama")) {
                     FileDialog fileDialog = new FileDialog(chatAppClient);
                     fileDialog.setVisible(true);

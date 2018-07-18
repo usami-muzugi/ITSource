@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day29.demo;
+package cn.ximcloud.itsource.day29._01InetAdress.GUI;
 
 import java.awt.*;
 import java.io.File;
@@ -37,35 +37,27 @@ import java.text.SimpleDateFormat;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ClientAppThread extends Thread {
-    ChatAppClient chatAppClient;
+public class ServletThread extends Thread {
+    ChatAppServlet chatAppServlet;
 
-    public ClientAppThread(ChatAppClient chatAppClient) {
-        this.chatAppClient = chatAppClient;
+    public ServletThread(ChatAppServlet chatAppServlet) {
+        this.chatAppServlet = chatAppServlet;
     }
 
     @Override
     public void run() {
         while (true) {
             try {
-                char[] chars = new char[1024];
-                int length;
-                StringBuffer stringBuffer = new StringBuffer();
-                while ((length = chatAppClient.dataInputStream.read()) != -1) {
-                    stringBuffer.append(String.valueOf(chars));
-                }
-                String s = stringBuffer.toString();
-                System.out.println(s);
-
+                String s = chatAppServlet.dataInputStream.readUTF();
                 if (s.endsWith("EOF_ourinsama")) {
-                    FileDialog fileDialog = new FileDialog(chatAppClient);
+                    FileDialog fileDialog = new FileDialog(chatAppServlet);
                     fileDialog.setVisible(true);
                     fileDialog.setTitle("收到了一个文件！");
                     if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
                     File file = new File(fileDialog.getDirectory() + fileDialog.getFile());//缓存文件
                     try {
-                        String string = chatAppClient.name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + file.getName() + "  接受完成！" + "\r\n";
-                        chatAppClient.textArea.append(string);
+                        String string = chatAppServlet.name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + file.getName() + "  接受完成！" + "\r\n";
+                        chatAppServlet.textArea.append(string);
                         s = s.substring(0, s.length() - 13);
                         System.out.println();
                         FileWriter fileWriter = new FileWriter(file);
@@ -76,7 +68,7 @@ public class ClientAppThread extends Thread {
                         e1.printStackTrace();
                     }
                 } else {
-                    chatAppClient.textArea.append(s);
+                    chatAppServlet.textArea.append(s);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

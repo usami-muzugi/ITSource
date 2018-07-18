@@ -35,18 +35,30 @@ import java.io.InputStream;
  * 测试为什么输入一个1，会执行两边，就是这个原因，read是读取的一个字符，回车符号也是一个符号，会读取出来的。所以这里是执行了两次
  **/
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         InputStream in = System.in;//1.将打印流对象赋值给out
+        int temp;
+        while ((temp = in.read()) != -1) {
 
-        try {
-            byte[] bytes = new byte[1024];
-            int length;
-            while ((length = in.read(bytes)) != -1) {
-                System.out.println(new String(bytes, 0, length));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(temp);
         }
+//        Scanner scanner = new Scanner(in);
+//        while (scanner.hasNext()) {
+//            int next = scanner.nextInt();
+//            System.out.println(next);
+//        }
+
+
+//
+//        try {
+//            byte[] bytes = new byte[1024];
+//            int length;
+//            while ((length = in.read(bytes)) != -1) {
+//                System.out.println(new String(bytes, 0, length));
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        while (true) {  //2.进入循环    6.由于是死循环，继续执行   10.继续执行

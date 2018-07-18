@@ -65,7 +65,7 @@ public class HomeWork4 {
 //            System.out.println(i);
 //            System.out.println(string);
 //            System.out.println(b);
-            System.out.println((Student)o);
+            System.out.println((Student) o);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class HomeWork4 {
     }
 }
 
-class Student implements Serializable{
+class Student implements Serializable {
     private String name;
     private int age;
 

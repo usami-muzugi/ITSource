@@ -37,6 +37,8 @@ public class HomeWork5 {
 
     @Test
     public void homeWork5Test() {
-
+        String str = "17612883120";
+        String str2 = "1[3589]{1}[0-9]{9}";
+        System.out.println(str.matches(str2));
     }
 }

@@ -56,9 +56,12 @@ public class HomeWork3 {
                 initVar[0] = new Scanner(System.in).nextInt();      //5.报错的语句为nextInt(),可能传入的不是一个int类型
                 System.out.print("\n次数:");
                 initVar[1] = new Scanner(System.in).nextInt();      //7.直到两个int类型的值都输入正确之后，才会执行下面的设置flag为false语句。跳出循环
+                if (initVar[0] < 0 || initVar[1] < 0) throw new IllegalArgumentException("值需要大于0");
                 flag = false;
             } catch (InputMismatchException e) {        //6.报错之后打印下面的语句，但是flag并没有被修改，还是true，所以继续执行while内部得语句。
                 System.err.println("输入一个数字！");
+            } catch (IllegalArgumentException e) {
+                e.getMessage();
             }
         } //9.while end.到此，initVar数组，有了取值范围，有了竞猜次数，有了下面的随机值
         initVar[2] = new Random().nextInt(initVar[0] + 1);  //8.获得随机值，并赋值给initVar[2]。由于random的nextInt方法是左闭又开，是取不到initVar[0]的，所以+1。

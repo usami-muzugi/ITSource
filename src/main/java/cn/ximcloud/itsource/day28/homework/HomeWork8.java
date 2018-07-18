@@ -1,6 +1,8 @@
 package cn.ximcloud.itsource.day28.homework;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.*;
 
 /**
@@ -40,51 +42,49 @@ import java.util.*;
 public class HomeWork8 {
 
     public static void main(String[] args) {
-        maprecude(new File("D:/a.txt"),new File("D:/b.txt"));
+        maprecude(new File("D:/a.txt"), new File("D:/b.txt"));
     }
 
     /**
-     *  词频计数
-     * @param srcFile 源文件File类型
-     * @param destFile  目标文件File类型
+     * 词频计数
+     *
+     * @param srcFile  源文件File类型
+     * @param destFile 目标文件File类型
      */
     public static void maprecude(File srcFile, File destFile) {
         HashMap<String, Integer> hashMap = new HashMap<>();
         String string;
-        FileWriter fileWriter = null;
+        PrintStream printStream = null;
         try {
             Scanner scanner = new Scanner(srcFile);
             while (scanner.hasNext()) {
                 string = scanner.nextLine();
-                String[] split = string.split(" ");
+                String[] split = string.split("[^a-zA-Z]");
                 for (String s : split) {
-                    if (hashMap.containsKey(s)) {
-                        hashMap.put(s, hashMap.get(s) + 1);
-                    } else {
-                        hashMap.put(s, 1);
-                    }
+                    if (s.length() > 0)
+                        if (hashMap.containsKey(s)) {
+                            hashMap.put(s, hashMap.get(s) + 1);
+                        } else {
+                            hashMap.put(s, 1);
+                        }
                 }
             }
             System.out.println(hashMap.toString());
-            fileWriter = new FileWriter(destFile);
+            printStream = new PrintStream(destFile);
             Set<Map.Entry<String, Integer>> entries = hashMap.entrySet();
             Iterator<Map.Entry<String, Integer>> iterator = entries.iterator();
             while (iterator.hasNext()) {
                 Map.Entry<String, Integer> next = iterator.next();
-                fileWriter.write(next.getKey() + "----" + next.getValue());
-                fileWriter.write((char)10);
-                fileWriter.flush();
+                printStream.print(next.getKey() + "----" + next.getValue());
+                printStream.println();
+                printStream.flush();
 
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            assert fileWriter != null;
-            try {
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } finally {
+            assert printStream != null;
+            printStream.close();
         }
     }
 }

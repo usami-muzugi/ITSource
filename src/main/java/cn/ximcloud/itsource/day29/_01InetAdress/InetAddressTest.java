@@ -1,12 +1,12 @@
-package cn.ximcloud.itsource.day28.homework;
+package cn.ximcloud.itsource.day29._01InetAdress;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-07-17
- * Time: 23:40
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ * User: wzard
+ * Date: 2018-07-18
+ * Time: 11:31
+ * ProjectName: ITSource.cn.ximcloud.itsource.day29._01InetAdress
+ * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -27,12 +27,13 @@ package cn.ximcloud.itsource.day28.homework;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 6、写出邮箱的正则表达式并测试（建议自己先去搜索或者注册不同的有邮箱体验他们的规则是什么）
  **/
-public class HomeWork6 {
+
+public class InetAddressTest {
     public static void main(String[] args) {
-        System.out.println(new String("715759898@qq.com").split("[{1-9a-zA-Z}@{1-9a-zA-Z}.{com,cn}]"));
+
+
     }
 }

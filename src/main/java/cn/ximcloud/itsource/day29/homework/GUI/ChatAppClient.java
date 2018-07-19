@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day29._01InetAdress.GUI;
+package cn.ximcloud.itsource.day29.homework.GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.*;
-import java.net.ServerSocket;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 
@@ -42,22 +42,25 @@ import java.text.SimpleDateFormat;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ChatAppServlet extends JFrame{
+public class ChatAppClient extends JFrame {
     TextArea textArea;
     TextField textField;
     DataInputStream dataInputStream;
     DataOutputStream dataOutputStream;
     int prot;
     String name;
-    public static void main(String[] args) {
-        new ChatAppServlet();
-    }
-    private ChatAppServlet() {
+    String ip;
 
+    public static void main(String[] args) {
+        new ChatAppClient();
+    }
+
+    private ChatAppClient() {
         init();
         connect();
-        new ServletThread(this).start();
+        new ClientAppThread(this).start();
     }
+
     void init() {
         MenuBar menuBar = new MenuBar();
         Menu menu1 = new Menu("File");
@@ -78,17 +81,19 @@ public class ChatAppServlet extends JFrame{
 
 
         add(textArea, BorderLayout.CENTER);
-        add(jPanel,BorderLayout.SOUTH);
+        add(jPanel, BorderLayout.SOUTH);
 
-        name = JOptionPane.showInputDialog("输入服务端用户名");
-        prot = Integer.parseInt(JOptionPane.showInputDialog("输入端口号"));
+
+        ip = JOptionPane.showInputDialog("输入客户端ip");
+        prot = Integer.parseInt(JOptionPane.showInputDialog("输入端端口号"));
+        name = JOptionPane.showInputDialog("输入用户端用户名");
 
 
         menuItem1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //点击new的操作
-                FileDialog fileDialog = new FileDialog(ChatAppServlet.this);
+                FileDialog fileDialog = new FileDialog(ChatAppClient.this);
                 fileDialog.setVisible(true);
                 fileDialog.setTitle("发送文件给人家");
                 if (fileDialog.getDirectory() == null || fileDialog.getName() == null) return;
@@ -103,14 +108,14 @@ public class ChatAppServlet extends JFrame{
                     while ((str = bufferedInputStream.readLine()) != null) {
                         stringBuffer.append(str);
                     }
-                    dataOutputStream.writeUTF(stringBuffer.toString() +"EOF_ourinsama");
+                    dataOutputStream.writeUTF(stringBuffer.toString() + "EOF_ourinsama");
                     dataOutputStream.flush();
+
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
         });
-
 
         jButton.addActionListener(new ActionListener() {
             @Override
@@ -155,23 +160,17 @@ public class ChatAppServlet extends JFrame{
         });
 
 
-        setTitle("Server  [服务端]");
-        setSize(500,300);
+        setTitle("Client  [客户端]");
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
     void connect() {
         try {
-            ServerSocket serverSocket = new ServerSocket(prot);
-            Socket accept = serverSocket.accept();
-
-            InputStream inputStream = accept.getInputStream();
-            dataInputStream = new DataInputStream(inputStream);
-
-            OutputStream outputStream = accept.getOutputStream();
-            dataOutputStream = new DataOutputStream(outputStream);
-
-
+            Socket socket = new Socket(InetAddress.getByName(ip), prot);
+            dataInputStream = new DataInputStream(socket.getInputStream());
+            dataOutputStream = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }

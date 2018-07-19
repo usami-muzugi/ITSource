@@ -34,7 +34,7 @@ package cn.ximcloud.itsource.day6;
 public class Test {
     public static void main(String[] args) {
         //stop talk show me your code.
-        //大星星
+        //打星星
         for (int i = 1; i <= 5; i++) {    //外层循环决定了大星星5层
             for (int j = 1; j <= i; j++) {    //内部随着层数的增加，星星数也一同增加
                 System.out.print("* ");    //打印一个星星
@@ -43,7 +43,7 @@ public class Test {
         }
         System.out.println("----------");        //华丽的分割线
 
-        //反大星星
+        //反向打星星
         for (int i = 1; i <= 5; i++) {        //外层循环决定了大星星5层
             for (int j = 0; j <= 5 - i; j++) {    //内部随着层数的增加，星星数从5层开始随着外层变量i的增加而减少
                 System.out.print("* ");    //打印一个星星

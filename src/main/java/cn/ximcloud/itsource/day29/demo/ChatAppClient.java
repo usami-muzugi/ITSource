@@ -42,7 +42,7 @@ import java.text.SimpleDateFormat;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ChatAppClient extends JFrame{
+public class ChatAppClient extends JFrame {
     TextArea textArea;
     TextField textField;
     DataInputStream dataInputStream;
@@ -54,11 +54,13 @@ public class ChatAppClient extends JFrame{
     public static void main(String[] args) {
         new ChatAppClient();
     }
+
     private ChatAppClient() {
         init();
         connect();
         new ClientAppThread(this).start();
     }
+
     void init() {
         MenuBar menuBar = new MenuBar();
         Menu menu1 = new Menu("File");
@@ -79,7 +81,7 @@ public class ChatAppClient extends JFrame{
 
 
         add(textArea, BorderLayout.CENTER);
-        add(jPanel,BorderLayout.SOUTH);
+        add(jPanel, BorderLayout.SOUTH);
 
 
         ip = JOptionPane.showInputDialog("输入客户端ip");
@@ -106,9 +108,9 @@ public class ChatAppClient extends JFrame{
                     while ((str = bufferedInputStream.readLine()) != null) {
                         stringBuffer.append(str);
                     }
-                    dataOutputStream.write((stringBuffer.toString() +"EOF_ourinsama").getBytes());
+                    dataOutputStream.write((stringBuffer.toString() + "EOF_ourinsama").getBytes());
                     dataOutputStream.flush();
-                    
+
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -159,13 +161,14 @@ public class ChatAppClient extends JFrame{
 
 
         setTitle("Client  [客户端]");
-        setSize(500,300);
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
     void connect() {
         try {
-            Socket socket = new Socket(InetAddress.getByName(ip),prot);
+            Socket socket = new Socket(InetAddress.getByName(ip), prot);
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {

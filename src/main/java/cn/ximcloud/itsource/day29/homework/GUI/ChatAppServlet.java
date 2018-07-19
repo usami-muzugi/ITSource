@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day29.demo;
+package cn.ximcloud.itsource.day29.homework.GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -106,7 +106,7 @@ public class ChatAppServlet extends JFrame {
                     while ((str = bufferedInputStream.readLine()) != null) {
                         stringBuffer.append(str);
                     }
-                    dataOutputStream.write((stringBuffer.toString() + "EOF_ourinsama").getBytes());
+                    dataOutputStream.writeUTF(stringBuffer.toString() + "EOF_ourinsama");
                     dataOutputStream.flush();
                 } catch (IOException e1) {
                     e1.printStackTrace();
@@ -121,7 +121,7 @@ public class ChatAppServlet extends JFrame {
                 String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + textField.getText() + "\r\n";
                 textArea.append(string);
                 try {
-                    dataOutputStream.write(string.getBytes());
+                    dataOutputStream.writeUTF(string);
                     dataOutputStream.flush();
                 } catch (IOException e1) {
                     e1.printStackTrace();
@@ -142,7 +142,7 @@ public class ChatAppServlet extends JFrame {
                     String string = name + "    " + new SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis()) + "\r\n    " + textField.getText() + "\r\n";
                     textArea.append(string);
                     try {
-                        dataOutputStream.write(string.getBytes());
+                        dataOutputStream.writeUTF(string);
                         dataOutputStream.flush();
                     } catch (IOException e1) {
                         e1.printStackTrace();

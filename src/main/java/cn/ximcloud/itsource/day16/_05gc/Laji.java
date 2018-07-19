@@ -32,6 +32,7 @@ package cn.ximcloud.itsource.day16._05gc;
  **/
 
 public class Laji {
+    //对象被失去引用会在最终调用finalize()方法
     @Override
     protected void finalize() throws Throwable {
         System.out.println("被回收了");

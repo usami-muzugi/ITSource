@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day29._01InetAdress.GUI;
+package cn.ximcloud.itsource.day29.homework.GUI;
 
 import java.awt.*;
 import java.io.File;

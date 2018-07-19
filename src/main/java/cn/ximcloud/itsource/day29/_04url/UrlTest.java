@@ -1,19 +1,16 @@
-package cn.ximcloud.itsource.day29._99test;
+package cn.ximcloud.itsource.day29._04url;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-07-18
- * Time: 22:42
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ * User: wzard
+ * Date: 2018-07-19
+ * Time: 09:03
+ * ProjectName: ITSource.cn.ximcloud.itsource.day29._04url
+ * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -34,39 +31,21 @@ import java.net.Socket;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ * URL测试
  **/
-public class Test2 {
 
-    public static void main(String[] args) {
+public class UrlTest {
+    public static void main(String[] args) throws UnsupportedEncodingException {
 
-        try {
-            ServerSocket server = new ServerSocket(9999);
-            while (true) {
+        //String的编码和解码可以使用 URLEncoder.encode() URLDecoder.decode() 对字符串可以按某一种编码格式进行编码和解码
+        //编码方法
+        String encode = URLEncoder.encode("源码时代", "utf-8");
+        System.out.println(encode);
 
-                System.out.println("准备接收一个数据...");
-                Socket s = server.accept();//阻塞式方法
-                System.out.println("接收了一个数据...");
-
-                //读--从客户端读数据
-                InputStream in = s.getInputStream();
-                byte buf[] = new byte[1024];
-                in.read(buf);
-                System.out.println("read info: " + new String(buf));
-
-                //写--应答客户端--向他写数据
-                OutputStream out = s.getOutputStream();
-                DataOutputStream dout = new DataOutputStream(out);
-                dout.writeUTF("你好，" + s.getInetAddress().getHostAddress() + "  ,你的信息已收到。");
-                dout.close();
-                s.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        //解码方法
+        String decode = URLDecoder.decode("%E6%BA%90%E7%A0%81%E6%97%B6%E4%BB%A3", "utf-8");
+        System.out.println(decode);
     }
-
 }

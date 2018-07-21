@@ -56,4 +56,15 @@ public class Test_4 {
     public void test() {
         System.out.println(Arrays.toString(solution(new int[]{1, 23, 3, 4, 21, 123, 13, 25, 1}, new int[]{2, 2, 1, 312, 12, 4})));
     }
+
+
+    @Test
+    public void copy() {
+        int[] a = {1, 2, 31, 24, 1, 12, 2, 1, 1};
+        int[] b = {2, 2, 34, 1, 2, 12, 12, 12,};
+        int[] dest = new int[a.length + b.length];
+        System.arraycopy(a, 0, dest, 0, a.length);
+        System.arraycopy(a, 0, dest, a.length, b.length);
+        System.out.println(Arrays.toString(dest));
+    }
 }

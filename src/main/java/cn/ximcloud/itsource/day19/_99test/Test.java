@@ -13,6 +13,8 @@ package cn.ximcloud.itsource.day19._99test;
 public class Test {
     /*
         解释为什么几个线程能共享
+        因为这几个对象都是操作的是同一个对象 stringBuffer，所以得到的是同一个对象的引用地址。
+        所以能共享
      */
     public static void main(String[] args) {
         StringBuffer stringBuffer = new StringBuffer("123");

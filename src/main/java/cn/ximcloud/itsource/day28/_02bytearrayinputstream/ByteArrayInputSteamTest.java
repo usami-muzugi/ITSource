@@ -50,10 +50,10 @@ public class ByteArrayInputSteamTest {
     @Test
     public void byteArrayInputSteamTest() {
         try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(new byte[]{65, 66, 67, 68, 69, 70})) {
-            byte[] bytes = byteArrayInputStream.readAllBytes();
-            System.out.println(bytes);
-            System.out.println(new String(bytes));
-            System.out.println(new String(bytes, 0, bytes.length));
+            //[] bytes = byteArrayInputStream.readAllBytes();
+            //System.out.println(bytes);
+            //System.out.println(new String(bytes));
+            //System.out.println(new String(bytes, 0, bytes.length));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,11 +71,11 @@ public class ByteArrayInputSteamTest {
                 bytes1[i] = (byte) i;
             }
             byteArrayInputStream = new ByteArrayInputStream(bytes1);
-            byte[] bytes = byteArrayInputStream.readAllBytes();
-            System.out.println(new String(bytes));
+            //byte[] bytes = byteArrayInputStream.readAllBytes();
+            //System.out.println(new String(bytes));
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            //} catch (IOException e) {
+            // e.printStackTrace();
         } finally {
             try {
                 assert byteArrayInputStream != null;

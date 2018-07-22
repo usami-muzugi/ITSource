@@ -94,7 +94,7 @@ public class Homework1 {
         try {
             fileInputStream = new FileInputStream("D:/新建文本文档.txt");
             fileOutputStream = new FileOutputStream("D:/新建文本文档2.txt");
-            fileOutputStream.write(fileInputStream.readAllBytes());
+            //fileOutputStream.write(fileInputStream.readAllBytes());
             fileOutputStream.flush();
         } catch (IOException e) {
             e.printStackTrace();

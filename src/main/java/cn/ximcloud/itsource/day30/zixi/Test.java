@@ -1,5 +1,10 @@
 package cn.ximcloud.itsource.day30.zixi;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -32,8 +37,10 @@ package cn.ximcloud.itsource.day30.zixi;
  **/
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         init();
+
+        InputStream fileInputStream = new FileInputStream(new File(""));
 
     }
 

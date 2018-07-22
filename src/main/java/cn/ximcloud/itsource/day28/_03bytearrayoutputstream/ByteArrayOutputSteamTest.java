@@ -58,8 +58,8 @@ public class ByteArrayOutputSteamTest {
             System.out.println(new String(bytes, 0, bytes.length));
 
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
-            byte[] bytes1 = byteArrayInputStream.readAllBytes();
-            System.out.println(new String(bytes1));
+            //byte[] bytes1 = byteArrayInputStream.readAllBytes();
+            //System.out.println(new String(bytes1));
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

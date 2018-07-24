@@ -33,9 +33,9 @@ import org.junit.Test;
  **/
 
 public class Junti4 {
-
+    //测试方法需要加上注解@Test
     @Test
     public void test() {
-
+        //测试方法内部填写该执行的测试
     }
 }

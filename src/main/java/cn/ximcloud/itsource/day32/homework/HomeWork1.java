@@ -1,13 +1,12 @@
-package cn.ximcloud.itsource.day32.junit3;
-
+package cn.ximcloud.itsource.day32.homework;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-07-23
- * Time: 10:41
- * ProjectName: ITSource.cn.ximcloud.itsource.day32.junit3
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * User: Wizard
+ * Date: 2018-07-24
+ * Time: 16:51
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -28,19 +27,25 @@ package cn.ximcloud.itsource.day32.junit3;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
+ * 单元测试(junit3) + 工具类(判断字符串是否为空StringUtil, isEmpty )
  **/
+public class HomeWork1 {
 
-public class JTest3 {
 
-    /**
-     *  上传一个文件到服务器上
-     * @param filePath String类型的文件路径
-     * @return  返回文件是否上传成功
-     */
-    public static boolean upLoad(String filePath) {
-        return filePath != null && !filePath.equals(filePath);
+
+}
+
+class Util {
+    //不能实例化
+    private Util() {
+
     }
+
+    public static boolean isEmppty(String string) {
+        return string != null && string.length() == 0;
+    }
+
 
 }

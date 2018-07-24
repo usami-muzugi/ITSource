@@ -32,11 +32,15 @@ import org.junit.*;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-
+//执行这个测试类就是执行了所有的加上注解的方法
 public class AllInOneTest {
 
+    //测试变量初始化
+    private static String name;
+    private int age;
 
     /**
+     * JUint测试方法执行流程
      * testBeforeClass
      * testBefore
      * test1
@@ -49,20 +53,29 @@ public class AllInOneTest {
     @Test
     public void test1() {
         System.out.println("test1");
+        test2();//加了@Test注解的方法也能调用加了注解的方法
     }
 
     @Test
     public void test2() {
+        //@Test方法也能打印成员变量
+        System.out.println(name);
+        System.out.println(age);
         System.out.println("test2");
     }
 
     @BeforeClass
     public static void a() {
+        //BeforeClass不能初始化非static变量
+        name = "ourinsama"; //可以初始化static变量
         System.out.println("testBeforeClass");
     }
 
     @Before
     public void b() {
+        //@Before方法能初始化静态变量和非静态变量
+        name = "usamimizugi";
+        age = 22;
         System.out.println("testBefore");
     }
 

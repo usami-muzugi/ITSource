@@ -46,6 +46,7 @@ public class JTest3Test extends TestCase {
 
 
     /**
+     * 断言错误会提示以下信息
      * java.lang.AssertionError:
      * Expected :true
      * Actual   :false

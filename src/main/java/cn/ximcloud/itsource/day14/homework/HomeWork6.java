@@ -68,7 +68,7 @@ public class HomeWork6 {
 
 
         for (JButton jButton : jButtons
-                ) {
+        ) {
             jFrame.add(jButton);
         }
 

@@ -73,7 +73,7 @@ public class SeftDemo {
         jFrame.add(textField);
 
         for (JButton jb : jButtons
-                ) {
+        ) {
             jFrame.add(jb);
         }
         //④设置组件的大小和位置

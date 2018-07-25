@@ -21,7 +21,7 @@ public class HomeWork2 {
     public static int sum(int... ints) {
         int i = 0;
         for (int index : ints
-                ) {
+        ) {
             i += index;
         }
         return i;

@@ -1,5 +1,6 @@
 package cn.ximcloud.itsource.day32.teachercode.javaplus;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class Util3Test {

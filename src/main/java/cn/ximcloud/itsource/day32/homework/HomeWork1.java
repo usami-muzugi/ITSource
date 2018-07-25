@@ -34,7 +34,6 @@ package cn.ximcloud.itsource.day32.homework;
 public class HomeWork1 {
 
 
-
 }
 
 class Util {

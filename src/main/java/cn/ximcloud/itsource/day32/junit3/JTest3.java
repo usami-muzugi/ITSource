@@ -35,9 +35,10 @@ package cn.ximcloud.itsource.day32.junit3;
 public class JTest3 {
 
     /**
-     *  上传一个文件到服务器上
+     * 上传一个文件到服务器上
+     *
      * @param filePath String类型的文件路径
-     * @return  返回文件是否上传成功
+     * @return 返回文件是否上传成功
      */
     public static boolean upLoad(String filePath) {
         return filePath != null && !filePath.equals(filePath);

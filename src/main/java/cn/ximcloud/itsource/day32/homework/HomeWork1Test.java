@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day32.homework;
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
 
 /**

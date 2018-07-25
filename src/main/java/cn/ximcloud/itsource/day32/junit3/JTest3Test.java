@@ -41,7 +41,7 @@ public class JTest3Test extends TestCase {
     /*无参 非静态 无返回 三无*/
     public void testUpLoad() {
         //断言是结果是否正确
-        Assert.assertEquals(true,JTest3.upLoad("D:/java/hello.java"));
+        Assert.assertEquals(true, JTest3.upLoad("D:/java/hello.java"));
     }
 
 

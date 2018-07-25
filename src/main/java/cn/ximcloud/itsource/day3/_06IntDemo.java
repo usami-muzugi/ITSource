@@ -38,10 +38,16 @@ public class _06IntDemo {
             boolean byte short char int long folat double
             还有其对应的包装类
          */
+
+        /**
+         * 0x开头的是16进制
+         * 0开头的是8进制
+         *
+         */
         byte b = 10;
         short s = 10;
         int i = 10;
-        long l = 10;  //10默认是int类型，所以需要在10后面加L
+        long l = 10;  //10默认是int类型，所以需要在10后面加L,也可以不加。
 
         System.out.println(0b1);
         System.out.println();

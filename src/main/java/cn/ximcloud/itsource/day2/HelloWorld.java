@@ -44,8 +44,50 @@ public class HelloWorld implements Serializable {
      * @param args void
      */
     public static void main(String[] args) {
+        /**
+         * 打印自动调用toString(),本质上是println()方法调用了toString()方法
+         */
         System.out.println("1");
+        /**
+         *     public void println(String x) {
+         *         synchronized (this) {
+         *             print(x);
+         *             newLine();
+         *         }
+         *     }
+         *     public void print(String s) {
+         *         write(String.valueOf(s));
+         *     }
+         */
+        System.out.println(1);
+        /**
+         *     public void println(int x) {
+         *         synchronized (this) {
+         *             print(x);
+         *             newLine();
+         *         }
+         *     }
+         *     public void print(int i) {
+         *         write(String.valueOf(i));
+         *     }
+         */
 
+        System.out.println(new HelloWorld());
+        /**
+         *     public void println(Object x) {
+         *         String s = String.valueOf(x);
+         *         synchronized (this) {
+         *             print(s);
+         *             newLine();
+         *         }
+         *     }
+         *     public void print(int i) {
+         *         write(String.valueOf(i));
+         *     }
+         *     public static String valueOf(Object obj) {
+         *         return (obj == null) ? "null" : obj.toString();
+         *     }
+         */
 
     }
 }

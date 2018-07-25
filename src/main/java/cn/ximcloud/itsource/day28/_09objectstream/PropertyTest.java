@@ -62,6 +62,11 @@ class Student implements Serializable {
     String name;
     int age;
 
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
@@ -75,11 +80,6 @@ class Student implements Serializable {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Student(String name, int age) {
-        this.name = name;
         this.age = age;
     }
 }

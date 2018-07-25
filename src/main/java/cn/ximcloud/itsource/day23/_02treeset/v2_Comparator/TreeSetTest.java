@@ -74,6 +74,11 @@ class Student implements Comparable {   //因为使用了定制比较器，这�
     String name;
     int age;
 
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     //    @Override
 //    public int compareTo(Object o) {
 //        Student stundent = (Student) o;
@@ -90,18 +95,12 @@ class Student implements Comparable {   //因为使用了定制比较器，这�
         return 0;   //这里返回0，是和任意对象比较都是相等了。为了测试这个TreeSet能不能传入同一个相等的值
     }
 
-
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
-    }
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
     }
 }
 

@@ -30,17 +30,6 @@ public class Tools {
     }
 
     /**
-     * 判断一个字符串是否为空字符串；
-     *
-     * @param string stirng
-     * @return true false
-     */
-    public boolean isString(String string) {
-        return string == null || string.equals(STRING);
-    }
-
-
-    /**
      * String和Date之间的相互转换；
      *
      * @param date 被转换类型Date
@@ -60,7 +49,6 @@ public class Tools {
         return new SimpleDateFormat().parse(string);
     }
 
-
     /**
      * 判断一个字符串是否以指定的后缀结尾
      *
@@ -75,6 +63,16 @@ public class Tools {
 
     public static void main(String[] args) {
         System.out.println(Tools.getDate(new Date()));
+    }
+
+    /**
+     * 判断一个字符串是否为空字符串；
+     *
+     * @param string stirng
+     * @return true false
+     */
+    public boolean isString(String string) {
+        return string == null || string.equals(STRING);
     }
 
 }

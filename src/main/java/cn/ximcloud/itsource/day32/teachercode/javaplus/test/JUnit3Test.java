@@ -7,6 +7,16 @@ public class JUnit3Test {
 
     private String name = null;
 
+    @BeforeClass
+    public static void a() {
+        System.out.println("a");
+    }
+
+    @AfterClass
+    public static void c() {
+        System.out.println("c");
+    }
+
     @Test
     public void test() {
         System.out.println("test");
@@ -17,20 +27,10 @@ public class JUnit3Test {
         System.out.println("test1");
     }
 
-    @BeforeClass
-    public static void a() {
-        System.out.println("a");
-    }
-
     @Before
     public void b() {
         name = "xxx";
         System.out.println("b");
-    }
-
-    @AfterClass
-    public static void c() {
-        System.out.println("c");
     }
 
     @After

@@ -14,6 +14,11 @@ public class OverrideHashCodeAndEuqalsV2 {
     private String name;
     private int age;
 
+    public OverrideHashCodeAndEuqalsV2(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
@@ -45,11 +50,6 @@ public class OverrideHashCodeAndEuqalsV2 {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
-
-    public OverrideHashCodeAndEuqalsV2(String name, int age) {
-        this.name = name;
         this.age = age;
     }
 }

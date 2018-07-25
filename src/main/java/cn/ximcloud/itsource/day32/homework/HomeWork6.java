@@ -2,6 +2,10 @@ package cn.ximcloud.itsource.day32.homework;
 
 import org.junit.Test;
 
+interface Phone {
+
+}
+
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
@@ -55,7 +59,7 @@ public class HomeWork6 {
 
 }
 
-class PhoneTest{
+class PhoneTest {
 
     @Test
     public void test() {
@@ -64,10 +68,6 @@ class PhoneTest{
         System.out.println(((Apple) (instance)).getName());
 
     }
-
-}
-
-interface Phone {
 
 }
 
@@ -97,11 +97,11 @@ class Mi implements Phone {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public Mi() {
     }
 
-    public Mi() {
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {

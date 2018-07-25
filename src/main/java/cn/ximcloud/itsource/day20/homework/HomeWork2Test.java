@@ -45,14 +45,13 @@ public class HomeWork2Test {
 }
 
 class HomeWork2 extends Thread {
+    private static final Lock lock = new ReentrantLock();
+    private static final Condition condition = lock.newCondition();
     /*
         线程通信代码实现    lock
      */
     private static int num = 0; //计数
     private static boolean flag = true;    //线程通信
-    private static final Lock lock = new ReentrantLock();
-    private static final Condition condition = lock.newCondition();
-
 
     public void method() {
         try {

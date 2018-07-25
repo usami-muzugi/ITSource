@@ -51,14 +51,14 @@ public class ChatAppClient extends JFrame {
     String name;
     String ip;
 
-    public static void main(String[] args) {
-        new ChatAppClient();
-    }
-
     private ChatAppClient() {
         init();
         connect();
         new ClientAppThread(this).start();
+    }
+
+    public static void main(String[] args) {
+        new ChatAppClient();
     }
 
     void init() {

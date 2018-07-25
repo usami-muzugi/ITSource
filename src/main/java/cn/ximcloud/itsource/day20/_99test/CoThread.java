@@ -35,6 +35,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * ////////////////////////////////////////////////////////////////////
  **/
 public class CoThread extends Thread {
+    private static final Lock lock = new ReentrantLock();
     /*
     main : num自增完成,当前num值:50
     main : num自增完成,当前num值:49
@@ -59,7 +60,6 @@ public class CoThread extends Thread {
     Thread-1 : num自减完成,当前num值:44
      */
     private static int num = 50;
-    private static final Lock lock = new ReentrantLock();
 
     public CoThread() {
         try {

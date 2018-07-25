@@ -77,6 +77,14 @@ class Student implements Serializable {
     private String name;
     private int age;
 
+    public Student() {
+    }
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -98,14 +106,6 @@ class Student implements Serializable {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Student() {
-    }
-
-    public Student(String name, int age) {
-        this.name = name;
         this.age = age;
     }
 }

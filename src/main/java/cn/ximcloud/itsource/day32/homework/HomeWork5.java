@@ -38,10 +38,10 @@ public class HomeWork5 {
 
     @Test
     public void test() {
-        B b = new B("彭瑞",22);
+        B b = new B("彭瑞", 22);
         b.say();
 
-        A a = new A(new B("彭瑞",22));
+        A a = new A(new B("彭瑞", 22));
         a.say();
 
     }

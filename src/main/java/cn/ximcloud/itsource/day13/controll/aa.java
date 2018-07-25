@@ -1,5 +1,20 @@
 package cn.ximcloud.itsource.day13.controll;
 
+interface USB {
+    String name = "你好";//字段,  默认public static final 修饰的全局常量 所以必须初始化值
+
+    //void code(){}//_10Interface.java:20: 错误: 接口抽象方法不能带有主体
+    abstract void code();//抽象方法没有方法主体
+    //void run();//抽象方法，可以不加abstract，在接口默认的
+    //USB(){}//没有构造方法
+}
+
+interface B {
+}
+
+interface C {
+}
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -62,26 +77,11 @@ public class aa {
     }
 }
 
-interface USB {
-    String name = "你好";//字段,  默认public static final 修饰的全局常量 所以必须初始化值
-
-    //void code(){}//_10Interface.java:20: 错误: 接口抽象方法不能带有主体
-    abstract void code();//抽象方法没有方法主体
-    //void run();//抽象方法，可以不加abstract，在接口默认的
-    //USB(){}//没有构造方法
-}
-
 class Usb implements USB {
     @Override
     public void code() {
         System.out.println("类实现接口覆写接口中的方法");
     }
-}
-
-interface B {
-}
-
-interface C {
 }
 
 class A implements C {//类实现接口，

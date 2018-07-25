@@ -20,11 +20,6 @@ public class Paint extends JFrame {
     private int x1, y1, x2, y2;        //一条线段的两个端点的x轴和y轴的值
     private ArrayList arrayList;
 
-    //private Graphics graphics;
-    public static void main(String[] args) {
-        new Paint();
-    }
-
     public Paint() {
         arrayList = new ArrayList();
         //graphics = getGraphics();
@@ -89,6 +84,11 @@ public class Paint extends JFrame {
 
             }
         });
+    }
+
+    //private Graphics graphics;
+    public static void main(String[] args) {
+        new Paint();
     }
 
     class Line {

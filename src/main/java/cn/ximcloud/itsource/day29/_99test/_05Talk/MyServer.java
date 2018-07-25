@@ -20,15 +20,15 @@ public class MyServer extends JFrame {
     ServerSocket serverSocket;
     Socket socket;
 
-    public static void main(String[] args) throws UnknownHostException {
-        new MyServer();
-
-    }
-
     MyServer() {
         init();
         connect();
         new ServerThread(this).start();
+    }
+
+    public static void main(String[] args) throws UnknownHostException {
+        new MyServer();
+
     }
 
     void connect() {

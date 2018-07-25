@@ -41,18 +41,18 @@ public interface BinaryNodeInterface<T> {   //T BinaryNode存储的对象的类�
     public BinaryNodeInterface<T> getLeftChild();
 
     /**
-     * 获取该节点的右子节点
-     *
-     * @return 获取该节点的右子节点
-     */
-    public BinaryNodeInterface<T> getRightChild();
-
-    /**
      * 设置左子节点
      *
      * @param leftChild
      */
     public void setLeftChild(BinaryNodeInterface<T> leftChild);
+
+    /**
+     * 获取该节点的右子节点
+     *
+     * @return 获取该节点的右子节点
+     */
+    public BinaryNodeInterface<T> getRightChild();
 
     /**
      * 设置右子节点

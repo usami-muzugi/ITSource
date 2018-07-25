@@ -16,6 +16,10 @@ public class SexySister extends Hunman {
     private Character cup;
     private Pock pock;
 
+    public SexySister(Character cup) {
+        this.cup = cup;
+    }
+
     public void rush() {
         Pock pock;
         Collections.shuffle((pock = new Pock()).getPock());
@@ -29,10 +33,6 @@ public class SexySister extends Hunman {
             System.arraycopy(strings, i * 17, temp[i], 0, 17);
             gamers[i].setPock(temp[i]);
         }
-    }
-
-    public SexySister(Character cup) {
-        this.cup = cup;
     }
 
     /**

@@ -56,6 +56,7 @@ public class HomeWork2 {
         System.out.println((String) admin);
         System.out.println((String) properties.get("password"));
     }
+
     @Test
     public void testRun3() throws IOException {
         InputStream resourceAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("../resource/testConfig.properties");

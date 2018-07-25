@@ -48,14 +48,10 @@ import java.util.Date;
  **/
 
 public class HomeWork3 {
-    private TextArea textArea;
-    private static File file;
     private static final String string = "草鸡无敌牛皮李时珍的皮的飙水水水乱流至尊宝记事本";
+    private static File file;
+    private TextArea textArea;
 
-
-    public static void main(String[] args) {
-        new HomeWork3();
-    }
 
     private HomeWork3() {
         //创建顶层窗体
@@ -250,6 +246,9 @@ public class HomeWork3 {
         jFrame.setVisible(true);
     }
 
+    public static void main(String[] args) {
+        new HomeWork3();
+    }
 
     /**
      * 把TextArea里面的内容写入到硬盘

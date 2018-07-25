@@ -14,8 +14,8 @@ import java.awt.event.ActionListener;
  **/
 
 public class ActionListenerImpl implements Runnable, ActionListener {
-    private boolean flag = false;
     private static ActionEvent actionEvent;
+    private boolean flag = false;
 
     @Override
     public void actionPerformed(ActionEvent e) {

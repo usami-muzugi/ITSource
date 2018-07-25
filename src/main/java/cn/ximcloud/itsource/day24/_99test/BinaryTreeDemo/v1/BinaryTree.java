@@ -71,11 +71,11 @@ public class BinaryTree {
     }
 
     class BinaryNode {
+        private final Object object = new Object();
         private BinaryNode fathreNode;
         private BinaryNode leftNode;
         private BinaryNode rightNode;
         private int number;
-        private final Object object = new Object();
 
         BinaryNode() {
 

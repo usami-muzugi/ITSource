@@ -60,12 +60,6 @@ public class MyUtils {
         return string == null || string.equals("");
     }
 
-    @Test
-    public void StringTest() {
-        System.out.println(isEnmty(null));
-    }
-
-
     /**
      * String和Date之间的相互转换，传入一个对象可以是String类型，也可以是Date类型。该两种类型可以通过SimpleDateFormat进行格式化。其他类型抛出一个错误
      *
@@ -78,12 +72,6 @@ public class MyUtils {
         if (object instanceof String) return simpleDateFormat.parse((String) object);
         else if (object instanceof Date) return simpleDateFormat.format(object);
         throw new ParseException("Can not Format", 0);
-    }
-
-    @Test
-    public void exchangeTest() throws ParseException {
-        System.out.println(exchange(new Date(), new SimpleDateFormat("YYY-MM-dd")));
-        System.out.println(exchange("2018-12-21", new SimpleDateFormat("YYY-MM-dd")));
     }
 
     /**
@@ -99,7 +87,6 @@ public class MyUtils {
         throw new ParseException("Can not Format", 0);
     }
 
-
     /**
      * 判断一个字符串是否以指定的后缀结尾
      *
@@ -110,12 +97,6 @@ public class MyUtils {
     public static boolean isRight(String src, String dest) {
         return src.endsWith(dest);
     }
-
-    @Test
-    public void isRightTest() {
-        System.out.println(isRight("hacg@qq.com", "@qq.com"));
-    }
-
 
     /**
      * 自己写的方法 【我自己写方法有严重的偏差，比如传入的值是111.111.111.111得到的结果是[]的数组，但是能比较@】
@@ -129,6 +110,22 @@ public class MyUtils {
         System.out.println(Arrays.toString(split));
 //        return split[0].equals(dest);
         return true;
+    }
+
+    @Test
+    public void StringTest() {
+        System.out.println(isEnmty(null));
+    }
+
+    @Test
+    public void exchangeTest() throws ParseException {
+        System.out.println(exchange(new Date(), new SimpleDateFormat("YYY-MM-dd")));
+        System.out.println(exchange("2018-12-21", new SimpleDateFormat("YYY-MM-dd")));
+    }
+
+    @Test
+    public void isRightTest() {
+        System.out.println(isRight("hacg@qq.com", "@qq.com"));
     }
 
     @Test

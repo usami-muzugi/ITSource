@@ -22,15 +22,15 @@ public class Server extends Frame {
     DataInputStream dis;//�õ���Ϣ����
     DataOutputStream dos;//������Ϣ����
 
-    public static void main(String[] args) {
-        new Server();
-    }
-
     public Server() {
         init();
         connect();
         new ServerThread(this).start();
         ;
+    }
+
+    public static void main(String[] args) {
+        new Server();
     }
 
     void init() {

@@ -47,14 +47,10 @@ import java.util.Date;
  * 7、完成记事本的高级替换功能（支持正则表达式）
  **/
 public class HomeWork7 {
-    private TextArea textArea;
-    private static File file;
     private static final String string = "草鸡无敌牛皮李时珍的皮的飙水水水乱流至尊宝记事本";
+    private static File file;
+    private TextArea textArea;
 
-
-    public static void main(String[] args) {
-        new HomeWork7();
-    }
 
     private HomeWork7() {
         //创建顶层窗体
@@ -262,6 +258,9 @@ public class HomeWork7 {
         jFrame.setVisible(true);
     }
 
+    public static void main(String[] args) {
+        new HomeWork7();
+    }
 
     /**
      * 把TextArea里面的内容写入到硬盘

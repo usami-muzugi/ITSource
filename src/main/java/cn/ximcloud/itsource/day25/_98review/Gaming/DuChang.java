@@ -20,6 +20,16 @@ public class DuChang {
     }
 
 
+    public DuChang(String name) {
+        this.name = name;
+    }
+
+    public DuChang(String name, Integer size) {
+        this.name = name;
+        this.size = size;
+        this.duZhuos = new DuZhuo[size];
+    }
+
     public DuZhuo[] getDuZhuos() {
         return duZhuos;
     }
@@ -28,18 +38,8 @@ public class DuChang {
         this.duZhuos = duZhuos;
     }
 
-    public DuChang(String name) {
-        this.name = name;
-    }
-
     public DuZhuo getDuZhuo(Integer integer) {
         return duZhuos[integer];
-    }
-
-    public DuChang(String name, Integer size) {
-        this.name = name;
-        this.size = size;
-        this.duZhuos = new DuZhuo[size];
     }
 
     public String getName() {

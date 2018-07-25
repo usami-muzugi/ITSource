@@ -16,89 +16,6 @@ public class MyActionListener implements ActionListener {
         MyActionListener.textField = textField;
     }
 
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (jButton.getText().equals("=")) {
-            textField.setText(getSum());
-        } else if (jButton.getText().equals("CE")) {
-            ce();
-        } else if (jButton.getText().equals("C")) {
-            c();
-        } else if (jButton.getText().equals("DEL")) {
-            del();
-        } else if (jButton.getText().equals("±")) {
-            if (textField.getText().substring(0, 1).equals("-")) {    //有-号
-                textField.setText(textField.getText().substring(1, textField.getText().length()));
-            } else {
-                textField.setText("-" + textField.getText());
-            }
-        } else {
-            textField.setText(textField.getText() + jButton.getText());
-        }
-    }
-
-    private String getSum() {
-        //获取这个string
-        String string = textField.getText();
-        try {
-            string = opt(string) + "";
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (string.substring(string.length() - 1, string.length()).equals("0")) {
-            string = string.substring(0, string.length() - 2);
-        }
-        return string;
-
-    }
-
-//    private String getSum() {
-//        int sum = 0;
-//        char[] chars = textField.getText().substring(0,textField.getText().length()-1).toCharArray();
-//        /*
-//            1+1*1+4/2*2-1+2-1*1/1
-//            思路，加减乘除优先级
-//
-//            1，遍历乘号个数，然后把左边的值进行乘法运算  （BUG1：4/2*2 = 4，但是我的思路就是1了！！）
-//               1+1*1+4/2*2-1+2-1*1/1
-//                  ^     ^       ^
-//             结果: 2+2+4/4-1+2-1/1  有错误
-//
-//            Re1: 遍历乘除号位置
-//               1+1*1+4/2*2-1+2-1*1/1
-//                  ^   ^ ^       ^ ^
-//               1-1+2 +(1*1)+(4/2*2)+(1*1/1)
-//
-//
-//               1+1*1+4/2 *  2  -  1+2-1*1/1
-//               123456789 10 11 12 13
-//         */
-//        outsidt : for (int i = 0; i < chars.length; i++) {
-//            if (chars[i] == '*' || chars[i] == '%') {  //这个符号为高级运算
-//                do{
-//                    i += 2;
-//                }while(chars[i] == '*' || chars[i] == '%');
-//
-//            }
-//        }
-//
-//        return "";
-//    }
-
-    private void ce() {
-        textField.setText("");
-    }
-
-    private void c() {
-        textField.setText("");
-    }
-
-    private void del() {
-        if (!textField.getText().equals(""))
-            textField.setText(textField.getText().substring(0, textField.getText().length() - 1));
-    }
-
     private static float opt(String s) throws Exception {
         if (s == null || "".equals(s.trim())) {
             return 0f;
@@ -139,6 +56,88 @@ public class MyActionListener implements ActionListener {
             return opt(s.substring(0, a4)) / opt(s.substring(a4 + 1, s.length()));
         }
         return Integer.parseInt(s.trim());
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (jButton.getText().equals("=")) {
+            textField.setText(getSum());
+        } else if (jButton.getText().equals("CE")) {
+            ce();
+        } else if (jButton.getText().equals("C")) {
+            c();
+        } else if (jButton.getText().equals("DEL")) {
+            del();
+        } else if (jButton.getText().equals("±")) {
+            if (textField.getText().substring(0, 1).equals("-")) {    //有-号
+                textField.setText(textField.getText().substring(1, textField.getText().length()));
+            } else {
+                textField.setText("-" + textField.getText());
+            }
+        } else {
+            textField.setText(textField.getText() + jButton.getText());
+        }
+    }
+
+//    private String getSum() {
+//        int sum = 0;
+//        char[] chars = textField.getText().substring(0,textField.getText().length()-1).toCharArray();
+//        /*
+//            1+1*1+4/2*2-1+2-1*1/1
+//            思路，加减乘除优先级
+//
+//            1，遍历乘号个数，然后把左边的值进行乘法运算  （BUG1：4/2*2 = 4，但是我的思路就是1了！！）
+//               1+1*1+4/2*2-1+2-1*1/1
+//                  ^     ^       ^
+//             结果: 2+2+4/4-1+2-1/1  有错误
+//
+//            Re1: 遍历乘除号位置
+//               1+1*1+4/2*2-1+2-1*1/1
+//                  ^   ^ ^       ^ ^
+//               1-1+2 +(1*1)+(4/2*2)+(1*1/1)
+//
+//
+//               1+1*1+4/2 *  2  -  1+2-1*1/1
+//               123456789 10 11 12 13
+//         */
+//        outsidt : for (int i = 0; i < chars.length; i++) {
+//            if (chars[i] == '*' || chars[i] == '%') {  //这个符号为高级运算
+//                do{
+//                    i += 2;
+//                }while(chars[i] == '*' || chars[i] == '%');
+//
+//            }
+//        }
+//
+//        return "";
+//    }
+
+    private String getSum() {
+        //获取这个string
+        String string = textField.getText();
+        try {
+            string = opt(string) + "";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (string.substring(string.length() - 1, string.length()).equals("0")) {
+            string = string.substring(0, string.length() - 2);
+        }
+        return string;
+
+    }
+
+    private void ce() {
+        textField.setText("");
+    }
+
+    private void c() {
+        textField.setText("");
+    }
+
+    private void del() {
+        if (!textField.getText().equals(""))
+            textField.setText(textField.getText().substring(0, textField.getText().length() - 1));
     }
 
 }

@@ -39,6 +39,18 @@ public class AllInOneTest {
     private static String name;
     private int age;
 
+    @BeforeClass
+    public static void a() {
+        //BeforeClass不能初始化非static变量
+        name = "ourinsama"; //可以初始化static变量
+        System.out.println("testBeforeClass");
+    }
+
+    @AfterClass
+    public static void c() {
+        System.out.println("testAfterClass");
+    }
+
     /**
      * JUint测试方法执行流程
      * testBeforeClass
@@ -64,24 +76,12 @@ public class AllInOneTest {
         System.out.println("test2");
     }
 
-    @BeforeClass
-    public static void a() {
-        //BeforeClass不能初始化非static变量
-        name = "ourinsama"; //可以初始化static变量
-        System.out.println("testBeforeClass");
-    }
-
     @Before
     public void b() {
         //@Before方法能初始化静态变量和非静态变量
         name = "usamimizugi";
         age = 22;
         System.out.println("testBefore");
-    }
-
-    @AfterClass
-    public static void c() {
-        System.out.println("testAfterClass");
     }
 
     @After

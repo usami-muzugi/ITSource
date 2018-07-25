@@ -66,6 +66,14 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
     }
 
     /**
+     * @param leftChild
+     */
+    @Override
+    public void setLeftChild(BinaryNodeInterface<T> leftChild) {
+        leftNode = (BinaryNode<T>) leftChild;   //BinaryNode是BinaryNodeInterface的实现类所有可以强制类型转换
+    }
+
+    /**
      * 获取该节点的右子节点
      *
      * @return 获取该节点的右子节点
@@ -73,14 +81,6 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>, Serializable {
     @Override
     public BinaryNodeInterface<T> getRightChild() {
         return rightNode;
-    }
-
-    /**
-     * @param leftChild
-     */
-    @Override
-    public void setLeftChild(BinaryNodeInterface<T> leftChild) {
-        leftNode = (BinaryNode<T>) leftChild;   //BinaryNode是BinaryNodeInterface的实现类所有可以强制类型转换
     }
 
     /**

@@ -58,6 +58,11 @@ class Person {
     public Person() {
     }
 
+    public Person(Long id, String username) {
+        this.id = id;
+        this.username = username;
+    }
+
     @Override
     public boolean equals(Object object) {
         return true;   //仅equals比较结果相同 返回值[Person{id=10000, username='电信客服'}, Person{id=10086, username='移动客服'}]
@@ -84,11 +89,6 @@ class Person {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 '}';
-    }
-
-    public Person(Long id, String username) {
-        this.id = id;
-        this.username = username;
     }
 
     public Long getId() {

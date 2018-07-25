@@ -20,6 +20,17 @@ class Game {
     private int size;
     private ArrayList<String>[] arrayLists = new ArrayList[3];
 
+    public Game() throws InterruptedException {
+        gamers = new Gamer[3];
+        System.out.println("澳门首家线上赌场上线辣！");
+        Thread.sleep(random.nextInt(2000));
+    }
+
+    public Game(Gamer gamer) throws InterruptedException {
+        this();
+        add(gamer);
+    }
+
     public void start() throws InterruptedException {
         System.out.println("游戏启动");
         Thread.sleep(random.nextInt(1000));
@@ -52,18 +63,6 @@ class Game {
             gamers[i].setPock(arrayLists[0]);
         }
         System.out.println("性感荷官发牌完毕！");
-    }
-
-
-    public Game() throws InterruptedException {
-        gamers = new Gamer[3];
-        System.out.println("澳门首家线上赌场上线辣！");
-        Thread.sleep(random.nextInt(2000));
-    }
-
-    public Game(Gamer gamer) throws InterruptedException {
-        this();
-        add(gamer);
     }
 
     public Game add(Gamer gamer) throws InterruptedException {

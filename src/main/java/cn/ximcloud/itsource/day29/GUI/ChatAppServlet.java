@@ -50,15 +50,15 @@ public class ChatAppServlet extends JFrame {
     int prot;
     String name;
 
-    public static void main(String[] args) {
-        new ChatAppServlet();
-    }
-
     private ChatAppServlet() {
 
         init();
         connect();
         new ServletThread(this).start();
+    }
+
+    public static void main(String[] args) {
+        new ChatAppServlet();
     }
 
     void init() {

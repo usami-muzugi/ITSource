@@ -55,9 +55,17 @@ public class SerializableTest {
 }
 
 class Person {
+    private static final long serialVersionUID = -6633114470754667710L;
     private String name;
     private int age;
-    private static final long serialVersionUID = -6633114470754667710L;
+
+    public Person() {
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -72,14 +80,6 @@ class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Person() {
-    }
-
-    public Person(String name, int age) {
-        this.name = name;
         this.age = age;
     }
 }

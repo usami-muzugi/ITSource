@@ -82,6 +82,12 @@ class Student<T extends CharSequence, E extends Number> implements Comparable<St
     private E socre;
 
 
+    public Student(T name, E age, E socre) {
+        this.name = name;
+        this.age = age;
+        this.socre = socre;
+    }
+
     public T getName() {
         return name;
     }
@@ -103,12 +109,6 @@ class Student<T extends CharSequence, E extends Number> implements Comparable<St
     }
 
     public void setSocre(E socre) {
-        this.socre = socre;
-    }
-
-    public Student(T name, E age, E socre) {
-        this.name = name;
-        this.age = age;
         this.socre = socre;
     }
 

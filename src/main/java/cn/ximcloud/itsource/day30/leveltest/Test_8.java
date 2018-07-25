@@ -29,14 +29,14 @@ public class Test_8 extends JFrame {
     JButton jButton;
     String operation;
 
-    public static void main(String[] args) {
-        new Test_8();
-
-    }
-
     private Test_8() {
         init();
         new ClickThread(this).start();
+    }
+
+    public static void main(String[] args) {
+        new Test_8();
+
     }
 
     void init() {

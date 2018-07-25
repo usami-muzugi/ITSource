@@ -67,16 +67,6 @@ class DoubleLinkedList {
         //return this;
     }
 
-    private class Node {
-        Node perviousNode;
-        Node nextNode;
-        Object object;
-
-        public Node(Object object) {
-            this.object = object;
-        }
-    }
-
     @Override
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("[");
@@ -89,5 +79,15 @@ class DoubleLinkedList {
             temp = temp.nextNode;
         }
         return stringBuffer.append("]").toString();
+    }
+
+    private class Node {
+        Node perviousNode;
+        Node nextNode;
+        Object object;
+
+        public Node(Object object) {
+            this.object = object;
+        }
     }
 }

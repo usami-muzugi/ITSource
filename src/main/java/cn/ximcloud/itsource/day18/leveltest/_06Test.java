@@ -1,5 +1,9 @@
 package cn.ximcloud.itsource.day18.leveltest;
 
+interface Method {
+    double function();
+}
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -45,10 +49,6 @@ public class _06Test {
 
 abstract class Father {
     double mianji;
-}
-
-interface Method {
-    double function();
 }
 
 class yuan extends Father implements Method {

@@ -18,16 +18,16 @@ public class MyClient extends JFrame {
     DataOutputStream dos;
     Socket socket;
 
-    public static void main(String[] args) {
-
-        new MyClient();
-
-    }
-
     MyClient() {
         init();
         connect();
         new ClientThread(this).start();
+    }
+
+    public static void main(String[] args) {
+
+        new MyClient();
+
     }
 
     void connect() {

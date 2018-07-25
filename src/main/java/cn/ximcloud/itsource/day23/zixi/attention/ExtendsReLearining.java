@@ -41,8 +41,8 @@ public class ExtendsReLearining extends Extends {
 }
 
 class Extends {
-    private int age;
     String string;
+    private int age;
 
     public int getAge() {
         System.out.println("调用了父类的设置年龄的方法");

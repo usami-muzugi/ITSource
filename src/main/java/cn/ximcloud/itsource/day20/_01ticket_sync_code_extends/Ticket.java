@@ -11,10 +11,10 @@ package cn.ximcloud.itsource.day20._01ticket_sync_code_extends;
  **/
 
 public class Ticket extends Thread {
+    private static final String string = "";
+    private static int num = 50;
     //int num是对象级别的变量实例变量，这里需要加static让所有对象共享
     String name;
-    private static int num = 50;
-    private static final String string = "";
 
     public Ticket() {
     }

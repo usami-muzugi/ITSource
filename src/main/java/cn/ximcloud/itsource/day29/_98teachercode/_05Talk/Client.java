@@ -19,14 +19,14 @@ public class Client extends Frame {
     DataInputStream dis;//�õ���Ϣ����
     DataOutputStream dos;//������Ϣ����
 
-    public static void main(String[] args) {
-        new Client();
-    }
-
     public Client() {
         init();//��ʼ������
         connect();//��������
         new ClientThread(this).start();
+    }
+
+    public static void main(String[] args) {
+        new Client();
     }
 
     void init() {

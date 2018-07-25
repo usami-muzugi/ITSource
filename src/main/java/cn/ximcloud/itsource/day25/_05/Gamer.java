@@ -19,6 +19,12 @@ class Gamer {
     private ArrayList<String> pock;
 
 
+    public Gamer(String name, int age, int money) {
+        this.name = name;
+        this.age = age;
+        this.money = money;
+    }
+
     @Override
     public String toString() {
         return "Gamer{" +
@@ -81,11 +87,5 @@ class Gamer {
 
     public void setPock(ArrayList<String> pock) {
         this.pock = pock;
-    }
-
-    public Gamer(String name, int age, int money) {
-        this.name = name;
-        this.age = age;
-        this.money = money;
     }
 }

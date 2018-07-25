@@ -42,10 +42,6 @@ import java.util.Scanner;
  **/
 
 public class HomeWork3 {
-    public static void main(String[] args) {
-        new HomeWork3();
-    }
-
     HomeWork3() {
         System.out.println("交互的猜数字游戏开始辣！");     //1.打印一句游戏开始辣
         int[] initVar = new int[3];     //2.创建一个初始化的数组。分别表示 取值的范围， 竞猜的次数，和在取值范围内的随机数
@@ -89,5 +85,9 @@ public class HomeWork3 {
             }
         }
         if (flag) System.out.println("程序结束，你没找到。建议使用二分查找感谢游玩!");    //最后给一个友情提示，完成小程序漂亮收场。
+    }
+
+    public static void main(String[] args) {
+        new HomeWork3();
     }
 }

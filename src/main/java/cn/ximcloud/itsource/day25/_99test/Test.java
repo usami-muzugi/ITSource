@@ -1,5 +1,10 @@
 package cn.ximcloud.itsource.day25._99test;
 
+interface A {
+    int x = 0;
+
+}
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -12,11 +17,6 @@ package cn.ximcloud.itsource.day25._99test;
 
 public class Test extends B implements A {
     int x;
-
-    public void pX() {
-        System.out.println(x);
-    }
-
 
     public static void main(String[] args) {
         System.out.println(test());
@@ -31,13 +31,12 @@ public class Test extends B implements A {
         }
     }
 
+    public void pX() {
+        System.out.println(x);
+    }
+
 }
 
 class B {
     int x = 1;
-}
-
-interface A {
-    int x = 0;
-
 }

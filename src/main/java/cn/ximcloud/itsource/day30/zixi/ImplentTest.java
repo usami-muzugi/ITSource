@@ -1,5 +1,10 @@
 package cn.ximcloud.itsource.day30.zixi;
 
+interface B {
+    int x = 1;
+
+}
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -43,9 +48,4 @@ public class ImplentTest extends A implements B {
 class A {
 
     static int x;
-}
-
-interface B {
-    int x = 1;
-
 }

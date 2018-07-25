@@ -55,6 +55,9 @@ class Student implements Comparable {
     }
 
 
+    public Student() {
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
@@ -71,9 +74,6 @@ class Student implements Comparable {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + age;
         return result;
-    }
-
-    public Student() {
     }
 
     public String getName() {

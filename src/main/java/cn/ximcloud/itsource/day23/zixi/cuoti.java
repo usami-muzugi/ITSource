@@ -1,5 +1,9 @@
 package cn.ximcloud.itsource.day23.zixi;
 
+interface Result {
+    double getResult();
+}
+
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
@@ -81,8 +85,4 @@ public class cuoti {
         }
     }
 
-}
-
-interface Result {
-    double getResult();
 }

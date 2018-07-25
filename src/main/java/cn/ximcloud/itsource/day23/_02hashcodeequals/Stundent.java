@@ -25,6 +25,15 @@ public class Stundent {
     private String name;
     private int age;
 
+    public Stundent() {
+
+    }
+
+    public Stundent(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public static void main(String[] args) {
         HashSet<Stundent> stundentHashSet = new HashSet<>();
         Stundent stundent1 = new Stundent("usamimizugi", 18);
@@ -39,10 +48,6 @@ public class Stundent {
 
         System.out.println(stundentHashSet);
         /*stundentHashSet.add();*/
-    }
-
-    public Stundent() {
-
     }
 
     @Override
@@ -83,11 +88,6 @@ public class Stundent {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Stundent(String name, int age) {
-        this.name = name;
         this.age = age;
     }
 }

@@ -32,12 +32,12 @@ package cn.ximcloud.itsource.day30.zixi;
  **/
 
 public class Test3 {
+    private static Test3 test3 = new Test3();
+
     static {
         System.out.println("123123");
         test3 = null;
     }
-
-    private static Test3 test3 = new Test3();
 
     public Test3() {
         System.out.println("11131231");

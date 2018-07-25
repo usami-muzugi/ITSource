@@ -2,6 +2,9 @@ package cn.ximcloud.itsource.day32.teachercode.javaplus.pattern.singleton;
 
 public class StringUtil {
 
+    // 2 提供一个私有的自身类型的静态的变量;
+    private static StringUtil instance;
+
     /*
      * 单例模式: 懒汉式 1 构造器私有化 2 提供一个私有的自身类型的静态的变量; 3 提供一个public
      * static的getInstance()方法返回该类的对象; 4 工具方法
@@ -14,9 +17,6 @@ public class StringUtil {
     // 1 构造器私有化
     private StringUtil() {
     }
-
-    // 2 提供一个私有的自身类型的静态的变量;
-    private static StringUtil instance;
 
     // 3 提供一个public static的getInstance()方法返回该类的对象;
     public static StringUtil getInstance() {

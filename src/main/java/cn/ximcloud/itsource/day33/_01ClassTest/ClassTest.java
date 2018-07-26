@@ -1,7 +1,11 @@
 package cn.ximcloud.itsource.day33._01ClassTest;
 
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,13 +39,17 @@ import java.lang.reflect.Method;
  **/
 
 public class ClassTest {
-    public static void main(String[] args) {
+
+    @Test
+    public void testClass() throws ClassNotFoundException {
         //通过.class 获取 字节码文件（类的类对象）
         Class stringClass = String.class;
         //也可以通过所有类都是Object的子类，而Object拥有getClass()方法来获取
         Class aClass = new String().getClass();
         System.out.println(stringClass == aClass);      //这里的到的结果是true，也就是说一个类的字节码文件在一个JVM当中有且只有一个
-
+        //还可以通过Class.forName(String className)获得
+        Class<?> aClass1 = Class.forName("java.lang.String");
+        System.out.println(stringClass == aClass);
 
         //深入了解Class类
 
@@ -60,15 +68,22 @@ public class ClassTest {
         System.out.println("--------------------------------------------");
 
 
-
         //打印下试试看
         for (Field field : fields) {
             System.out.println(field);
 
         }
 
+
+        Class<Integer[]> aClass2 = Integer[].class;
+        System.out.println(aClass2);
+        System.out.println(int[][][][][].class);
+//        Class<?> aClass3 = Class.forName("[Ljava.lang.Integer");
+//        System.out.println(aClass3);
+
         /**
          * result:
+         *
          * true
          * public boolean java.lang.String.equals(java.lang.Object)
          * public int java.lang.String.length()
@@ -150,8 +165,52 @@ public class ClassTest {
          * 字段只有一个哟
          * public static final java.util.Comparator java.lang.String.CASE_INSENSITIVE_ORDER
          */
+    }
 
+    @Test
+    public void defualtTest() {
+        Class integerClass = int.class;
+        Class integerClass1 = Integer.class;
+        Class<Integer> type = Integer.TYPE;
+        System.out.println(integerClass1 == integerClass);
+        System.out.println(type == integerClass);
+    }
 
+    @Test
+    public void arrayTest() {
+        Class<int[]> aClass = int[].class;
+        Class aClass1 = new int[5].getClass();
+        System.out.println(aClass == aClass1);
+
+        int[][] arrss = new int[1][];
+        Class aClass3 = arrss.getClass();
+        System.out.println(aClass == aClass3);
+
+        String[] strings = new String[1];
+        Class aClass2 = strings.getClass();
+        System.out.println(aClass == aClass2);
+    }
+
+    @Test
+    public void listTest() {
+        List list = new ArrayList<>();
+        Class aClass = list.getClass();
+        System.out.println(aClass);
+        Class<List> listClass = List.class;
+        System.out.println(listClass);
+    }
+
+    @Test
+    public void voidTest() {
+        Class voidClass = void.class;
+        System.out.println(voidClass);
+        Class type = Void.TYPE;
+        System.out.println(type);
+        Class voidClass1 = Void.class;
+        System.out.println(voidClass1);
 
     }
+
+
 }
+

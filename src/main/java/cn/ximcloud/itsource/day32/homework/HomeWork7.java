@@ -31,5 +31,64 @@ package cn.ximcloud.itsource.day32.homework;
  * ////////////////////////////////////////////////////////////////////
  **/
 public class HomeWork7 {
+    private Two two;
+
+    public static void main(String[] args) {
+        Three three = new Three();
+        Two two = new Two();
+        ThreeToTwo threeToTwo = new ThreeToTwo();
+        threeToTwo.setThree(three);
+        Hotel hotel = new Hotel();
+        hotel.setTwo(two);
+    }
 
 }
+
+class Hotel {
+    private Two two;
+
+    public void setTwo(Two two) {
+        this.two = two;
+    }
+    public void chage() {
+        two.say();
+    }
+}
+
+class Three implements IThree {
+
+    @Override
+    public void say() {
+
+    }
+}
+
+class Two implements ITwo{
+
+
+    @Override
+    public void say() {
+
+    }
+}
+
+interface ITwo {
+    void say();
+}
+
+interface IThree {
+    void say();
+}
+
+class ThreeToTwo {
+    private Three three;
+
+    public void setThree(Three three) {
+        this.three = three;
+    }
+
+    public void adapter() {
+        three.say();
+    }
+}
+

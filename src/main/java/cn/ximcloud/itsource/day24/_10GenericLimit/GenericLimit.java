@@ -31,16 +31,16 @@ public class GenericLimit {
         ArrayList<Integer> list5 = new ArrayList<>();
 
         limit1(list1);
-//        limit1(list2);
+//        limit1(list2);    这里的报错能理解
         limit1(list3);
 //        limit1(list4);
         limit1(list5);
 
         limit2(list1);
         limit2(list2);
-//        limit2(list3);
+//        limit2(list3);    这里也能理解
 //        limit2(list4);
-//        limit2(list5);
+//       limit2(list5);
 
         Number number = 1;
         Object object = new Object();
@@ -51,7 +51,7 @@ public class GenericLimit {
 
         //这里开始准备复制创建对象，需要指明其类型
         ArrayList<? extends Number> arrayList = new ArrayList<>();
-//        arrayList.add(number);
+//        arrayList.add(number);    这下面为什么啊
 //        arrayList.add(object);
 //        arrayList.add(d);
 //        arrayList.add(string);
@@ -60,9 +60,9 @@ public class GenericLimit {
         //这样写虽然不会报错，但是原则上不推荐这样写
         ArrayList<? super Number> arrayList1 = new ArrayList<>();
         arrayList1.add(number);
-//        arrayList1.add(object);
+//        arrayList1.add(object);       //这里也是，很迷
         arrayList1.add(d);
-//        arrayList1.add(string);
+//        arrayList1.add(string);       //还有这
         arrayList1.add(integer);
 
     }

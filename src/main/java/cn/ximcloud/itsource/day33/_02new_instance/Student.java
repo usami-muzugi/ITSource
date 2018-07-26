@@ -1,10 +1,8 @@
 package cn.ximcloud.itsource.day33._02new_instance;
 
-import cn.ximcloud.itsource.day30.leveltest.test_9.Stu;
-
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: wizard
  * Date: 2018-07-26
  * Time: 16:05
  * ProjectName: ITSource.cn.ximcloud.itsource.day33._02new_instance
@@ -34,11 +32,26 @@ import cn.ximcloud.itsource.day30.leveltest.test_9.Stu;
  **/
 
 public class Student {
+    public String name;
+    public int age;
     private Student() {
 
     }
 
     public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
 
+    }
+
+    private Student(String name) {
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

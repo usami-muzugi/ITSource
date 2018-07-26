@@ -1,11 +1,15 @@
-package cn.ximcloud.itsource.day27._98test;
+package cn.ximcloud.itsource.day33._98test;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-07-17
- * Time: 08:28
- * ProjectName: ITSource.cn.ximcloud.itsource.day27.Test
+ * Date: 2018-07-26
+ * Time: 18:35
+ * ProjectName: ITSource.cn.ximcloud.itsource.day33
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -31,56 +35,43 @@ package cn.ximcloud.itsource.day27._98test;
  * ////////////////////////////////////////////////////////////////////
  **/
 
+public class Test {
+    @org.junit.Test
+    public void test() {
+        System.out.println("构造方法:");
+        for (Constructor<?> constructor : A.class.getDeclaredConstructors()) {
+            System.out.println(constructor);
+        }
+        System.out.println("所有方法:");
+        for (Method declaredMethod : A.class.getDeclaredMethods()) {
+            System.out.println(declaredMethod);
+        }
+        System.out.println("所有字段");
+        for (Field field : A.class.getDeclaredFields()) {
+            System.out.println(field);
+        }
+        System.out.println("所有类:");
+        for (Class<?> aClass : A.class.getClasses()) {
+            System.out.println(aClass.getName());
+        }
+    }
+}
 
-import java.io.*;
 
-public class HomeWork {
+class A {
+    private String name;
+    private int age;
+    private Card card;
 
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("F:/java 视频/面向对象/新建");
-        getList(file, "F:/1/2/");
 
+
+    class Card{
+        private int id;
+    }
+
+    static class B{
 
     }
 
-    /**
-     * 找出目录下面的指定的所有的视频文件
-     *
-     * @param file
-     * @param str
-     * @throws FileNotFoundException
-     */
-    public static void getList(File file, String str) throws FileNotFoundException {
-        if (file == null || !file.exists())
-            return;
-        FileInputStream fileI = new FileInputStream(file);
 
-        if (file.isFile() && file.getName().endsWith("avi")) {
-            String name = file.getName();
-            FileOutputStream fileO = new FileOutputStream(str + name, true);
-
-            byte[] by = new byte[1024];
-            int len;
-            try {
-                while ((len = fileI.read(by)) != -1) {
-                    fileO.write(by, 0, len);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                fileO.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (file.isDirectory()) {
-            File[] listFiles = file.listFiles();
-            for (File file2 : listFiles) {
-                //此处递归了,会查找每一个文件夹,
-                getList(file2, str);
-            }
-        }
-    }
 }

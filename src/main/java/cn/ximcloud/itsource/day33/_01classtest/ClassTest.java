@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day33._01ClassTest;
+package cn.ximcloud.itsource.day33._01classtest;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * User: wzard
  * Date: 2018-07-26
  * Time: 11:53
- * ProjectName: ITSource.cn.ximcloud.itsource.day33._01ClassTest
+ * ProjectName: ITSource.cn.ximcloud.itsource.day33._01classtest
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -162,7 +162,7 @@ public class ClassTest {
          * public final native void java.lang.Object.notify()
          * public final native void java.lang.Object.notifyAll()
          * --------------------------------------------
-         * 字段只有一个哟
+         * 字段只有一个
          * public static final java.util.Comparator java.lang.String.CASE_INSENSITIVE_ORDER
          */
     }

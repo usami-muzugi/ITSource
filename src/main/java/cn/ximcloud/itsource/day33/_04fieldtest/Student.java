@@ -1,11 +1,11 @@
-package cn.ximcloud.itsource.day27._98test;
+package cn.ximcloud.itsource.day33._04fieldtest;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
- * Date: 2018-07-17
- * Time: 08:28
- * ProjectName: ITSource.cn.ximcloud.itsource.day27.Test
+ * Date: 2018-07-26
+ * Time: 16:05
+ * ProjectName: ITSource.cn.ximcloud.itsource.day33._02new_instance
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -31,56 +31,14 @@ package cn.ximcloud.itsource.day27._98test;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-
-import java.io.*;
-
-public class HomeWork {
-
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("F:/java 视频/面向对象/新建");
-        getList(file, "F:/1/2/");
-
+public class Student {
+    private static final String NAME = "彭睿";
+    public String sex = "男";
+    private Student() {
 
     }
 
-    /**
-     * 找出目录下面的指定的所有的视频文件
-     *
-     * @param file
-     * @param str
-     * @throws FileNotFoundException
-     */
-    public static void getList(File file, String str) throws FileNotFoundException {
-        if (file == null || !file.exists())
-            return;
-        FileInputStream fileI = new FileInputStream(file);
+    public Student(String name, int age) {
 
-        if (file.isFile() && file.getName().endsWith("avi")) {
-            String name = file.getName();
-            FileOutputStream fileO = new FileOutputStream(str + name, true);
-
-            byte[] by = new byte[1024];
-            int len;
-            try {
-                while ((len = fileI.read(by)) != -1) {
-                    fileO.write(by, 0, len);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                fileO.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (file.isDirectory()) {
-            File[] listFiles = file.listFiles();
-            for (File file2 : listFiles) {
-                //此处递归了,会查找每一个文件夹,
-                getList(file2, str);
-            }
-        }
     }
 }

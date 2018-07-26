@@ -1,8 +1,8 @@
-package cn.ximcloud.itsource.day33_reflect._04fieldtest;
+package cn.ximcloud.itsource.day33_reflect.homework.homework1;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * User: wizard
  * Date: 2018-07-26
  * Time: 16:05
  * ProjectName: ITSource.cn.ximcloud.itsource.day33_reflect.homework1
@@ -11,13 +11,26 @@ package cn.ximcloud.itsource.day33_reflect._04fieldtest;
  **/
 
 public class Student {
-    private static final String NAME = "彭睿";
-    public String sex = "男";
+    public String name;
+    public int age;
     private Student() {
 
     }
 
     public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
 
+    }
+
+    private Student(String name) {
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

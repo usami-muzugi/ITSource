@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day33_reflect._04fieldtest;
+package cn.ximcloud.itsource.day33_reflect.homework.homework3;
 
 import org.junit.Test;
 

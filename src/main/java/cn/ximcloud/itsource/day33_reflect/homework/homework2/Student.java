@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day33_reflect._04fieldtest;
+package cn.ximcloud.itsource.day33_reflect.homework.homework2;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,13 +11,23 @@ package cn.ximcloud.itsource.day33_reflect._04fieldtest;
  **/
 
 public class Student {
-    private static final String NAME = "彭睿";
-    public String sex = "男";
     private Student() {
 
     }
 
     public Student(String name, int age) {
 
+    }
+
+    public void say() {
+        System.out.println("我可是大神！");
+    }
+
+    private void say(String name, int age) {
+        System.out.println("我可是大神呀！");
+    }
+
+    private static void say(String name) {
+        System.out.println("这个有点意思啊！");
     }
 }

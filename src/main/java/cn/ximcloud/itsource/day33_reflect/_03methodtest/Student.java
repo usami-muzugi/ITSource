@@ -5,7 +5,7 @@ package cn.ximcloud.itsource.day33_reflect._03methodtest;
  * User: wzard
  * Date: 2018-07-26
  * Time: 16:05
- * ProjectName: ITSource.cn.ximcloud.itsource.day33_reflect._02new_instance
+ * ProjectName: ITSource.cn.ximcloud.itsource.day33_reflect.homework1
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  **/

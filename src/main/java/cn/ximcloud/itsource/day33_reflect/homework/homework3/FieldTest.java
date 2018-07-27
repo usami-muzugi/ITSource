@@ -2,6 +2,7 @@ package cn.ximcloud.itsource.day33_reflect.homework.homework3;
 
 import org.junit.Test;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -68,6 +69,11 @@ public class FieldTest {
         //Can not set static final java.lang.String field cn.ximcloud.itsource.day33_reflect.homework3.Student.NAME to java.lang.String
         //看来是不能对final修饰的字段进行修改的
 
+
+        Package aPackage = student.getClass().getPackage();
+        Annotation[] annotations = student.getClass().getAnnotations();
+        String simpleName = student.getClass().getSimpleName();
+        student.getClass().getInterfaces();
     }
 
 

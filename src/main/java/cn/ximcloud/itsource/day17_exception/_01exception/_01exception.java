@@ -45,7 +45,7 @@ public class _01exception {
          */
 //        var integer = Integer.valueOf("qq");
 
-        Integer integer = new Integer("1");
+        Integer integer = Integer.valueOf("1");
         int i = integer;//自动拆箱
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss E");

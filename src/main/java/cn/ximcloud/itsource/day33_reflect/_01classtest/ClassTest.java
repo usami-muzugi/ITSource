@@ -19,6 +19,20 @@ import java.util.List;
 
 public class ClassTest {
 
+
+    @Test
+    public void testClass2() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        //使用类的完全限定名来创建一个对象
+        Object o = Class.forName("java.lang.String").newInstance();
+        //使用这种方式来创建一个对象 ..其实都是一样的
+        String s = "java.lang.String";
+        Object o1 = Class.forName(s).newInstance();
+        System.out.println(o.getClass().getPackage());
+        System.out.println(o1.getClass().getPackage());
+    }
+
+
+
     @Test
     public void testClass() throws ClassNotFoundException {
         //通过.class 获取 字节码文件（类的类对象）

@@ -59,7 +59,7 @@ public class _02TestInteger {
 
 
         int test1 = 20;
-        Integer test2 = new Integer(20);
+        Integer test2 = Integer.valueOf(20);
         System.out.println("test1 == test ? " + (test1 == test2));//自动拆箱
 
         int test3 = test1 + test2;

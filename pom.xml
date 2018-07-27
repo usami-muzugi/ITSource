@@ -19,6 +19,20 @@
             <artifactId>jsp-api</artifactId>
             <version>2.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+        <!--Day34 XML学习-->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <!--&lt;!&ndash;上述配置中jaxen的包主要在使用Xpath时会被用到。&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>jaxen</groupId>-->
+            <!--<artifactId>jaxen</artifactId>-->
+            <!--<version>1.1.6</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 

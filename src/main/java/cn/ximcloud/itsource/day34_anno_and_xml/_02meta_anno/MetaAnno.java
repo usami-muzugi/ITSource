@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day34_anno_and_xml._02meta_anno;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-27
  * Time: 11:18
  * ProjectName: ITSource.cn.ximcloud.itsource.day34_anno_and_xml._01learning_anno

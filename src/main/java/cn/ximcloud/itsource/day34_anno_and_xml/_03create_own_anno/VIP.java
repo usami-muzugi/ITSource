@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-27
  * Time: 11:35
  * ProjectName: ITSource.cn.ximcloud.itsource.day34_anno_and_xml.AnnoTest

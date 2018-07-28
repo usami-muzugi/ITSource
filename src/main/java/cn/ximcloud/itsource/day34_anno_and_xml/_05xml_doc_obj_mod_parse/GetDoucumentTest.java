@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-27
  * Time: 16:05
  * ProjectName: ITSource.cn.ximcloud.itsource.day34_anno_and_xml._05xml_doc_obj_mod_parse
@@ -96,7 +96,7 @@ public class GetDoucumentTest {
     @Test
     public void testAdd() {
         //创建5个元素实例
-        Element linkman = document.createElement("Linkman");
+        Element linkman = document.createElement("linkman");
         Element name = document.createElement("name");
         Element email = document.createElement("email");
         Element address = document.createElement("address");

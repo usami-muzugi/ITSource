@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts xmlns="http://itsource.cn"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+	xs:schemaLocation="http://itsource.cn  contactsSchema.xsd">
+	<linkman id="2334">
+		<name>gg</name>
+		<email>gg@itsource.cn</email>
+		<address>成都</address>
+		<group>源代码教育</group>
+	</linkman>
+	<linkman id="45">
+		<name>mm</name>
+		<email>lanyotech@qq.com</email>
+		<address>成都</address>
+		<group>源代码教育</group>
+	</linkman>
+</contacts>

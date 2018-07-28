@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day34_anno_and_xml._03create_own_anno;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-27
  * Time: 11:34
  * ProjectName: ITSource.cn.ximcloud.itsource.day34_anno_and_xml.AnnoTest

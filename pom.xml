@@ -27,12 +27,12 @@
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
         </dependency>
-        <!--&lt;!&ndash;上述配置中jaxen的包主要在使用Xpath时会被用到。&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>jaxen</groupId>-->
-            <!--<artifactId>jaxen</artifactId>-->
-            <!--<version>1.1.6</version>-->
-        <!--</dependency>-->
+        <!--上述配置中jaxen的包主要在使用Xpath时会被用到。-->
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.6</version>
+        </dependency>
     </dependencies>
 
 

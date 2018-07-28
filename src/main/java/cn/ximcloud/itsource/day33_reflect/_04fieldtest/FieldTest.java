@@ -17,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
  * // 第一组: 得到当时公共的字段,包括从父类(接口)继承来的公共的字段
  * Field getField(String name)
  * Field[] getFields()
- *
+ * <p>
  * //第二组 : 本类(接口)中自己声明的所有字段,和权限无关
  * Field getDeclaredField(String name)
  * Field[] getDeclaredFields()
@@ -28,6 +28,7 @@ public class FieldTest {
 
     /**
      * 测试得到Student类的所有能够被访问的字段，和对字段进行操作
+     *
      * @throws NoSuchFieldException
      * @throws IllegalAccessException
      */
@@ -49,6 +50,7 @@ public class FieldTest {
 
     /**
      * 测试得到Student类的所有字段，并对其进行操作
+     *
      * @throws NoSuchFieldException
      * @throws IllegalAccessException
      */
@@ -69,8 +71,6 @@ public class FieldTest {
         //看来是不能对final修饰的字段进行修改的
 
     }
-
-
 
 
     /**

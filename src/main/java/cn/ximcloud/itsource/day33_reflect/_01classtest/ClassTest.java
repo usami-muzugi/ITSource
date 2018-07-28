@@ -32,7 +32,6 @@ public class ClassTest {
     }
 
 
-
     @Test
     public void testClass() throws ClassNotFoundException {
         //通过.class 获取 字节码文件（类的类对象）

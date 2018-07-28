@@ -42,14 +42,12 @@ class A {
     private int age;
     private Card card;
 
+    static class B {
 
-
-    class Card{
-        private int id;
     }
 
-    static class B{
-
+    class Card {
+        private int id;
     }
 
 

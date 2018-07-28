@@ -1,19 +1,13 @@
-package cn.ximcloud.itsource.day32_java_plus.homework;
+package cn.ximcloud.itsource.day34_anno_and_xml.homework.homework1.dom4j.v2;
 
-interface ITwo {
-    void say();
-}
-
-interface IThree {
-    void say();
-}
+import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
- * Date: 2018-07-24
- * Time: 19:10
- * ProjectName: itsource
+ * Date: 2018-07-28
+ * Time: 20:50
+ * ProjectName: ITSource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -38,58 +32,16 @@ interface IThree {
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
-public class HomeWork7 {
-    private Two two;
-
+public class Test {
     public static void main(String[] args) {
-        Three three = new Three();
-        Two two = new Two();
-        ThreeToTwo threeToTwo = new ThreeToTwo();
-        threeToTwo.setThree(three);
-        Hotel hotel = new Hotel();
-        hotel.setTwo(two);
-    }
-
-}
-
-class Hotel {
-    private Two two;
-
-    public void setTwo(Two two) {
-        this.two = two;
-    }
-
-    public void chage() {
-        two.say();
-    }
-}
-
-class Three implements IThree {
-
-    @Override
-    public void say() {
+        Student[] students = new Student[5];
+        students[0] = new Student("usami", 20);
+        students[1] = new Student("ourinsama", 20);
+        students[2] = new Student("time", 25);
+        students[3] = new Student("jeston", 20);
+        students[4] = new Student("彭睿", 20);
+        StudentDAOImpl studentDAO = new StudentDAOImpl(new File("C:\\Users\\Wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day34_anno_and_xml\\homework\\v2\\Student.xml"),students);
+        studentDAO.save();
 
     }
 }
-
-class Two implements ITwo {
-
-
-    @Override
-    public void say() {
-
-    }
-}
-
-class ThreeToTwo {
-    private Three three;
-
-    public void setThree(Three three) {
-        this.three = three;
-    }
-
-    public void adapter() {
-        three.say();
-    }
-}
-

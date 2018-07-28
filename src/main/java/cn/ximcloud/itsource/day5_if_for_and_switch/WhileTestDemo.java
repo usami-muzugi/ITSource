@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day5_if_for_and_switch;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-11
  * Time: 18:55
  * ProjectName: ITSource

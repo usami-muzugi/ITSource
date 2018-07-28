@@ -4,7 +4,7 @@ import java.util.Vector;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-08
  * Time: 14:01
  * ProjectName: ITSource

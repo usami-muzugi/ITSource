@@ -8,7 +8,7 @@ interface Phone {
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-24
  * Time: 18:52
  * ProjectName: itsource

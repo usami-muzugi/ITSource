@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-14
  * Time: 22:04
  * ProjectName: itsource

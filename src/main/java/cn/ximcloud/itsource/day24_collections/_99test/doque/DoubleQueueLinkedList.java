@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day24_collections._99test.doque;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-09
  * Time: 15:02
  * ProjectName: ITSource

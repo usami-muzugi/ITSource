@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-26
  * Time: 16:04
  * ProjectName: ITSource.cn.ximcloud.itsource.day33_reflect._01classtest

@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day17_exception._01exception;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-01
  * Time: 16:17
  * ProjectName: ITSource

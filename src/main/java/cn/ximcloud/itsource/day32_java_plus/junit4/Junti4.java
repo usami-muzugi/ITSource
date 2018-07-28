@@ -4,7 +4,7 @@ import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-23
  * Time: 14:07
  * ProjectName: ITSource.cn.ximcloud.itsource.day32_java_plus.junit3.junit4

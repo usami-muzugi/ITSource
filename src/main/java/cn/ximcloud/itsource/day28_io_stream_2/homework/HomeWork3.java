@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-17
  * Time: 16:13
  * ProjectName: ITSource.cn.ximcloud.itsource.day28_io_stream_2.homework

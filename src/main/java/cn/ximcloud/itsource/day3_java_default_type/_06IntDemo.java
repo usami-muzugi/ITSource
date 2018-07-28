@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day3_java_default_type;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-10
  * Time: 14:45
  * ProjectName: ITSource

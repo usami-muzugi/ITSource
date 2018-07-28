@@ -4,7 +4,7 @@ import cn.ximcloud.itsource.day13_abstact_and_interface.admin.Admin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-24
  * Time: 14:49
  * ProjectName: ITSource

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-08
  * Time: 10:34
  * ProjectName: ITSource

@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day20_thread_2._99test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-06
  * Time: 23:13
  * ProjectName: ITSource

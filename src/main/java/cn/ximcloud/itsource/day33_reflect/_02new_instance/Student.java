@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day33_reflect._02new_instance;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-26
  * Time: 16:05
  * ProjectName: ITSource.cn.ximcloud.itsource.day33_reflect.homework1

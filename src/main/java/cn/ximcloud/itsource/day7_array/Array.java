@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day7_array;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-15
  * Time: 16:06
  * ProjectName: ITSource

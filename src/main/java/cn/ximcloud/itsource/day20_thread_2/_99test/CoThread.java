@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-06
  * Time: 23:36
  * ProjectName: ITSource

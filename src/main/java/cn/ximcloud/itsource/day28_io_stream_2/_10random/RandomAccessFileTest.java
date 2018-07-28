@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-17
  * Time: 15:39
  * ProjectName: ITSource.cn.ximcloud.itsource.day28_io_stream_2._10random

@@ -3,7 +3,7 @@ package cn.ximcloud.itsource.day6_method_or_function;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-15
  * Time: 09:01
  * ProjectName: ITSource

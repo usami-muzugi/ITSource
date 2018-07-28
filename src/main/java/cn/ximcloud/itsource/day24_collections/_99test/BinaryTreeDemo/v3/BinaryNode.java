@@ -4,7 +4,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: wizard
+// * Student: wizard
 // * Date: 2018-07-10
 // * Time: 13:27
 // * ProjectName: ITSource

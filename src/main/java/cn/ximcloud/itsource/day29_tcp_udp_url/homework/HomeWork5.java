@@ -4,7 +4,7 @@ import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-17
  * Time: 23:40
  * ProjectName: itsource

@@ -11,7 +11,7 @@ import java.awt.event.WindowListener;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-28
  * Time: 16:39
  * ProjectName: ITSource

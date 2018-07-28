@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 18:20
  * ProjectName: ITSource

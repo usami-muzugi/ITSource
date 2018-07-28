@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day19_thread._010Priority;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 15:30
  * ProjectName: ITSource

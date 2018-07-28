@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day2_jre;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-09
  * Time: 10:42
  * ProjectName: ITSource

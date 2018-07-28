@@ -4,7 +4,7 @@ import cn.ximcloud.itsource.day19_thread._03Play.PlayGame;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 11:24
  * ProjectName: ITSource

@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-14
  * Time: 15:17
  * ProjectName: ITSource.cn.ximcloud.itsource.day26_io_stream_file._05filefilter2_learning

@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day20_thread_2._03sync_code_method_extends;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 11:46
  * ProjectName: ITSource

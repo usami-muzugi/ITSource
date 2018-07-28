@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day4_how_to_change_each_other;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-06-11
  * Time: 11:23
  * ProjectName: ITSource

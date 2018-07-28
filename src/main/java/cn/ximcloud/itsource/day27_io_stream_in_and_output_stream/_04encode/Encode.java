@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-16
  * Time: 09:57
  * ProjectName: ITSource.cn.ximcloud.itsource.day27_io_stream_in_and_output_stream._04encode

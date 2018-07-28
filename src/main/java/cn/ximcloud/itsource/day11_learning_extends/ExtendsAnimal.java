@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day11_learning_extends;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-22
  * Time: 10:14
  * ProjectName: ITSource

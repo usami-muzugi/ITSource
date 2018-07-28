@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-11
  * Time: 18:58
  * ProjectName: ITSource

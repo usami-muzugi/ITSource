@@ -5,7 +5,7 @@ import java.util.ListIterator;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-08
  * Time: 14:11
  * ProjectName: ITSource

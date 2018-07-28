@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-16
  * Time: 14:10
  * ProjectName: ITSource.cn.ximcloud.itsource.day27_io_stream_in_and_output_stream._07inputstreamreader

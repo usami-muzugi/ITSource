@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day24_collections.homework;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-12
  * Time: 08:52
  * ProjectName: ITSource

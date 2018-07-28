@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day13_abstact_and_interface.manager;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-24
  * Time: 13:56
  * ProjectName: ITSource

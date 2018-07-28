@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-01
  * Time: 11:52
  * ProjectName: ITSource

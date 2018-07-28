@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-19
  * Time: 14:13
  * ProjectName: ITSource.cn.ximcloud.itsource.day30_test.leveltest

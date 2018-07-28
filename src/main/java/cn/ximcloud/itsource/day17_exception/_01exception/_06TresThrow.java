@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day17_exception._01exception;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-03
  * Time: 10:11
  * ProjectName: ITSource
@@ -126,7 +126,7 @@ class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Student{" +
                 "name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 '}';

@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-14
  * Time: 23:14
  * ProjectName: itsource

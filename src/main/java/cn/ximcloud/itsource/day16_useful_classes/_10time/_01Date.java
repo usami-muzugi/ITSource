@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-01
  * Time: 15:23
  * ProjectName: ITSource

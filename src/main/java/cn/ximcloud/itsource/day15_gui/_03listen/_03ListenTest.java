@@ -5,7 +5,7 @@ import java.awt.*;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-28
  * Time: 10:48
  * ProjectName: ITSource

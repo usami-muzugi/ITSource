@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day23_collection_2._99test.BinaryTreeDemo.v1;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-09
  * Time: 11:46
  * ProjectName: ITSource

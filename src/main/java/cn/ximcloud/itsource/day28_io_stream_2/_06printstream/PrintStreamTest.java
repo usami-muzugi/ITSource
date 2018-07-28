@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-17
  * Time: 18:47
  * ProjectName: ITSource.cn.ximcloud.itsource.day28_io_stream_2._06printstream

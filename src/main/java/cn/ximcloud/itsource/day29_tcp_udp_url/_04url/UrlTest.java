@@ -6,7 +6,7 @@ import java.net.URLEncoder;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-19
  * Time: 09:03
  * ProjectName: ITSource.cn.ximcloud.itsource.day29_tcp_udp_url._04url

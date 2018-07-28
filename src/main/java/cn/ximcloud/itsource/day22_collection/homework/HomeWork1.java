@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-08
  * Time: 12:34
  * ProjectName: ITSource

@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day16_useful_classes._06stringclass;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-01
  * Time: 11:28
  * ProjectName: ITSource

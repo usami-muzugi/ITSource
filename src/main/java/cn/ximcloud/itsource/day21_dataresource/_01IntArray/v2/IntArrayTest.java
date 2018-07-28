@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day21_dataresource._01IntArray.v2;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-07
  * Time: 11:11
  * ProjectName: ITSource

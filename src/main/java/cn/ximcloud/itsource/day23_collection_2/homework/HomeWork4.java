@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-09
  * Time: 23:35
  * ProjectName: itsource

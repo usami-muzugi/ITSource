@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day27_io_stream_in_and_output_stream._98test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-17
  * Time: 08:28
  * ProjectName: ITSource.cn.ximcloud.itsource.day27_io_stream_in_and_output_stream.Test

@@ -4,7 +4,7 @@ import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-13
  * Time: 11:35
  * ProjectName: ITSource

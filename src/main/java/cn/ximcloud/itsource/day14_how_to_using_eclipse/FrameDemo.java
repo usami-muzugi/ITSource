@@ -4,7 +4,7 @@ import javax.swing.*;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-25
  * Time: 15:57
  * ProjectName: ITSource

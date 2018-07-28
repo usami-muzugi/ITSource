@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day29_tcp_udp_url.homework;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-17
  * Time: 23:40
  * ProjectName: itsource

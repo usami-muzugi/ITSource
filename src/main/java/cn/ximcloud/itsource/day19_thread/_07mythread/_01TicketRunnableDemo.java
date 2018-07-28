@@ -3,7 +3,7 @@ package cn.ximcloud.itsource.day19_thread._07mythread;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 14:17
  * ProjectName: ITSource

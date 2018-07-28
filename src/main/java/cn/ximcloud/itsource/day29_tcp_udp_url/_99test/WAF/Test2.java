@@ -9,7 +9,7 @@ import java.net.Socket;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-18
  * Time: 22:42
  * ProjectName: itsource

@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-18
  * Time: 00:36
  * ProjectName: itsource

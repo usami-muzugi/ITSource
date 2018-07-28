@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-30
  * Time: 15:04
  * ProjectName: ITSource

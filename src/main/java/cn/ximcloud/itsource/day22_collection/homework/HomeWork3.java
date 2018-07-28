@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-08
  * Time: 12:41
  * ProjectName: ITSource

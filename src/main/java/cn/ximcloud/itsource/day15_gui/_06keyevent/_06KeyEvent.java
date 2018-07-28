@@ -9,7 +9,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: wzard
+// * Student: wzard
 // * Date: 2018-06-28
 // * Time: 15:34
 // * ProjectName: ITSource

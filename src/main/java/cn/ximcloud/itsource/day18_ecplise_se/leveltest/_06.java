@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day18_ecplise_se.leveltest;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-03
  * Time: 14:06
  * ProjectName: ITSource

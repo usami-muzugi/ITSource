@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day30_test.zixi;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-21
  * Time: 14:42
  * ProjectName: ITSource.cn.ximcloud.itsource.day30_test.zixi

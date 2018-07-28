@@ -6,7 +6,7 @@ import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-11
  * Time: 15:40
  * ProjectName: ITSource

@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-14
  * Time: 11:37
  * ProjectName: ITSource.cn.ximcloud.itsource.day26_io_stream_file._03file_delete_learning

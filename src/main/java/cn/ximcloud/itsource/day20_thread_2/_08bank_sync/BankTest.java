@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day20_thread_2._08bank_sync;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-05
  * Time: 14:40
  * ProjectName: ITSource

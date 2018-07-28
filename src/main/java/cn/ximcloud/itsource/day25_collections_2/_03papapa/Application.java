@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-12
  * Time: 14:51
  * ProjectName: ITSource

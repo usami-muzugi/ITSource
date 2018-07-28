@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-16
  * Time: 15:37
  * ProjectName: ITSource.cn.ximcloud.itsource.day27_io_stream_in_and_output_stream.homework

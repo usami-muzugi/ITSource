@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-18
  * Time: 16:23
  * ProjectName: ITSource.cn.ximcloud.itsource.day29_tcp_udp_url.GUI

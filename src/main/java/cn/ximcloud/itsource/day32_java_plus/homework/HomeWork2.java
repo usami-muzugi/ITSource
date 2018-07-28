@@ -7,7 +7,7 @@ import java.util.Properties;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-24
  * Time: 16:57
  * ProjectName: itsource

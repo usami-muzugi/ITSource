@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-13
  * Time: 12:31
  * ProjectName: ITSource

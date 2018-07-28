@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-08
  * Time: 15:21
  * ProjectName: ITSource

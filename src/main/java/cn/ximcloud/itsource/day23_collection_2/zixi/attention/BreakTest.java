@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day23_collection_2.zixi.attention;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-10
  * Time: 14:15
  * ProjectName: ITSource

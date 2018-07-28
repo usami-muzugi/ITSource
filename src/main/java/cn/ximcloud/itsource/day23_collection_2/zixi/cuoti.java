@@ -6,7 +6,7 @@ interface Result {
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-10
  * Time: 10:06
  * ProjectName: ITSource

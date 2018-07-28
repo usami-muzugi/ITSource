@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day19_thread._08sleep;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 15:05
  * ProjectName: ITSource

@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day19_thread._06piaochi;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 11:46
  * ProjectName: ITSource

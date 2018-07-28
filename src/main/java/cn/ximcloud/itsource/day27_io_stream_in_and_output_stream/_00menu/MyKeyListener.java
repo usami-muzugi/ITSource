@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-28
  * Time: 19:32
  * ProjectName: ITSource

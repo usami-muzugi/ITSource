@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-13
  * Time: 00:01
  * ProjectName: itsource

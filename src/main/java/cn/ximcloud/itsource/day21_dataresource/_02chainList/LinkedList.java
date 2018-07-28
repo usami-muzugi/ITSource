@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day21_dataresource._02chainList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-07
  * Time: 14:26
  * ProjectName: ITSource

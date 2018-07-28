@@ -5,7 +5,7 @@ import java.io.FileFilter;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-14
  * Time: 23:10
  * ProjectName: itsource

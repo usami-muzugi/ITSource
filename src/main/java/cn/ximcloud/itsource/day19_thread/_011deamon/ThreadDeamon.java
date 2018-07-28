@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day19_thread._011deamon;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-04
  * Time: 16:16
  * ProjectName: ITSource

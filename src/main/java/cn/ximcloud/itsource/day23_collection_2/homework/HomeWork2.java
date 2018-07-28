@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wizard
+ * Student: wizard
  * Date: 2018-07-09
  * Time: 19:43
  * ProjectName: ITSource

@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
+ * Student: Wizard
  * Date: 2018-07-24
  * Time: 16:53
  * ProjectName: itsource

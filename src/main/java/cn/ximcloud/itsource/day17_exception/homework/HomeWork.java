@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-03
  * Time: 08:46
  * ProjectName: ITSource

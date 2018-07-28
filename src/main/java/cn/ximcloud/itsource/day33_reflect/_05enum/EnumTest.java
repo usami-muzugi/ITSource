@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-26
  * Time: 19:02
  * ProjectName: ITSource.cn.ximcloud.itsource.day33_reflect._05enum

@@ -3,7 +3,7 @@ package cn.ximcloud.itsource.day32_java_plus.junit3;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-23
  * Time: 10:41
  * ProjectName: ITSource.cn.ximcloud.itsource.day32_java_plus.junit3

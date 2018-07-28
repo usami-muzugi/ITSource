@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.test.day18;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-04
  * Time: 08:47
  * ProjectName: ITSource

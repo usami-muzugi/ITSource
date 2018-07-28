@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day20_thread_2._04sync_code_method_runnable;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-05
  * Time: 11:16
  * ProjectName: ITSource

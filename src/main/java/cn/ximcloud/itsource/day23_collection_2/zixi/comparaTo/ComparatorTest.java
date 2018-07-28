@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-10
  * Time: 09:26
  * ProjectName: ITSource

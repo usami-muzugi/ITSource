@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-06-15
  * Time: 15:44
  * ProjectName: ITSource

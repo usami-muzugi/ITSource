@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-15
  * Time: 10:51
  * ProjectName: ITSource.cn.ximcloud.itsource.day27_io_stream_in_and_output_stream._00menu._01fileinputstream

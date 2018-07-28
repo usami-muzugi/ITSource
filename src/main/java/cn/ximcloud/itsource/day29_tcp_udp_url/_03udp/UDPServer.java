@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day29_tcp_udp_url._03udp;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-18
  * Time: 15:12
  * ProjectName: ITSource.cn.ximcloud.itsource.day29_tcp_udp_url._03udp

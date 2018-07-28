@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day23_collection_2.understanding;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-10
  * Time: 14:44
  * ProjectName: ITSource

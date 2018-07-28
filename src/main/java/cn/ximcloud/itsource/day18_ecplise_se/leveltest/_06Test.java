@@ -6,7 +6,7 @@ interface Method {
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
+ * Student: wzard
  * Date: 2018-07-21
  * Time: 12:00
  * ProjectName: ITSource.cn.ximcloud.itsource.day18_ecplise_se.leveltest

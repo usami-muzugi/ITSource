@@ -17,24 +17,13 @@ public class LearningAnno {
     private static String msg = learn();
 
 
-
     //已经使用过的几个注解
-
-    //覆写toString方法的时候，可以加上@Override判断是否正确覆写
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
     //抑制错误注解，比如抑制变量未使用等等
     @SuppressWarnings("unused")
     int age;
-
-
     //注解可以添加在字段上
     @SuppressWarnings("unused")
     String name;
-
 
     //注解也可以添加在方法上
     @SuppressWarnings("unused")
@@ -43,5 +32,11 @@ public class LearningAnno {
     private static String learn() {
         //这个方法已经过时了
         return "这个方法已经过时了";
+    }
+
+    //覆写toString方法的时候，可以加上@Override判断是否正确覆写
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

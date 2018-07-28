@@ -24,6 +24,7 @@ public class StaticTest {
         anStaticInt = 1;
         anInt = 1;
     }
+
     StaticTest() {  //同理，构造方法能够对静态字段和非静态字段进行操作
         anInt = 5;
         anStaticInt = 1;

@@ -13,6 +13,7 @@ package cn.ximcloud.itsource.day33_reflect._02new_instance;
 public class Student {
     public String name;
     public int age;
+
     private Student() {
 
     }

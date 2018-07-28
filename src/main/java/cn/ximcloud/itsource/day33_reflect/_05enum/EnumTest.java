@@ -2,6 +2,10 @@ package cn.ximcloud.itsource.day33_reflect._05enum;
 
 import java.lang.reflect.Constructor;
 
+enum Test {
+    haha
+}
+
 /**
  * Created by IntelliJ IDEA.
  * Student: wzard
@@ -21,8 +25,4 @@ public class EnumTest {
 
     }
 
-}
-
-enum Test {
-    haha
 }

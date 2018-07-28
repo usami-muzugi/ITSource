@@ -19,15 +19,15 @@ public class Student {
 
     }
 
+    private static void say(String name) {
+        System.out.println("这个有点意思啊！");
+    }
+
     public void say() {
         System.out.println("我可是大神！");
     }
 
     private void say(String name, int age) {
         System.out.println("我可是大神呀！");
-    }
-
-    private static void say(String name) {
-        System.out.println("这个有点意思啊！");
     }
 }

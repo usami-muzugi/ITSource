@@ -15,21 +15,21 @@ import java.lang.reflect.Method;
  * ////////////////////////////////////////////////////////////////////
  * 通过反射获得一个类中的方法:
  * Class类中有如下的实例方法:
- *
+ * <p>
  * // 第一组: 得到当时公共的方法,包括从父类(接口)继承来的公共的方法
  * Method getMethod(String name, Class<?>... parameterTypes)
  * Method[] getMethods()
- *
+ * <p>
  * //第二组 : 本类(接口)中自己声明的所有方法,和权限无关
  * Method getDeclaredMethod(String name, Class<?>... parameterTypes)
  * Method[] getDeclaredMethods()
- *
+ * <p>
  * 1/ 测试上面方法是否真的能够获得注释描述的那些东西  --  作业自己完成
  * 2/ 测试通过反射获得方法并调用
  * ① 获得类的Class实例
  * ② 获得指定的方法  就是Method对象
  * ③ 通过Method类中的一个方法来执行一个方法
- *
+ * <p>
  * Method中的方法:
  * Object invoke(Object obj, Object... args)
  * obj 表示一个实体对象
@@ -40,9 +40,10 @@ public class MethodTest {
 
 
     /**
-     *  获取一个能访问的类的方法
+     * 获取一个能访问的类的方法
      * Method getMethod(String name, Class<?>... parameterTypes)
      * Method[] getMethods()
+     *
      * @throws NoSuchMethodException
      * @throws IllegalAccessException
      * @throws InvocationTargetException
@@ -72,6 +73,7 @@ public class MethodTest {
      * 获得一个类所有的方法
      * Method getDeclaredMethod(String name, Class<?>... parameterTypes)
      * Method[] getDeclaredMethods()
+     *
      * @throws NoSuchMethodException
      * @throws InvocationTargetException
      * @throws IllegalAccessException
@@ -95,6 +97,7 @@ public class MethodTest {
     /**
      * 测试一个方法如果是一个静态方法，这个时候是传什么作为参数
      * 可以是这个类的字节码文件，也可以是这个类的一个对象
+     *
      * @throws NoSuchMethodException
      * @throws InvocationTargetException
      * @throws IllegalAccessException

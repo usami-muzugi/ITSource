@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day34_anno_and_xml.homework;
+package cn.ximcloud.itsource.day34_anno_and_xml.homework.homework1.dom4j.v1;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -27,8 +27,8 @@ import java.lang.reflect.Field;
 public class XMLTest {
     private static Class aClass = Student.class;
     private static Document document;
-    private static File file = new File("C:\\Users\\wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day34_anno_and_xml\\homework\\Student.xml");
-    private static Integer sum;
+    private static File file = new File("C:\\Users\\Wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day34_anno_and_xml\\homework\\Student.xml");
+    private static int sum;
 
     /**
      * 初始化document和root
@@ -41,8 +41,16 @@ public class XMLTest {
         document.addElement(aClass.getSimpleName());
     }
 
+    @AfterClass
+    public static void doAfterClass() throws IOException {
+        XMLWriter xmlWriter = new XMLWriter(new FileWriter(file), OutputFormat.createPrettyPrint());
+        xmlWriter.write(document);
+        xmlWriter.flush();
+        xmlWriter.close();
+    }
+
     /**
-     *
+     * 创建一个根的子节点
      */
     @Test
     public void testCreateElement() {
@@ -51,12 +59,11 @@ public class XMLTest {
         //获得字段
         Field[] declaredFields = aClass.getDeclaredFields();
         int index = 1;
-        Element stu = rootElement.addElement("stu").addAttribute("No", sum++ +"");
+        Element stu = rootElement.addElement("stu").addAttribute("No", sum++ + "");
         for (Field declaredField : declaredFields) {
             stu.addElement(declaredField.getName()).addAttribute("id", index++ + "");
         }
     }
-
 
     /**
      * 创建学生对象
@@ -66,28 +73,23 @@ public class XMLTest {
         Element root = document.getRootElement();
         Student[] students = new Student[5];
         students[0] = new Student("usami", 20);
-
         students[1] = new Student("ourinsama", 20);
         students[2] = new Student("time", 25);
         students[3] = new Student("jeston", 20);
         students[4] = new Student("彭睿", 20);
 
 
-
         for (int i = 0; i < students.length; i++) {
+            //创建一个子节点
             testCreateElement();
-            root.selectNodes("stu")
-
+            //获取每一个stu节点
+            Element stu = (Element) root.elements().get(i);
+            //stu节点得到其中的子节点
+            Element name = (Element) stu.elements("name").get(0);
+            name.setText(students[i].getName());
+            Element age = (Element) stu.elements("age").get(0);
+            age.setText(students[i].getAge() + "");
         }
 
-    }
-
-
-    @AfterClass
-    public static void doAfterClass() throws IOException {
-        XMLWriter xmlWriter = new XMLWriter(new FileWriter(file), OutputFormat.createPrettyPrint());
-        xmlWriter.write(document);
-        xmlWriter.flush();
-        xmlWriter.close();
     }
 }

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<contacts> 
-  <linkman id="666" all="testValue"> 
-    <name>SS</name>  
-    <email>3436260@qq.com</email>  
-    <!--修改辣,并且JAVA并没有读取到这个注释，验证JAVA不会读取注释，但是如果用浏览器打开会显示注释-->  
-    <address>成都</address>  
-    <group>源码时代</group> 
-  </linkman>  
-  <linkman id="2" all="testValue"> 
-    <name>mm</name>  
-    <email>lanyotech@qq.com</email>  
-    <address>成都</address>  
-    <group>源码时代</group> 
-  </linkman>  
-  <linkman id="3" all="testValue"> 
-    <name>彭睿</name>  
-    <email>3436260@qq.com</email>  
-    <address>成都</address>  
-    <group>牛逼集团</group> 
-  </linkman>  
-  <linkman>
-    <name>卢思颖</name>
-    <email>なし</email>
-    <address>なし</address>
-    <group>なし</group>
-  </linkman>
+<contacts>
+    <linkman id="666" all="testValue">
+        <name>SS</name>
+        <email>3436260@qq.com</email>
+        <!--修改辣,并且JAVA并没有读取到这个注释，验证JAVA不会读取注释，但是如果用浏览器打开会显示注释-->
+        <address>成都</address>
+        <group>源码时代</group>
+    </linkman>
+    <linkman id="2" all="testValue">
+        <name>mm</name>
+        <email>lanyotech@qq.com</email>
+        <address>成都</address>
+        <group>源码时代</group>
+    </linkman>
+    <linkman id="3" all="testValue">
+        <name>彭睿</name>
+        <email>3436260@qq.com</email>
+        <address>成都</address>
+        <group>牛逼集团</group>
+    </linkman>
+    <linkman>
+        <name>卢思颖</name>
+        <email>なし</email>
+        <address>なし</address>
+        <group>なし</group>
+    </linkman>
 </contacts>

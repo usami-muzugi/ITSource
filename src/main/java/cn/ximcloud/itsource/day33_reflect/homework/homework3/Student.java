@@ -13,6 +13,7 @@ package cn.ximcloud.itsource.day33_reflect.homework.homework3;
 public class Student {
     private static final String NAME = "彭睿";
     public String sex = "男";
+
     private Student() {
 
     }

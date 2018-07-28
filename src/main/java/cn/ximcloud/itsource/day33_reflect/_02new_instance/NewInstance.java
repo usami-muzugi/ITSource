@@ -35,7 +35,7 @@ public class NewInstance {
      * Constructor<T> getConstructor(Class<?>... parameterTypes) 	// 根据参数获得指定的一个构造方法
      * Constructor<?>[] getConstructors() 	// 获得所有的公共的构造方法
      *
-     * @throws NoSuchMethodException    可能是权限不够导致的
+     * @throws NoSuchMethodException     可能是权限不够导致的
      * @throws IllegalAccessException
      * @throws InvocationTargetException
      * @throws InstantiationException
@@ -63,9 +63,10 @@ public class NewInstance {
 
 
     /**
-     *   Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)  //获取指定参数列表的构造方法
-     *   Constructor<?>[] getDeclaredConstructors() //获取所有的包括不能访问到的构造方法
-     * @throws NoSuchMethodException        未找到方法，可能出现在参数列表写错了，导致的
+     * Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)  //获取指定参数列表的构造方法
+     * Constructor<?>[] getDeclaredConstructors() //获取所有的包括不能访问到的构造方法
+     *
+     * @throws NoSuchMethodException     未找到方法，可能出现在参数列表写错了，导致的
      * @throws IllegalAccessException
      * @throws InvocationTargetException
      * @throws InstantiationException

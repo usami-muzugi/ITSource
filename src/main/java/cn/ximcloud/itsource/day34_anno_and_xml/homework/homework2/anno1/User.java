@@ -1,19 +1,13 @@
-package cn.ximcloud.itsource.day32_java_plus.homework;
+package cn.ximcloud.itsource.day34_anno_and_xml.homework.homework2.anno1;
 
-interface ITwo {
-    void say();
-}
-
-interface IThree {
-    void say();
-}
+import java.util.Objects;
 
 /**
  * Created by IntelliJ IDEA.
- * Student: Wizard
- * Date: 2018-07-24
- * Time: 19:10
- * ProjectName: itsource
+ * User: Wizard
+ * Date: 2018-07-28
+ * Time: 22:44
+ * ProjectName: ITSource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -38,58 +32,51 @@ interface IThree {
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
-public class HomeWork7 {
-    private Two two;
-
-    public static void main(String[] args) {
-        Three three = new Three();
-        Two two = new Two();
-        ThreeToTwo threeToTwo = new ThreeToTwo();
-        threeToTwo.setThree(three);
-        Hotel hotel = new Hotel();
-        hotel.setTwo(two);
-    }
-
-}
-
-class Hotel {
-    private Two two;
-
-    public void setTwo(Two two) {
-        this.two = two;
-    }
-
-    public void chage() {
-        two.say();
-    }
-}
-
-class Three implements IThree {
+public class User {
+    private String name;
+    private String password;
 
     @Override
-    public void say() {
-
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
-}
 
-class Two implements ITwo {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 
 
     @Override
-    public void say() {
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) &&
+                Objects.equals(password, user.password);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, password);
     }
 }
-
-class ThreeToTwo {
-    private Three three;
-
-    public void setThree(Three three) {
-        this.three = three;
-    }
-
-    public void adapter() {
-        three.say();
-    }
-}
-

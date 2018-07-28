@@ -44,6 +44,20 @@ public class Dom4jTest {
     }
 
     /**
+     * 把写好的XML从内存中写入到磁盘上
+     *
+     * @throws IOException
+     */
+    @AfterClass
+    public static void testSave() throws IOException {
+        OutputFormat prettyPrint = OutputFormat.createPrettyPrint();
+        XMLWriter xmlWriter = new XMLWriter(new FileWriter(file), prettyPrint);
+        xmlWriter.write(document);
+        xmlWriter.flush();
+        xmlWriter.close();
+    }
+
+    /**
      * 获取根的所有子节点
      * 通过迭代
      * rootElement.elementIterator();
@@ -86,7 +100,6 @@ public class Dom4jTest {
 
     }
 
-
     /**
      * 适用DOM4J对指定的元素的Text进行操作
      */
@@ -100,7 +113,6 @@ public class Dom4jTest {
         System.out.println("Before:" + element1.getText());
         element1.setText("SS");
     }
-
 
     /**
      * 给指定的元素添加一个attr
@@ -117,7 +129,6 @@ public class Dom4jTest {
             iterator.next().setAttributeValue("all", "testValue");
         }
     }
-
 
     @Test
     public void testAdd() {
@@ -138,19 +149,5 @@ public class Dom4jTest {
         linkman.appendAttributes(email);
         linkman.appendAttributes(address);
         linkman.appendAttributes(group);
-    }
-
-    /**
-     * 把写好的XML从内存中写入到磁盘上
-     *
-     * @throws IOException
-     */
-    @AfterClass
-    public static void testSave() throws IOException {
-        OutputFormat prettyPrint = OutputFormat.createPrettyPrint();
-        XMLWriter xmlWriter = new XMLWriter(new FileWriter(file), prettyPrint);
-        xmlWriter.write(document);
-        xmlWriter.flush();
-        xmlWriter.close();
     }
 }

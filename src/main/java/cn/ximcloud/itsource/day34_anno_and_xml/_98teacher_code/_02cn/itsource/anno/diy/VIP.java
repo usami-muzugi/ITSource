@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface VIP {
-	String[] value();
-	int level();
+    String[] value();
+
+    int level();
 }

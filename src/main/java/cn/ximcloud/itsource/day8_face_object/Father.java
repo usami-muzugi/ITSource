@@ -2,7 +2,7 @@ package cn.ximcloud.itsource.day8_face_object;
 
 /**
  * Created by IntelliJ IDEA.
- * Student: wzard
+ * Student: wizard
  * Date: 2018-06-17
  * Time: 15:58
  * ProjectName: ITSource

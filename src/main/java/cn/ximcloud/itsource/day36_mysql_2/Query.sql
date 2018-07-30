@@ -1,3 +1,4 @@
+# 结果是错误的，或导致笛卡儿积，sum = emp.length * dept.length
 SELECT *
 FROM emp,
      dept;
@@ -9,6 +10,8 @@ SELECT *
 FROM emp,
      dept
 WHERE emp.dept_id = dept.id;
+/*避免笛卡儿积，仅当emp.dept_id = dept.id ,也就是员工的部门id和dept的id相符才返回改行结果*/
+
 /*避免全笛卡尔积*/
 -- 查询员工id，姓名，和所属部门 从 emp，dept 里面联合查询，仅当 部门id等于员工id的时候，并且使用员工id的倒叙排序
 SELECT emp.id AS 员工ID, emp.`name` AS 员工姓名, dept.`name` AS 部门姓名
@@ -18,9 +21,10 @@ WHERE emp.dept_id = dept.id
 ORDER BY emp.id DESC;
 
 -- 查询货品id，货品名称，货品所属分类名称
-SELECT product.id AS '货品ID', product.productName AS "货品名称", productdir.dirName AS "货品所属分类名称"
+SELECT product.id AS ''货品ID'', product.productName AS "货品名称", productdir.dirName AS "货品所属分类名称"
 FROM product
        JOIN productdir ON product.dir_id = productdir.id;
+
 SELECT pt.id, pt.productName, pr.dirName
 FROM product AS pt
        JOIN productdir AS pr ON pt.dir_id = pr.id;
@@ -52,9 +56,36 @@ FROM product AS pt
        JOIN product_stock AS ps ON pt.dir_id = ps.product_id
 ORDER BY 利润 DESC;
 
+-- 查询零售价比罗技MX1100更高的所有商品信息。
+SELECT *
+FROM product
+WHERE product.salePrice >
+      (SELECT salePrice FROM product WHERE productName = "罗技MX1100");
+
+-- 查询分类编号和折扣与罗技M100相同的所有商品信息
+SELECT *
+FROM product
+WHERE product.cutoff =
+      (SELECT cutoff FROM product WHERE productName = "罗技MX1100");
+
+
+/*左连接右连接*/
+# 左连接:
+SELECT *
+FROM product p
+       LEFT JOIN productdir pd ON p.dir_id = pd.id;
+#     右连接:
+SELECT *
+FROM product p
+       RIGHT JOIN productdir pd ON p.dir_id = pd.id;
+
+
+/*左连接*/
+# 数据的条数仅有左边的表的行数
 SELECT pr.id, pr.dirName, pr2.dirName
 FROM productdir AS pr
        LEFT join productdir as pr2 on pr.parent_id = pr2.id;
+
 
 SELECT product.dir_id
 FROM product
@@ -133,5 +164,6 @@ WHERE product.dir_id = productdir.id
 
 DROP table emp;
 
-
+# 删库
+DROP database it;
 

@@ -56,19 +56,6 @@ FROM product AS pt
        JOIN product_stock AS ps ON pt.dir_id = ps.product_id
 ORDER BY 利润 DESC;
 
--- 查询零售价比罗技MX1100更高的所有商品信息。
-SELECT *
-FROM product
-WHERE product.salePrice >
-      (SELECT salePrice FROM product WHERE productName = "罗技MX1100");
-
--- 查询分类编号和折扣与罗技M100相同的所有商品信息
-SELECT *
-FROM product
-WHERE product.cutoff =
-      (SELECT cutoff FROM product WHERE productName = "罗技MX1100");
-
-
 /*左连接右连接*/
 # 左连接:
 SELECT *
@@ -163,7 +150,4 @@ WHERE product.dir_id = productdir.id
 # 删除数据
 
 DROP table emp;
-
-# 删库
-DROP database it;
 

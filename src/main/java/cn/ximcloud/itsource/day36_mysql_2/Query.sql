@@ -1,4 +1,4 @@
-# 结果是错误的，或导致笛卡儿积，sum = emp.length * dept.length
+-- 结果是错误的，或导致笛卡儿积，sum = emp.length * dept.length
 SELECT *
 FROM emp,
      dept;

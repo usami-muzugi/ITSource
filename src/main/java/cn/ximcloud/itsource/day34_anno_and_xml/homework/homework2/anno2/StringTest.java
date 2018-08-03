@@ -11,17 +11,17 @@ import org.junit.Test;
  * ProjectName: ITSource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
-
  **/
 public class StringTest {
     @Test
     public void testStringFunc1() {
         String string = "1123131242 3";
-        Assert.assertEquals(false,new StringUtil().isNull(string));
+        Assert.assertEquals(false, new StringUtil().isNull(string));
     }
+
     @Test
     public void testStringFunc2() {
         String string = "1123131242 3";
-        Assert.assertEquals(false,new StringUtil().func(string));
+        Assert.assertEquals(false, new StringUtil().func(string));
     }
 }

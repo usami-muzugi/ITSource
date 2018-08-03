@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day39_mysql_jdbc.jdbcunit;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
 

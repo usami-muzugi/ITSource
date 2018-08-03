@@ -18,21 +18,21 @@ public class UserTest {
     @CheckVIP(admin = true)
     private User admim;
 
-    @Test
-    public void userLoginTest() {
-        UserServiceImpl userService = new UserServiceImpl();
-        userService.updateUser(new User("admin", "22222"));
-        admim = userService.login("admin", "111");
-        userService.findAll();
-
-    }
-
     @AfterClass
     public static void doAfterClass() throws NoSuchFieldException {
         Field admim = UserTest.class.getDeclaredField("admim");
         CheckVIP annotation = admim.getAnnotation(CheckVIP.class);
         boolean admin = annotation.admin();
         System.out.println(admin);
+
+    }
+
+    @Test
+    public void userLoginTest() {
+        UserServiceImpl userService = new UserServiceImpl();
+        userService.updateUser(new User("admin", "22222"));
+        admim = userService.login("admin", "111");
+        userService.findAll();
 
     }
 }

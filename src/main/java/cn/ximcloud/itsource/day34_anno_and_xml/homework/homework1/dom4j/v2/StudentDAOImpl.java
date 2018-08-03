@@ -94,7 +94,7 @@ public class StudentDAOImpl {
         return this;
     }
 
-    public void save(){
+    public void save() {
         try {
             XMLWriter xmlWriter = new XMLWriter(new FileWriter(file), OutputFormat.createPrettyPrint());
             xmlWriter.write(document);

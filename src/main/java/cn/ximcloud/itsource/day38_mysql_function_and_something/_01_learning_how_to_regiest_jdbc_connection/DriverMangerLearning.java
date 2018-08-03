@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day39_mysql_jdbc._01_learning_how_to_regiest_jdbc_connection;
+package cn.ximcloud.itsource.day38_mysql_function_and_something._01_learning_how_to_regiest_jdbc_connection;
 
 import com.mysql.jdbc.Driver;
 import org.junit.AfterClass;

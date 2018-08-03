@@ -53,9 +53,10 @@ public interface IUserService {
 
     /**
      * 登录认证
-     * @param name 姓名
-     * @param password  密码
+     *
+     * @param name     姓名
+     * @param password 密码
      * @return 如果验证成功 返回这个user，如果验证失败返回null
      */
-    User login(String name,String password);
+    User login(String name, String password);
 }

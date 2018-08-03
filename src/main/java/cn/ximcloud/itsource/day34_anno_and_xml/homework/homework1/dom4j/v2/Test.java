@@ -40,7 +40,7 @@ public class Test {
         students[2] = new Student("time", 25);
         students[3] = new Student("jeston", 20);
         students[4] = new Student("彭睿", 20);
-        StudentDAOImpl studentDAO = new StudentDAOImpl(new File("C:\\Users\\Wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day34_anno_and_xml\\homework\\v2\\Student.xml"),students);
+        StudentDAOImpl studentDAO = new StudentDAOImpl(new File("C:\\Users\\Wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day34_anno_and_xml\\homework\\v2\\Student.xml"), students);
         studentDAO.save();
 
     }

@@ -345,7 +345,6 @@ public class SingleInstanceForJDBC {
     }
 
     /**
-     *
      * @param SQL
      * @throws SQLException
      */

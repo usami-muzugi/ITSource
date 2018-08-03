@@ -57,6 +57,12 @@ public class JDBCTest {
         System.out.println(instance);
     }
 
+    @AfterClass
+    public static void doAfterClass() throws Throwable {
+        instance.release();
+
+    }
+
     /**
      * get connection
      *
@@ -106,7 +112,6 @@ public class JDBCTest {
         instance.dropDatabase();
     }
 
-
     @Test
     public void testShowTable() throws SQLException {
         instance.showTable("product");
@@ -114,18 +119,11 @@ public class JDBCTest {
 
     @Test
     public void testShowColmn() throws SQLException {
-        instance.showColmn("product","id","salePrice","productName");
+        instance.showColmn("product", "id", "salePrice", "productName");
     }
-
 
     @Before
     public void doBefore() {
         connection = instance.getConnection();
-    }
-
-    @AfterClass
-    public static void doAfterClass() throws Throwable {
-        instance.release();
-
     }
 }

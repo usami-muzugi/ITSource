@@ -58,7 +58,7 @@ public class DriverMangerLearning {
     private static final String PORT = "3306";
     private static final String DATABASE = "itsource";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "********";
+    private static final String PASSWORD = "WGY199667";
 
     private static Connection connection;
 
@@ -210,7 +210,7 @@ public class DriverMangerLearning {
     @Test
     public void testSelect() throws SQLException {
         Statement statement = connection.createStatement();
-        final String SQL = "SELECT * FROM test";
+        final String SQL = "SELECT * FROM product";
         ResultSet resultSet = statement.executeQuery(SQL);
         ResultSetMetaData metaData = resultSet.getMetaData();
         int columnCount = metaData.getColumnCount(); //2
@@ -218,14 +218,13 @@ public class DriverMangerLearning {
         System.out.println("开始");
         while (resultSet.next()) {
             for (int i = 1; i <= columnCount; i++) {
-                System.out.print("Type = " + metaData.getColumnTypeName(i) + "\t");
                 System.out.print("Name = " + metaData.getColumnName(i) + "\t");
+                System.out.print("Type = " + metaData.getColumnTypeName(i) + "\t");
                 String object = resultSet.getObject(i, String.class);
-                System.out.print(object + "\t");
+                System.out.print("Value = " + object + "\t");
             }
             System.out.println();
         }
-
     }
 
     /**

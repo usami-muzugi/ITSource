@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day38_function_and_something.homework;
+package cn.ximcloud.itsource.day38_mysql_function_and_something.homework;
 
 import org.junit.*;
 

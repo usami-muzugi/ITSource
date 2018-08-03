@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day38_function_and_something.homework;
+package cn.ximcloud.itsource.day38_mysql_function_and_something.homework;
 
 import java.sql.*;
 
@@ -321,12 +321,37 @@ public class SingleInstanceForJDBC {
 
     /**
      * @param tableName table name what are you updating for
-     * @param objects   object like this : type,value,type,valye....
+     * @param objects   object like this : type,value,type,value....
      * @throws SQLException can not update from tableName
      */
     public void update(String tableName, Object... objects) throws SQLException {
         Statement statement = connection.createStatement();
-        int i = statement.executeUpdate("UPDATE product SET product.supplier=\"辣鸡\" WHERE product.brand=\"彭睿\"");
+        StringBuffer stringBuffer = new StringBuffer();
+        StringBuffer stringBuffer1 = new StringBuffer();
+        for (int i = 0; i < objects.length; i++) {
+            stringBuffer.append(objects[i]);
+            stringBuffer1.append("\"" + objects[++i] + "\"");
+            if (i != objects.length - 1) {
+                stringBuffer.append(",");
+                stringBuffer1.append(",");
+            }
+        }
+        String SQL = "UPDATE" + tableName + " (" + stringBuffer + " ) WHERE (" + stringBuffer1 + ")";
+
+
+        statement.executeUpdate("UPDATE product SET product.supplier=\"辣鸡\" WHERE product.brand=\"彭睿\"");
+        statement.close();
+
+    }
+
+    /**
+     *
+     * @param SQL
+     * @throws SQLException
+     */
+    public void update(String SQL) throws SQLException {
+        Statement statement = connection.createStatement();
+        int i = statement.executeUpdate(SQL);
         System.out.println(i);
         statement.close();
 

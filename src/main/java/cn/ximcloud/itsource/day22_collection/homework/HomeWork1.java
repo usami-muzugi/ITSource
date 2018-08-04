@@ -21,7 +21,7 @@ public class HomeWork1 {
         list.add(2013);
         list.add("基于数组的集合");
         list.add(true);
-        list.add('I');
+        list.add('IAccoutDAO');
         list.add('T');
          */
         ArrayList list = new ArrayList();

@@ -39,7 +39,7 @@
 
 
 /**
- * I love blinking things.
+ * IAccoutDAO love blinking things.
  *
  * @author Arthur van Hoff
  * @author 04/24/96 Jim Hagen use getBackground

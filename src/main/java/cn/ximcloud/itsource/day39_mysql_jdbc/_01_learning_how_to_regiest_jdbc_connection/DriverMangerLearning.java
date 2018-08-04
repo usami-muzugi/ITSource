@@ -54,7 +54,7 @@ public class DriverMangerLearning {
 //    private static final String JDBCADDRESS = "jdbc:mysql://localhost:3306/itsource";
 //    //    简写 "jdbc:mysql://itsource"
 //    private static final String USERNAME = "root";
-//    private static final String PASSWORD = "WGY199667";
+//    private static final String PASSWORD = "*******";
 
 
     //    优化
@@ -84,8 +84,11 @@ public class DriverMangerLearning {
          */
 
 //        1.创建一个驱动实例     com.mysql.jdbc.Driver
+//        public class Driver extends NonRegisteringDriver implements java.sql.Driver {
         Driver driver = new Driver();
 //        2.通过DriverManager.registerDriver()方法注册驱动      这里，我可以偏不写，就是不写，绝对还是能够运行的
+//            public static void registerDriver(java.sql.Driver driver)
+//            public static void registerDriver(java.sql.Driver driver)
         DriverManager.registerDriver(driver);
         System.out.println("リンケ　スタート！");
 //        3.选取又三个String的参数列表的这个getConnection()方法，分别对应的是连接主机URL，用户名，密码.获得Connection实例

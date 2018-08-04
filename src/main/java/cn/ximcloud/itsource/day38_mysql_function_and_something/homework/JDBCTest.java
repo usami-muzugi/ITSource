@@ -119,7 +119,7 @@ public class JDBCTest {
 
     @Test
     public void testShowColmn() throws SQLException {
-        instance.showColmn("product", "id", "salePrice", "productName");
+        instance.showColumn("product", "id", "salePrice", "productName");
     }
 
     @Before

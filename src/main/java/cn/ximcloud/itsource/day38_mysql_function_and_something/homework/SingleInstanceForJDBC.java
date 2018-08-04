@@ -61,13 +61,13 @@ public class SingleInstanceForJDBC {
      *
      * @param url       url to connection mysql
      * @param username  mysql username
-     * @param passwowrd mysql password
+     * @param password mysql password
      * @throws SQLException           username or password not match
      * @throws ClassNotFoundException com.mysql.jdbc.Driver not Found Exception
      */
-    private SingleInstanceForJDBC(String url, String username, String passwowrd) throws SQLException, ClassNotFoundException {
+    private SingleInstanceForJDBC(String url, String username, String password) throws SQLException, ClassNotFoundException {
         this();
-        connection = DriverManager.getConnection(url, username, passwowrd);
+        connection = DriverManager.getConnection(url, username, password);
     }
 
     /**
@@ -248,10 +248,10 @@ public class SingleInstanceForJDBC {
     }
 
     /**
-     * insert to myqsl
+     * insert to mysql table
      *
      * @param tableName tableName
-     * @param arr       arr like this : type,value,type,valye....
+     * @param arr       arr like this : type,value,type,value....
      * @throws SQLException can not insert Exception
      */
     public void insert(String tableName, Object... arr) throws SQLException {
@@ -303,7 +303,7 @@ public class SingleInstanceForJDBC {
      * @param colmn
      * @throws SQLException can not select Exception
      */
-    public void showColmn(String tableName, String... colmn) throws SQLException {
+    public void showColumn(String tableName, String... colmn) throws SQLException {
         Statement statement = connection.createStatement();
         final String SQL = "SELECT * FROM " + tableName;
         ResultSet resultSet = statement.executeQuery(SQL);

@@ -1,11 +1,11 @@
-package cn.ximcloud.itsource.day39_mysql_jdbc.jdbcunit;
+package cn.ximcloud.itsource.day39_mysql_with_jdbc._02_learning_DAO.cn.ximcloud.itsource.dao;
 
 /**
  * Created by IntelliJ IDEA.
  * User: wzard
  * Date: 2018-08-03
  * Time: 16:00
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_jdbc.jdbcunit
+ * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.unit
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -31,58 +31,56 @@ package cn.ximcloud.itsource.day39_mysql_jdbc.jdbcunit;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class Student {
-    private String name;
-    private int age;
+import cn.ximcloud.itsource.day39_mysql_with_jdbc._02_learning_DAO.cn.ximcloud.itsource.domain.Student;
+
+import java.util.List;
+
+/**
+ * @author Wizard
+ * 增删改查
+ */
+public interface IStudentDAO {
+
+    /**
+     * 增
+     * 向表里添加一个Student实例对象
+     *
+     * @param student 一个Student的实例
+     */
+    void save(Student student);
+
+    /**
+     * 删
+     * 从表里删除一的用户
+     *
+     * @param integer 通过id来删除用户
+     */
+    void delete(Integer integer);
+
+    /**
+     * 改
+     * 从表里修改一个学生
+     *
+     * @param student 被修改的学生
+     */
+    void update(Student student);
 
 
-    public Student() {
-    }
+    /**
+     * 通过id来查找学生
+     *
+     * @param integer 学生的id
+     * @return 返回被查找的学生
+     */
+    Student find(Integer integer);
 
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    /**
+     * 查
+     * 查询出所有的学生
+     *
+     * @return 返回一个ArrayList表
+     */
+    List<Student> findAll();
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Student student = (Student) o;
-
-        if (age != student.age) return false;
-        return name != null ? name.equals(student.name) : student.name == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + age;
-        return result;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

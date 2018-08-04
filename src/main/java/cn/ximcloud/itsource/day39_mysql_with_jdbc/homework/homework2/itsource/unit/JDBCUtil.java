@@ -1,15 +1,19 @@
-package cn.ximcloud.itsource.day39_mysql_jdbc.jdbcunit;
+package cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.unit;
 
+import cn.ximcloud.itsource.day32_java_plus.properties.PropertiesTest;
+
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-08-03
- * Time: 16:00
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_jdbc.jdbcunit
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * User: Wizard
+ * Date: 2018-08-04
+ * Time: 23:26
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -30,68 +34,63 @@ import java.util.Properties;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
-
 public class JDBCUtil {
-    private static JDBCUtil instance = null;
-    //用作读取资源文件
-    private static Properties prop = null;
+    private static Properties properties;
+    private static JDBCUtil instance;
+    private static Connection connection;
+    private static StringBuffer stringBuffer;
 
     static {
         try {
-            prop = new Properties();
-            //去加载资源文件
-            prop.load(Thread.currentThread().getContextClassLoader()
-                    .getResourceAsStream("jdbc.properties"));
-            //注册驱动
-            Class.forName(prop.getProperty("driverName"));
-            instance = new JDBCUtil();
-        } catch (Exception e) {
+            properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+            (stringBuffer = new StringBuffer()).append("jdbc:mysql://").append(properties.getProperty("HOST")).append(":").append(properties.getProperty("PORT")).append("/").append(properties.getProperty("DATABASE"));
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
     }
 
     private JDBCUtil() {
+
     }
 
     public static JDBCUtil getInstance() {
+        if (instance == null) {
+            synchronized (JDBCUtil.class) {
+                if (instance == null) {
+                    instance = new JDBCUtil();
+                }
+            }
+        }
         return instance;
     }
 
-    /**
-     * 拿到连接对象
-     *
-     * @return
-     */
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection(prop.getProperty("url"),
-                    prop.getProperty("userName"), prop.getProperty("password"));
+            return DriverManager.getConnection(stringBuffer.toString(), properties.getProperty("USERNAME"), properties.getProperty("PASSWORD"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    /**
-     * 用来关闭资源
-     */
-    public void close(ResultSet rs, Statement st, Connection conn) {
+    public void close(Connection connection, Statement statement, ResultSet resultSet) {
         try {
-            if (rs != null) rs.close();
-        } catch (Exception e) {
+            if (resultSet != null) resultSet.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (st != null) st.close();
-            } catch (Exception e) {
+                if (statement != null) statement.close();
+            } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (conn != null) conn.close();
-                } catch (Exception e) {
+                    if (connection != null) connection.close();
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }

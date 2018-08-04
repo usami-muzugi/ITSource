@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day6_method_or_function;
+package cn.ximcloud.itsource.day6_method_and_function;
 
 /**
  * Created by IntelliJ IDEA.

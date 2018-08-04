@@ -1,12 +1,10 @@
-package cn.ximcloud.itsource.day6_method_or_function;
-
-import java.io.File;
+package cn.ximcloud.itsource.day6_method_and_function;
 
 /**
  * Created by IntelliJ IDEA.
  * Student: wzard
- * Date: 2018-06-15
- * Time: 15:44
+ * Date: 2018-06-14
+ * Time: 15:45
  * ProjectName: ITSource
  * To change this template use FileDemo | Settings | Editor | FileDemo and Code Templates.
  * ////////////////////////////////////////////////////////////////////
@@ -33,9 +31,22 @@ import java.io.File;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class FileDemo {
+public class Method {
+
+
+    /**
+     * get the sum of HashSetTest and b
+     *
+     * @param a int type HashSetTest
+     * @param b int type b
+     * @return sum of HashSetTest and b
+     */
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+
     public static void main(String[] args) {
-        File file = new File("");
 
     }
 

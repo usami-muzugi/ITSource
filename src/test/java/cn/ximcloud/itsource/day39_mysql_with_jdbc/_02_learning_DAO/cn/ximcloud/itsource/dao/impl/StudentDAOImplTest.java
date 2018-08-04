@@ -1,12 +1,17 @@
-package cn.ximcloud.itsource.day39_mysql_jdbc._02_learning_DAO;
+package cn.ximcloud.itsource.day39_mysql_with_jdbc._02_learning_DAO.cn.ximcloud.itsource.dao.impl;
+
+import cn.ximcloud.itsource.day39_mysql_with_jdbc._02_learning_DAO.cn.ximcloud.itsource.domain.Student;
+import org.junit.Test;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-08-02
- * Time: 18:04
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_jdbc._01_learning_how_to_regiest_jdbc_connection
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * User: Wizard
+ * Date: 2018-08-04
+ * Time: 23:07
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -27,9 +32,39 @@ package cn.ximcloud.itsource.day39_mysql_jdbc._02_learning_DAO;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
+public class StudentDAOImplTest {
+    private static StudentDAOImpl studentDAO = new StudentDAOImpl();
 
-public class DAOLearning {
+    @Test
+    public void save() {
+        Student student = new Student("彭瑞", 20);
+        studentDAO.save(student);
+    }
+
+    @Test
+    public void delete() {
+        studentDAO.delete(1);
+    }
+
+    @Test
+    public void update() {
+        studentDAO.update(new Student(1, "彭瑞", 22));
+    }
+
+    @Test
+    public void find() {
+        Student student = studentDAO.find(1);
+        System.out.println(student);
+    }
+
+    @Test
+    public void findAll() {
+        List<Student> all = studentDAO.findAll();
+        for (Student student : all) {
+            System.out.println(student);
+        }
+    }
 }

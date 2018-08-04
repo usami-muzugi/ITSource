@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day39_mysql_jdbc._01_learning_how_to_regiest_jdbc_connection;
+package cn.ximcloud.itsource.day39_mysql_with_jdbc._01_learning_how_to_regiest_jdbc_connection;
 
 import com.mysql.jdbc.Driver;
 import org.junit.AfterClass;
@@ -12,7 +12,7 @@ import java.sql.*;
  * User: wizard
  * Date: 2018-08-02
  * Time: 14:22
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_jdbc._01_learning_how_to_regiest_jdbc_connection
+ * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_with_jdbc._01_learning_how_to_regiest_jdbc_connection
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //

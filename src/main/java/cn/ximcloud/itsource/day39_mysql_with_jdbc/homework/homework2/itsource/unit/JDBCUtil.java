@@ -40,12 +40,11 @@ import java.util.Properties;
 public class JDBCUtil {
     private static Properties properties;
     private static JDBCUtil instance;
-    private static Connection connection;
     private static StringBuffer stringBuffer;
 
     static {
         try {
-            properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+            (properties = new Properties()).load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
             (stringBuffer = new StringBuffer()).append("jdbc:mysql://").append(properties.getProperty("HOST")).append(":").append(properties.getProperty("PORT")).append("/").append(properties.getProperty("DATABASE"));
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException | IOException e) {

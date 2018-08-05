@@ -1,7 +1,5 @@
-package cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.unit;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc._01preparedstatement.unit;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
@@ -43,7 +41,7 @@ public class JDBCUtil {
 
     static {
         try {
-            (properties = new Properties()).load(new FileInputStream(new File("C:\\Users\\wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day40_deep_learning_jdbc\\_01preparedstatement\\resource\\config.properties")));
+            (properties = new Properties()).load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
             (stringBuffer = new StringBuffer()).append("jdbc:mysql://").append(properties.getProperty("HOST")).append(":").append(properties.getProperty("PORT")).append("/").append(properties.getProperty("DATABASE"));
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException | IOException e) {

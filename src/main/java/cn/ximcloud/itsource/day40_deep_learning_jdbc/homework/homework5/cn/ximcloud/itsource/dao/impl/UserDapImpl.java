@@ -1,6 +1,7 @@
 package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl;
 
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.IUserDao;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.ext.Crud;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.domain.User;
 
 import java.util.List;
@@ -36,19 +37,21 @@ import java.util.List;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class UserDapImpl implements IUserDao<User> {
+public class UserDapImpl extends Crud implements IUserDao<User> {
     /**
      * 创建表
      */
     public void createTable() {
-
+        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+        update(sql);
     }
 
     /**
      * 删除表
      */
     public void dropTable() {
-
+        String sql = "DROP TABLE department";
+        droptable(sql);
     }
 
     /**
@@ -57,7 +60,8 @@ public class UserDapImpl implements IUserDao<User> {
      * @param user
      */
     public void save(User user) {
-
+        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
+        save(sql);
     }
 
     /**
@@ -66,7 +70,8 @@ public class UserDapImpl implements IUserDao<User> {
      * @param integer 通过id来删除
      */
     public void delete(Integer integer) {
-
+        String sql = "DELETE * FROM department WHERE id=" + id + "";
+        delete(sql);
     }
 
     /**
@@ -75,7 +80,8 @@ public class UserDapImpl implements IUserDao<User> {
      * @param user 修改对象
      */
     public void update(User user) {
-
+        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+        update(sql);
     }
 
     /**

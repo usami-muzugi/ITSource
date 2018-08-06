@@ -1,14 +1,14 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao;
 
-import java.util.List;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.IbasicDao;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: wzard
+ * User: Wizard
  * Date: 2018-08-06
- * Time: 11:47
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * Time: 22:26
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -29,55 +29,9 @@ import java.util.List;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
-
-public interface IbasicDao<T> {
-
-    /**
-     * 创建表
-     */
-    void createTable();
-
-    /**
-     * 删除表
-     */
-    void droptable();
-
-    /**
-     * 增
-     *
-     * @param t
-     */
-    void save(T t);
-
-    /**
-     * 删
-     *
-     * @param id
-     */
-    void delete(Integer id);
-
-    /**
-     * 改
-     *
-     * @param t
-     */
-    void update(T t);
-
-    /**
-     * 查
-     *
-     * @param id
-     * @return
-     */
-    T find(Integer id);
-
-    /**
-     * @return
-     */
-    List<T> findAll();
-
+public interface IDepartmentDao<T> extends IbasicDao<T> {
 
 }

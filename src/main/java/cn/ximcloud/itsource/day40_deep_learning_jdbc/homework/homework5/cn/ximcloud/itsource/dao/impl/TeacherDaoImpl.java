@@ -1,6 +1,7 @@
 package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl;
 
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.ITeacherDao;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.ext.Crud;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.domain.Teacher;
 
 import java.util.List;
@@ -36,14 +37,21 @@ import java.util.List;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class TeacherDaoImpl implements ITeacherDao<Teacher> {
+public class TeacherDaoImpl extends Crud implements ITeacherDao<Teacher> {
 
     /**
      * 创建表
      */
     @Override
     public void createTable() {
-
+        String sql = "CREATE TABLE `department` (\n" +
+                "  `id` int(11) NOT NULL DEFAULT '0',\n" +
+                "  `deptName` varchar(30) DEFAULT NULL,\n" +
+                "  `teacherNumber` int(11) DEFAULT NULL,\n" +
+                "  `studentNumber` int(11) DEFAULT NULL,\n" +
+                "  PRIMARY KEY (`id`)\n" +
+                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;\n";
+        createTable(sql);
     }
 
     /**
@@ -51,7 +59,8 @@ public class TeacherDaoImpl implements ITeacherDao<Teacher> {
      */
     @Override
     public void dropTable() {
-
+        String sql = "DROP TABLE department";
+        droptable(sql);
     }
 
     /**
@@ -60,7 +69,8 @@ public class TeacherDaoImpl implements ITeacherDao<Teacher> {
      * @param teacher
      */
     public void save(Teacher teacher) {
-
+        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
+        save(sql);
     }
 
     /**
@@ -69,7 +79,8 @@ public class TeacherDaoImpl implements ITeacherDao<Teacher> {
      * @param integer 通过id来删除
      */
     public void delete(Integer integer) {
-
+        String sql = "DELETE * FROM department WHERE id=" + id + "";
+        delete(sql);
     }
 
     /**
@@ -78,7 +89,8 @@ public class TeacherDaoImpl implements ITeacherDao<Teacher> {
      * @param teacher 修改对象
      */
     public void update(Teacher teacher) {
-
+        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+        update(sql);
     }
 
     /**

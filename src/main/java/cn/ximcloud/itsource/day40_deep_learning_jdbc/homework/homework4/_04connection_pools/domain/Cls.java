@@ -1,13 +1,11 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
-
-import org.junit.*;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework4._04connection_pools.domain;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: wzard
  * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ * Time: 11:48
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.domain
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +31,44 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
+public class Cls {
+    //    班级主键id
+    private Integer id;
+    //    班级名称
+    private String className;
+    //    学生人数
+    private Integer studentNumber;
 
+    @Override
+    public String toString() {
+        return "Cls{" +
+                "id=" + id +
+                ", className='" + className + '\'' +
+                ", studentNumber=" + studentNumber +
+                '}';
     }
 
-    @AfterClass
-    public static void doAfterClass() {
-
+    public Integer getId() {
+        return id;
     }
 
-    @Before
-    public void doBefore() {
-
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    @Test
-    public void test() {
-
+    public String getClassName() {
+        return className;
     }
 
-    @After
-    public void doAfter() {
+    public void setClassName(String className) {
+        this.className = className;
+    }
 
+    public Integer getStudentNumber() {
+        return studentNumber;
+    }
+
+    public void setStudentNumber(Integer studentNumber) {
+        this.studentNumber = studentNumber;
     }
 }

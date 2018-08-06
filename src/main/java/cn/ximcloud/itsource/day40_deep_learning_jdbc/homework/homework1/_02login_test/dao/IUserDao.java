@@ -1,13 +1,16 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework1._02login_test.dao;
 
-import org.junit.*;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.domain.User;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: wzard
- * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ *
+ * @author: wzard
+ * @date: 2018-08-06
+ * Time: 15:15
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +36,35 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
+public interface IUserDao {
+    /**
+     * 增
+     */
+    void save(User user);
 
-    }
+    /**
+     * 改
+     *
+     * @param user 传入一个user实例，修改其中的值
+     */
+    void update(User user);
 
-    @AfterClass
-    public static void doAfterClass() {
+    /**
+     * 删
+     */
+    void delete(Integer id);
 
-    }
 
-    @Before
-    public void doBefore() {
+    /**
+     * 通过id来查找用户
+     *
+     * @param id id 主键
+     * @return 返回一个用户，如果是null则表示没有查找到
+     */
+    User find(Integer id);
 
-    }
-
-    @Test
-    public void test() {
-
-    }
-
-    @After
-    public void doAfter() {
-
-    }
+    /**
+     * 查找所有的用户
+     */
+    List<User> findAll();
 }

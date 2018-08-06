@@ -1,11 +1,12 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework4._04connection_pools.dao.impl;
 
-import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.IBasicDao;
-import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.domain.Department;
-import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.util.Utils;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.IStudentDao;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.domain.Student;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,8 +14,8 @@ import java.util.List;
  * Created by IntelliJ IDEA.
  * Author: wzard
  * Date: 2018-08-06
- * Time: 11:13
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl
+ * Time: 11:46
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.impl
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -40,11 +41,12 @@ import java.util.List;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class DepartmentDaoImpl implements IBasicDao<Department> {
-    private static Utils instance;
+public class StudentImpl implements IStudentDao<Student> {
+
+    private static JDBCUtils instance;
 
     static {
-        instance = Utils.INSTANCE;
+        instance = JDBCUtils.INSTANCE;
     }
 
     /**
@@ -52,60 +54,70 @@ public class DepartmentDaoImpl implements IBasicDao<Department> {
      */
     @Override
     public void createTable() {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        String sql = "CREATE TABLE `department` (\n" +
-                "  `id` int(11) NOT NULL DEFAULT '0',\n" +
-                "  `deptName` varchar(30) DEFAULT NULL,\n" +
-                "  `teacherNumber` int(11) DEFAULT NULL,\n" +
-                "  `studentNumber` int(11) DEFAULT NULL,\n" +
+        Connection connection = instance.getConnection();
+        final String sql = "CREATE TABLE `student` (\n" +
+                "  `id` int(30) NOT NULL AUTO_INCREMENT,\n" +
+                "  `cls` int(30) DEFAULT NULL,\n" +
+                "  `name` varchar(30) DEFAULT NULL,\n" +
+                "  `age` int(30) DEFAULT NULL,\n" +
+                "  `address` varchar(100) DEFAULT NULL,\n" +
                 "  PRIMARY KEY (`id`)\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;\n";
+                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+        PreparedStatement preparedStatement = null;
         try {
-            connection = instance.getConnection();
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
             instance.close(null, preparedStatement, connection);
         }
-
     }
 
     /**
      * 删除表
      */
     @Override
-    public void dropTable() {
-        Connection connection = null;
+    public void droptable() {
+        Connection connection = instance.getConnection();
+        final String sql = "DROP TABLE student";
         PreparedStatement preparedStatement = null;
-        String sql = "DROP TABLE department";
         try {
-            connection = instance.getConnection();
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
             instance.close(null, preparedStatement, connection);
         }
     }
 
     /**
      * 增
+     * 往数据库里面添加一行数据
      *
-     * @param department
+     * @param student
      */
     @Override
-    public void save(Department department) {
-        Connection connection = null;
+    public void save(Student student) {
+        Connection connection = instance.getConnection();
+        String sql = "insert into student(name,age,address) values (?,?,?)";
         PreparedStatement preparedStatement = null;
-        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (?,?,?)";
         try {
-            connection = instance.getConnection();
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, department.getDeptName());
-            preparedStatement.setInt(2, department.getTeacherNumber());
-            preparedStatement.setInt(3, department.getStudentNumber());
+            preparedStatement.setString(1, student.getName());
+            preparedStatement.setInt(2, student.getAge());
+            preparedStatement.setString(3, student.getAddress());
             preparedStatement.executeUpdate();
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            generatedKeys.next();
+            int anInt = generatedKeys.getInt(1);
+            sql = "";
+
+
         } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
             instance.close(null, preparedStatement, connection);
         }
     }
@@ -113,19 +125,19 @@ public class DepartmentDaoImpl implements IBasicDao<Department> {
     /**
      * 删
      *
-     * @param integer 通过id来删除
+     * @param id
      */
     @Override
-    public void delete(Integer integer) {
-        Connection connection = null;
+    public void delete(Integer id) {
+        Connection connection = instance.getConnection();
+        final String sql = "";
         PreparedStatement preparedStatement = null;
-        String sql = "DELETE * FROM department WHERE id=?";
         try {
-            connection = instance.getConnection();
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, integer);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
             instance.close(null, preparedStatement, connection);
         }
     }
@@ -133,40 +145,29 @@ public class DepartmentDaoImpl implements IBasicDao<Department> {
     /**
      * 改
      *
-     * @param department 修改对象
+     * @param id
      */
     @Override
-    public void update(Department department) {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (?,?,?) where id=?";
-        try {
-            connection = instance.getConnection();
-            preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, department.getDeptName());
-            preparedStatement.setInt(2, department.getTeacherNumber());
-            preparedStatement.setInt(3, department.getStudentNumber());
-            preparedStatement.setInt(4,department.getId());
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            instance.close(null, preparedStatement, connection);
-        }
+    public void update(Integer id) {
+
     }
 
     /**
-     * @param integer
-     * @return 通过id来查找对象
+     * 查
+     *
+     * @param id
+     * @return
      */
     @Override
-    public Department find(Integer integer) {
+    public Student find(Integer id) {
         return null;
     }
 
     /**
-     * @return 查找所有的对象
+     * @return
      */
     @Override
-    public List<Department> findAll() {
+    public List<Student> findAll() {
         return null;
     }
 }

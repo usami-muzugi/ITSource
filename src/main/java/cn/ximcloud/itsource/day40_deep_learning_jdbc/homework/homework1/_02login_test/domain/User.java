@@ -1,13 +1,12 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
-
-import org.junit.*;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework1._02login_test.domain;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: wzard
- * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ *
+ * @author: wzard
+ * @date: 2018-08-06
+ * Time: 15:14
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.domain
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +32,41 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
+public class User {
+    private Integer id;
+    private String userName;
+    private String passWord;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                '}';
     }
 
-    @AfterClass
-    public static void doAfterClass() {
-
+    public Integer getId() {
+        return id;
     }
 
-    @Before
-    public void doBefore() {
-
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    @Test
-    public void test() {
-
+    public String getUserName() {
+        return userName;
     }
 
-    @After
-    public void doAfter() {
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 }

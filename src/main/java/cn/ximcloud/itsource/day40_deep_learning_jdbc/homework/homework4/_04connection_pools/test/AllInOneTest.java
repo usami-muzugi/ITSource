@@ -1,19 +1,17 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.utils;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework4._04connection_pools.test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Properties;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.impl.ClsImpl;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.impl.StudentImpl;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: wzard
- * Date: 2018-08-05
- * Time: 16:51
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource
+ *
+ * @author wizard
+ * @date 2018-08-06
+ * Time: 14:17
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.test
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -39,23 +37,32 @@ import java.util.Properties;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public enum Utils {
-    //    单例模式，仅生成一个实例对象
-    INSTANCE;
+public class AllInOneTest {
+    private static StudentImpl student;
+    private static ClsImpl cls;
 
-    private static Connection connection;
+    /**
+     * 实例初始化
+     */
+    @BeforeClass
+    public static void doBeforeClass() {
+        student = new StudentImpl();
+        student.createTable();
+        cls = new ClsImpl();
+        cls.createTable();
 
-    static {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream(new File("C:\\Users\\wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day40_deep_learning_jdbc\\_01preparedstatement\\cn\\ximcloud\\istource\\resource\\config.properties")));
-            //System.out.println(properties.getProperty("dirverClassName"));
-            Class.forName(properties.getProperty("dirverClassName"));
-            connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"), properties.getProperty("password"));
-        } catch (IOException | ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
     }
 
+    /**
+     * 添加一个学生，会自动在学生表中进行添加并且还会在cls表中查询是否有学生表的这个cls字段，没有就在cls表中创建这个字段
+     */
+    @Test
+    public void testSave() {
 
+    }
+
+//    @AfterClass
+//    public static void doAfterClass() {
+//        student.droptable();
+//    }
 }

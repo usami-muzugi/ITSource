@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework1._02login_test;
 
 import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao.impl.UserImpl;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.domain.User;

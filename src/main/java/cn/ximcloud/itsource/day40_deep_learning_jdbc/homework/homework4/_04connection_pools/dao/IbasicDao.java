@@ -1,13 +1,13 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework4._04connection_pools.dao;
 
-import org.junit.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: wzard
  * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ * Time: 11:47
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +33,51 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
+public interface IbasicDao<T> {
 
-    }
+    /**
+     * 创建表
+     */
+    void createTable();
 
-    @AfterClass
-    public static void doAfterClass() {
+    /**
+     * 删除表
+     */
+    void droptable();
 
-    }
+    /**
+     * 增
+     *
+     * @param t
+     */
+    void save(T t);
 
-    @Before
-    public void doBefore() {
+    /**
+     * 删
+     *
+     * @param id
+     */
+    void delete(Integer id);
 
-    }
+    /**
+     * 改
+     *
+     * @param id
+     */
+    void update(Integer id);
 
-    @Test
-    public void test() {
+    /**
+     * 查
+     *
+     * @param id
+     * @return
+     */
+    T find(Integer id);
 
-    }
+    /**
+     * @return
+     */
+    List<T> findAll();
 
-    @After
-    public void doAfter() {
 
-    }
 }

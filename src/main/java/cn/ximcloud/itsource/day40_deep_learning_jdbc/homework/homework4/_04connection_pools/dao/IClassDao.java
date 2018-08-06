@@ -1,13 +1,13 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework4._04connection_pools.dao;
 
-import org.junit.*;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.IbasicDao;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: wzard
  * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ * Time: 11:46
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +33,5 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
-
-    }
-
-    @AfterClass
-    public static void doAfterClass() {
-
-    }
-
-    @Before
-    public void doBefore() {
-
-    }
-
-    @Test
-    public void test() {
-
-    }
-
-    @After
-    public void doAfter() {
-
-    }
+public interface IClassDao<T> extends IbasicDao<T> {
 }

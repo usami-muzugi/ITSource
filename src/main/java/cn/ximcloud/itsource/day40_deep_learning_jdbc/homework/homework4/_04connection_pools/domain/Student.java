@@ -1,13 +1,11 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
-
-import org.junit.*;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework4._04connection_pools.domain;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: wzard
  * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ * Time: 11:48
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.domain
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +31,54 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
+public class Student {
+    //    主键ID
+    private Integer id;
+    //        学生姓名
+    private Integer cls;
+    private String name;
+    //    学生年龄
+    private Integer age;
+    //    学生地址
+    private String address;
 
+    public Integer getCls() {
+        return cls;
     }
 
-    @AfterClass
-    public static void doAfterClass() {
-
+    public void setCls(Integer cls) {
+        this.cls = cls;
     }
 
-    @Before
-    public void doBefore() {
-
+    public Integer getId() {
+        return id;
     }
 
-    @Test
-    public void test() {
-
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    @After
-    public void doAfter() {
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

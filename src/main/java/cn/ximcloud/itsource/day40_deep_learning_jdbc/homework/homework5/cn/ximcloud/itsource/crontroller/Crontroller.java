@@ -1,13 +1,12 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test;
-
-import org.junit.*;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.crontroller;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: wzard
- * Date: 2018-08-06
- * Time: 13:00
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.test
+ *
+ * @author: wzard
+ * @date: 2018-08-06
+ * Time: 16:27
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.crontroller
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -33,29 +32,5 @@ import org.junit.*;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class AllInOneTest {
-    @BeforeClass
-    public static void doBeforeClass() {
-
-    }
-
-    @AfterClass
-    public static void doAfterClass() {
-
-    }
-
-    @Before
-    public void doBefore() {
-
-    }
-
-    @Test
-    public void test() {
-
-    }
-
-    @After
-    public void doAfter() {
-
-    }
+public class Crontroller {
 }

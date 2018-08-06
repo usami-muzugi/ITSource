@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl;
 
-import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.IBasicDao;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.ITeacherDao;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.domain.Teacher;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * Author: wzard
  * Date: 2018-08-05
  * Time: 16:53
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.IUserDao.impl
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -38,6 +37,22 @@ import java.util.List;
  **/
 
 public class TeacherDaoImpl implements ITeacherDao<Teacher> {
+
+    /**
+     * 创建表
+     */
+    @Override
+    public void createTable() {
+
+    }
+
+    /**
+     * 删除表
+     */
+    @Override
+    public void dropTable() {
+
+    }
 
     /**
      * 增
@@ -78,6 +93,17 @@ public class TeacherDaoImpl implements ITeacherDao<Teacher> {
      * @return 查找所有的对象
      */
     public List<Teacher> findAll() {
+        return null;
+    }
+
+    /**
+     * 通过id获取老师的工资
+     *
+     * @param integer id
+     * @return 工资
+     */
+    @Override
+    public Double balance(Integer integer) {
         return null;
     }
 }

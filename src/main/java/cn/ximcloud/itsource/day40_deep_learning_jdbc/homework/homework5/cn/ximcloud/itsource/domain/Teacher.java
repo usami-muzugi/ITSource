@@ -31,5 +31,49 @@ package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximc
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class Teacher {
+/**
+ * Entity老师表
+ *
+ * @author wizard
+ */
+public class Teacher extends Person {
+    @Override
+    public Integer getCls() {
+        return super.cls;
+    }
+
+    @Override
+    public void setCls(Integer cls) {
+        super.cls = cls;
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public void setName(String name) {
+
+    }
+
+    @Override
+    public Integer getAge() {
+        return null;
+    }
+
+    @Override
+    public void setAge(Integer age) {
+
+    }
+
+    @Override
+    public Integer getId() {
+        return null;
+    }
+
+    @Override
+    public void setId(Integer id) {
+
+    }
 }

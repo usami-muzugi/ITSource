@@ -1,11 +1,17 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.domain;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.test;
+
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.impl.ClsImpl;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao.impl.StudentImpl;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-08-03
- * Time: 16:00
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.unit
+ *
+ * @author wizard
+ * @date 2018-08-06
+ * Time: 14:17
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.test
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -31,76 +37,32 @@ package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.domain;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-import java.util.Objects;
+public class AllInOneTest {
+    private static StudentImpl student;
+    private static ClsImpl cls;
 
-/**
- * @author Wizard
- * Entity 实体类
- */
-public class Student {
-    private Integer id;
-    private String name;
-    private Integer age;
+    /**
+     * 实例初始化
+     */
+    @BeforeClass
+    public static void doBeforeClass() {
+        student = new StudentImpl();
+        student.createTable();
+        cls = new ClsImpl();
+        cls.createTable();
 
-    public Student() {
     }
 
-    public Student(String name, Integer age) {
-        this.name = name;
-        this.age = age;
+    /**
+     * 添加一个学生，会自动在学生表中进行添加并且还会在cls表中查询是否有学生表的这个cls字段，没有就在cls表中创建这个字段
+     */
+    @Test
+    public void testSave() {
+
     }
 
-    public Student(Integer id, String name, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(id, student.id) &&
-                Objects.equals(name, student.name) &&
-                Objects.equals(age, student.age);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, age);
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+//    @AfterClass
+//    public static void doAfterClass() {
+//        student.droptable();
+//    }
 }

@@ -1,11 +1,13 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: wzard
- * Date: 2018-08-03
- * Time: 16:00
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.unit
+ * Author: wzard
+ * Date: 2018-08-06
+ * Time: 11:47
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._04connection_pools.dao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -31,74 +33,51 @@ package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-import cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.domain.Student;
+public interface IbasicDao<T> {
 
-import java.util.List;
+    /**
+     * 创建表
+     */
+    void createTable();
 
-/**
- * @author Wizard
- * 增删改查
- */
-public interface IStudentDAO {
+    /**
+     * 删除表
+     */
+    void droptable();
 
     /**
      * 增
-     * 向表里添加一个Student实例对象
      *
-     * @param student 一个Student的实例
+     * @param t
      */
-    void save(Student student);
+    void save(T t);
 
     /**
      * 删
-     * 从表里删除一的用户
      *
-     * @param integer 通过id来删除用户
+     * @param id
      */
-    void delete(Integer integer);
+    void delete(Integer id);
 
     /**
      * 改
-     * 从表里修改一个学生
      *
-     * @param student 被修改的学生
+     * @param id
      */
-    void update(Student student);
-
-
-    /**
-     * 通过id来查找学生
-     *
-     * @param integer 学生的id
-     * @return 返回被查找的学生
-     */
-    Student find(Integer integer);
+    void update(Integer id);
 
     /**
      * 查
-     * 查询出所有的学生
      *
-     * @return 返回一个ArrayList表
+     * @param id
+     * @return
      */
-    List<Student> findAll();
-
+    T find(Integer id);
 
     /**
-     *
-     * @param username  username
-     * @param password  passoword
-     * @return  student instance or null
+     * @return
      */
-    Student login(String username, String password);
-
-
-    /**
-     *
-     * @param username  username
-     * @return  student instance or null
-     */
-    Student login(String username);
-
+    List<T> findAll();
 
 
 }

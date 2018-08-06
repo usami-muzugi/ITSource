@@ -10,7 +10,7 @@ import java.util.List;
  * Author: wzard
  * Date: 2018-08-05
  * Time: 16:52
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.impl
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.IUserDao.impl
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -38,6 +38,22 @@ import java.util.List;
 
 public class StudentDaoImpl implements IStudentDao<Student> {
 
+
+    /**
+     * 创建表
+     */
+    @Override
+    public void createTable() {
+
+    }
+
+    /**
+     * 删除表
+     */
+    @Override
+    public void dropTable() {
+
+    }
 
     /**
      * 增
@@ -79,5 +95,16 @@ public class StudentDaoImpl implements IStudentDao<Student> {
      */
     public List<Student> findAll() {
         return null;
+    }
+
+    /**
+     * 获取学生的成绩
+     *
+     * @param integer 学号
+     * @return 成绩
+     */
+    @Override
+    public int score(Integer integer) {
+        return 0;
     }
 }

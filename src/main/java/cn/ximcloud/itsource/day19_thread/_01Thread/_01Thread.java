@@ -20,5 +20,9 @@ public class _01Thread {
      */
     public static void main(String[] args) {
         Thread thread = new Thread();//JAVA中线程也是一种类，线程的实现就是线程的对象
+        //lambda表达式
+        new Thread(() -> {
+            System.out.println("可以这样");
+        }).start();
     }
 }

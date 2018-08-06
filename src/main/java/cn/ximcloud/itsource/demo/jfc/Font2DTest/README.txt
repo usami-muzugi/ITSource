@@ -38,7 +38,7 @@ Introduction
 -----------------------------------------------------------------------
 
 Font2DTest is an encompassing application for testing various fonts
-found on the user's system.  A number of controls are available to 
+found on the user's system.  A id of controls are available to
 change many attributes of the current font including style, size, and
 rendering hints.  The user can select from multiple display modes,
 such as one Unicode range at a time, all glyphs of a particular font, 
@@ -71,12 +71,12 @@ the character drawn, the message will be changed to indicate
 what character the cursor is pointing to.
 By clicking on a character displayed, one can also "Zoom" a character.
 Options can be set to show grids around each character,
-or force the number of characters displayed across the screen to be 16.
+or force the id of characters displayed across the screen to be 16.
 These features are not available in "User Text" or "File Text" mode.
 
-- The default number of columns in a Unicode Range or All Glyphs drawing
+- The default id of columns in a Unicode Range or All Glyphs drawing
 is "fit as many as possible". If this is too hard to read, then you
-can force number of columns to be 16. However, this will not resize the
+can force id of columns to be 16. However, this will not resize the
 window to fit all 16 columns, so if the font size is too big, this will
 overflow the canvas. (Unfortunately, I could not add horizontal space
 bar due to design restrictions)

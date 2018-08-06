@@ -59,8 +59,8 @@ public class SingleInstanceForJDBC {
     /**
      * Load Driver,Get a connection Instance,with username,password
      *
-     * @param url       url to connection mysql
-     * @param username  mysql username
+     * @param url      url to connection mysql
+     * @param username mysql username
      * @param password mysql password
      * @throws SQLException           username or password not match
      * @throws ClassNotFoundException com.mysql.jdbc.Driver not Found Exception

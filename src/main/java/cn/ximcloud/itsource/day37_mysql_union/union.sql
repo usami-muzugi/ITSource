@@ -43,7 +43,7 @@ SELECT *
 FROM order2015;
 /*
 当联合查询的时候，查询的字段数不相同时，会报错，并提示以下信息
-The used SELECT statements have a different number of columns
+The used SELECT statements have a different id of columns
 */
 SELECT order2014.id, order2014.name
 FROM order2014

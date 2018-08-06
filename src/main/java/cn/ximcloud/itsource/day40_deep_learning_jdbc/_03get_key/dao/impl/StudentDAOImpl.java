@@ -3,7 +3,6 @@ package cn.ximcloud.itsource.day40_deep_learning_jdbc._03get_key.dao.impl;
 import cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.dao.IStudentDAO;
 import cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.domain.Student;
 import cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.unit.JDBCUtil;
-import org.junit.Test;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -176,15 +175,13 @@ public class StudentDAOImpl implements IStudentDAO {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-
             String sql = "INSERT INTO product (productName,dir_id) values ('垃圾',3)";
-            statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+            statement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet generatedKeys = statement.getGeneratedKeys();
             generatedKeys.next();
             Long aLong = generatedKeys.getLong(1);
             System.out.println(aLong);
-
-            sql = "INSERT INTO product_stock(product_id) values (" + aLong+")";
+            sql = "INSERT INTO product_stock(product_id) values (" + aLong + ")";
             statement.executeUpdate(sql);
 
         } catch (SQLException e) {
@@ -192,22 +189,5 @@ public class StudentDAOImpl implements IStudentDAO {
         } finally {
             jdbcUtil.close(connection, statement, null);
         }
-    }
-
-    /**
-     * 测试，获得主键
-     */
-    @Test
-    public void getKey2() {
-        Connection connection = jdbcUtil.getConnection();
-
-        Runnable runnable = () -> {
-            try {
-                connection.prepareStatement("INSERT INTO product (productName,dir_id) values ('垃圾',3)").getMetaData();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        };
-
     }
 }

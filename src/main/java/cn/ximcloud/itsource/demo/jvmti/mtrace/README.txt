@@ -34,7 +34,7 @@ mtrace
 This agent library can be used to track method call and return counts.
 It uses the same java_crw_demo library used by HPROF to do BCI on all or
 selected classfiles loaded into the Virtual Machine.  It will print out a 
-sorted list of the most heavily used classes (as determined by the number 
+sorted list of the most heavily used classes (as determined by the id
 of method calls into the class) and also include the call and return counts 
 for all methods that are called.  
 

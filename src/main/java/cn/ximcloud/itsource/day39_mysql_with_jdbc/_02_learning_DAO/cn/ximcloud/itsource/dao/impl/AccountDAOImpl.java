@@ -10,7 +10,7 @@ import java.util.List;
  * User: wzard
  * Date: 2018-08-04
  * Time: 15:33
- * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_jdbc._02_learning_DAO.cn.ximcloud.itsource.dao.impl
+ * ProjectName: itsource.cn.ximcloud.itsource.day39_mysql_jdbc._02_learning_DAO.cn.ximcloud.itsource.IUserDao.impl
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //

@@ -1,16 +1,19 @@
-package cn.ximcloud.itsource.day40_deep_learning_jdbc._01preparedstatement.unit;
+package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.jdbcutil;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-08-04
- * Time: 23:26
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ *
+ * @author: wzard
+ * @date: 2018-08-06
+ * Time: 15:19
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.jdbcutil
+ * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -31,65 +34,67 @@ import java.util.Properties;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-public class JDBCUtil {
+
+public enum LoginUtils {
+    /**
+     * 枚举类LoginUtils仅有一个实例
+     */
+    INSTANCE;
+
     private static Properties properties;
-    private static JDBCUtil instance;
-    private static StringBuffer stringBuffer;
+    private static Connection connection;
 
     static {
+        properties = new Properties();
         try {
-            (properties = new Properties()).load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
-            (stringBuffer = new StringBuffer()).append("jdbc:mysql://").append(properties.getProperty("HOST")).append(":").append(properties.getProperty("PORT")).append("/").append(properties.getProperty("DATABASE"));
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException | IOException e) {
+            properties.load(new FileInputStream(new File("src/main/java/cn/ximcloud/itsource/day40_deep_learning_jdbc/_02login_test/resource/config.properties")));
+            Class.forName(properties.getProperty("dirverClassName"));
+            connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"), properties.getProperty("password"));
+        } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    private JDBCUtil() {
 
     }
 
-    public static JDBCUtil getInstance() {
-        if (instance == null) {
-            synchronized (JDBCUtil.class) {
-                if (instance == null) {
-                    instance = new JDBCUtil();
-                }
-            }
-        }
-        return instance;
+    /**
+     * 私有化构造方法
+     */
+    private LoginUtils() {
     }
 
     public Connection getConnection() {
-        try {
-            return DriverManager.getConnection(stringBuffer.toString(), properties.getProperty("USERNAME"), properties.getProperty("PASSWORD"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return connection;
     }
 
-    public void close(Connection connection, Statement statement, ResultSet resultSet) {
+    public void close(ResultSet resultSet, Statement statement, Connection connection) {
         try {
-            if (resultSet != null) resultSet.close();
+            if (resultSet != null) {
+                resultSet.close();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (statement != null) statement.close();
+                if (statement != null) {
+                    statement.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (connection != null) connection.close();
+                    if (connection != null) {
+                        connection.close();
+                    }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
+
     }
+
+
 }

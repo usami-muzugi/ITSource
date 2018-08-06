@@ -51,19 +51,20 @@ public interface IAccoutDAO {
 
     /**
      * 更新Account实例
-     * @param account   一个accout实例
+     *
+     * @param account 一个accout实例
      */
     void update(Account account);
 
     /**
      * 删除用户，使用唯一主键就可以删除了
+     *
      * @param id id
      */
     void delete(Integer id);
 
     /**
-     *
-     * @param id    id
+     * @param id id
      * @return 返回一个用户
      */
     Account find(Integer id);

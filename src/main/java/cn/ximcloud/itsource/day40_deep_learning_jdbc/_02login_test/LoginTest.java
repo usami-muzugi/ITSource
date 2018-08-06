@@ -1,20 +1,19 @@
 package cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test;
 
-import cn.ximcloud.itsource.day39_mysql_with_jdbc.homework.homework2.itsource.domain.Student;
-import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao.IStudentDAO;
-import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao.impl.StudentDAOImpl;
-import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.unit.JDBCUtil;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.dao.impl.UserImpl;
+import cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test.domain.User;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.sql.Connection;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: wzard
- * Date: 2018-08-05
- * Time: 10:36
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._01preparedstatement
+ *
+ * @author: wzard
+ * @date: 2018-08-06
+ * Time: 15:14
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc._02login_test
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -41,35 +40,68 @@ import java.sql.Connection;
  **/
 
 public class LoginTest {
-    private static Connection connection;
-    private static IStudentDAO studentDAO;
+    private static UserImpl user;
 
-
-    /**
-     * doBefore
-     * get JDBCUtil instance and studentDAO instance
-     */
     @BeforeClass
-    public static void testConnection() {
-        connection = JDBCUtil.getInstance().getConnection();
-        studentDAO = new StudentDAOImpl();
+    public static void doBeforeClass() {
+        user = new UserImpl();
+//        创建表操作
+//        user.createTable();
+    }
+
+    @Test
+    public void testSaveUser() {
+        User testUser = new User();
+        testUser.setUserName("彭睿4");
+        testUser.setPassWord("password");
+
+        user.save(testUser);
+    }
+
+
+    @Test
+    public void testFindAll() {
+        List<User> all = user.findAll();
+        all.forEach(x -> System.out.println(x));
+    }
+
+
+    @Test
+    public void testDeleteUser() {
+        user.delete(4);
     }
 
 
     @Test
     public void testLogin() {
-        String username = "balabala";
-        String password = "123123";
-        Student login = studentDAO.login(username, password);
-        System.out.println(login);
+        String userName = "";
+        String passWord = "";
+        if (user.login1(userName, passWord)) {
+            System.out.println("验证成功！");
+        } else {
+            System.out.println("验证失败！");
+        }
     }
 
     @Test
     public void testLogin2() {
-        String username = "balabala";
-        String password = "123123";
-        Student login = studentDAO.login(username);
-        System.out.println(login);
+        String userName = "";
+        String passWord = "";
+        User user = LoginTest.user.login2(userName, passWord);
+        if (user == null) {
+            System.out.println("验证失败");
+        } else {
+            if (user.getPassWord().equals(passWord)) {
+                System.out.println("用户名和密码都不正确");
+            } else {
+                System.out.println("用户名正确，密码错误");
+            }
+        }
     }
+
+//    @AfterClass
+//    public static void  doAfterClass() {
+//        user.dropTable();
+//    }
 
 }

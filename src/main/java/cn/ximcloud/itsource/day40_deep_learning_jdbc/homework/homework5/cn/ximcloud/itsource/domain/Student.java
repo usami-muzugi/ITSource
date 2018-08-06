@@ -31,5 +31,77 @@ package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximc
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class Student {
+/**
+ * Entity 学生表
+ *
+ * @author wizard
+ */
+public class Student extends Person {
+    private Double high;
+    private Double flat;
+    private Character level;
+
+    public Double getHigh() {
+        return high;
+    }
+
+    public void setHigh(Double high) {
+        this.high = high;
+    }
+
+    public Double getFlat() {
+        return flat;
+    }
+
+    public void setFlat(Double flat) {
+        this.flat = flat;
+    }
+
+    public Character getLevel() {
+        return level;
+    }
+
+    public void setLevel(Character level) {
+        this.level = level;
+    }
+
+    @Override
+    public Integer getCls() {
+        return super.cls;
+    }
+
+    @Override
+    public void setCls(Integer cls) {
+        super.cls = cls;
+    }
+
+    @Override
+    public String getName() {
+        return super.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        super.name = name;
+    }
+
+    @Override
+    public Integer getAge() {
+        return super.age;
+    }
+
+    @Override
+    public void setAge(Integer age) {
+        super.age = age;
+    }
+
+    @Override
+    public Integer getId() {
+        return super.id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        super.id = id;
+    }
 }

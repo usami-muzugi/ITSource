@@ -7,7 +7,7 @@ import java.util.List;
  * Author: wzard
  * Date: 2018-08-05
  * Time: 16:52
- * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao
+ * ProjectName: itsource.cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.IUserDao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -66,4 +66,14 @@ public interface IStudentDao<T> extends IBasicDao<T> {
      * @return 查找所有的对象
      */
     List<T> findAll();
+
+
+    /**
+     * 获取学生的成绩
+     *
+     * @param integer 学号
+     * @return 成绩
+     */
+    int score(Integer integer);
+
 }

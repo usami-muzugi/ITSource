@@ -41,14 +41,16 @@ public class UserDapImpl extends Crud implements IUserDao<User> {
     /**
      * 创建表
      */
+    @Override
     public void createTable() {
-        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
-        update(sql);
+//        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+//        update(sql);
     }
 
     /**
      * 删除表
      */
+    @Override
     public void dropTable() {
         String sql = "DROP TABLE department";
         droptable(sql);
@@ -59,9 +61,10 @@ public class UserDapImpl extends Crud implements IUserDao<User> {
      *
      * @param user
      */
+    @Override
     public void save(User user) {
-        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
-        save(sql);
+//        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
+//        save(sql);
     }
 
     /**
@@ -69,9 +72,10 @@ public class UserDapImpl extends Crud implements IUserDao<User> {
      *
      * @param integer 通过id来删除
      */
+    @Override
     public void delete(Integer integer) {
-        String sql = "DELETE * FROM department WHERE id=" + id + "";
-        delete(sql);
+//        String sql = "DELETE * FROM department WHERE id=" + id + "";
+//        delete(sql);
     }
 
     /**
@@ -79,15 +83,17 @@ public class UserDapImpl extends Crud implements IUserDao<User> {
      *
      * @param user 修改对象
      */
+    @Override
     public void update(User user) {
-        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
-        update(sql);
+//        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+//        update(sql);
     }
 
     /**
      * @param integer
      * @return 通过id来查找对象
      */
+    @Override
     public User find(Integer integer) {
         return null;
     }
@@ -95,6 +101,7 @@ public class UserDapImpl extends Crud implements IUserDao<User> {
     /**
      * @return 查找所有的对象
      */
+    @Override
     public List<User> findAll() {
         return null;
     }

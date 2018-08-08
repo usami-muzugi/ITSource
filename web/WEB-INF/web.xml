@@ -3,4 +3,24 @@
          xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!--
+        配置一个Servlet需要用到
+            <servlet>
+                servlet-name 自己写的Servlet的名字 可以随便写，但是要写的有意义
+                servlet-class 自己写的Servlet的类的完全限定名，不能乱写，必须匹配上自己写的这个Servlet
+            <servlet-mapping>
+                servlet-name 与上面写的这个servlet-name必须匹配，也就是说成对出现
+                url-pattern  是tomcat向外暴露的路径，可以随便写，但是需要在最左边加上一个/ 必须！
+    -->
+
+    <!--&lt;!&ndash;day42 MyServlet&ndash;&gt;-->
+    <!--<servlet>-->
+        <!--<servlet-name>Day42-helloServlet</servlet-name>-->
+        <!--<servlet-class>cn.ximcloud.itsource.day42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>Day42-helloServlet</servlet-name>-->
+        <!--<url-pattern>/day42/hello</url-pattern>-->
+    <!--</servlet-mapping>-->
 </web-app>

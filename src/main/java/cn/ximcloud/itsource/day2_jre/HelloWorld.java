@@ -48,6 +48,7 @@ public class HelloWorld implements Serializable {
          * 打印自动调用toString(),本质上是println()方法调用了toString()方法
          */
         System.out.println("1");
+        //new Thread(() -> System.out.print("喵喵喵？")).start();
         /**
          *     public void println(String x) {
          *         synchronized (this) {

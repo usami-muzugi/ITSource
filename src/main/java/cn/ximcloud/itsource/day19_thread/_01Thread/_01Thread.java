@@ -19,7 +19,7 @@ public class _01Thread {
         包装独立的软件任务[独立的获取CPU资源]
      */
     public static void main(String[] args) {
-        Thread thread = new Thread();//JAVA中线程也是一种类，线程的实现就是线程的对象
+        //Thread thread = new Thread();//JAVA中线程也是一种类，线程的实现就是线程的对象
         //lambda表达式
         new Thread(() -> {
             System.out.println("可以这样");

@@ -47,7 +47,6 @@ public class DepartmentDaoImpl extends Crud<Department> implements IDepartmentDa
      */
     @Override
     public void createTable() {
-c
     }
 
     /**

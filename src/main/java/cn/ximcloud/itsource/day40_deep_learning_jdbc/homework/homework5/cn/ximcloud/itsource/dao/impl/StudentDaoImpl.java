@@ -69,9 +69,10 @@ public class StudentDaoImpl  extends Crud implements IStudentDao<Student> {
      *
      * @param student
      */
+    @Override
     public void save(Student student) {
-        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
-        save(sql);
+//        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
+//        save(sql);
     }
 
     /**
@@ -79,6 +80,7 @@ public class StudentDaoImpl  extends Crud implements IStudentDao<Student> {
      *
      * @param integer 通过id来删除
      */
+    @Override
     public void delete(Integer integer) {
         String sql = "DELETE * FROM department WHERE id=" + integer + "";
         delete(sql);
@@ -89,15 +91,17 @@ public class StudentDaoImpl  extends Crud implements IStudentDao<Student> {
      *
      * @param student 修改对象
      */
+    @Override
     public void update(Student student) {
-        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
-        update(sql);
+//        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+//        update(sql);
     }
 
     /**
      * @param integer
      * @return 通过id来查找对象
      */
+    @Override
     public Student find(Integer integer) {
         return null;
     }
@@ -105,6 +109,7 @@ public class StudentDaoImpl  extends Crud implements IStudentDao<Student> {
     /**
      * @return 查找所有的对象
      */
+    @Override
     public List<Student> findAll() {
         return null;
     }

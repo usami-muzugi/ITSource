@@ -68,6 +68,7 @@ public class _03ListenTest {
         MyActionListener myActionListener = new MyActionListener(jButton, textField);    //创建自己的事件监听实现类，并传入jbutton，textfield
 
         jButton.addActionListener(myActionListener);    //添加事件监听的实现类的对象
+
         /*
             result: やめてくださいwwwww
          */

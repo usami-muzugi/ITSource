@@ -145,13 +145,12 @@ public class StudentImpl implements IStudentDao<Student> {
     /**
      * 改
      *
-     * @param id
+     * @param student
      */
     @Override
-    public void update(Integer id) {
+    public void update(Student student) {
 
     }
-
     /**
      * 查
      *

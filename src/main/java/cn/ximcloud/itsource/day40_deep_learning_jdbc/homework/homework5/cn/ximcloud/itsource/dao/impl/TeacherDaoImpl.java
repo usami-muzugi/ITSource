@@ -68,9 +68,10 @@ public class TeacherDaoImpl extends Crud implements ITeacherDao<Teacher> {
      *
      * @param teacher
      */
+    @Override
     public void save(Teacher teacher) {
-        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
-        save(sql);
+//        String sql = "INSERT INTO department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ")";
+//        save(sql);
     }
 
     /**
@@ -78,8 +79,9 @@ public class TeacherDaoImpl extends Crud implements ITeacherDao<Teacher> {
      *
      * @param integer 通过id来删除
      */
+    @Override
     public void delete(Integer integer) {
-        String sql = "DELETE * FROM department WHERE id=" + id + "";
+        String sql = "DELETE * FROM department WHERE id=" + integer + "";
         delete(sql);
     }
 
@@ -88,15 +90,17 @@ public class TeacherDaoImpl extends Crud implements ITeacherDao<Teacher> {
      *
      * @param teacher 修改对象
      */
+    @Override
     public void update(Teacher teacher) {
-        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
-        update(sql);
+//        String sql = "UPDATE department(deptName,teacherNumber,studentNumber) values (" + department.getDeptName() + "," + department.getTeacherNumber() + "," + department.getStudentNumber() + ") where id=" + department.getId() + "";
+//        update(sql);
     }
 
     /**
      * @param integer
      * @return 通过id来查找对象
      */
+    @Override
     public Teacher find(Integer integer) {
         return null;
     }
@@ -104,6 +108,7 @@ public class TeacherDaoImpl extends Crud implements ITeacherDao<Teacher> {
     /**
      * @return 查找所有的对象
      */
+    @Override
     public List<Teacher> findAll() {
         return null;
     }

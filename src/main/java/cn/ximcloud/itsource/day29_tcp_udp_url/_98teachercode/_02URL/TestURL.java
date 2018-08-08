@@ -23,7 +23,7 @@ public class TestURL {
             fos.write(b, 0, len);
         }
 
-        URL ur = new URL("https", "zhidao.baidu.com", "/question/514272331.html");
+        URL ur = new URL("https", "zhidao.baidu.com", "/question5/514272331.html");
         InputStream openStream = ur.openStream();
         FileOutputStream foss = new FileOutputStream("H:/b/yyyyy.html");
         byte[] bb = new byte[1024];

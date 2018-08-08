@@ -111,12 +111,13 @@ public class ClsImpl implements IClassDao<Cls> {
     /**
      * 改
      *
-     * @param id
+     * @param cls
      */
     @Override
-    public void update(Integer id) {
+    public void update(Cls cls) {
 
     }
+
 
     /**
      * 查

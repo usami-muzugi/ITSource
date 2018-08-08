@@ -31,7 +31,6 @@ public class _02PlayGameAndMusicPlayerModel {
         MyMusicThread myMusicThread = new MyMusicThread("放吃鸡音乐");
         myGameThread.start();
         myMusicThread.start();
-
     }
 }
 

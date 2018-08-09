@@ -71,14 +71,14 @@ public abstract class MyHttpServlet extends BaseMyGenericServlet {
     }
 
     /**
-     *  专门用来处理GET的请求的方法 抽象了,让子类瞎几把实现吧
+     *  专门用来处理GET的请求的方法 抽象了,让子类实现吧
      * @param httpServletRequest    处理HttpServletRequest 的请求
      * @param httpServletResponse   处理HttpServletResponse 的请求
      */
     public abstract void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse);
 
     /**
-     *  专门用来处理POST的请求的方法    也他妈抽象了,让子类瞎几把实现,草!
+     *  专门用来处理POST的请求的方法    也抽象了,让子类实现,草!
      * @param httpServletRequest    处理HttpServletRequest 的请求
      * @param httpServletResponse   处理HttpServletResponse 的请求
      */

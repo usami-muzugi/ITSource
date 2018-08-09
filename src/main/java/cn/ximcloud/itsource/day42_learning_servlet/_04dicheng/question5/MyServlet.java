@@ -52,7 +52,7 @@ public class MyServlet extends MyHttpServlet {
      */
     @Override
     public void service(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-//        这里实现了一个HttpServlet专精的Service()方法,可以瞎几把写httpServlet的操作
+//        这里实现了一个HttpServlet专精的Service()方法,可以写httpServlet的操作
 //        但是这样还是不够,还可以加强.于是就有了问题6
     }
 
@@ -65,7 +65,7 @@ public class MyServlet extends MyHttpServlet {
 //        而是调用init(ServiceConfig config) 方法
 //        但是子类当中并没有这个方法,于是子类没有找到这个方法而是去调用父类的方法
 //        调用父类的方式并且会执行这个无参的钩子方法,反而会回来调用这个无参的init()方法
-//        所以这里可以瞎几把写,都不会报错了
+//        所以这里可以写,都不会报错了
         System.out.println("Hello Servlet!!!");
     }
 

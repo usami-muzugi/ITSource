@@ -37,4 +37,6 @@ import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.domain.Use
 
 public interface IUserDao {
     User find(String username, String password);
+
+    void save(User user);
 }

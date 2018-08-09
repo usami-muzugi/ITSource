@@ -1,19 +1,24 @@
-package cn.ximcloud.itsource.day42_learning_servlet._01myfirstservlet;
+package cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.controller;
 
-import javax.servlet.*;
+import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.dao.IUserDao;
+import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.dao.impl.UserImpl;
+import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.domain.User;
+
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-
+import java.io.PrintWriter;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-08
- * Time: 10:24
- * ProjectName: itsource.cn.ximcloud.itsource.day42_learning_servlet
+ * @date: 2018-08-09
+ * Time: 21:51
+ * ProjectName: itsource.cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.controller
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -37,36 +42,32 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
- * Servlet是接口，所以需要一个类来实现这个接口的所有方法
- * 方法service()会在每次urlPatterns被访问的时候执行一次
  **/
-@WebServlet(name = "hello",urlPatterns = "/day42/hello.php")
-public class MyServlet implements Servlet {
+@WebServlet(name = "homeWor3_regist", urlPatterns = "/day42/regist.php")
+public class RegiestServlet extends HttpServlet {
+    private static IUserDao user;
 
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-
+    static {
+        user = new UserImpl();
     }
 
     @Override
-    public ServletConfig getServletConfig() {
-        return null;
-    }
-
-    @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        System.out.println("hello Servlet");
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
-
-    @Override
-    public void destroy() {
-
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        getParameter()方法,是用来获得参数的
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String[] hobbies = req.getParameterValues("hobby");
+        StringBuilder s = new StringBuilder();
+        for (String hobby : hobbies) {
+            s.append(hobby);
+        }
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("UTF-8");
+        User u = new User(username, password, s.toString());
+        user.save(u);
+        PrintWriter writer = resp.getWriter();
+        System.out.println("注册成功!");
+        writer.print("<html>");
+        writer.println("注册成功！<a href=\"regist.html\">返回登录</a>");
     }
 }

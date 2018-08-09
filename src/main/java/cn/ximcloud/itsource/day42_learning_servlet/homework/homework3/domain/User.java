@@ -45,11 +45,14 @@ public class User {
     private String hobby;
 
     public User(Integer id, String username, String password, String hobby) {
+        this(username, password, hobby);
         this.id = id;
+    }
+
+    public User(String username, String password, String hobby) {
         this.username = username;
         this.password = password;
         this.hobby = hobby;
-
     }
 
     public Integer getId() {

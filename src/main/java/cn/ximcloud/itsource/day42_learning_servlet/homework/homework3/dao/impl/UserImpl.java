@@ -3,7 +3,6 @@ package cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.dao.impl;
 import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.dao.IUserDao;
 import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.domain.User;
 import cn.ximcloud.itsource.day42_learning_servlet.homework.homework3.utils.JDBCUtil;
-import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -57,7 +56,7 @@ public class UserImpl implements IUserDao {
             try {
                 User user;
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setString(1,username);
+                preparedStatement.setString(1, username);
                 preparedStatement.setString(2, password);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
@@ -70,8 +69,24 @@ public class UserImpl implements IUserDao {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
+            } finally {
+//                close
             }
         }
         return null;
+    }
+
+    @Override
+    public void save(User user) {
+        final String sql = "INSERT INTO user(username,password,hobby) VALUES(?,?,?)";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getHobby());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -40,7 +40,7 @@ import java.util.Enumeration;
  * 当Tomcat启动的时候，并不会直接去创建自己写的Servlet实例，而是在url被访问到的时候才会加载，并且会把这个
  * 对象存储到缓存池，每一访问url时，是在缓存池中使用这个对象。
  **/
-@WebServlet(name = "day40-helloServlet2", urlPatterns = "/day40/hello2",
+@WebServlet(name = "day40-helloServlet2", urlPatterns = "/day40/hello2.php",
         description = "这个Servlet是测试Servlet第一次被执行到的时候，访问init方法并且会得到一个ServletConfig对象")
 public class MyServlet2 implements Servlet {
 

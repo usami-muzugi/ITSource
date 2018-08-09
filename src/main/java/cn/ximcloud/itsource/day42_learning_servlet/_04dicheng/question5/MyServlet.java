@@ -1,14 +1,16 @@
-package cn.ximcloud.itsource.day42_learning_servlet._04dicheng.question4;
+package cn.ximcloud.itsource.day42_learning_servlet._04dicheng.question5;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: wzard
+ * @author: wizard
  * @date: 2018-08-08
  * Time: 18:48
  * ProjectName: itsource.cn.ximcloud.itsource.day42_learning_servlet._04dicheng
@@ -39,8 +41,21 @@ import java.util.Enumeration;
  * 这些方法来达到实现功能，Tomcat启动的时候，在子类么有找到方法就会自己去父类
  * 查找这些方法
  **/
-@WebServlet(name = "liucheng_question4",urlPatterns = "/day42/question4.php")
-public class MyServlet extends BaseMyGenericServlet {
+@WebServlet(name = "liucheng_question5", urlPatterns = "/day42/question5.php")
+public class MyServlet extends MyHttpServlet {
+
+    /**
+     * 定义一个钩子方法,子类继承直接实现Http专精
+     *
+     * @param httpServletRequest  处理HttpServletRequest 的请求
+     * @param httpServletResponse 处理HttpServletResponse 的请求
+     */
+    @Override
+    public void service(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+//        这里实现了一个HttpServlet专精的Service()方法,可以瞎几把写httpServlet的操作
+//        但是这样还是不够,还可以加强.于是就有了问题6
+    }
+
     /**
      * 父类无参初始化钩子方法
      */
@@ -74,10 +89,11 @@ public class MyServlet extends BaseMyGenericServlet {
 
     /**
      * 子类如果只想重写这个Servlet接口的service方法，就可以采用这种方式，不必每次都去实现，然后重写，很烦
+     *
      * @param req ServletRequest Servlet请求
      * @param res ServletResponse Servlet响应
-     * @throws ServletException     一个异常
-     * @throws IOException          又一个异常
+     * @throws ServletException 一个异常
+     * @throws IOException      又一个异常
      */
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {

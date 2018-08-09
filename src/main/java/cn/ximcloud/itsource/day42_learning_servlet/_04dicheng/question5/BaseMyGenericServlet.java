@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day42_learning_servlet._04dicheng.question4;
+package cn.ximcloud.itsource.day42_learning_servlet._04dicheng.question5;
 
 import javax.servlet.*;
 import java.io.IOException;
@@ -49,6 +49,15 @@ import java.util.Enumeration;
  * 子类在自己覆写init的时候不小心把调用父类的init方法删掉了怎么办？
  * 解决办法：
  * 在父类中写一个钩子方法init();  然后在父类的原init方法中调用钩子方法，而在子类中覆写钩子方法即可
+ *
+ * 5. 问题五：
+ * 由于我们的请求都是http请求，因为我们在执行service方法的时候，我们需要把我们的请求与响应对象强转成http的对象。 我们怎么能在子类中直接调用http的对象呢？
+ * 解决办法：
+ * 先创建一个MyHttpServlet 拓展MyGenericServlet专门处理Http请求；
+ * 其次覆写service 方法，其中进行强转ServletRequest 和 ServletResponse;
+ * 提供钩子方法：service(HttpServletRequest req, HttpServletResponse resp)
+ * service方法中调用钩子方法；
+ * 在子类中覆写service钩子方法即可
  **/
 
 public abstract class BaseMyGenericServlet implements Servlet, ServletConfig {

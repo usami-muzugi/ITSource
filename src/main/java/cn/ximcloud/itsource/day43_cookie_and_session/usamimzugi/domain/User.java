@@ -1,21 +1,12 @@
-package cn.ximcloud.itsource.day43_cookie_and_session.homework.homework2;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.domain;
 
 /**
  * Created by IntelliJ IDEA.
- *
- * @author: wizard
- * @date: 2018-08-10
- * Time: 11:47
- * ProjectName: itsource.cn.ximcloud.itsource.day43_cookie_and_session._03http_session._by_self
- * To change this template use File | Settings | Editor | File and Code Templates.
+ * User: Wizard
+ * Date: 2018-08-10
+ * Time: 23:00
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -36,26 +27,23 @@ import java.io.PrintWriter;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
+ * Entity实体
  **/
-@WebServlet(name = "day42_itemServlet_cookie_homework2", urlPatterns = "/day42/homework2/cookie/item.php")
-public class ItemServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //        设置编码格式
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
+public class User {
+    //    用户的id，主键
+    private Integer id;
+    //    用户姓名
+    private String username;
+    //    用户密码
+    private String password;
 
-        String username = CookieUtil.getCookie(req, "username").getValue();
-        //            主页
-        PrintWriter writer = resp.getWriter();
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("<html>")
-                .append("欢迎你，")
-                .append(username).append("<hr />")
-                .append("玩沙漠风暴！");
-        writer.print(stringBuffer.toString());
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                '}';
     }
 }

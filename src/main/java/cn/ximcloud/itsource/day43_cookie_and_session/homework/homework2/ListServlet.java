@@ -39,7 +39,7 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_listServlet_cookie", urlPatterns = "/day42/cookie/list.php")
+@WebServlet(name = "day42_listServlet_cookie_homework2", urlPatterns = "/day42/homework2/cookie/list.php")
 public class ListServlet extends HttpServlet {
     /**
      * @param req
@@ -61,7 +61,7 @@ public class ListServlet extends HttpServlet {
         stringBuffer.append("<html>")
                 .append("欢迎你，")
                 .append(username).append("<hr />")
-                .append("<a href='").append("/day42/cookie/item.php").append("'>")
+                .append("<a href='").append("/day42/homework2/cookie/item.php").append("'>")
                 .append("1.大爷进来玩儿！")
                 .append("</a>")
                 .append("<br />");

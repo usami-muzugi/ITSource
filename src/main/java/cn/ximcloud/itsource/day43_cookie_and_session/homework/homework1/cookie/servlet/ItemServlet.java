@@ -41,7 +41,7 @@ import java.net.URLDecoder;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_itemServlet_cookie", urlPatterns = "/day42/cookie/item.php")
+@WebServlet(name = "day42_itemServlet_cookie_homework", urlPatterns = "/day42/homework/cookie/item.php")
 public class ItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -65,9 +65,7 @@ public class ItemServlet extends HttpServlet {
         stringBuffer.append("<html>")
                 .append("欢迎你，")
                 .append(username).append("<hr />")
-                .append("<a href='").append("/day42/cookie/item.php").append("?").append("username").append("=").append(username).append("1.大爷进来玩儿!").append("'>")
-                .append("</a>")
-                .append("<br />");
+                .append("玩沙漠风暴！");
         writer.print(stringBuffer.toString());
     }
 }

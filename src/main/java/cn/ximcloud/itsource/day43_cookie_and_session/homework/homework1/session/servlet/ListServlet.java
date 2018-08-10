@@ -39,7 +39,7 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_listServlet_session", urlPatterns = "/day42/session/list.php")
+@WebServlet(name = "day42_listServlet_session_homework", urlPatterns = "/day42/homework/session/list.php")
 public class ListServlet extends HttpServlet {
     /**
      * @param req
@@ -72,7 +72,7 @@ public class ListServlet extends HttpServlet {
         stringBuffer.append("<html>")
                 .append("欢迎你，")
                 .append(username).append("<hr />")
-                .append("<a href='").append("/day42/session/item.php").append("'>")
+                .append("<a href='").append("/day42/homework/session/item.php").append("'>")
                 .append("1.大爷进来玩儿！")
                 .append("</a>")
                 .append("<br />");

@@ -39,7 +39,7 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_itemServlet", urlPatterns = "/day42/item.php")
+@WebServlet(name = "day42_itemServlet_homework1", urlPatterns = "/day42/homework/item.php")
 public class ItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

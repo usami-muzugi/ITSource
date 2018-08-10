@@ -39,10 +39,10 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_mainServlet", urlPatterns = "/day42/home.php")
+@WebServlet(name = "day42_mainServlet_homework1", urlPatterns = "/day42/homework/home.php")
 public class MainServlet extends HttpServlet {
     /**
-     * @param req  loginy页面的请求
+     * @param req  login页面的请求
      * @param resp
      * @throws ServletException ServletException
      * @throws IOException      IOException
@@ -66,7 +66,7 @@ public class MainServlet extends HttpServlet {
                     .append("欢迎你，")
                     .append(username).append("<hr />")
                     .append("你有")
-                    .append("<a href='").append("/day42/list.php").append("?").append("username").append("=").append(username).append("'>")
+                    .append("<a href='").append("/day42/homework/list.php").append("?").append("username").append("=").append(username).append("'>")
                     .append("10")
                     .append("</a>")
                     .append("封未读邮件");

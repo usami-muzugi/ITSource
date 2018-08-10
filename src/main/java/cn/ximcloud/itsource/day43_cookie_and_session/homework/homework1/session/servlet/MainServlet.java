@@ -40,7 +40,7 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_mainServlet_session", urlPatterns = "/day42/session/home.php")
+@WebServlet(name = "day42_mainServlet_session_homework", urlPatterns = "/day42/homework/session/home.php")
 public class MainServlet extends HttpServlet {
     /**
      * @param req  login页面的请求
@@ -73,7 +73,7 @@ public class MainServlet extends HttpServlet {
                     .append("欢迎你，")
                     .append(username).append("<hr />")
                     .append("你有")
-                    .append("<a href='").append("/day42/session/list.php").append("'>")
+                    .append("<a href='").append("/day42/homework/session/list.php").append("'>")
                     .append("10")
                     .append("</a>")
                     .append("封未读邮件");

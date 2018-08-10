@@ -64,9 +64,7 @@ public class ItemServlet extends HttpServlet {
         stringBuffer.append("<html>")
                 .append("欢迎你，")
                 .append(username).append("<hr />")
-                .append("<a href='").append("/day42/session/item.php").append("?").append("username").append("=").append(username).append("1.大爷进来玩儿!").append("'>")
-                .append("</a>")
-                .append("<br />");
+                .append("玩沙漠风暴！");
         writer.print(stringBuffer.toString());
     }
 }

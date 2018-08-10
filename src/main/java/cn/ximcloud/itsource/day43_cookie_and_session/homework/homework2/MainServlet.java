@@ -40,7 +40,7 @@ import java.net.URLEncoder;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day42_mainServlet_cookie", urlPatterns = "/day42/cookie/home.php")
+@WebServlet(name = "day42_mainServlet_cookie_homework2", urlPatterns = "/day42/homework2/cookie/home.php")
 public class MainServlet extends HttpServlet {
     /**
      * @param req  login页面的请求
@@ -56,6 +56,7 @@ public class MainServlet extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
 //        获取请求的值
         String username = req.getParameter("username");
+        System.out.println(username);
 //        String password = req.getParameter("password");
 
 //登录认证操作
@@ -70,7 +71,7 @@ public class MainServlet extends HttpServlet {
                     .append("欢迎你，")
                     .append(username).append("<hr />")
                     .append("你有")
-                    .append("<a href='").append("/day42/cookie/list.php").append("'>")
+                    .append("<a href='").append("/day42/homework2/cookie/list.php").append("'>")
                     .append("10")
                     .append("</a>")
                     .append("封未读邮件");

@@ -69,6 +69,6 @@ public class Test_6 {
         //java.base/java.lang.Character cannot be cast to java.base/java.lang.String
 //        Properties properties = new Properties();
 //        properties.putAll(map);
-//        properties.list(new PrintWriter(new FileOutputStream(new File("D:/keyAndValue.txt"))));
+//        properties.List(new PrintWriter(new FileOutputStream(new File("D:/keyAndValue.txt"))));
     }
 }

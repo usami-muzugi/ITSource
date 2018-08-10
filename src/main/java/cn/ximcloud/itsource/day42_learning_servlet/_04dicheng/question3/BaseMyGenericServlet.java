@@ -38,15 +38,15 @@ import java.util.Enumeration;
  * 问题1 ：我们一般只执行service方法，但是现在我们直接实现Servlet接口
  * ，所有的方法都需要实现，每个实现类都这样做感觉...
  * 所以我们写了一个抽象类来实现Servlet接口的所有方法，并且只保留了service()方法的抽象
- *
+ * <p>
  * 问题2 ：按照1写了代码之后,我们在子类中如果想使用ServletConfig怎么办
  * 如果子类想使用ServletConfig对象，就可以在父类把这个对象抽取出来搞成一个字段
- *
+ * <p>
  * 问题3 ：想直接从子类中调用到ServletConfig中的方法而不需要先得到Config对象
  * 我们可以实现ServletConfig方法
  **/
 
-public abstract class BaseMyGenericServlet implements Servlet,ServletConfig {
+public abstract class BaseMyGenericServlet implements Servlet, ServletConfig {
     private ServletConfig config;
 
     /**

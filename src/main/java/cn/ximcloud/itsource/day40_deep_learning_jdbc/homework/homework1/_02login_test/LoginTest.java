@@ -68,7 +68,7 @@ public class LoginTest {
     @Test
     public void testFindAll() {
         List<User> all = user.findAll();
-        all.forEach(x -> System.out.print(x+"\t"));
+        all.forEach(x -> System.out.print(x + "\t"));
         all.forEach(System.out::println);
     }
 

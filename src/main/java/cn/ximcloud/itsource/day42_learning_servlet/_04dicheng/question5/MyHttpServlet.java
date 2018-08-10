@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day42_learning_servlet._04dicheng.question5;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -38,7 +37,7 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 专一的类做专一的事情,这里MyHttpServlet 就是专门用于处理Http请求的类
  **/
 public class MyHttpServlet extends BaseMyGenericServlet {
@@ -53,8 +52,9 @@ public class MyHttpServlet extends BaseMyGenericServlet {
 
     /**
      * 定义一个钩子方法,子类继承直接实现Http专精
-     * @param httpServletRequest    处理HttpServletRequest 的请求
-     * @param httpServletResponse   处理HttpServletResponse 的请求
+     *
+     * @param httpServletRequest  处理HttpServletRequest 的请求
+     * @param httpServletResponse 处理HttpServletResponse 的请求
      */
     public void service(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 

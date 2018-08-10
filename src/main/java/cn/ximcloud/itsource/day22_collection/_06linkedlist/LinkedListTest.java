@@ -20,8 +20,8 @@ public class LinkedListTest {
         }
 
 //        /**   把一个值传入到表的头部 实质上是在调用addFirst(E e)
-//         * Pushes an element onto the stack represented by this list.  In other
-//         * words, inserts the element at the front of this list.
+//         * Pushes an element onto the stack represented by this List.  In other
+//         * words, inserts the element at the front of this List.
 //         *
 //         * <p>This method is equivalent to {@link #addFirst}.
 //         *
@@ -46,7 +46,7 @@ public class LinkedListTest {
 //            modCount++;
 //        }
 //        /**
-//         * Inserts the specified element at the beginning of this list.
+//         * Inserts the specified element at the beginning of this List.
 //         *
 //         * @param e the element to add
 //         */
@@ -57,14 +57,14 @@ public class LinkedListTest {
         System.out.println(linkedList);
 
 //        /**   从此列表弹出第一个元素
-//         * Pops an element from the stack represented by this list.  In other
-//         * words, removes and returns the first element of this list.
+//         * Pops an element from the stack represented by this List.  In other
+//         * words, removes and returns the first element of this List.
 //         *
 //         * <p>This method is equivalent to {@link #removeFirst()}.
 //         *
-//         * @return the element at the front of this list (which is the top
-//         *         of the stack represented by this list)
-//         * @throws NoSuchElementException if this list is empty
+//         * @return the element at the front of this List (which is the top
+//         *         of the stack represented by this List)
+//         * @throws NoSuchElementException if this List is empty
 //         * @since 1.6
 //         */
 //        public E pop() {  //如果此列表为空 抛出NoSuchElementException
@@ -81,9 +81,9 @@ public class LinkedListTest {
 
 
 //        /**   获取并移除此列表的头（第一个元素）
-//         * Retrieves and removes the head (first element) of this list.
+//         * Retrieves and removes the head (first element) of this List.
 //         *
-//         * @return the head of this list, or {@code null} if this list is empty
+//         * @return the head of this List, or {@code null} if this List is empty
 //         * @since 1.5
 //         */
 //        public E poll() {     //poll
@@ -95,9 +95,9 @@ public class LinkedListTest {
         // Queue operations.
 
 //        /**   获取但不移除此列表的头（第一个元素）
-//         * Retrieves, but does not remove, the head (first element) of this list.
+//         * Retrieves, but does not remove, the head (first element) of this List.
 //         *
-//         * @return the head of this list, or {@code null} if this list is empty
+//         * @return the head of this List, or {@code null} if this List is empty
 //         * @since 1.5
 //         */
 //        public E peek() {
@@ -108,20 +108,20 @@ public class LinkedListTest {
 
 
 //        /**
-//         * Retrieves, but does not remove, the head (first element) of this list.
+//         * Retrieves, but does not remove, the head (first element) of this List.
 //         *
-//         * @return the head of this list
-//         * @throws NoSuchElementException if this list is empty
+//         * @return the head of this List
+//         * @throws NoSuchElementException if this List is empty
 //         * @since 1.5
 //         */
 //        public E element() {
 //            return getFirst();
 //        }
 //        /**
-//         * Returns the first element in this list.
+//         * Returns the first element in this List.
 //         *
-//         * @return the first element in this list
-//         * @throws NoSuchElementException if this list is empty
+//         * @return the first element in this List
+//         * @throws NoSuchElementException if this List is empty
 //         */
 //        public E getFirst() {
 //            final Node<E> f = first;

@@ -38,8 +38,8 @@ import java.util.Arrays;
  * ////////////////////////////////////////////////////////////////////
  * <p>
  * 子目录过滤器
- * String[] fileList, file.list();                      //无参，直接返回子目录下仅一层目录的所有目录和文件
- * String[] fileList, file.list(FilenameFilter f);      //传入类型 接口的实现对象（匿名对象），需要重写接口实现对象的accept(File dir,String name)方法,dir就是this，也就是这个文件对象，name为每一个文件、文件夹对象的名字
+ * String[] fileList, file.List();                      //无参，直接返回子目录下仅一层目录的所有目录和文件
+ * String[] fileList, file.List(FilenameFilter f);      //传入类型 接口的实现对象（匿名对象），需要重写接口实现对象的accept(File dir,String name)方法,dir就是this，也就是这个文件对象，name为每一个文件、文件夹对象的名字
  * File[] fileList, file.listFiles(FileFilter);         //于FilenameFilter相比，accept(File dir)方法少了String name。要实现拦截可以通过dir.getName()方法获取dir的文件\文件夹名字。获取路径方法为dir.getPath()；获取绝对路径方法为dir.getAbsolutePath();
  * File[] fileList, file.listFiles();
  * file.getName();
@@ -54,8 +54,8 @@ public class FileFilterTest {
         File file = new File("D:/");    //设置目录
 
         /**
-         *     public String[] list(FilenameFilter filter) {    //传入一个FilenameFilter的实现类
-         *         String names[] = list();                     //调用this.list()方法获取所有的子目录和文件的名字
+         *     public String[] List(FilenameFilter filter) {    //传入一个FilenameFilter的实现类
+         *         String names[] = List();                     //调用this.List()方法获取所有的子目录和文件的名字
          *         if ((names == null) || (filter == null)) {   //如果数字为null或者是filter为null就表示没有子目录和拦截器
          *             return names;                            //返回一个null就行了
          *         }
@@ -70,12 +70,12 @@ public class FileFilterTest {
          */
         String[] list = file.list(new FilenameFilter() {
             /**
-             * Tests if a specified file should be included in a file list.
+             * Tests if a specified file should be included in a file List.
              *
              * @param   dir    the directory in which the file was found.
              * @param   name   the name of the file.
              * @return  <code>true</code> if and only if the name should be
-             * included in the file list; <code>false</code> otherwise.
+             * included in the file List; <code>false</code> otherwise.
              */
             @Override
             public boolean accept(File dir, String name) {      //重写了FilenameFilter接口的accept()方法，

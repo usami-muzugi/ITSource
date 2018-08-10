@@ -25,11 +25,11 @@ public class ArrayListIterator {
         arrayList.add(7);
 
 //        /**   返回一个Iterator类的对象
-//         * Returns an iterator over the elements in this list in proper sequence.
+//         * Returns an iterator over the elements in this List in proper sequence.
 //         *
 //         * <p>The returned iterator is <HashSetTest href="#fail-fast"><i>fail-fast</i></HashSetTest>.
 //         *
-//         * @return an iterator over the elements in this list in proper sequence
+//         * @return an iterator over the elements in this List in proper sequence
 //         */
 //        public Iterator<E> iterator() {
 //            return new Itr();

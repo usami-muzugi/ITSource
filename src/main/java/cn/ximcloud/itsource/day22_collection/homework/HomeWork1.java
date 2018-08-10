@@ -17,12 +17,12 @@ public class HomeWork1 {
     public static void main(String[] args) {
         /*
         有如下代码，请用3中以上的方式遍历该集合中的数据
-        ArrayList list = new ArrayList();
-        list.add(2013);
-        list.add("基于数组的集合");
-        list.add(true);
-        list.add('IAccoutDAO');
-        list.add('T');
+        ArrayList List = new ArrayList();
+        List.add(2013);
+        List.add("基于数组的集合");
+        List.add(true);
+        List.add('IAccoutDAO');
+        List.add('T');
          */
         ArrayList list = new ArrayList();
         list.add(2013);

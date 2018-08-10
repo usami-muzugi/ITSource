@@ -8,6 +8,7 @@ import java.util.Properties;
 
 /**
  * Created by IntelliJ IDEA.
+ *
  * @author wizard
  * Date: 2018-08-05
  * Time: 16:51

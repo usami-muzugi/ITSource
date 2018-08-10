@@ -6,7 +6,7 @@ package cn.ximcloud.itsource.learning_lambda.list;
  * @author: wzard
  * @date: 2018-08-07
  * Time: 19:51
- * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.list
+ * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.List
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //

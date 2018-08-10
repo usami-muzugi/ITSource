@@ -3,7 +3,6 @@ package cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximc
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.IDepartmentDao;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.dao.ext.Crud;
 import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.domain.Department;
-import cn.ximcloud.itsource.day40_deep_learning_jdbc.homework.homework5.cn.ximcloud.itsource.util.Utils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

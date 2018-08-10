@@ -2,7 +2,10 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
+         version="4.0"
+>
+    <!--metadata-complete="false"-->
+    <!--默认为false，删除了也为false，为true就是不检查Servlet当中的注解-->
 
     <!--
         配置一个Servlet需要用到
@@ -14,13 +17,21 @@
                 url-pattern  是tomcat向外暴露的路径，可以随便写，但是需要在最左边加上一个/ 必须！
     -->
 
-    <!--&lt;!&ndash;day42 MyServlet&ndash;&gt;-->
+    <!--day42 MyServlet-->
     <!--<servlet>-->
-        <!--<servlet-name>Day42-helloServlet</servlet-name>-->
-        <!--<servlet-class>cn.ximcloud.itsource.day42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
+    <!--<servlet-name>Day42-helloServlet</servlet-name>-->
+    <!--<servlet-class>cn.ximcloud.itsource.day42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>Day42-helloServlet</servlet-name>-->
-        <!--<url-pattern>/day42/hello</url-pattern>-->
+    <!--<servlet-name>Day42-helloServlet</servlet-name>-->
+    <!--<url-pattern>/day42/hello</url-pattern>-->
     <!--</servlet-mapping>-->
+
+    <!--Day42 Welcome file List-->
+    <!--<welcome-file-List>-->
+    <!--<welcome-file>index.php</welcome-file>-->
+    <!--<welcome-file>index.jsp</welcome-file>-->
+    <!--<welcome-file>index.html</welcome-file>-->
+    <!--<welcome-file>index.asp</welcome-file>-->
+    <!--</welcome-file-List>-->
 </web-app>

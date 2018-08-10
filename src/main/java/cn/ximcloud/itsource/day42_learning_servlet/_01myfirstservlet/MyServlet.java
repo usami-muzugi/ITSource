@@ -2,9 +2,7 @@ package cn.ximcloud.itsource.day42_learning_servlet._01myfirstservlet;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import java.io.IOException;
-
 
 
 /**
@@ -37,11 +35,11 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * Servlet是接口，所以需要一个类来实现这个接口的所有方法
  * 方法service()会在每次urlPatterns被访问的时候执行一次
  **/
-@WebServlet(name = "hello",urlPatterns = "/day42/hello.php")
+@WebServlet(name = "hello", urlPatterns = "/day42/hello.php")
 public class MyServlet implements Servlet {
 
 

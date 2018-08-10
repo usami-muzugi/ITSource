@@ -52,7 +52,7 @@ public class PropertyTest {
         properties.put(new Student("usami", 10), "usamimizugi");
         System.out.println(properties);
         //测试不通过，对象的传输要使用ObjectI/0putStream
-        //properties.list(new PrintStream(new FileOutputStream(new File("D:/abc.txt"))));
+        //properties.List(new PrintStream(new FileOutputStream(new File("D:/abc.txt"))));
 //        properties.load(new FileInputStream(new File("D:/abc.txt")));
 //        System.out.println(properties);
     }

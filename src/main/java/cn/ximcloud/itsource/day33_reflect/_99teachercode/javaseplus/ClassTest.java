@@ -40,8 +40,8 @@ public class ClassTest {
     @Test
     public void testInterface() throws Exception {
         // 获得List接口对应的Class实例
-//		List list = new ArrayList();
-//		System.out.println(list.getClass());   //ArrayList
+//		List List = new ArrayList();
+//		System.out.println(List.getClass());   //ArrayList
 
         Class clz1 = List.class;
         Class clz2 = Class.forName("java.util.List");

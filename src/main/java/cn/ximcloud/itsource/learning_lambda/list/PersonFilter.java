@@ -2,7 +2,6 @@ package cn.ximcloud.itsource.learning_lambda.list;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -13,7 +12,7 @@ import java.util.stream.Stream;
  * @author: wzard
  * @date: 2018-08-07
  * Time: 19:52
- * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.list
+ * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.List
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
@@ -42,10 +41,10 @@ import java.util.stream.Stream;
 public class PersonFilter {
     @Test
     public void test() {
-        Persion persion1 = new Persion("彭睿",20);
-        Persion persion2 = new Persion("小鱼儿",24);
-        Persion persion3 = new Persion("印酱",22);
-        Persion persion4 = new Persion("卢酱",26);
+        Persion persion1 = new Persion("彭睿", 20);
+        Persion persion2 = new Persion("小鱼儿", 24);
+        Persion persion3 = new Persion("印酱", 22);
+        Persion persion4 = new Persion("卢酱", 26);
 
 
         List<Persion> list = Arrays.asList(persion1, persion2, persion3, persion4);

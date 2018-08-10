@@ -37,7 +37,7 @@ import java.util.List;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class StudentDaoImpl  extends Crud implements IStudentDao<Student> {
+public class StudentDaoImpl extends Crud implements IStudentDao<Student> {
 
 
     /**

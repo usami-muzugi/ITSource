@@ -8,12 +8,12 @@ public class TestFile {
      * file�е�ϵ��List����
          static File[] listRoots()
                   �г����õ��ļ�ϵͳ����
-     *   String[] list()
+     *   String[] List()
                   ����һ���ַ������飬��Щ�ַ���ָ���˳���·������ʾ��Ŀ¼�е��ļ���Ŀ¼��
          File[] listFiles()
                   ����һ������·�������飬��Щ·������ʾ�˳���·������ʾ��Ŀ¼�е��ļ���
 
-         String[] list(FilenameFilter filter)
+         String[] List(FilenameFilter filter)
                   ����һ���ַ������飬��Щ�ַ���ָ���˳���·������ʾ��Ŀ¼������ָ�����������ļ���Ŀ¼��
          File[] listFiles(FileFilter filter)
                   ���س���·�������飬��Щ·������ʾ�˳���·������ʾ��Ŀ¼������ָ�����������ļ���Ŀ¼��
@@ -22,9 +22,9 @@ public class TestFile {
      * */
     public static void main(String[] args) throws IOException {
         File file = new File("H:/a");
-//		System.out.println(file.list());
-//		String[] list = file.list();
-//		for (String string : list) {//���صĶ���һ�����·��������
+//		System.out.println(file.List());
+//		String[] List = file.List();
+//		for (String string : List) {//���صĶ���һ�����·��������
 //			System.out.println(string);
 //		}
 		

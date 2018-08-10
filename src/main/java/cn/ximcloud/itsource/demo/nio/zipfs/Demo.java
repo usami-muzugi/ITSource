@@ -6,10 +6,10 @@
  * are met:
  *
  *   - Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
+ *     notice, this List of conditions and the following disclaimer.
  *
  *   - Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in the
+ *     notice, this List of conditions and the following disclaimer in the
  *     documentation and/or other materials provided with the distribution.
  *
  *   - Neither the name of Oracle nor the names of its
@@ -261,7 +261,7 @@ public class Demo {
                     list(fs.getPath("/"), false);
                     while (true) {
                         Thread.sleep(10000);
-                        //list(fs.getPath("/"), true);
+                        //List(fs.getPath("/"), true);
                         System.out.println("sleeping...");
                     }
             }
@@ -650,7 +650,7 @@ public class Demo {
         setctime,        // <java Demo setctime zipfile "MM/dd/yy-HH:mm:ss" path...>
 
         lsdir,           // <java Demo lsdir zipfile dir>
-        // list dir's direct child files/dirs
+        // List dir's direct child files/dirs
 
         mkdir,           // <java Demo mkdir zipfile dir>
 
@@ -658,15 +658,15 @@ public class Demo {
 
         rmdirs,          // <java Demo rmdirs zipfile dir>
 
-        list,            // <java Demo list zipfile [dir]>
-        // recursively list all entries of dir
+        list,            // <java Demo List zipfile [dir]>
+        // recursively List all entries of dir
         // via DirectoryStream
 
         tlist,           // <java Demo tlist zipfile [dir]>
-        // list with buildDirTree=true
+        // List with buildDirTree=true
 
         vlist,           // <java Demo vlist zipfile [dir]>
-        // recursively verbose list all entries of
+        // recursively verbose List all entries of
         // dir via DirectoryStream
 
         walk,            // <java Demo walk zipfile [dir]>

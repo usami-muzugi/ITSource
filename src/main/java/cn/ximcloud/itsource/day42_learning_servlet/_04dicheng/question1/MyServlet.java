@@ -40,17 +40,18 @@ import java.io.IOException;
  * 这些方法来达到实现功能，Tomcat启动的时候，在子类么有找到方法就会自己去父类
  * 查找这些方法
  **/
-@WebServlet(name = "liucheng_question1",urlPatterns = "/day42/question1.php")
+@WebServlet(name = "liucheng_question1", urlPatterns = "/day42/question1.php")
 public class MyServlet extends BaseMyGenericServlet {
     /**
      * 子类如果只想重写这个Servlet接口的service方法，就可以采用这种方式，不必每次都去实现其他方法。
      * 然后重写，很烦。
      * 这里我们仅需要对象service进行业务操作，所以保持了BaseMyGenericServlet的抽象并且继续保持service()方法的抽象
      * 所以这里子类需要重写这个方法。
+     *
      * @param req ServletRequest Servlet请求
      * @param res ServletResponse Servlet响应
-     * @throws ServletException     一个异常
-     * @throws IOException          又一个异常
+     * @throws ServletException 一个异常
+     * @throws IOException      又一个异常
      */
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {

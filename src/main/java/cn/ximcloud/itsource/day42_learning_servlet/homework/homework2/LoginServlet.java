@@ -80,7 +80,8 @@ public class LoginServlet extends HttpServlet {
     }
 
     /**
-     *  把ISO-8859-1编码的字符改变成UTF-8
+     * 把ISO-8859-1编码的字符改变成UTF-8
+     *
      * @param arr
      */
     void charSet(String[] arr) {

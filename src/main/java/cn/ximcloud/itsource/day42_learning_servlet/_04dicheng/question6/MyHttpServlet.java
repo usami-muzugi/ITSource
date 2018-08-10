@@ -37,7 +37,7 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 专一的类做专一的事情,这里MyHttpServlet 就是专门用于处理Http请求的类
  * 问题6,抽象一下,让子类实现doGet() doPost()方法
  **/
@@ -53,8 +53,9 @@ public abstract class MyHttpServlet extends BaseMyGenericServlet {
 
     /**
      * 定义一个钩子方法,子类继承直接实现Http专精
-     * @param httpServletRequest    处理HttpServletRequest 的请求
-     * @param httpServletResponse   处理HttpServletResponse 的请求
+     *
+     * @param httpServletRequest  处理HttpServletRequest 的请求
+     * @param httpServletResponse 处理HttpServletResponse 的请求
      */
     public void service(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 //        把doGet()和doPost()方法作为钩子方法,来被这个service()方法调用
@@ -71,16 +72,18 @@ public abstract class MyHttpServlet extends BaseMyGenericServlet {
     }
 
     /**
-     *  专门用来处理GET的请求的方法 抽象了,让子类实现吧
-     * @param httpServletRequest    处理HttpServletRequest 的请求
-     * @param httpServletResponse   处理HttpServletResponse 的请求
+     * 专门用来处理GET的请求的方法 抽象了,让子类实现吧
+     *
+     * @param httpServletRequest  处理HttpServletRequest 的请求
+     * @param httpServletResponse 处理HttpServletResponse 的请求
      */
     public abstract void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse);
 
     /**
-     *  专门用来处理POST的请求的方法    也抽象了,让子类实现,草!
-     * @param httpServletRequest    处理HttpServletRequest 的请求
-     * @param httpServletResponse   处理HttpServletResponse 的请求
+     * 专门用来处理POST的请求的方法    也抽象了,让子类实现,草!
+     *
+     * @param httpServletRequest  处理HttpServletRequest 的请求
+     * @param httpServletResponse 处理HttpServletResponse 的请求
      */
     public abstract void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse);
 

@@ -36,7 +36,7 @@ import java.util.Enumeration;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 当Tomcat启动的时候，并不会直接去创建自己写的Servlet实例，而是在url被访问到的时候才会加载，并且会把这个
  * 对象存储到缓存池，每一访问url时，是在缓存池中使用这个对象。
  **/
@@ -48,7 +48,7 @@ public class MyServlet2 implements Servlet {
      * 启动的时候，执行一次
      *
      * @param servletConfig 初始化配置对象，由Tomcat容器传递过来
-     * @throws ServletException
+     * @throws ServletException 一个异常
      */
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
@@ -68,8 +68,8 @@ public class MyServlet2 implements Servlet {
     /**
      * 每次访问，执行一次
      *
-     * @param servletRequest    Servlet请求对象
-     * @param servletResponse   Servlet相应对象
+     * @param servletRequest  Servlet请求对象
+     * @param servletResponse Servlet相应对象
      * @throws ServletException 一个异常
      * @throws IOException      另一个异常
      */
@@ -87,8 +87,9 @@ public class MyServlet2 implements Servlet {
     }
 
     /**
-     *  获取配置ServletConfig 配置信息
-     * @return  一个配置信息对象
+     * 获取配置ServletConfig 配置信息
+     *
+     * @return 一个配置信息对象
      */
     @Override
     public ServletConfig getServletConfig() {
@@ -96,7 +97,8 @@ public class MyServlet2 implements Servlet {
     }
 
     /**
-     *  该方法返回Servlet的信息
+     * 该方法返回Servlet的信息
+     *
      * @return 作者、版权等
      */
     @Override

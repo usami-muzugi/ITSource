@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by IntelliJ IDEA.
@@ -55,7 +56,7 @@ public class ItemServlet extends HttpServlet {
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("username".equals(cookie.getName())) {
-                    username = URLDecoder.decode(cookie.getValue(), "utf-8");
+                    username = URLDecoder.decode(cookie.getValue(), StandardCharsets.UTF_8);
                 }
             }
         }

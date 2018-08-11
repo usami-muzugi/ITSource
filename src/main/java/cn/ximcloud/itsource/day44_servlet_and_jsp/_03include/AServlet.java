@@ -1,24 +1,23 @@
-package cn.ximcloud.itsource.day43_cookie_and_session.homework.homework1.cookie.servlet;
+package cn.ximcloud.itsource.day44_servlet_and_jsp._03include;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-10
- * Time: 11:46
- * ProjectName: itsource.cn.ximcloud.itsource.day43_cookie_and_session._03http_session._by_self
+ * @date: 2018-08-11
+ * Time: 10:48
+ * ProjectName: itsource.cn.ximcloud.itsource.day44_servlet_and_jsp._01forward
  * To change this template use File | Settings | Editor | File and Code Templates.
+ * <p>
+ * you are not expected to understand this.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -41,45 +40,17 @@ import java.nio.charset.StandardCharsets;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ * 测试请求转发
+ * 在请求对象调用getRequestDispatcher()方法，获得一个转发器
+ * 然后转发器在调用forward()方法，转发请求和响应对象
  **/
-@WebServlet(name = "day42_mainServlet_cookie_homework", urlPatterns = "/day42/homework/cookie/home.php")
-public class MainServlet extends HttpServlet {
-    /**
-     * @param req  login页面的请求
-     * @param resp resp
-     * @throws ServletException ServletException
-     * @throws IOException      IOException
-     */
+@WebServlet(name = "day44_include_AServlet",urlPatterns = "/day44/_03include/a")
+public class AServlet  extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        设置编码格式
-        req.setCharacterEncoding("UTF-8");
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
-//        获取请求的值
-        String username = req.getParameter("username");
-//        String password = req.getParameter("password");
-
-//登录认证操作
-        if (true) {
-//            创建Cookie
-//            在tomcat7当中，是不支持中文的cookie的，所以这里需要URL自己编码一下
-            Cookie cookie = new Cookie("username", URLEncoder.encode(username, StandardCharsets.UTF_8));
-            resp.addCookie(cookie);
-//            主页
-            PrintWriter writer = resp.getWriter();
-            StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("<html>")
-                    .append("欢迎你，")
-                    .append(username).append("<hr />")
-                    .append("你有")
-                    .append("<a href='").append("/day42/homework/cookie/list.php").append("'>")
-                    .append("10")
-                    .append("</a>")
-                    .append("封未读邮件");
-            writer.print(stringBuffer);
-        } else {
-//            错误页
-        }
+//        include会将两个的response融合
+        resp.getWriter().print("我是A Servlet 的响应应该打印的东西");
+        req.getRequestDispatcher("b").include(req, resp);
     }
 }

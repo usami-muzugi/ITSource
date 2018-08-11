@@ -156,7 +156,7 @@ public class DriverMangerLearning {
         final String SQL = "SHOW DATABASES";
         int i = statement.executeUpdate(SQL);
         /**
-         * either (1) the row count for SQL Data Manipulation Language (DML) statements
+         * either (1) the row _04count for SQL Data Manipulation Language (DML) statements
          *      *         or (2) 0 for SQL statements that return nothing
          */
 //        但是看不到这条语句执行的效果，但是这个方法会返回一个int，打印一下

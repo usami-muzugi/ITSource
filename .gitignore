@@ -85,3 +85,6 @@ target/classes/cn/ximcloud/itsource/day40_deep_learning_jdbc/_01preparedstatemen
 target/generated-sources/
 target/generated-test-sources/
 target/maven-status/
+out/artifacts/itsource_war_exploded/WEB-INF/classes/cn/ximcloud/itsource/day44_servlet_and_jsp/forward/
+out/artifacts/itsource_war_exploded/WEB-INF/classes/cn/ximcloud/itsource/day44_servlet_and_jsp/include/
+out/artifacts/itsource_war_exploded/WEB-INF/classes/cn/ximcloud/itsource/day44_servlet_and_jsp/redirect/

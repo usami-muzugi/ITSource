@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.servlet;
+package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,7 +38,7 @@ import java.io.IOException;
  * ////////////////////////////////////////////////////////////////////
  *
  * @author Wizard*/
-@WebServlet(name = "day43_ListServlet",urlPatterns = "/day43/ListServlet")
+@WebServlet(name = "day44_homework1_ListServlet",urlPatterns = "/day44/homework/list")
 public class ListServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

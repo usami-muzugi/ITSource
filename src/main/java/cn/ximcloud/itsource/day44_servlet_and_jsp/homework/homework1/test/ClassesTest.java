@@ -1,21 +1,19 @@
-package cn.ximcloud.itsource.day44_servlet_and_jsp._05servlet_context;
+package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.test;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain.User;
+import org.junit.Test;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-11
- * Time: 15:12
- * ProjectName: itsource.cn.ximcloud.itsource.day44_servlet_and_jsp._05servlet_context
+ * Time: 22:17
+ * ProjectName: itsource.cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.test
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -43,14 +41,45 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name ="ServletContextTestServlet",urlPatterns = "/day44/ServletContextTestServlet")
-public class ServletContextTestServlet extends HttpServlet {
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        获得的是这个Servlet的配置信息
-        ServletConfig servletConfig = getServletConfig();
-        ServletContext servletContext = getServletContext();
-//        获得的是全局的Servlet们的配置信息
 
+public class ClassesTest {
+    /**
+     * 测试字段
+     * private java.lang.Integer cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain.User.id
+     * private java.lang.String cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain.User.username
+     * private java.lang.String cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain.User.password
+     */
+    @Test
+    public void testFields() {
+        Field[] fields = new User().getClass().getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println(field.getName()+field.getType());
+        }
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testClass() {
+        String simpleName = String.class.getSimpleName();
+        System.out.println(simpleName);
+    }
+    /**
+     * 测试方法
+     */
+    @Test
+    public void testMethod() {
+        Method[] declaredMethods = new User().getClass().getDeclaredMethods();
+        for (Method declaredMethod : declaredMethods) {
+            System.out.println(declaredMethod);
+        }
+    }
+
+    @Test
+    public void testAnyWay() {
+        String[] strings = {"123123","1231231","1231231","123123","12312312",};
+        String string = Arrays.toString(strings);
+        System.out.println(string.substring(1, string.length() - 1));
     }
 }

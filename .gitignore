@@ -75,12 +75,6 @@ out/artifacts/itsource_war_exploded/day41_how_to_install_tomcat/
 out/artifacts/itsource_war_exploded/day42/
 Would
 remove out/artifacts/itsource_war_exploded/index.jsp
-src/main/java/cn/ximcloud/itsource/day24_collections/_09Line/
-src/main/java/cn/ximcloud/itsource/day32_java_plus/junit3/junit4/
-src/main/java/cn/ximcloud/itsource/day32_java_plus/wapper/
-src/main/java/cn/ximcloud/itsource/day32_java_plus/zixi/
-src/main/java/cn/ximcloud/itsource/day40_deep_learning_jdbc/homework/homework2/
-src/main/java/cn/ximcloud/itsource/day43_cookie_and_session/_01mapping/_02anno/
 target/classes/cn/ximcloud/itsource/day40_deep_learning_jdbc/_01preparedstatement/resource/
 target/generated-sources/
 target/generated-test-sources/
@@ -88,3 +82,13 @@ target/maven-status/
 out/artifacts/itsource_war_exploded/WEB-INF/classes/cn/ximcloud/itsource/day44_servlet_and_jsp/forward/
 out/artifacts/itsource_war_exploded/WEB-INF/classes/cn/ximcloud/itsource/day44_servlet_and_jsp/include/
 out/artifacts/itsource_war_exploded/WEB-INF/classes/cn/ximcloud/itsource/day44_servlet_and_jsp/redirect/
+out/artifacts/itsource_war_exploded/WEB-INF/classes/META-INF/
+out/artifacts/itsource_war_exploded/day43/
+out/artifacts/itsource_war_exploded/day44/
+src/main/java/cn/ximcloud/itsource/day44_servlet_and_jsp/homework/homework4/
+target/classes/META-INF/
+src/main/java/cn/ximcloud/itsource/day24_collections/_09Line/
+src/main/java/cn/ximcloud/itsource/day32_java_plus/junit3/junit4/
+src/main/java/cn/ximcloud/itsource/day32_java_plus/wapper/
+src/main/java/cn/ximcloud/itsource/day32_java_plus/zixi/
+src/main/java/cn/ximcloud/itsource/day40_deep_learning_jdbc/homework/homework2/

@@ -111,7 +111,7 @@ activated and stopped by clicking in the gray area of the demos Custom
 Control panel.
 
 For less garbage collection and smoother animation for the Intro and
-other animated demos run with command line argument:
+owner animated demos run with command line argument:
 
     java -jar -ms48m Java2Demo.jar
 

@@ -1,17 +1,10 @@
-package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.servlet;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
- * Date: 2018-08-11
- * Time: 00:04
+ * Date: 2018-08-10
+ * Time: 23:57
  * ProjectName: itsource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
@@ -38,10 +31,5 @@ import java.io.IOException;
  * ////////////////////////////////////////////////////////////////////
  *
  * @author Wizard*/
-@WebServlet(name = "day43_ListServlet",urlPatterns = "/day43/ListServlet")
-public class ListServlet extends HttpServlet {
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.service(req, resp);
-    }
+public interface IListDao<T> extends IBaseDao<T> {
 }

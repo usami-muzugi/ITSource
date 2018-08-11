@@ -1,17 +1,10 @@
-package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.servlet;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
- * Date: 2018-08-11
- * Time: 00:04
+ * Date: 2018-08-10
+ * Time: 23:00
  * ProjectName: itsource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
@@ -36,12 +29,37 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
- *
- * @author Wizard*/
-@WebServlet(name = "day43_ListServlet",urlPatterns = "/day43/ListServlet")
-public class ListServlet extends HttpServlet {
+ **/
+public class Item {
+    private Integer id;
+    private Integer owner;
+    private String sender;
+    private String getter;
+    private String body;
+
+    /**
+     * 必须有一个空的构造方法让反射访问
+     */
+    public Item() {
+    }
+
+
+    public Item(Integer id, Integer owner, String sender, String getter, String body) {
+        this.id = id;
+        this.owner = owner;
+        this.sender = sender;
+        this.getter = getter;
+        this.body = body;
+    }
+
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.service(req, resp);
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", owner=" + owner +
+                ", sender='" + sender + '\'' +
+                ", getter='" + getter + '\'' +
+                ", body='" + body + '\'' +
+                '}';
     }
 }

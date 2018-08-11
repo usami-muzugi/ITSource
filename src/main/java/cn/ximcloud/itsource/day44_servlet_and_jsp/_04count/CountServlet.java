@@ -40,6 +40,14 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ *
+ * 测试HttpServletRequest，Session，ServletContext 对象的生命周期
+ * 结果是HttpServletRequest的生命周期是一个请求的结束
+ * 也就是说每一次的请求都是不相同的一个请求对象
+ * 但是session是浏览器的打开、操作和关闭
+ * 所以Session的生命周期是比较长的。但是值得注意的是当一个人打开了两个浏览器（不相同耳朵浏览器）的时候，
+ * 其实是开启了两个会话。是分别计数的
+ * 而ServletContext的生命周期是最长的，是随着Tomcat的启动和关闭。
  **/
 
 @WebServlet(name = "day44_count",urlPatterns = "/day44/count")

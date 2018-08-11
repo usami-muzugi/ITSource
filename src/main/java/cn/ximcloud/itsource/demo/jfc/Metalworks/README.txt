@@ -47,7 +47,7 @@ the Metalworks demo include:
    using Metal.
 
 6. The Theme menu allows you to change the color theme of the
-   application.  The default theme (Steel) and several other
+   application.  The default theme (Steel) and several owner
    demo themes are included.  Note that the themes can control
    not only the colors, but also the sizes of many controls.
    Also included with this demo is the PropertiesMetalTheme

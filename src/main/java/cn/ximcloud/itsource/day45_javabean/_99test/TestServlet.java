@@ -1,20 +1,24 @@
-package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.servlet;
+package cn.ximcloud.itsource.day45_javabean._99test;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-08-11
- * Time: 00:04
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ *
+ * @author: wzard
+ * @date: 2018-08-12
+ * Time: 12:55
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean._99test
+ * To change this template use File | Settings | Editor | File and Code Templates.
+ * <p>
+ * you are not expected to understand this.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -35,29 +39,22 @@ import java.io.PrintWriter;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
- * @author Wizard*/
-@WebServlet(name = "day44_homework1_ListServlet",urlPatterns = "/day44/homework/list")
-public class ListServlet extends HttpServlet {
+ **/
+@WebServlet(name = "testServlet",urlPatterns = "/test/clac")
+public class TestServlet extends HttpServlet {
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //        设置编码格式
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
+        String var_1 = req.getParameter("var_1");
+        String operation = req.getParameter("operation");
+        String var_2 = req.getParameter("var_2");
 
-        //            主页
-        PrintWriter writer = resp.getWriter();
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("<html>")
-                .append("欢迎你，")
-                .append(req.getSession().getAttribute("USERNAME_IN_SESSION")).append("<hr />")
-                .append("<a href='").append("/day44/homework/item").append("'>")
-                .append("1.大爷进来玩儿！")
-                .append("</a>")
-                .append("<br />");
-        writer.print(stringBuffer.toString());
+        HttpSession session = req.getSession();
+        session.setAttribute("var_1",var_1);
+        session.setAttribute("operation",operation);
+        session.setAttribute("var_2",var_2);
+        req.getRequestDispatcher("/day45/test.jsp").forward(req, resp);
     }
 }

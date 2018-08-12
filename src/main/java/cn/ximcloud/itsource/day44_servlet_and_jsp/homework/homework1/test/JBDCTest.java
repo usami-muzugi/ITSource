@@ -1,20 +1,22 @@
-package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.servlet;
+package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.test;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.impl.ItemImpl;
+import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.impl.ListImpl;
+import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.impl.UserImpl;
+import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.utils.JDBCUtil;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-08-11
- * Time: 00:04
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ *
+ * @author: wzard
+ * @date: 2018-08-12
+ * Time: 08:41
+ * ProjectName: itsource.cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.test
+ * To change this template use File | Settings | Editor | File and Code Templates.
+ * <p>
+ * you are not expected to understand this.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -35,28 +37,19 @@ import java.io.PrintWriter;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
- * @author Wizard
- */
-@WebServlet(name = "day44_homework1_ItemServlet", urlPatterns = "/day44/homework/item")
-public class ItemServlet extends HttpServlet {
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //        设置编码格式
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
+ **/
 
+public class JBDCTest {
 
-        //            主页
-        PrintWriter writer = resp.getWriter();
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("<html>")
-                .append("欢迎你，")
-                .append(req.getSession().getAttribute("USERNAME_IN_SESSION")).append("<hr />")
-                .append("玩沙漠风暴！");
-        writer.print(stringBuffer.toString());
+    @Test
+    public void testJDBC() {
+        JDBCUtil instance = JDBCUtil.getInstance();
+        UserImpl user = new UserImpl();
+        ListImpl list = new ListImpl();
+        ItemImpl item = new ItemImpl();
+        user.find(1);
+        user.find(2);
     }
 }

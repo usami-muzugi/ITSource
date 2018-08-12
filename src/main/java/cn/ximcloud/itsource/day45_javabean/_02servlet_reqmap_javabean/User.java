@@ -1,20 +1,16 @@
-package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.servlet;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+package cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-08-11
- * Time: 00:04
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ *
+ * @author: wizard
+ * @date: 2018-08-12
+ * Time: 10:53
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean._01javabean
+ * To change this template use File | Settings | Editor | File and Code Templates.
+ * <p>
+ * you are not expected to understand this.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -35,28 +31,65 @@ import java.io.PrintWriter;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
- * @author Wizard
- */
-@WebServlet(name = "day44_homework1_ItemServlet", urlPatterns = "/day44/homework/item")
-public class ItemServlet extends HttpServlet {
+ * Entity
+ **/
+public class User {
+    private String name;
+    private Integer age;
+    private Boolean sex;
+
+    private String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Boolean getSex() {
+        return sex;
+    }
+
+    public void setSex(Boolean sex) {
+        this.sex = sex;
+    }
+
+    public boolean isSexy() {
+        return true;
+    }
+
+    public void test() {
+
+    }
+
+    public void test(int i) {
+
+    }
+
+    public void test(Integer integer) {
+
+    }
+
+    public void test(String string) {
+
+    }
+
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //        设置编码格式
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
-
-
-        //            主页
-        PrintWriter writer = resp.getWriter();
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("<html>")
-                .append("欢迎你，")
-                .append(req.getSession().getAttribute("USERNAME_IN_SESSION")).append("<hr />")
-                .append("玩沙漠风暴！");
-        writer.print(stringBuffer.toString());
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex=" + sex +
+                '}';
     }
 }

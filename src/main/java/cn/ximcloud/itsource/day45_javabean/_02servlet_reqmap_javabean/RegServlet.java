@@ -1,20 +1,29 @@
-package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.servlet;
+package cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean;
 
+import cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean.utils.MyBeanUtil;
+import org.apache.commons.beanutils.BeanUtils;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Wizard
- * Date: 2018-08-11
- * Time: 00:04
- * ProjectName: itsource
- * To change this template use File | Settings | File Templates.
+ *
+ * @author: wzard
+ * @date: 2018-08-12
+ * Time: 11:45
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean
+ * To change this template use File | Settings | Editor | File and Code Templates.
+ * <p>
+ * you are not expected to understand this.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -35,29 +44,38 @@ import java.io.PrintWriter;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG          永不修改             //
+ * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
- * @author Wizard*/
-@WebServlet(name = "day44_homework1_ListServlet",urlPatterns = "/day44/homework/list")
-public class ListServlet extends HttpServlet {
+ **/
+@WebServlet(name = "da45_regServlet", urlPatterns = "/day45/regServlet")
+public class RegServlet extends HttpServlet {
+
+    /**
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //        设置编码格式
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
+        /*
+         * 原先的使用req.getParameter()方法一个一个来取数据代码臃肿
+         * 可以使用req.getParameterMap()一下子把所有的参数都存放在一个map里面
+         * 需要改一些编码方式，不然对中文的支持不太友好
+         */
+//        req.setCharacterEncoding("UTF-8");
+//        Map<String, String[]> parameterMap = req.getParameterMap();
+//        User u = new User();
+//        try {
+////            然后调用BeanUtils.copyProperties(Object dest,Object map) 方法，将map里面的数据复制给dest对象当中去
+//            BeanUtils.copyProperties(u, parameterMap);
+//        } catch (IllegalAccessException | InvocationTargetException e) {
+//            e.printStackTrace();
+//        }
 
-        //            主页
-        PrintWriter writer = resp.getWriter();
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("<html>")
-                .append("欢迎你，")
-                .append(req.getSession().getAttribute("USERNAME_IN_SESSION")).append("<hr />")
-                .append("<a href='").append("/day44/homework/item").append("'>")
-                .append("1.大爷进来玩儿！")
-                .append("</a>")
-                .append("<br />");
-        writer.print(stringBuffer.toString());
+        User user = MyBeanUtil.requestToObject(req, User.class);
+
+        System.out.println(user);
     }
 }

@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: wzard
   Date: 2018/8/12
-  Time: 1:09
+  Time: 12:58
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,7 +14,6 @@
         var = session.getAttribute("var").toString();
         System.out.println("var1:"+var);
     }
-
 %>
 <html>
 <head>
@@ -31,6 +30,5 @@
     </select>
     <input type="text" name="val_b"> = <%=var%> <input type="submit">
 </form>
-<%=session.getAttribute("1231")%>
 </body>
 </html>

@@ -4,8 +4,10 @@ import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.IUserDa
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain.User;
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.utils.JDBCUtil;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -57,9 +59,37 @@ public class UserImpl extends BaseImpl<User> implements IUserDao<User> {
     @Override
     public User login(Integer id, String password) {
         User user = find(id);
-        if (user!=null) {
+        if (user != null) {
             if (user.getId().equals(id) && user.getPassword().equals(password)) {
                 return user;
+            }
+        }
+        return null;
+    }
+
+    public User login(String username, String password) {
+        Integer integer;
+        try {
+            integer = Integer.valueOf(username);
+            return login(integer, password);
+        } catch (NumberFormatException e) {
+            JDBCUtil instance = JDBCUtil.getInstance();
+            Connection connection = instance.getConnection();
+            PreparedStatement preparedStatement = null;
+            ResultSet resultSet = null;
+            final String sql = "SELECT id FROM User WHERE username=?";
+            System.out.println(sql);
+            try {
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, username);
+                resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    return login(resultSet.getInt(1), password);
+                }
+            } /*finally {
+            instance.close(resultSet, preparedStatement, connection);
+        }*/ catch (SQLException e1) {
+                e1.printStackTrace();
             }
         }
         return null;

@@ -52,14 +52,14 @@ public class JDBCUtil {
         return instance;
     }
 
-    public static Connection connection;
+    public Connection connection;
 
-    static {
+    {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream(new File("C:\\Users\\wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day40_deep_learning_jdbc\\homework\\homework5\\cn\\ximcloud\\itsource\\resource\\config.properties")));
+            properties.load(new FileInputStream(new File("C:\\Users\\wizard\\IdeaProjects\\itsource\\src\\main\\java\\cn\\ximcloud\\itsource\\day44_servlet_and_jsp\\homework\\homework1\\resource\\config.properties")));
             Class.forName(properties.getProperty("driverClassName"));
-            connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"), properties.getProperty("password"));
+            connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("user"), properties.getProperty("password"));
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

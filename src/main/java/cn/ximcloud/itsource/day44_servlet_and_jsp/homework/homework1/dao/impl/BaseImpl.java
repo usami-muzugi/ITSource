@@ -78,14 +78,6 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
      * 获取查询的结果
      */
     private Object[] objects;
-    {
-        declaredFields = tClass.getDeclaredFields();
-        fields = new String[declaredFields.length];
-        classes = new Class[declaredFields.length];
-        objects = new Object[declaredFields.length];
-    }
-
-
 
     /**
      * 这个方法是真的棒!(๑•̀ㅂ•́)و✧，获得运行时类型
@@ -93,6 +85,10 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
      */
     public BaseImpl(Class<T> tClass) {
         this.tClass = tClass;
+        declaredFields = tClass.getDeclaredFields();
+        fields = new String[declaredFields.length];
+        classes = new Class[declaredFields.length];
+        objects = new Object[declaredFields.length];
     }
 
     /**
@@ -156,9 +152,9 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
+        }/* finally {
             instance.close(null, preparedStatement, connection);
-        }
+        }*/
     }
 
     /**
@@ -191,12 +187,13 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             }
 //            反正就是要保证有序，就是那个顺序
             Constructor<T> constructor = tClass.getConstructor(classes);
+            constructor.setAccessible(true);
             return constructor.newInstance(objects);
         } catch (SQLException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
-        } finally {
+        } /*finally {
             instance.close(resultSet, preparedStatement, connection);
-        }
+        }*/
         return null;
     }
 
@@ -222,9 +219,9 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             return arrayList;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
+        }/* finally {
             instance.close(resultSet, preparedStatement, connection);
-        }
+        }*/
         return null;
     }
 }

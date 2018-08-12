@@ -56,6 +56,7 @@ public class SumServlet extends HttpServlet {
         }
         System.out.println("var2:"+opt);
         req.getSession().setAttribute("var", opt);
+        req.getSession().setAttribute("1231", "31231");
         req.getRequestDispatcher("/day44/homework/Sum.jsp").forward(req, resp);
     }
 

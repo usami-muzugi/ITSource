@@ -33,9 +33,10 @@ package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao;
 public interface IUserDao<T> extends IBaseDao<T> {
     /**
      * 用户登录
-     * @param id    id主键
-     * @param password  用户密码
-     * @return  返回用户，没有找到返回null
+     *
+     * @param id       id主键
+     * @param password 用户密码
+     * @return 返回用户，没有找到返回null
      */
     T login(Integer id, String password);
 }

@@ -5,15 +5,15 @@ import java.io.IOException;
 
 public class TestFile {
     /*
-     * file�е�ϵ��List����
+     * file�е�ϵ��StudentList����
          static File[] listRoots()
                   �г����õ��ļ�ϵͳ����
-     *   String[] List()
+     *   String[] StudentList()
                   ����һ���ַ������飬��Щ�ַ���ָ���˳���·������ʾ��Ŀ¼�е��ļ���Ŀ¼��
          File[] listFiles()
                   ����һ������·�������飬��Щ·������ʾ�˳���·������ʾ��Ŀ¼�е��ļ���
 
-         String[] List(FilenameFilter filter)
+         String[] StudentList(FilenameFilter filter)
                   ����һ���ַ������飬��Щ�ַ���ָ���˳���·������ʾ��Ŀ¼������ָ�����������ļ���Ŀ¼��
          File[] listFiles(FileFilter filter)
                   ���س���·�������飬��Щ·������ʾ�˳���·������ʾ��Ŀ¼������ָ�����������ļ���Ŀ¼��
@@ -22,9 +22,9 @@ public class TestFile {
      * */
     public static void main(String[] args) throws IOException {
         File file = new File("H:/a");
-//		System.out.println(file.List());
-//		String[] List = file.List();
-//		for (String string : List) {//���صĶ���һ�����·��������
+//		System.out.println(file.StudentList());
+//		String[] StudentList = file.StudentList();
+//		for (String string : StudentList) {//���صĶ���һ�����·��������
 //			System.out.println(string);
 //		}
 		

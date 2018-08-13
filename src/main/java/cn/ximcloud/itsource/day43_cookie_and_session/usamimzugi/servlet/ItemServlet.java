@@ -37,8 +37,9 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  *
- * @author Wizard*/
-@WebServlet(name = "day43_ItemServlet",urlPatterns = "/day43/ItemServlet")
+ * @author Wizard
+ */
+@WebServlet(name = "day43_ItemServlet", urlPatterns = "/day43/ItemServlet")
 public class ItemServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

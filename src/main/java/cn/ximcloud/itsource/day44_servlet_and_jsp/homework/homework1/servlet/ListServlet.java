@@ -38,8 +38,9 @@ import java.io.PrintWriter;
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  *
- * @author Wizard*/
-@WebServlet(name = "day44_homework1_ListServlet",urlPatterns = "/day44/homework/list")
+ * @author Wizard
+ */
+@WebServlet(name = "day44_homework1_ListServlet", urlPatterns = "/day44/homework/list")
 public class ListServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

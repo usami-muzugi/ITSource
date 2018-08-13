@@ -11,6 +11,6 @@
     <title>JSP页面</title>
 </head>
 <body>
-    这是一个JSP的header <br />
+这是一个JSP的header <br/>
 </body>
 </html>

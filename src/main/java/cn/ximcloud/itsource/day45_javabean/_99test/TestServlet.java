@@ -42,7 +42,7 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "testServlet",urlPatterns = "/test/clac")
+@WebServlet(name = "testServlet", urlPatterns = "/test/clac")
 public class TestServlet extends HttpServlet {
 
     @Override
@@ -52,9 +52,9 @@ public class TestServlet extends HttpServlet {
         String var_2 = req.getParameter("var_2");
 
         HttpSession session = req.getSession();
-        session.setAttribute("var_1",var_1);
-        session.setAttribute("operation",operation);
-        session.setAttribute("var_2",var_2);
+        session.setAttribute("var_1", var_1);
+        session.setAttribute("operation", operation);
+        session.setAttribute("var_2", var_2);
         req.getRequestDispatcher("/day45/test.jsp").forward(req, resp);
     }
 }

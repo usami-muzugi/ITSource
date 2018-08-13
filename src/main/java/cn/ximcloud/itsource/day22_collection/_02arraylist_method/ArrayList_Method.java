@@ -33,7 +33,7 @@ public class ArrayList_Method {
         list.remove(cla);
         System.out.println(list);
 //        /**   把数组中所有的元素null掉
-//         * Removes all of the elements from this List.  The List will
+//         * Removes all of the elements from this StudentList.  The StudentList will
 //         * be empty after this call returns.
 //         */
 //        public void clear() {
@@ -42,16 +42,16 @@ public class ArrayList_Method {
 //            for (int to = size, i = size = 0; i < to; i++)
 //                es[i] = null; //把数组的所有元素null掉
 //        }
-        //List.clear();
+        //StudentList.clear();
 
 //        /**   如果此列表总包含指定的元素，则返回true
-//         * Returns {@code true} if this List contains the specified element.
-//         * More formally, returns {@code true} if and only if this List contains
+//         * Returns {@code true} if this StudentList contains the specified element.
+//         * More formally, returns {@code true} if and only if this StudentList contains
 //         * at least one element {@code e} such that
 //         * {@code Objects.equals(o, e)}.
 //         *
-//         * @param o element whose presence in this List is to be tested
-//         * @return {@code true} if this List contains the specified element
+//         * @param o element whose presence in this StudentList is to be tested
+//         * @return {@code true} if this StudentList contains the specified element
 //         */
 //        public boolean contains(Object o) {
 //            return indexOf(o) >= 0;   //indexOf(Object obj)是返回这个对象在这个表里面的索引，如果有的话就返回索引值，没有的话就返回-1.所以contains是判断一个列表中是否包含这个对象
@@ -60,7 +60,7 @@ public class ArrayList_Method {
 
 //        /**   返回一个对象在ArrayList第一次出现的位置
 //         * Returns the index of the first occurrence of the specified element
-//         * in this List, or -1 if this List does not contain the element.
+//         * in this StudentList, or -1 if this StudentList does not contain the element.
 //         * More formally, returns the lowest index {@code i} such that
 //         * {@code Objects.equals(o, get(i))},
 //         * or -1 if there is no such index.
@@ -80,7 +80,7 @@ public class ArrayList_Method {
         System.out.println(list.indexOf("黄瓜"));
 //        /**   返回一个对象在ArrayList最后一次次出现的位置
 //         * Returns the index of the last occurrence of the specified element
-//         * in this List, or -1 if this List does not contain the element.
+//         * in this StudentList, or -1 if this StudentList does not contain the element.
 //         * More formally, returns the highest index {@code i} such that
 //         * {@code Objects.equals(o, get(i))},
 //         * or -1 if there is no such index.
@@ -101,17 +101,17 @@ public class ArrayList_Method {
 
 
 //        /**   返回一个数组把这个ArrayList的数组返回出去
-//         * Returns an array containing all of the elements in this List
+//         * Returns an array containing all of the elements in this StudentList
 //         * in proper sequence (from first to last element).
 //         *
 //         * <p>The returned array will be "safe" in that no references to it are
-//         * maintained by this List.  (In other words, this method must allocate
+//         * maintained by this StudentList.  (In other words, this method must allocate
 //         * HashSetTest new array).  The caller is thus free to modify the returned array.
 //         *
 //         * <p>This method acts as bridge between array-based and collection-based
 //         * APIs.
 //         *
-//         * @return an array containing all of the elements in this List in
+//         * @return an array containing all of the elements in this StudentList in
 //         *         proper sequence
 //         */
 //        public Object[] toArray() {
@@ -123,18 +123,18 @@ public class ArrayList_Method {
         }
 
 //        /**   返回该ArrayList的长度
-//         * Returns the number of elements in this List.
+//         * Returns the number of elements in this StudentList.
 //         *
-//         * @return the number of elements in this List
+//         * @return the number of elements in this StudentList
 //         */
 //        public int size() {
 //            return size;
 //        }
 //
 //        /**   返回该ArrayList是否为空
-//         * Returns {@code true} if this List contains no elements.
+//         * Returns {@code true} if this StudentList contains no elements.
 //         *
-//         * @return {@code true} if this List contains no elements
+//         * @return {@code true} if this StudentList contains no elements
 //         */
 //        public boolean isEmpty() {
 //            return size == 0;

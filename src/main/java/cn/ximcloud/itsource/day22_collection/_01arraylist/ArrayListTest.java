@@ -23,7 +23,7 @@ public class ArrayListTest {
      */
     public static void main(String[] args) {
 //        /**   构造一个初始化长度为10的数组的空表
-//         * Constructs an empty List with an initial capacity of *ten*.
+//         * Constructs an empty StudentList with an initial capacity of *ten*.
 //         */
 //        public ArrayList() {
 //            this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
@@ -38,9 +38,9 @@ public class ArrayListTest {
         ArrayList<Object> arrayList = new ArrayList<>();
 
 //        /**构造一个一个初始化长度为自定义长度的空表
-//         * Constructs an empty List with the specified initial capacity.
+//         * Constructs an empty StudentList with the specified initial capacity.
 //         *
-//         * @param  initialCapacity  the initial capacity of the List
+//         * @param  initialCapacity  the initial capacity of the StudentList
 //         * @throws IllegalArgumentException if the specified initial capacity
 //         *         is negative
 //         */
@@ -57,9 +57,9 @@ public class ArrayListTest {
         ArrayList<Object> arrayList1 = new ArrayList<>(100);
 
 //        /**
-//         * Appends the specified element to the end of this List.
+//         * Appends the specified element to the end of this StudentList.
 //         *
-//         * @param e element to be appended to this List
+//         * @param e element to be appended to this StudentList
 //         * @return {@code true} (as specified by {@link Collection#add})
 //         */
 //        public boolean add(E e) {
@@ -73,7 +73,7 @@ public class ArrayListTest {
 
 //        /**   是在抽象的collition里面写好的
 //         * Returns HashSetTest string representation of this collection.  The string
-//         * representation consists of HashSetTest List of the collection's elements in the
+//         * representation consists of HashSetTest StudentList of the collection's elements in the
 //         * order they are returned by its iterator, enclosed in square brackets
 //         * ({@code "[]"}).  Adjacent elements are separated by the characters
 //         * {@code ", "} (comma and space).  Elements are converted to strings as

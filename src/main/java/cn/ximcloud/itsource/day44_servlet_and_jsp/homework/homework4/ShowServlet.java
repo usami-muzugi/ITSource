@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework4;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +48,7 @@ public class ShowServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext servletContext = getServletContext();
-        servletContext.setAttribute("","");
+        servletContext.setAttribute("", "");
 
         HttpSession session = req.getSession();
         session.setAttribute("", "");

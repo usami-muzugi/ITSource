@@ -47,7 +47,7 @@
 //	}
 //
 //	@Override
-//	public List<Student> queryAll() {
+//	public StudentList<Student> queryAll() {
 //		return null;
 //	}
 //

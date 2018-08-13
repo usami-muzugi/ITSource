@@ -40,7 +40,7 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- *
+ * <p>
  * 测试HttpServletRequest，Session，ServletContext 对象的生命周期
  * 结果是HttpServletRequest的生命周期是一个请求的结束
  * 也就是说每一次的请求都是不相同的一个请求对象
@@ -50,7 +50,7 @@ import java.io.IOException;
  * 而ServletContext的生命周期是最长的，是随着Tomcat的启动和关闭。
  **/
 
-@WebServlet(name = "day44_count",urlPatterns = "/day44/count")
+@WebServlet(name = "day44_count", urlPatterns = "/day44/count")
 public class CountServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -59,21 +59,21 @@ public class CountServlet extends HttpServlet {
         if (sum_in_request == null) {
             req.setAttribute("SUM_IN_REQUEST", 1);
         } else {
-            req.setAttribute("SUM_IN_REQUEST", sum_in_request+1);
+            req.setAttribute("SUM_IN_REQUEST", sum_in_request + 1);
         }
 //        Session对象
         Integer sum_in_session = (Integer) req.getSession().getAttribute("SUM_IN_SESSION");
         if (sum_in_session == null) {
             req.getSession().setAttribute("SUM_IN_SESSION", 1);
         } else {
-            req.getSession().setAttribute("SUM_IN_SESSION", sum_in_session+1);
+            req.getSession().setAttribute("SUM_IN_SESSION", sum_in_session + 1);
         }
 //        Application(ServletContext)对象
         Integer sum_in_server_context = (Integer) getServletContext().getAttribute("SUM_IN_SERVER_CONTEXT");
         if (sum_in_server_context == null) {
             getServletContext().setAttribute("SUM_IN_SERVER_CONTEXT", 1);
         } else {
-            getServletContext().setAttribute("SUM_IN_SERVER_CONTEXT", sum_in_server_context+1);
+            getServletContext().setAttribute("SUM_IN_SERVER_CONTEXT", sum_in_server_context + 1);
         }
 
 //        转发下

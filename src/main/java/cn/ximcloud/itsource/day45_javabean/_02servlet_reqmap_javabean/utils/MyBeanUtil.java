@@ -43,17 +43,17 @@ import java.util.Map;
  **/
 
 public class MyBeanUtil {
-//    私有化构造器，不能直接通过new关键字创建实例对象
-    private MyBeanUtil(){}
+    //    私有化构造器，不能直接通过new关键字创建实例对象
+    private MyBeanUtil() {
+    }
 
     /**
-     *
      * @param httpServletRequest 需要通过HttpServletRequest对象来调用getParameterMap()方法来获取到前台传入的Map集合
-     * @param tClass    需要指定 指定类型的类，才能通过反射创建对象
-     * @param <T>   泛型参数，指定其具体的类型
-     * @return  传出一个已经将属性设置好了的对象
+     * @param tClass             需要指定 指定类型的类，才能通过反射创建对象
+     * @param <T>                泛型参数，指定其具体的类型
+     * @return 传出一个已经将属性设置好了的对象
      */
-    public static <T> T requestToObject(HttpServletRequest httpServletRequest,Class<T> tClass) {
+    public static <T> T requestToObject(HttpServletRequest httpServletRequest, Class<T> tClass) {
         Map<String, String[]> parameterMap = httpServletRequest.getParameterMap();
         T t = null;
         try {

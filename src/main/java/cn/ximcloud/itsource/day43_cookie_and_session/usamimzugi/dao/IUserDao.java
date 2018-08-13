@@ -33,17 +33,19 @@ package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.dao;
 public interface IUserDao<T> extends IBaseDao<T> {
     /**
      * 用户登录
+     *
      * @param username 用户名
-     * @param password  密码
-     * @return  返回用户，没有找到返回null
+     * @param password 密码
+     * @return 返回用户，没有找到返回null
      */
-    T login(String username,String password);
+    T login(String username, String password);
 
     /**
      * 用户登录
-     * @param id    id主键
-     * @param password  用户密码
-     * @return  返回用户，没有找到返回null
+     *
+     * @param id       id主键
+     * @param password 用户密码
+     * @return 返回用户，没有找到返回null
      */
     T login(Integer id, String password);
 }

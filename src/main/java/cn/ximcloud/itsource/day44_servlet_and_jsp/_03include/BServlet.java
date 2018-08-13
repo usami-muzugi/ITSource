@@ -43,8 +43,8 @@ import java.io.IOException;
  **/
 
 
-@WebServlet(name = "day44_include_BServlet",urlPatterns = "/day44/_03include/b")
-public class BServlet  extends HttpServlet {
+@WebServlet(name = "day44_include_BServlet", urlPatterns = "/day44/_03include/b")
+public class BServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setCharacterEncoding("UTF-8");

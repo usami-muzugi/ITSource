@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class TestFileFilter {
     /*
-     *  String[] List(FilenameFilter filter)
+     *  String[] StudentList(FilenameFilter filter)
                   ����һ���ַ������飬��Щ�ַ���ָ���˳���·������ʾ��Ŀ¼������ָ�����������ļ���Ŀ¼��
          File[] listFiles(FilenameFilter filter)
                   ���س���·�������飬��Щ·������ʾ�˳���·������ʾ��Ŀ¼������ָ�����������ļ���Ŀ¼��

@@ -18,9 +18,9 @@ public class ListItratorTest {
         /*
          *  集合
          *  public class ArrayList<E> extends AbstractList<E>
-         *  public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
+         *  public abstract class AbstractList<E> extends AbstractCollection<E> implements StudentList<E> {
          *  public abstract class AbstractCollection<E> implements Collection<E> {
-         *  public interface List<E> extends Collection<E> {
+         *  public interface StudentList<E> extends Collection<E> {
          *  public interface Collection<E> extends Iterable<E> {
          */
 

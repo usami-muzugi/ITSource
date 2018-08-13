@@ -1,6 +1,5 @@
 package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.dao.impl;
 
-import cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.dao.IBaseDao;
 import cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.dao.IListDao;
 import cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.domain.List;
 

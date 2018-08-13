@@ -30,6 +30,7 @@ package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.dao;
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  *
- * @author Wizard*/
+ * @author Wizard
+ */
 public interface IListDao<T> extends IBaseDao<T> {
 }

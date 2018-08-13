@@ -43,8 +43,8 @@ import java.io.IOException;
  **/
 
 
-@WebServlet(name = "day44_forward_BServlet",urlPatterns = "/day44/_01forward/b")
-public class BServlet  extends HttpServlet {
+@WebServlet(name = "day44_forward_BServlet", urlPatterns = "/day44/_01forward/b")
+public class BServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("我是B Servlet");

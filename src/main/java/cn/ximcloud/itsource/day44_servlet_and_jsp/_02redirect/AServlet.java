@@ -44,8 +44,8 @@ import java.io.IOException;
  * 在请求对象调用getRequestDispatcher()方法，获得一个转发器
  * 然后转发器在调用forward()方法，转发请求和响应对象
  **/
-@WebServlet(name = "day44_redirect_AServlet",urlPatterns = "/day44/_02redirect/a")
-public class AServlet  extends HttpServlet {
+@WebServlet(name = "day44_redirect_AServlet", urlPatterns = "/day44/_02redirect/a")
+public class AServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        转发是在响应对象处理的，这也就证明了为什么是请求了两次

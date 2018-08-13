@@ -11,7 +11,7 @@
     <title>Learning JSP</title>
 </head>
 <body>
-    学习JSP
+学习JSP
 <%
     System.out.println("在这里可以写纯的JAVA代码");
     String string = "这里还可以定义变量和方法";
@@ -20,10 +20,11 @@
 <%=string%>
 
 <%!
-   /*加上这个标签可以在JSP里面定义方法，定义全局变量*/
-   void print(String string) {
-       System.out.println(string);
-   }
+    /*加上这个标签可以在JSP里面定义方法，定义全局变量*/
+    void print(String string) {
+        System.out.println(string);
+    }
+
     /*定义一个全局变量*/
     private static Integer id;
 %>

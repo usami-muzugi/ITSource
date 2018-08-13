@@ -53,7 +53,7 @@ public class ClassesTest {
     public void testFields() {
         Field[] fields = new User().getClass().getDeclaredFields();
         for (Field field : fields) {
-            System.out.println(field.getName()+field.getType());
+            System.out.println(field.getName() + field.getType());
         }
     }
 
@@ -65,6 +65,7 @@ public class ClassesTest {
         String simpleName = String.class.getSimpleName();
         System.out.println(simpleName);
     }
+
     /**
      * 测试方法
      */
@@ -78,7 +79,7 @@ public class ClassesTest {
 
     @Test
     public void testAnyWay() {
-        String[] strings = {"123123","1231231","1231231","123123","12312312",};
+        String[] strings = {"123123", "1231231", "1231231", "123123", "12312312",};
         String string = Arrays.toString(strings);
         System.out.println(string.substring(1, string.length() - 1));
     }

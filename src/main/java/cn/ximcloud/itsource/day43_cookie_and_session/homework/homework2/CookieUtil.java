@@ -44,10 +44,11 @@ public class CookieUtil {
     }
 
     /**
-     *  工具方法，传入两个String就可以创建一个对象了，爽！
-     * @param httpServletResponse   传入一个httpServletResponse 用于接受cookie对象
-     * @param name  cookie对象的name
-     * @param value cookie对象的值
+     * 工具方法，传入两个String就可以创建一个对象了，爽！
+     *
+     * @param httpServletResponse 传入一个httpServletResponse 用于接受cookie对象
+     * @param name                cookie对象的name
+     * @param value               cookie对象的值
      */
     static void addCookie(HttpServletResponse httpServletResponse, String name, String value) {
         Cookie cookie = new Cookie(name, value);
@@ -55,10 +56,11 @@ public class CookieUtil {
     }
 
     /**
-     *  获取Cookie的方法，传入HttpServletRequest和Cookie的名字就可以获取指定的Cookie了
-     * @param httpServletRequest    http请求
-     * @param name  cookie的名字
-     * @return  返回的是一个Cookie，如果没有返回null
+     * 获取Cookie的方法，传入HttpServletRequest和Cookie的名字就可以获取指定的Cookie了
+     *
+     * @param httpServletRequest http请求
+     * @param name               cookie的名字
+     * @return 返回的是一个Cookie，如果没有返回null
      */
     static Cookie getCookie(HttpServletRequest httpServletRequest, String name) {
         if (name == null) {

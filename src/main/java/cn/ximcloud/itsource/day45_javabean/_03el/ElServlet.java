@@ -41,7 +41,7 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day45_EL",urlPatterns = "/day45/el/elServlet")
+@WebServlet(name = "day45_EL", urlPatterns = "/day45/el/elServlet")
 public class ElServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

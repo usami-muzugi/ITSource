@@ -43,25 +43,7 @@ import java.io.IOException;
  **/
 @WebServlet(name = "day44_homework_SumServlet", urlPatterns = "/day44/homework2/SumServlet")
 public class SumServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String val_a = req.getParameter("val_a");
-        String select = req.getParameter("select");
-        String val_b = req.getParameter("val_b");
-        float opt = 0F;
-        try {
-            opt = opt(val_a + select + val_b);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println("var2:"+opt);
-        req.getSession().setAttribute("var", opt);
-        req.getSession().setAttribute("1231", "31231");
-        req.getRequestDispatcher("/day44/homework/Sum.jsp").forward(req, resp);
-    }
-
     /**
-     *
      * @param s
      * @return
      * @throws Exception
@@ -106,5 +88,22 @@ public class SumServlet extends HttpServlet {
             return opt(s.substring(0, a4)) / opt(s.substring(a4 + 1, s.length()));
         }
         return Integer.parseInt(s.trim());
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String val_a = req.getParameter("val_a");
+        String select = req.getParameter("select");
+        String val_b = req.getParameter("val_b");
+        float opt = 0F;
+        try {
+            opt = opt(val_a + select + val_b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("var2:" + opt);
+        req.getSession().setAttribute("var", opt);
+        req.getSession().setAttribute("1231", "31231");
+        req.getRequestDispatcher("/day44/homework/Sum.jsp").forward(req, resp);
     }
 }

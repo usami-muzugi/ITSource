@@ -32,7 +32,7 @@ public class WhatIsGenericTest {
     @Test
     public void GenericTest() {
         /*public class ArrayList<E> extends AbstractList<E>
-                implements List<E>, RandomAccess, Cloneable, java.io.Serializable*/
+                implements StudentList<E>, RandomAccess, Cloneable, java.io.Serializable*/
         ArrayList<String> arrayList = new ArrayList<>();    //在类型的后面跟上<泛型>
         arrayList.add("");
     }

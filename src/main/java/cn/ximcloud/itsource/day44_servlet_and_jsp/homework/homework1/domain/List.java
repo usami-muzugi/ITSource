@@ -31,11 +31,11 @@ package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain;
  * ////////////////////////////////////////////////////////////////////
  **/
 public class List {
-//    邮件列表的分类
+    //    邮件列表的分类
     private Integer id;
-//    邮件列表的名称
+    //    邮件列表的名称
     private String name;
-//    邮件列表的类型
+    //    邮件列表的类型
     private String type;
 
     /**
@@ -51,7 +51,7 @@ public class List {
 
     @Override
     public String toString() {
-        return "List{" +
+        return "StudentList{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +

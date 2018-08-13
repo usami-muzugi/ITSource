@@ -34,11 +34,13 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  *
- * @author Wizard*/
-@WebServlet(name = "day43_initServlet",loadOnStartup = 1)
+ * @author Wizard
+ */
+@WebServlet(name = "day43_initServlet", loadOnStartup = 1)
 public class InitServlet implements Servlet {
     /**
      * 这个实例仅仅是用于做初始化操作的
+     *
      * @param servletConfig
      * @throws ServletException
      */

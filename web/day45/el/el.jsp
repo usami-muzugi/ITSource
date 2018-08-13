@@ -12,14 +12,14 @@
 </head>
 <body>
 <%
-    request.setAttribute("msg","request");
-    session.setAttribute("msg","session");
-    pageContext.setAttribute("msg","session");
-    application.setAttribute("msg","application");
+    request.setAttribute("msg", "request");
+    session.setAttribute("msg", "session");
+    pageContext.setAttribute("msg", "session");
+    application.setAttribute("msg", "application");
 %>
 
 <%--<%=--%>
-    <%--pageContext.findAttribute("msg");--%>
+<%--pageContext.findAttribute("msg");--%>
 <%--%>--%>
 
 ${msg}

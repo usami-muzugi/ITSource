@@ -12,7 +12,7 @@
         var = "0.00";
     } else {
         var = session.getAttribute("var").toString();
-        System.out.println("var1:"+var);
+        System.out.println("var1:" + var);
     }
 
 %>

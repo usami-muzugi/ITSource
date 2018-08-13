@@ -4,7 +4,6 @@ import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.IUserDa
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.domain.User;
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.utils.JDBCUtil;
 
-import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

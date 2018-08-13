@@ -10,7 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -48,13 +49,10 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
      */
     private static JDBCUtil instance;
 
-//    初始化实例
+    //    初始化实例
     static {
         instance = JDBCUtil.getInstance();
     }
-
-
-
 
     /**
      * 定义一个class泛型的class
@@ -81,6 +79,7 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
 
     /**
      * 这个方法是真的棒!(๑•̀ㅂ•́)و✧，获得运行时类型
+     *
      * @param tClass
      */
     public BaseImpl(Class<T> tClass) {
@@ -93,7 +92,8 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
 
     /**
      * 保存方法，保存一个T
-     *  被保存的这个t对象，应该是没有id这个字段的。
+     * 被保存的这个t对象，应该是没有id这个字段的。
+     *
      * @param t 一个实例对象
      */
     @Override
@@ -111,7 +111,7 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             stringBuffer.append("?");
         }
 
-        final String sql = "INSERT INTO "+tClass.getSimpleName()+" ("+string+") VALUES ("+stringBuffer+")";
+        final String sql = "INSERT INTO " + tClass.getSimpleName() + " (" + string + ") VALUES (" + stringBuffer + ")";
         System.out.println(sql);
 //        try {
 //            preparedStatement = connection.prepareStatement(sql);
@@ -127,7 +127,8 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
 
     /**
      * 更新方法，更新该对象
-     *  更新是必须要有id这个字段的，用id这个字段来更新
+     * 更新是必须要有id这个字段的，用id这个字段来更新
+     *
      * @param t 通过传入一个对象来查询并更新
      */
     @Override
@@ -152,9 +153,9 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        }/* finally {
+        } finally {
             instance.close(null, preparedStatement, connection);
-        }*/
+        }
     }
 
     /**
@@ -191,9 +192,9 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             return constructor.newInstance(objects);
         } catch (SQLException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
-        } /*finally {
+        } finally {
             instance.close(resultSet, preparedStatement, connection);
-        }*/
+        }
         return null;
     }
 
@@ -219,9 +220,9 @@ public abstract class BaseImpl<T> implements IBaseDao<T> {
             return arrayList;
         } catch (SQLException e) {
             e.printStackTrace();
-        }/* finally {
+        } finally {
             instance.close(resultSet, preparedStatement, connection);
-        }*/
+        }
         return null;
     }
 }

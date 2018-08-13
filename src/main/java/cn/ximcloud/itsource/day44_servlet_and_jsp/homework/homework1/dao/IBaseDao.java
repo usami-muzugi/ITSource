@@ -35,43 +35,48 @@ import java.util.ArrayList;
 public interface IBaseDao<T> {
     /**
      * 保存方法，保存一个T
+     *
      * @param t 一个实例对象
      */
     void save(T t);
 
     /**
      * 更新方法，更新该对象
+     *
      * @param t 通过传入一个对象来查询并更新
      */
     void update(T t);
 
     /**
      * 删除一个对象
-     * @param id    通过id主键来查找实例，然后删除该实例
+     *
+     * @param id 通过id主键来查找实例，然后删除该实例
      */
     void delete(Integer id);
 
     /**
      * 查找用户
+     *
      * @param id 通过id主键来查找实力
-     * @return  返回一个用户实例，如果没有查找到实例，返回null
+     * @return 返回一个用户实例，如果没有查找到实例，返回null
      */
     T find(Integer id);
 
     /**
      * 查找所有的用户
-     * @return  返回一个ArrayList表，表里面存放的是每一个实例
+     *
+     * @return 返回一个ArrayList表，表里面存放的是每一个实例
      */
     ArrayList<T> findAll();
 
 
     /**
-     *  创建一张表
+     * 创建一张表
      */
     void createTable();
 
     /**
-     *  删除这张表
+     * 删除这张表
      */
     void dropTable();
 }

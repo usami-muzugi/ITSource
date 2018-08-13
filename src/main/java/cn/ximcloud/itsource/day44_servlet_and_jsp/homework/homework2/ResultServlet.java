@@ -43,7 +43,7 @@ import java.io.PrintWriter;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-@WebServlet(name = "day44_homework_result",urlPatterns = "/day44/homework2/result")
+@WebServlet(name = "day44_homework_result", urlPatterns = "/day44/homework2/result")
 public class ResultServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -27,11 +27,11 @@
     <!--<url-pattern>/day42/hello</url-pattern>-->
     <!--</servlet-mapping>-->
 
-    <!--Day42 Welcome file List-->
-    <!--<welcome-file-List>-->
+    <!--Day42 Welcome file StudentList-->
+    <!--<welcome-file-StudentList>-->
     <!--<welcome-file>index.php</welcome-file>-->
     <!--<welcome-file>index.jsp</welcome-file>-->
     <!--<welcome-file>index.html</welcome-file>-->
     <!--<welcome-file>index.asp</welcome-file>-->
-    <!--</welcome-file-List>-->
+    <!--</welcome-file-StudentList>-->
 </web-app>

@@ -31,11 +31,11 @@ package cn.ximcloud.itsource.day43_cookie_and_session.usamimzugi.domain;
  * ////////////////////////////////////////////////////////////////////
  **/
 public class List {
-//    邮件列表的分类
+    //    邮件列表的分类
     private Integer id;
-//    邮件列表的名称
+    //    邮件列表的名称
     private String name;
-//    邮件列表的类型
+    //    邮件列表的类型
     private String type;
 
 }

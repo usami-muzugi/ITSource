@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  * @author: wzard
  * @date: 2018-08-07
  * Time: 19:52
- * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.List
+ * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.StudentList
  * To change this template use File | Settings | Editor | File and Code Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //

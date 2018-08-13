@@ -3,7 +3,6 @@ package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.servlet;
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.impl.ItemImpl;
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.impl.ListImpl;
 import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao.impl.UserImpl;
-import cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.utils.JDBCUtil;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -42,11 +41,12 @@ import javax.servlet.http.HttpServlet;
  *
  * @author Wizard
  */
-@WebServlet(name = "day44_initServlet", loadOnStartup = 0,urlPatterns = "/day44/init")
+@WebServlet(name = "day44_initServlet", loadOnStartup = 0, urlPatterns = "/day44/init")
 public class InitServlet extends HttpServlet {
 
     /**
      * 初始化钩子方法
+     *
      * @throws ServletException
      */
     @Override

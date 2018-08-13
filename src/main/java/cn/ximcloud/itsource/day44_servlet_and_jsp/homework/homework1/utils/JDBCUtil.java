@@ -40,18 +40,6 @@ import java.util.Properties;
  */
 public class JDBCUtil {
     private static JDBCUtil instance;
-
-    public static JDBCUtil getInstance() {
-        if (instance == null) {
-            synchronized (JDBCUtil.class) {
-                if (instance == null) {
-                    instance = new JDBCUtil();
-                }
-            }
-        }
-        return instance;
-    }
-
     public Connection connection;
 
     {
@@ -63,6 +51,17 @@ public class JDBCUtil {
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static JDBCUtil getInstance() {
+        if (instance == null) {
+            synchronized (JDBCUtil.class) {
+                if (instance == null) {
+                    instance = new JDBCUtil();
+                }
+            }
+        }
+        return instance;
     }
 
     public Connection getConnection() {

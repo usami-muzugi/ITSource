@@ -44,8 +44,8 @@ import java.io.IOException;
  * 在请求对象调用getRequestDispatcher()方法，获得一个转发器
  * 然后转发器在调用forward()方法，转发请求和响应对象
  **/
-@WebServlet(name = "day44_include_AServlet",urlPatterns = "/day44/_03include/a")
-public class AServlet  extends HttpServlet {
+@WebServlet(name = "day44_include_AServlet", urlPatterns = "/day44/_03include/a")
+public class AServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setCharacterEncoding("UTF-8");

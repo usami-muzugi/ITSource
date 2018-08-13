@@ -43,7 +43,7 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name ="ServletContextTestServlet",urlPatterns = "/day44/ServletContextTestServlet")
+@WebServlet(name = "ServletContextTestServlet", urlPatterns = "/day44/ServletContextTestServlet")
 public class ServletContextTestServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

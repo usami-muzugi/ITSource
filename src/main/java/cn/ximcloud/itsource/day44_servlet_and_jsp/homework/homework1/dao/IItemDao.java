@@ -30,6 +30,7 @@ package cn.ximcloud.itsource.day44_servlet_and_jsp.homework.homework1.dao;
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  *
- * @author Wizard*/
+ * @author Wizard
+ */
 public interface IItemDao<T> extends IBaseDao<T> {
 }

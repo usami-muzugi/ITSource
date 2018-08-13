@@ -1,17 +1,13 @@
 package cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean;
 
 import cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean.utils.MyBeanUtil;
-import org.apache.commons.beanutils.BeanUtils;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,7 +47,6 @@ import java.util.Map;
 public class RegServlet extends HttpServlet {
 
     /**
-     *
      * @param req
      * @param resp
      * @throws ServletException

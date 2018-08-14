@@ -41,7 +41,7 @@ import javax.servlet.http.HttpServlet;
  *
  * @author Wizard
  */
-@WebServlet(name = "day44_initServlet", loadOnStartup = 0, urlPatterns = "/day44/init")
+@WebServlet(name = "day44_initServlet", urlPatterns = "/day44/init")
 public class InitServlet extends HttpServlet {
 
     /**

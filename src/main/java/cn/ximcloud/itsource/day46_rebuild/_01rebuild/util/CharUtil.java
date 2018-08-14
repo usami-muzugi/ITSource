@@ -1,7 +1,6 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.util;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.util;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -56,14 +55,4 @@ public class CharUtil {
         }
         return null;
     }
-//    public static String charset(Map map) {
-//        byte[] bytes;
-//        try {
-//            bytes = string.getBytes("ISO-8859-1");
-//            return new String(bytes, "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 }

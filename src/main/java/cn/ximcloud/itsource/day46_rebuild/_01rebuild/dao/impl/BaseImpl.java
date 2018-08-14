@@ -1,7 +1,7 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.dao.impl;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl;
 
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.dao.IBaseDao;
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.util.JDBCUtil;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.IBaseDao;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.util.JDBCUtil;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -122,16 +122,16 @@ public class BaseImpl<T> implements IBaseDao<T> {
         try {
             preparedStatement = connection.prepareStatement(sql);
             for (int i = 1; i <= tempFields.length; i++) {
-                Field tempFields1 = t.getClass().getDeclaredField(tempFields[i - 1]);
+                Field tempFields1 = tClass.getDeclaredField(tempFields[i - 1]);
                 tempFields1.setAccessible(true);
                 preparedStatement.setObject(i, tempFields1.get(t));
             }
             preparedStatement.executeUpdate();
         } catch (SQLException | NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
-        } /*finally {
+        } finally {
             instance.close(null, preparedStatement, connection);
-        }*/
+        }
     }
 
     /**
@@ -144,31 +144,34 @@ public class BaseImpl<T> implements IBaseDao<T> {
     public void update(T t) {
         Connection connection = instance.getConnection();
         PreparedStatement preparedStatement = null;
-//        少一个字段的数量,新字段数组
-        String[] tempFields = new String[fields.length - 1];
-        System.arraycopy(fields, 1, tempFields, 0, fields.length - 1);
-        String string = Arrays.toString(tempFields);
-        string = string.substring(1, string.length() - 1);
-
         StringBuilder stringBuffer = new StringBuilder();
-        for (String tempField : tempFields) {
-            stringBuffer.append("?,");
-        }
-        final String sql = "UPDATE " + tClass.getSimpleName() + " (" + string + ") VALUES (" + stringBuffer.toString().substring(0, stringBuffer.length() - 1) + ")";
-        System.out.println(sql);
         try {
+            Integer id = null;
+            for (int i = 0; i < fields.length; i++) {
+                stringBuffer.append(fields[i]).append("=").append("?");
+                if (i < fields.length - 1) {
+                    stringBuffer.append(",");
+                }
+            }
+            Field id1 = tClass.getDeclaredField("id");
+            id1.setAccessible(true);
+            id = (Integer) id1.get(t);
+
+            stringBuffer.append(" WHERE id=").append(id);
+            final String sql = "UPDATE " + tClass.getSimpleName() + " SET " + stringBuffer;
+            System.out.println(sql);
             preparedStatement = connection.prepareStatement(sql);
-            for (int i = 1; i <= tempFields.length; i++) {
-                Field tempFields1 = t.getClass().getDeclaredField(tempFields[i - 1]);
+            for (int i = 0; i < fields.length; i++) {
+                Field tempFields1 = tClass.getDeclaredField(fields[i]);
                 tempFields1.setAccessible(true);
-                preparedStatement.setObject(i, tempFields1.get(t));
+                preparedStatement.setObject(i + 1, tempFields1.get(t));
             }
             preparedStatement.executeUpdate();
-        } catch (SQLException | NoSuchFieldException | IllegalAccessException e) {
+        } catch (SQLException | IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
-        } /*finally {
+        } finally {
             instance.close(null, preparedStatement, connection);
-        }*/
+        }
     }
 
     /**
@@ -183,9 +186,7 @@ public class BaseImpl<T> implements IBaseDao<T> {
         PreparedStatement preparedStatement = null;
 //        标准查询语句
         final String sql = "DELETE From " + tClass.getSimpleName() + " WHERE id=?";
-
         System.out.println(sql);
-
         try {
 //            执行查询语句
             preparedStatement = connection.prepareStatement(sql);
@@ -193,9 +194,9 @@ public class BaseImpl<T> implements IBaseDao<T> {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        }/* finally {
+        } finally {
             instance.close(null, preparedStatement, connection);
-        }*/
+        }
     }
 
     /**
@@ -215,11 +216,6 @@ public class BaseImpl<T> implements IBaseDao<T> {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
-
-            for (int i = 0; i < declaredFields.length; i++) {
-                fields[i] = declaredFields[i].getName();
-                classes[i] = declaredFields[i].getType();
-            }
             while (resultSet.next()) {
                 for (int i = 0; i < declaredFields.length; i++) {
                     objects[i] = (resultSet.getObject(fields[i], classes[i]));
@@ -232,9 +228,9 @@ public class BaseImpl<T> implements IBaseDao<T> {
             return constructor.newInstance(objects);
         } catch (SQLException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
-        }/* finally {
+        } finally {
             instance.close(resultSet, preparedStatement, connection);
-        }*/
+        }
         return null;
     }
 
@@ -260,9 +256,27 @@ public class BaseImpl<T> implements IBaseDao<T> {
             return arrayList;
         } catch (SQLException e) {
             e.printStackTrace();
-        }/* finally {
+        } finally {
             instance.close(resultSet, preparedStatement, connection);
-        }*/
+        }
         return null;
     }
+
+    /**
+     * 創建表
+     */
+    @Override
+    public void createTable() {
+        new String().intern();
+    }
+
+    /**
+     * 删除表
+     */
+    @Override
+    public void dropTable() {
+        String intern = "".intern();
+    }
+
+
 }

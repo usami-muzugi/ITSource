@@ -36,7 +36,7 @@ import java.io.IOException;
  *
  * @author Wizard
  */
-@WebServlet(name = "day43_initServlet", loadOnStartup = 1)
+@WebServlet(name = "day43_initServlet")
 public class InitServlet implements Servlet {
     /**
      * 这个实例仅仅是用于做初始化操作的

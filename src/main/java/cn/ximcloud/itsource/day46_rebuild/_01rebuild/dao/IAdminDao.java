@@ -1,15 +1,13 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.util;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.dao;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-13
- * Time: 22:10
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.util
+ * Time: 14:22
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.dao.impl
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,32 +36,13 @@ import java.util.Map;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class CharUtil {
-    private CharUtil() {
-    }
-
+public interface IAdminDao<T> extends IBaseDao<T> {
     /**
-     * 把ISO-8859-1编码的字符改变成UTF-8
+     * 用户登录
      *
+     * @param id       id主键
+     * @param password 用户密码
+     * @return 返回用户，没有找到返回null
      */
-    public static String charset(String string) {
-        byte[] bytes;
-        try {
-            bytes = string.getBytes("ISO-8859-1");
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-//    public static String charset(Map map) {
-//        byte[] bytes;
-//        try {
-//            bytes = string.getBytes("ISO-8859-1");
-//            return new String(bytes, "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    T login(Integer id, String password);
 }

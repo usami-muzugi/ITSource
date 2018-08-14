@@ -45,7 +45,7 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day45_homework5_InitServlet", urlPatterns = "/day45/homework5/init", loadOnStartup = 1)
+@WebServlet(name = "day45_homework5_InitServlet", urlPatterns = "/day45/homework5/init")
 public class InitServlet extends HttpServlet {
     /**
      * 初始化方法

@@ -1,15 +1,22 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.util;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.test;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.domain.Admin;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.domain.Student;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-13
- * Time: 22:10
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.util
+ * Time: 20:53
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.test
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,32 +45,34 @@ import java.util.Map;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class CharUtil {
-    private CharUtil() {
+public class DaoTest {
+    @Test
+    public void testSave() {
+        StudentImpl student = new StudentImpl();
+        student.save(new Student("彭睿",20,"男","JAVA0606"));
     }
 
-    /**
-     * 把ISO-8859-1编码的字符改变成UTF-8
-     *
-     */
-    public static String charset(String string) {
-        byte[] bytes;
-        try {
-            bytes = string.getBytes("ISO-8859-1");
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
+    @Test
+    public void testFind() {
+        StudentImpl student = new StudentImpl();
+        Student student1 = student.find(1);
+        System.out.println(student1);
+        ArrayList<Student> all = student.findAll();
+        System.out.println(Collections.singletonList(all));
     }
-//    public static String charset(Map map) {
-//        byte[] bytes;
-//        try {
-//            bytes = string.getBytes("ISO-8859-1");
-//            return new String(bytes, "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    @Test
+    public void testUpdate() {
+        StudentImpl student = new StudentImpl();
+        Student student1 = student.find(1);
+        System.out.println(student1.getAge());
+        student1.setAge(666);
+        student.update(student1);
+        System.out.println(student.find(1).getAge());
+    }
+
+    @Test
+    public void testAdminLogin() {
+        AdminImpl admin = new AdminImpl();
+        Admin login = admin.login(1,"ourinsama");
+    }
 }

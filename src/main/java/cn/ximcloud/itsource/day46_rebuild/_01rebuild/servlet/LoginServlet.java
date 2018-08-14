@@ -1,11 +1,8 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
 
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.dao.impl.ListImpl;
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.dao.impl.StudentImpl;
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.domain.Admin;
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.domain.Student;
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.domain.StudentList;
-import cn.ximcloud.itsource.day45_javabean.homework.homework5.util.CharUtil;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.domain.Admin;
+import cn.ximcloud.itsource.day46_rebuild._01rebuild.util.MyBeanUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,15 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: wizard
+ * @author: wzard
  * @date: 2018-08-13
- * Time: 12:11
+ * Time: 12:30
  * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
@@ -49,44 +44,38 @@ import java.util.ArrayList;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
+ * 登录Servlet
  **/
-@WebServlet(name = "day45_homework5_UpdateServlet", urlPatterns = "/day45/homework5/update")
-public class UpdateServlet extends HttpServlet {
+@WebServlet(name = "day45_loginServlet", urlPatterns = "/day46/login")
+public class LoginServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Admin admin_in_session = (Admin) req.getSession().getAttribute("ADMIN_IN_SESSION");
         if (admin_in_session != null) {
-//            有Session,获取一下
-            String name = CharUtil.charset(req.getParameter("name"));
-            String age = CharUtil.charset(req.getParameter("age"));
-            String sex = CharUtil.charset(req.getParameter("age"));
-            req.setCharacterEncoding("UTF-8");
-            resp.setCharacterEncoding("UTF-8");
-            ListImpl list = (ListImpl) getServletContext().getAttribute("list");
-            StudentImpl student = (StudentImpl) getServletContext().getAttribute("student");
-            list.save(new StudentList(name));
-            student.save(new Student(Integer.valueOf(age), Boolean.valueOf(sex)));
-            ArrayList<StudentList> all = list.findAll();
-            req.getSession().setAttribute("ALL_STUDENT_IN_SESSION", all);
-            resp.sendRedirect("/day45/homework/list.jsp");
+//            有Session,转发一下
+            req.getRequestDispatcher("/day46/main").forward(req, resp);
         } else {
-            resp.sendRedirect("/day45/homework/errorPage.jsp");
+            Admin tempAdmin = MyBeanUtil.requestToObject(req, Admin.class);
+            System.out.println(tempAdmin);
+            AdminImpl admin = (AdminImpl) getServletContext().getAttribute("admin");
+            System.out.println("Login_admin:" + tempAdmin);
+            if ((tempAdmin = admin.login(tempAdmin.getAdmin(), tempAdmin.getPassword())) != null) {
+//            密码正确，进行下一步设置
+                req.getSession().setAttribute("ADMIN_IN_SESSION", tempAdmin);
+                req.getRequestDispatcher("/day46/main").forward(req, resp);
+            } else {
+//            密码错误，进行错误返回页面
+                System.out.println("error");
+                req.setAttribute("msg", "登录错误，请输出上面的账号和密码！");
+//            转发
+                resp.sendRedirect("/day46/login.jsp");
+            }
         }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/day45/homework/errorPage.jsp");
-    }
-
-    String charset(String string) {
-        byte[] bytes;
-            try {
-                bytes = string.getBytes("ISO-8859-1");
-                return new String(bytes, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-        return null;
+        resp.sendRedirect("/day46/errorPage.jsp");
     }
 }

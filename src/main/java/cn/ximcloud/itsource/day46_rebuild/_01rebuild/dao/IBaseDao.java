@@ -1,15 +1,14 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.util;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.dao;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-13
- * Time: 22:10
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.util
+ * Time: 12:12
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.dao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,32 +37,51 @@ import java.util.Map;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class CharUtil {
-    private CharUtil() {
-    }
+public interface IBaseDao<T> {
 
     /**
-     * 把ISO-8859-1编码的字符改变成UTF-8
+     * 增
      *
+     * @param t 一个对象
      */
-    public static String charset(String string) {
-        byte[] bytes;
-        try {
-            bytes = string.getBytes("ISO-8859-1");
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-//    public static String charset(Map map) {
-//        byte[] bytes;
-//        try {
-//            bytes = string.getBytes("ISO-8859-1");
-//            return new String(bytes, "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    void save(T t);
+
+    /**
+     * 删
+     *
+     * @param id 一个对象的id主键
+     */
+    void delete(Integer id);
+
+    /**
+     * 改
+     *
+     * @param t 一个对象
+     */
+    void update(T t);
+
+    /**
+     * 查一个
+     *
+     * @param id 主键id
+     * @return 查出来的对象
+     */
+    T find(Integer id);
+
+    /**
+     * 查所有的对象
+     *
+     * @return 所有的对象
+     */
+    ArrayList<T> findAll();
+
+    /**
+     * 創建表
+     */
+    void createTable();
+
+    /**
+     * 删除表
+     */
+    void dropTable();
 }

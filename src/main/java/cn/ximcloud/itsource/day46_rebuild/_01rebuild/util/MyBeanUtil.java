@@ -1,15 +1,21 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.util;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.util;
 
+import org.apache.commons.beanutils.BeanUtils;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 22:10
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.util
+ * @date: 2018-08-12
+ * Time: 14:18
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean.utils
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,32 +44,32 @@ import java.util.Map;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class CharUtil {
-    private CharUtil() {
+public class MyBeanUtil {
+    //    私有化构造器，不能直接通过new关键字创建实例对象
+    private MyBeanUtil() {
     }
 
     /**
-     * 把ISO-8859-1编码的字符改变成UTF-8
-     *
+     * @param httpServletRequest 需要通过HttpServletRequest对象来调用getParameterMap()方法来获取到前台传入的Map集合
+     * @param tClass             需要指定 指定类型的类，才能通过反射创建对象
+     * @param <T>                泛型参数，指定其具体的类型
+     * @return 传出一个已经将属性设置好了的对象
      */
-    public static String charset(String string) {
-        byte[] bytes;
+    public static <T> T requestToObject(HttpServletRequest httpServletRequest, Class<T> tClass) {
+        Map<String, String[]> parameterMap = httpServletRequest.getParameterMap();
+        T t = null;
         try {
-            bytes = string.getBytes("ISO-8859-1");
-            return new String(bytes, "UTF-8");
+//            设置请求对象的字符编码
+            httpServletRequest.setCharacterEncoding("UTF-8");
+            t = tClass.newInstance();
+//            传入的Map需要和对象的属性匹配上，不然会抛出一个异常
+//            java.lang.NoClassDefFoundError: org/apache/commons/collections/FastHashMap
+            BeanUtils.copyProperties(t, parameterMap);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.getMessage();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return null;
+        return t;
     }
-//    public static String charset(Map map) {
-//        byte[] bytes;
-//        try {
-//            bytes = string.getBytes("ISO-8859-1");
-//            return new String(bytes, "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 }

@@ -1,15 +1,12 @@
-package cn.ximcloud.itsource.day45_javabean.homework.homework5.util;
-
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
+package cn.ximcloud.itsource.day46_rebuild._01rebuild.dao;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 22:10
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.util
+ * @date: 2018-08-14
+ * Time: 09:08
+ * ProjectName: itsource.cn.ximcloud.itsource.day46_rebuild._01rebuild.dao
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,32 +35,5 @@ import java.util.Map;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class CharUtil {
-    private CharUtil() {
-    }
-
-    /**
-     * 把ISO-8859-1编码的字符改变成UTF-8
-     *
-     */
-    public static String charset(String string) {
-        byte[] bytes;
-        try {
-            bytes = string.getBytes("ISO-8859-1");
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-//    public static String charset(Map map) {
-//        byte[] bytes;
-//        try {
-//            bytes = string.getBytes("ISO-8859-1");
-//            return new String(bytes, "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+public interface IStudentDao<T> extends IBaseDao<T>{
 }

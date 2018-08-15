@@ -1,7 +1,9 @@
-package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale._01login.servlet;
 
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
+
+import cn.ximcloud.itsource.day47_login_ordersale._01login.dao.impl.AdminImpl;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.domain.Admin;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.util.MyBeanUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,7 @@ import java.io.IOException;
  *
  * @author: wzard
  * @date: 2018-08-13
- * Time: 12:11
+ * Time: 12:30
  * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
@@ -43,31 +45,38 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 初始化Servlet
+ * 登录Servlet
  **/
-@WebServlet(name = "day46_InitServlet", urlPatterns = "/day46/init")
-public class InitServlet extends HttpServlet {
-    /**
-     * 初始化方法
-     *
-     * @throws ServletException 抛出一个不知名的异常
-     */
-    @Override
-    public void init() throws ServletException {
-//        初始化操作
-//        2.得到daoimpl对象并初始化表
-        AdminImpl admin = new AdminImpl();
-        StudentImpl student = new StudentImpl();
-        System.out.println("admin:" + admin);
-        System.out.println("Student:" + student);
+@WebServlet(name = "day47_loginServlet", urlPatterns = "/day47/login")
+public class LoginServlet extends HttpServlet {
 
-        getServletContext().setAttribute("admin", admin);
-        getServletContext().setAttribute("student", student);
-        System.out.println("初始化完成！");
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Admin admin_in_session = (Admin) req.getSession().getAttribute("ADMIN_IN_SESSION");
+        if (admin_in_session != null) {
+//            有Session,转发一下
+            req.getRequestDispatcher("/day46/main").forward(req, resp);
+        } else {
+            Admin tempAdmin = MyBeanUtil.requestToObject(req, Admin.class);
+            System.out.println(tempAdmin);
+            AdminImpl admin = (AdminImpl) getServletContext().getAttribute("admin");
+            System.out.println("Login_admin:" + tempAdmin);
+            if ((tempAdmin = admin.login(tempAdmin.getAdmin(), tempAdmin.getPassword())) != null) {
+//            密码正确，进行下一步设置
+                req.getSession().setAttribute("ADMIN_IN_SESSION", tempAdmin);
+                req.getRequestDispatcher("/day46/main").forward(req, resp);
+            } else {
+//            密码错误，进行错误返回页面
+                System.out.println("error");
+                req.setAttribute("msg", "登录错误，请输出上面的账号和密码！");
+//            转发
+                resp.sendRedirect("/day46/login.jsp");
+            }
+        }
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.sendRedirect("/day46/errorPage.jsp");
     }
 }

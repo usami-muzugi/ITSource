@@ -1,22 +1,19 @@
-package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale._03captcha.util;
 
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
+import org.apache.commons.beanutils.BeanUtils;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 12:11
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet
+ * @date: 2018-08-12
+ * Time: 14:18
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean._02servlet_reqmap_javabean.utils
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -43,31 +40,34 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 初始化Servlet
  **/
-@WebServlet(name = "day46_InitServlet", urlPatterns = "/day46/init")
-public class InitServlet extends HttpServlet {
-    /**
-     * 初始化方法
-     *
-     * @throws ServletException 抛出一个不知名的异常
-     */
-    @Override
-    public void init() throws ServletException {
-//        初始化操作
-//        2.得到daoimpl对象并初始化表
-        AdminImpl admin = new AdminImpl();
-        StudentImpl student = new StudentImpl();
-        System.out.println("admin:" + admin);
-        System.out.println("Student:" + student);
 
-        getServletContext().setAttribute("admin", admin);
-        getServletContext().setAttribute("student", student);
-        System.out.println("初始化完成！");
+public class MyBeanUtil {
+    //    私有化构造器，不能直接通过new关键字创建实例对象
+    private MyBeanUtil() {
     }
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/day46/errorPage.jsp");
+    /**
+     * @param httpServletRequest 需要通过HttpServletRequest对象来调用getParameterMap()方法来获取到前台传入的Map集合
+     * @param tClass             需要指定 指定类型的类，才能通过反射创建对象
+     * @param <T>                泛型参数，指定其具体的类型
+     * @return 传出一个已经将属性设置好了的对象
+     */
+    public static <T> T requestToObject(HttpServletRequest httpServletRequest, Class<T> tClass) {
+        Map<String, String[]> parameterMap = httpServletRequest.getParameterMap();
+        T t = null;
+        try {
+//            设置请求对象的字符编码
+            httpServletRequest.setCharacterEncoding("UTF-8");
+            t = tClass.newInstance();
+//            传入的Map需要和对象的属性匹配上，不然会抛出一个异常
+//            java.lang.NoClassDefFoundError: org/apache/commons/collections/FastHashMap
+            BeanUtils.copyProperties(t, parameterMap);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.getMessage();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return t;
     }
 }

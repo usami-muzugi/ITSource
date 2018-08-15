@@ -1,22 +1,14 @@
-package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale._03captcha.dao;
 
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-13
- * Time: 12:11
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet
+ * Time: 14:22
+ * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.dao.impl
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -43,31 +35,15 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 初始化Servlet
  **/
-@WebServlet(name = "day46_InitServlet", urlPatterns = "/day46/init")
-public class InitServlet extends HttpServlet {
+
+public interface IAdminDao<T> extends IBaseDao<T> {
     /**
-     * 初始化方法
+     * 用户登录
      *
-     * @throws ServletException 抛出一个不知名的异常
+     * @param id       id主键
+     * @param password 用户密码
+     * @return 返回用户，没有找到返回null
      */
-    @Override
-    public void init() throws ServletException {
-//        初始化操作
-//        2.得到daoimpl对象并初始化表
-        AdminImpl admin = new AdminImpl();
-        StudentImpl student = new StudentImpl();
-        System.out.println("admin:" + admin);
-        System.out.println("Student:" + student);
-
-        getServletContext().setAttribute("admin", admin);
-        getServletContext().setAttribute("student", student);
-        System.out.println("初始化完成！");
-    }
-
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/day46/errorPage.jsp");
-    }
+    T login(Integer id, String password);
 }

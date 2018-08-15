@@ -1,7 +1,9 @@
-package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale._03captcha.servlet;
 
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
+
+import cn.ximcloud.itsource.day47_login_ordersale._03captcha.dao.impl.StudentImpl;
+import cn.ximcloud.itsource.day47_login_ordersale._03captcha.domain.Admin;
+import cn.ximcloud.itsource.day47_login_ordersale._03captcha.domain.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,31 +46,31 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 初始化Servlet
+ * 移除页Servlet
  **/
-@WebServlet(name = "day46_InitServlet", urlPatterns = "/day46/init")
-public class InitServlet extends HttpServlet {
-    /**
-     * 初始化方法
-     *
-     * @throws ServletException 抛出一个不知名的异常
-     */
-    @Override
-    public void init() throws ServletException {
-//        初始化操作
-//        2.得到daoimpl对象并初始化表
-        AdminImpl admin = new AdminImpl();
-        StudentImpl student = new StudentImpl();
-        System.out.println("admin:" + admin);
-        System.out.println("Student:" + student);
+@WebServlet(name = "day47_RemoveServlet_captcha_captcha", urlPatterns = "/day47/remove_captcha")
+public class RemoveSerlvet extends HttpServlet {
 
-        getServletContext().setAttribute("admin", admin);
-        getServletContext().setAttribute("student", student);
-        System.out.println("初始化完成！");
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Admin admin_in_session = (Admin) req.getSession().getAttribute("ADMIN_IN_SESSION");
+        if (admin_in_session != null) {
+//            有Session,获取一下
+            StudentImpl student = (StudentImpl) getServletContext().getAttribute("student");
+            Integer id = Integer.valueOf(req.getParameter("id"));
+            System.out.println("id" + id);
+            student.delete(id);
+
+            ArrayList<Student> all = student.findAll();
+            req.getSession().setAttribute("ALL_STUDENT_IN_SESSION", all);
+            resp.sendRedirect("/day47/list.jsp");
+        } else {
+            resp.sendRedirect("/day47/errorPage.jsp");
+        }
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/day46/errorPage.jsp");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/day47/errorPage.jsp").forward(req, resp);
     }
 }

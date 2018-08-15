@@ -1,7 +1,9 @@
-package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale._01login.servlet;
 
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.dao.impl.StudentImpl;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.domain.Admin;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.domain.Student;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.util.MyBeanUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,11 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: wzard
+ * @author: wizard
  * @date: 2018-08-13
  * Time: 12:11
  * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet
@@ -43,31 +47,41 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 初始化Servlet
  **/
-@WebServlet(name = "day46_InitServlet", urlPatterns = "/day46/init")
-public class InitServlet extends HttpServlet {
-    /**
-     * 初始化方法
-     *
-     * @throws ServletException 抛出一个不知名的异常
-     */
+@WebServlet(name = "day47_UpdateServlet", urlPatterns = "/day47/new")
+public class NewServlet extends HttpServlet {
     @Override
-    public void init() throws ServletException {
-//        初始化操作
-//        2.得到daoimpl对象并初始化表
-        AdminImpl admin = new AdminImpl();
-        StudentImpl student = new StudentImpl();
-        System.out.println("admin:" + admin);
-        System.out.println("Student:" + student);
-
-        getServletContext().setAttribute("admin", admin);
-        getServletContext().setAttribute("student", student);
-        System.out.println("初始化完成！");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Admin admin_in_session = (Admin) req.getSession().getAttribute("ADMIN_IN_SESSION");
+        if (admin_in_session != null) {
+//            有Session,获取一下
+            req.setCharacterEncoding("UTF-8");
+            resp.setCharacterEncoding("UTF-8");
+            Student stu = MyBeanUtil.requestToObject(req, Student.class);
+            System.out.println("stu :" + stu);
+            StudentImpl student = (StudentImpl) getServletContext().getAttribute("student");
+            student.save(stu);
+            ArrayList<Student> all = student.findAll();
+            req.getSession().setAttribute("ALL_STUDENT_IN_SESSION", all);
+            resp.sendRedirect("/day46/list.jsp");
+        } else {
+            resp.sendRedirect("/day46/errorPage.jsp");
+        }
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.sendRedirect("/day46/errorPage.jsp");
+    }
+
+    String charset(String string) {
+        byte[] bytes;
+        try {
+            bytes = string.getBytes("ISO-8859-1");
+            return new String(bytes, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

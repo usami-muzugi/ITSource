@@ -1,7 +1,8 @@
-package cn.ximcloud.itsource.day46_rebuild._01rebuild.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale._01login.servlet;
 
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day46_rebuild._01rebuild.dao.impl.StudentImpl;
+
+import cn.ximcloud.itsource.day47_login_ordersale._01login.dao.impl.AdminImpl;
+import cn.ximcloud.itsource.day47_login_ordersale._01login.dao.impl.StudentImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,7 +46,7 @@ import java.io.IOException;
  * ////////////////////////////////////////////////////////////////////
  * 初始化Servlet
  **/
-@WebServlet(name = "day46_InitServlet", urlPatterns = "/day46/init")
+@WebServlet(name = "day47_InitServlet", urlPatterns = "/day47/init")
 public class InitServlet extends HttpServlet {
     /**
      * 初始化方法
@@ -63,7 +64,7 @@ public class InitServlet extends HttpServlet {
 
         getServletContext().setAttribute("admin", admin);
         getServletContext().setAttribute("student", student);
-        System.out.println("初始化完成！");
+        System.out.println("day47_InitServlet 初始化完成！");
     }
 
     @Override

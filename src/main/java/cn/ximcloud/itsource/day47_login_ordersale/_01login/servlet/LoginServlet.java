@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
                 System.out.println("error");
                 req.setAttribute("msg", "登录错误，请输出上面的账号和密码！");
 //            转发
-                resp.sendRedirect("/day46/login.jsp");
+                resp.sendRedirect("/day46/index.jsp");
             }
         }
     }

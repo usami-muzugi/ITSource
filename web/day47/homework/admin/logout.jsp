@@ -7,8 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    //这个Session....哎...
-    session.setAttribute("admin_in_session", null);
+    if (session.getAttribute("ADMIN_IN_SESSION") == null) {
+        request.getSession().setAttribute("msg", "未登录！");
+        response.sendRedirect("login.jsp");
+    }
+    //这个Session....哎... 草！忘记大写了
+    session.setAttribute("ADMIN_IN_SESSION", null);
     try {
         Thread.sleep(1000);
     } catch (InterruptedException e) {

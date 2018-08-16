@@ -1,24 +1,21 @@
-package cn.ximcloud.itsource.day47_login_ordersale._03captcha.servlet;
+package cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.web;
 
-
-
-import cn.ximcloud.itsource.day47_login_ordersale._03captcha.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.day47_login_ordersale._03captcha.dao.impl.StudentImpl;
+import cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.dao.impl.AdminImpl;
+import cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.dao.impl.UserImpl;
+import cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.domain.Admin;
+import cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.domain.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 12:11
- * ProjectName: itsource.cn.ximcloud.itsource.day45_javabean.homework.homework5.servlet
+ * @date: 2018-08-16
+ * Time: 14:06
+ * ProjectName: itsource.cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.web
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -45,31 +42,40 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- * 初始化Servlet
  **/
-@WebServlet(name = "day47_InitServlet_captcha", urlPatterns = "/day47/captcha_init")
+@WebServlet(name = "day47_homework_InitServlet", urlPatterns = "/day47/homework/init", loadOnStartup = 1)
 public class InitServlet extends HttpServlet {
-    /**
-     * 初始化方法
-     *
-     * @throws ServletException 抛出一个不知名的异常
-     */
     @Override
     public void init() throws ServletException {
-//        初始化操作
-//        2.得到daoimpl对象并初始化表
         AdminImpl admin = new AdminImpl();
-        StudentImpl student = new StudentImpl();
-        System.out.println("admin:" + admin);
-        System.out.println("Student:" + student);
+        UserImpl user = new UserImpl();
+
+        admin.dropTable();
+        admin.createTable();
+        user.dropTable();
+        user.createTable();
+
+        Admin adm = new Admin();
+        adm.setUsername("wen");
+        adm.setPassword("wen");
+        admin.save(adm);
+
+        User u1 = new User("usamimizugi", "ourinsama", "锦江区", 10000000D, true);
+        User u2 = new User("wizard", "123", "锦江区", 100000D, false);
+        User u3 = new User("ourinsama", "usamimizugi", "锦江区", 10000000D, true);
+        User u4 = new User("ximcloud", "gg", "锦江区", 100D, true);
+
+        user.save(u1);
+        user.save(u2);
+        user.save(u3);
+        user.save(u4);
+
+        System.out.println("admin : " + admin);
+        System.out.println("user : " + user);
 
         getServletContext().setAttribute("admin", admin);
-        getServletContext().setAttribute("student", student);
-        System.out.println("day47_InitServlet 初始化完成！");
-    }
+        getServletContext().setAttribute("user", user);
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/day47/errorPage.jsp");
+        System.out.println("day47_homework_InitServlet 初始化完成！");
     }
 }

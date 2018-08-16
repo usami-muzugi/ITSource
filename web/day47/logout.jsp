@@ -14,5 +14,5 @@
     } catch (InterruptedException e) {
         e.printStackTrace();
     }
-    response.sendRedirect("login.jsp");
+    response.sendRedirect("index.jsp");
 %>

@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
             String randomcode_in_session = (String) req.getSession().getAttribute("RANDOMCODE_IN_SESSION");
             if (!req.getParameter("code").equalsIgnoreCase(randomcode_in_session)) {
                 req.getSession().setAttribute("msg", "验证码错误！");
-                resp.sendRedirect("login.jsp");
+                resp.sendRedirect("index.jsp");
                 return;
             }
             Admin tempAdmin = MyBeanUtil.requestToObject(req, Admin.class);
@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
                 System.out.println("error");
                 req.setAttribute("msg", "登录错误，请输出上面的账号和密码！");
 //            转发
-                req.getRequestDispatcher("login.jsp").forward(req, resp);
+                req.getRequestDispatcher("index.jsp").forward(req, resp);
             }
         }
     }

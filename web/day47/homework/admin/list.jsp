@@ -34,16 +34,21 @@
         <th>钱钱</th>
         <th colspan="2">操作</th>
     </tr>
-    <c:forEach items="${USERLIST_IN_SESSION}" var="studentList">
+    <c:forEach items="${USERLIST_IN_SESSION}" var="user">
         <tr>
-            <td>${studentList["id"]}</td>
-            <td>${studentList["username"]}</td>
-            <td>${studentList["password"]}</td>
-            <td>${studentList["sex"]}</td>
-            <th>${studentList["address"]}</th>
-            <td>${studentList["balance"]}</td>
-            <th><a href="/day47/update.jsp?id=${studentList["id"]}">修改</a></th>
-            <th><a href="/day47/remove_captcha?id=${studentList["id"]}">删除</a></th>
+            <td>${user["id"]}</td>
+            <td>${user["username"]}</td>
+            <td>${user["password"]}</td>
+            <c:if test="${user.sex==true}">
+                <td>男</td>
+            </c:if>
+            <c:if test="${user.sex==false}">
+                <td>女</td>
+            </c:if>
+            <th>${user["address"]}</th>
+            <td>${user["balance"]}</td>
+            <th><a href="update.jsp?id=${user["id"]}">修改</a></th>
+            <th><a href="remove?id=${user["id"]}">删除</a></th>
         </tr>
     </c:forEach>
 </table>

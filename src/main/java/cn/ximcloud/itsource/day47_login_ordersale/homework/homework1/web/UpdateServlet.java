@@ -18,7 +18,7 @@ import java.util.ArrayList;
  *
  * @author: wzard
  * @date: 2018-08-16
- * Time: 16:50
+ * Time: 20:44
  * ProjectName: itsource.cn.ximcloud.itsource.day47_login_ordersale.homework.homework1.web
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
@@ -47,20 +47,18 @@ import java.util.ArrayList;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "day47_UserAddServlet", urlPatterns = "/day47/homework/admin/add")
-public class UserAddServlet extends HttpServlet {
+@WebServlet(name = "day47_homework_UpdateServlet",urlPatterns = "/day47/homework/admin/update")
+public class UpdateServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, IOException {
         Admin admin_in_session = (Admin) req.getSession().getAttribute("ADMIN_IN_SESSION");
         if (admin_in_session != null) {
 //            有Session,获取一下
             req.setCharacterEncoding("UTF-8");
             resp.setCharacterEncoding("UTF-8");
-
-            User tempUser = MyBeanUtil.requestToObject(req, User.class);
-            System.out.println("stu :" + tempUser);
             UserImpl user = (UserImpl) getServletContext().getAttribute("user");
-            user.save(tempUser);
+            User tempUser = MyBeanUtil.requestToObject(req, User.class);
+            user.update(tempUser);
             ArrayList<User> all = user.findAll();
             req.getSession().setAttribute("USERLIST_IN_SESSION", all);
             resp.sendRedirect("list.jsp");

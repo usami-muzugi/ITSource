@@ -1,0 +1,30 @@
+a.精确拦截指定资源
+<url-pattern>/hello</url-pattern>:当前Filter只对/hello这个资源做过滤.
+b.拦截所有资源
+<url-pattern>/*</url-pattern>:当前Filter对所有的请求做过滤.如字符编码
+c.对部分资源进行拦截(以什么开头)
+    <url-pattern>/system/*</url-pattern>:当前Filter	对/system/之后的请求做过滤.
+     比如:/system/list,/system/edit,/system/delete 如权限判断
+d.对部分资源进行拦截(以什么结束)
+<url-pattern>*.html</url-pattern>:当前Filter	对后缀是html的进行过滤
+如伪（假）静态化
+路径的配置提供了三种方式，方便大家以后根据不同的情况对不同的资源进行拦截
+
+REQUEST：当用户直接访问页面时，Web容器将会调用过滤器。
+            如果目标资源是通过RequestDispatcher的include()或forward()方法访问时，
+            那么该过滤器就不会被调用。默认值
+INCLUDE：如果目标资源是通过RequestDispatcher的include()方法访问时，
+            那么该过滤器将被调用。除此之外，该过滤器不会被调用。
+FORWARD：如果目标资源是通过RequestDispatcher的forward()方法访问时，
+            那么该过滤器将被调用，除此之外，该过滤器不会被调用。
+注意一下还有顺序要求的，是url在上，dispatcher在下，虽然tomcat不会提示报错，但是xml提示这样不规范，
+不要这样写
+    <filter>
+        <filter-name>day48_forwardfilter</filter-name>
+        <filter-class>cn.ximcloud.itsource.day48_filter.homework.homework4.ForwardFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>day48_forwardfilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>

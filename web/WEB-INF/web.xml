@@ -4,6 +4,39 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
 >
+
+    <!--<filter>-->
+        <!--<filter-name>day48_forwardfilter</filter-name>-->
+        <!--<filter-class>cn.ximcloud.itsource.day48_filter.homework.homework4.ForwardFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>day48_forwardfilter</filter-name>-->
+        <!--<url-pattern>/test/clac</url-pattern>-->
+        <!--<dispatcher>FORWARD</dispatcher>-->
+        <!--&lt;!&ndash;<dispatcher>REQUEST</dispatcher>&ndash;&gt;-->
+    <!--</filter-mapping>-->
+    <!--Day48 过滤器-->
+    <!--<filter>-->
+        <!--<filter-name>AFilter</filter-name>-->
+        <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.AFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>AFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+    <!--<filter>-->
+        <!--<filter-name>BFilter</filter-name>-->
+        <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.BFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>BFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+
+
+
     <!--metadata-complete="false"-->
     <!--默认为false，删除了也为false，为true就是不检查Servlet当中的注解-->
 
@@ -20,7 +53,7 @@
     <!--day42 MyServlet-->
     <!--<servlet>-->
     <!--<servlet-name>Day42-helloServlet</servlet-name>-->
-    <!--<servlet-class>cn.ximcloud.itsource.day42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
+    <!--<servlet-class>cn.ximcloud.itsource.day1_day47.day42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
     <!--<servlet-name>Day42-helloServlet</servlet-name>-->

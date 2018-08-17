@@ -35,5 +35,5 @@ package cn.ximcloud.itsource.day1_day47.day47_login_ordersale.homework.homework1
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public interface IAdminDao<T> extends IBaseDao<T>{
+public interface IAdminDao<T> extends IBaseDao<T> {
 }

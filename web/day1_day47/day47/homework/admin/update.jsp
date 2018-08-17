@@ -35,7 +35,7 @@
     </c:if>
     <c:if test="${tempUser.sex==false}">
         <option value="true">男</option>
-        <option value="false"selected="selected">女</option>
+        <option value="false" selected="selected">女</option>
     </c:if>
 </select><br/>
     地址:<input type="text" name="address" value="${tempUser["address"]}"><br/>

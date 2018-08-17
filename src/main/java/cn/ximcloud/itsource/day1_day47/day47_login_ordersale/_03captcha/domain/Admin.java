@@ -56,8 +56,9 @@ public class Admin {
 
     /**
      * 只比较admin字段和password字段即可
+     *
      * @param o 一个Admin类型的实例
-     * @return  相同返回true 不相同返回false
+     * @return 相同返回true 不相同返回false
      */
     @Override
     public boolean equals(Object o) {
@@ -82,7 +83,7 @@ public class Admin {
     public String toString() {
         return "Admin{" +
                 "id=" + id +
-                ", admin=" + admin  +
+                ", admin=" + admin +
                 ", password=" + password +
                 '}';
     }

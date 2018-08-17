@@ -43,7 +43,7 @@ import java.io.IOException;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "auth_Servlet",urlPatterns = "/day47/homework/auth")
+@WebServlet(name = "auth_Servlet", urlPatterns = "/day47/homework/auth")
 public class AuthServlet extends HttpServlet {
 
     @Override

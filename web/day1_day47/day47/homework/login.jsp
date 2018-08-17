@@ -1,4 +1,4 @@
-<%@ page import="java.util.UUID" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: wzard
   Date: 2018/8/13
@@ -11,7 +11,7 @@
     <title>学生信息系统</title>
     <script type="text/javascript">
         function touchme(me) {
-            me.src ="/day47/randomCode?cmd="+Math.random();
+            me.src = "/day47/randomCode?cmd=" + Math.random();
         }
     </script>
 </head>

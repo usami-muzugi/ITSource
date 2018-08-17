@@ -47,7 +47,7 @@ import java.util.ArrayList;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "update_servlet_captcha_captcha",urlPatterns = "/day47/update_captcha")
+@WebServlet(name = "update_servlet_captcha_captcha", urlPatterns = "/day47/update_captcha")
 public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

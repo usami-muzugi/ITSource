@@ -64,6 +64,7 @@ public class RemoveSerlvet extends HttpServlet {
             resp.sendRedirect("errorPage.jsp");
         }
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("errorPage.jsp").forward(req, resp);

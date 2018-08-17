@@ -42,6 +42,24 @@ public class Student {
     private String sex;
     private String cls;
 
+    public Student(String name, Integer age, String sex, String cls) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.cls = cls;
+    }
+
+    public Student(Integer id, String name, Integer age, String sex, String cls) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.cls = cls;
+    }
+
+    public Student() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -115,23 +133,5 @@ public class Student {
 
     public void setCls(String cls) {
         this.cls = cls;
-    }
-
-    public Student(String name, Integer age, String sex, String cls) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.cls = cls;
-    }
-
-    public Student(Integer id, String name, Integer age, String sex, String cls) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.cls = cls;
-    }
-
-    public Student() {
     }
 }

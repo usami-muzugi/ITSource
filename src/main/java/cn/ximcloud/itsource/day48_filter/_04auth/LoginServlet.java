@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("home.jsp");
             return;
         }
-        req.setAttribute("msg","登录错误！");
+        req.setAttribute("msg", "登录错误！");
         req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 }

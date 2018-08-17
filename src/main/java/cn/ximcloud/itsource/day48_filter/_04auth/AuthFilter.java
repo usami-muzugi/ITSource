@@ -45,13 +45,13 @@ import java.io.IOException;
 
 @WebFilter(filterName = "AuthFilter", urlPatterns = "/day48/*")
 public class AuthFilter extends HttpFilter {
-//    需求:
+    //    需求:
 //      需要对除开登录的action和login.jsp之外的所有的动作，都做出一个拦截，并且
 //      判断是否已经登录，如果登录，则正常放行，否则返回登录页面
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
         Object admin_in_session = request.getSession().getAttribute("ADMIN_IN_SESSION");
-        if ("/day48/login".equals(request.getRequestURI())|| "/day48/login.jsp".equals(request.getRequestURI())) {
+        if ("/day48/login".equals(request.getRequestURI()) || "/day48/login.jsp".equals(request.getRequestURI())) {
             chain.doFilter(request, response);
         } else {
             if (admin_in_session == null) {

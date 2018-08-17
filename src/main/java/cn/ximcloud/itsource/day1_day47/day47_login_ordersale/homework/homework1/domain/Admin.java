@@ -58,6 +58,7 @@ public class Admin {
 
     /**
      * 特殊字段不做打印处理
+     *
      * @return
      */
     @Override
@@ -70,6 +71,7 @@ public class Admin {
 
     /**
      * 比较两个管理员是否相同，比较username 和password就可以了
+     *
      * @param o
      * @return
      */

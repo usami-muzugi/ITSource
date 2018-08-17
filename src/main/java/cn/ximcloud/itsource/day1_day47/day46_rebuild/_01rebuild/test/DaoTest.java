@@ -48,7 +48,7 @@ public class DaoTest {
     @Test
     public void testSave() {
         StudentImpl student = new StudentImpl();
-        student.save(new Student("彭睿",20,"男","JAVA0606"));
+        student.save(new Student("彭睿", 20, "男", "JAVA0606"));
     }
 
     @Test
@@ -59,6 +59,7 @@ public class DaoTest {
         ArrayList<Student> all = student.findAll();
         System.out.println(Collections.singletonList(all));
     }
+
     @Test
     public void testUpdate() {
         StudentImpl student = new StudentImpl();
@@ -72,6 +73,6 @@ public class DaoTest {
     @Test
     public void testAdminLogin() {
         AdminImpl admin = new AdminImpl();
-        Admin login = admin.login(1,"ourinsama");
+        Admin login = admin.login(1, "ourinsama");
     }
 }

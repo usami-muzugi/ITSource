@@ -35,5 +35,5 @@ package cn.ximcloud.itsource.day1_day47.day46_rebuild._01rebuild.dao;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public interface IStudentDao<T> extends IBaseDao<T>{
+public interface IStudentDao<T> extends IBaseDao<T> {
 }

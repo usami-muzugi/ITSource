@@ -40,18 +40,16 @@ import java.util.ArrayList;
 public interface IBaseDao<T> {
 
     /**
-     *
-     * @param id id
+     * @param id       id
      * @param password password
      * @return
      */
     T login(Long id, String password);
 
     /**
-     *
-     * @param username  username
-     * @param password  password
-     * @return  如果登录成功，返回一个T的实例，如果登录失败，返回null
+     * @param username username
+     * @param password password
+     * @return 如果登录成功，返回一个T的实例，如果登录失败，返回null
      */
     T login(String username, String password);
 

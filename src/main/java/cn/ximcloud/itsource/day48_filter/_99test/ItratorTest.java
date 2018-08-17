@@ -2,8 +2,9 @@ package cn.ximcloud.itsource.day48_filter._99test;
 
 import org.junit.Test;
 
-import java.lang.reflect.Type;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Created by IntelliJ IDEA.

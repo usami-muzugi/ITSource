@@ -90,7 +90,8 @@ public class Item {
 
     /**
      * Item 获得总价的属性
-     * @return  返回购物车Item商品的总价
+     *
+     * @return 返回购物车Item商品的总价
      */
     public Double getTotalPrice() {
         return this.price * this.num;
@@ -98,6 +99,7 @@ public class Item {
 
     /**
      * 覆写equal和hashCode(),有逼数的呀
+     *
      * @param o
      * @return
      */

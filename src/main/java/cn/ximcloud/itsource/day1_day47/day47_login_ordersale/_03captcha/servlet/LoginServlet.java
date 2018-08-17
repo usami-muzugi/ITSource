@@ -1,7 +1,6 @@
 package cn.ximcloud.itsource.day1_day47.day47_login_ordersale._03captcha.servlet;
 
 
-
 import cn.ximcloud.itsource.day1_day47.day47_login_ordersale._03captcha.dao.impl.AdminImpl;
 import cn.ximcloud.itsource.day1_day47.day47_login_ordersale._03captcha.domain.Admin;
 import cn.ximcloud.itsource.day1_day47.day47_login_ordersale._03captcha.util.MyBeanUtil;

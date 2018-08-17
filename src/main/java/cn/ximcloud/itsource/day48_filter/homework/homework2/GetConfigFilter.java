@@ -49,7 +49,7 @@ public class GetConfigFilter extends HttpFilter {
 
     }
 
-//    拿取Filter的配置信息
+    //    拿取Filter的配置信息
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 //        可以调用filterConfig对象来拿去，这里的filterConfig对象，也是Tomcat容器在启动的时候，

@@ -77,7 +77,8 @@ public class Cart {
 
     /**
      * Items属性，Map没有实现迭代接口，所以不能迭代，于是有了这一个属性
-     * @return  所有的item的一个集合，实现了迭代的。也就是可以使用foreach或者是迭代器
+     *
+     * @return 所有的item的一个集合，实现了迭代的。也就是可以使用foreach或者是迭代器
      */
     public Collection<Item> getItems() {
         return itemMap.values();

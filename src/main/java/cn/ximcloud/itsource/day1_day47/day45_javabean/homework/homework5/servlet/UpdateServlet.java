@@ -81,12 +81,12 @@ public class UpdateServlet extends HttpServlet {
 
     String charset(String string) {
         byte[] bytes;
-            try {
-                bytes = string.getBytes("ISO-8859-1");
-                return new String(bytes, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
+        try {
+            bytes = string.getBytes("ISO-8859-1");
+            return new String(bytes, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

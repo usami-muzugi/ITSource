@@ -18,27 +18,27 @@
 <hr>
 <h3>学生表</h3>
 <table border="1px" cellspacing="0" style="border-color: #66CCFF;">
+<tr>
+    <th>ID</th>
+    <th>姓名</th>
+    <th>年龄</th>
+    <th>性别</th>
+    <th>班级</th>
+    <th colspan="2">操作</th>
+</tr>
+<c:forEach items="${ALL_STUDENT_IN_SESSION}" var="studentList">
     <tr>
-        <th>ID</th>
-        <th>姓名</th>
-        <th>年龄</th>
-        <th>性别</th>
-        <th>班级</th>
-        <th colspan="2">操作</th>
-    </tr>
-    <c:forEach items="${ALL_STUDENT_IN_SESSION}" var="studentList">
-        <tr>
-            <td>${studentList["id"]}</td>
-            <td>${studentList["name"]}</td>
-            <td>${studentList["age"]}</td>
-            <th>${studentList["sex"]}</th>
-            <td>${studentList["cls"]}</td>
-            <th><a href="/day1_day47/day46/update.jsp?id=${studentList[">修改</a></th>
+    <td>${studentList["id"]}</td>
+    <td>${studentList["name"]}</td>
+    <td>${studentList["age"]}</td>
+    <th>${studentList["sex"]}</th>
+    <td>${studentList["cls"]}</td>
+    <th><a href="/day1_day47/day46/update.jsp?id=${studentList[">修改</a></th>
             <th><a href="/day46/remove?id=${studentList["id"]}">删除</a></th>
         </tr>
-    </c:forEach>
-</table>
-<hr/>
-<a href="list.jsp">返回</a>
-</body>
-</html>
+        </c:forEach>
+        </table>
+        <hr/>
+        <a href="list.jsp">返回</a>
+        </body>
+        </html>

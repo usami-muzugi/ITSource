@@ -43,7 +43,6 @@ public class CharUtil {
 
     /**
      * 把ISO-8859-1编码的字符改变成UTF-8
-     *
      */
     public static String charset(String string) {
         byte[] bytes;

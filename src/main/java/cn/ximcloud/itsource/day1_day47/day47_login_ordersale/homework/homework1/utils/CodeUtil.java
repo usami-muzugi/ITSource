@@ -45,7 +45,8 @@ import java.util.UUID;
  **/
 
 public class CodeUtil {
-    private CodeUtil(){}
+    private CodeUtil() {
+    }
 
 
     public static boolean auth(HttpServletRequest httpServletRequest) {
@@ -54,9 +55,10 @@ public class CodeUtil {
 
     /**
      * 获得验证码 和设置Session
-     * @param httpServletRequest 请求对象
+     *
+     * @param httpServletRequest  请求对象
      * @param httpServletResponse 响应对象
-     * @throws IOException  IO异常
+     * @throws IOException IO异常
      */
     public static void getCodeImg(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
 

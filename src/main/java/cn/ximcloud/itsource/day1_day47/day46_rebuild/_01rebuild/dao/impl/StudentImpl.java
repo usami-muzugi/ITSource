@@ -44,7 +44,6 @@ public class StudentImpl extends BaseImpl<Student> implements IStudentDao<Studen
 
     /**
      * 这个方法是真的棒!(๑•̀ㅂ•́)و✧，获得运行时类型
-     *
      */
     public StudentImpl() {
         super(Student.class);

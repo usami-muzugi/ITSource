@@ -48,7 +48,7 @@ import java.util.ArrayList;
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
  **/
-@WebServlet(name = "update_servlet",urlPatterns = "/day47/update")
+@WebServlet(name = "update_servlet", urlPatterns = "/day47/update")
 public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

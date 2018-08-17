@@ -1,4 +1,4 @@
-<%@ page import="java.util.UUID" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: wzard
   Date: 2018/8/13
@@ -11,7 +11,7 @@
     <title>管理员登录页</title>
     <script type="text/javascript">
         function touchme(me) {
-            me.src ="/day47/homework/auth?authCode="+Math.random();
+            me.src = "/day47/homework/auth?authCode=" + Math.random();
         }
     </script>
 </head>

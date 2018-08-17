@@ -1,14 +1,12 @@
-package cn.ximcloud.itsource.day1_day47.day47_login_ordersale._03captcha.util;
-
-import java.io.UnsupportedEncodingException;
+package cn.ximcloud.itsource.day48_filter._99test;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 22:10
- * ProjectName: itsource.cn.ximcloud.itsource.day1_day47.day45_javabean.homework.homework5.util
+ * @date: 2018-08-18
+ * Time: 00:03
+ * ProjectName: itsource.cn.ximcloud.itsource.day48_filter._99test
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -37,21 +35,15 @@ import java.io.UnsupportedEncodingException;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class CharUtil {
-    private CharUtil() {
+public class Son extends FatherClass {
+
+    //    可以覆写父类非静态方法
+    @Override
+    void test() {
+        super.test();
     }
 
-    /**
-     * 把ISO-8859-1编码的字符改变成UTF-8
-     */
-    public static String charset(String string) {
-        byte[] bytes;
-        try {
-            bytes = string.getBytes("ISO-8859-1");
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    但是无法覆写父类非静态方法
+
+
 }

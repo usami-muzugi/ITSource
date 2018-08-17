@@ -44,6 +44,10 @@ import java.util.Map;
 public class Cart {
     private Map<Long, Item> itemMap;
 
+    public Cart() {
+        itemMap = new HashMap<>();
+    }
+
     public Double getTotalPrice() {
         return 0D;
     }
@@ -66,10 +70,6 @@ public class Cart {
             itemMap.put(item.getId(), item);
         }
         itemMap.put(item.getId(), item);
-    }
-
-    public Cart() {
-        itemMap = new HashMap<>();
     }
 
     public Map<Long, Item> getItemMap() {

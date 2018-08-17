@@ -1,7 +1,6 @@
 package cn.ximcloud.itsource.day1_day47.day47_login_ordersale._01login.dao.impl;
 
 
-
 import cn.ximcloud.itsource.day1_day47.day47_login_ordersale._01login.dao.IAdminDao;
 import cn.ximcloud.itsource.day1_day47.day47_login_ordersale._01login.domain.Admin;
 import cn.ximcloud.itsource.day1_day47.day47_login_ordersale._01login.util.JDBCUtil;

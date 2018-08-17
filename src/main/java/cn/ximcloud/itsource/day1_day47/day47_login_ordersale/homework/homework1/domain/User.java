@@ -51,6 +51,9 @@ public class User {
         this.sex = sex;
     }
 
+    public User() {
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -126,8 +129,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public User() {
     }
 }

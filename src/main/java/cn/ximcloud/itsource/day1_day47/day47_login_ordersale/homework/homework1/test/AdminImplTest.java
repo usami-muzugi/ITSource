@@ -52,7 +52,7 @@ public class AdminImplTest {
     }
 
     /**
-     *  passed
+     * passed
      */
     @Test
     public void testAdminImplFind() {
@@ -63,7 +63,7 @@ public class AdminImplTest {
     }
 
     /**
-     *  passed
+     * passed
      */
     @Test
     public void testAdminImplFindAll() {
@@ -73,7 +73,7 @@ public class AdminImplTest {
     }
 
     /**
-     *  passed
+     * passed
      */
     @Test
     public void testAdminImplUpdate() {
@@ -85,7 +85,7 @@ public class AdminImplTest {
     }
 
     /**
-     *  passed
+     * passed
      */
     @Test
     public void testAdminImplSave() {

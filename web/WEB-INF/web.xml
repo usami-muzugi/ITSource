@@ -6,35 +6,33 @@
 >
 
     <!--<filter>-->
-        <!--<filter-name>day48_forwardfilter</filter-name>-->
-        <!--<filter-class>cn.ximcloud.itsource.day48_filter.homework.homework4.ForwardFilter</filter-class>-->
+    <!--<filter-name>day48_forwardfilter</filter-name>-->
+    <!--<filter-class>cn.ximcloud.itsource.day48_filter.homework.homework4.ForwardFilter</filter-class>-->
     <!--</filter>-->
     <!--<filter-mapping>-->
-        <!--<filter-name>day48_forwardfilter</filter-name>-->
-        <!--<url-pattern>/test/clac</url-pattern>-->
-        <!--<dispatcher>FORWARD</dispatcher>-->
-        <!--&lt;!&ndash;<dispatcher>REQUEST</dispatcher>&ndash;&gt;-->
+    <!--<filter-name>day48_forwardfilter</filter-name>-->
+    <!--<url-pattern>/test/clac</url-pattern>-->
+    <!--<dispatcher>FORWARD</dispatcher>-->
+    <!--&lt;!&ndash;<dispatcher>REQUEST</dispatcher>&ndash;&gt;-->
     <!--</filter-mapping>-->
     <!--Day48 过滤器-->
     <!--<filter>-->
-        <!--<filter-name>AFilter</filter-name>-->
-        <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.AFilter</filter-class>-->
+    <!--<filter-name>AFilter</filter-name>-->
+    <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.AFilter</filter-class>-->
     <!--</filter>-->
     <!--<filter-mapping>-->
-        <!--<filter-name>AFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
+    <!--<filter-name>AFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
 
     <!--<filter>-->
-        <!--<filter-name>BFilter</filter-name>-->
-        <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.BFilter</filter-class>-->
+    <!--<filter-name>BFilter</filter-name>-->
+    <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.BFilter</filter-class>-->
     <!--</filter>-->
     <!--<filter-mapping>-->
-        <!--<filter-name>BFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
+    <!--<filter-name>BFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
-
-
 
 
     <!--metadata-complete="false"-->

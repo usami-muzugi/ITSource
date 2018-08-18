@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacts SYSTEM "contacts.dtd">
+<contacts>
+    <linkman>
+        <name>gg</name>
+        <email>gg@itsource.cn</email>
+        <address>成都</address>
+        <group>源码时代</group>
+    </linkman>
+    <linkman>
+        <name>mm</name>
+        <email>lanyotech@qq.com</email>
+        <address>成都</address>
+        <group>源码时代</group>
+    </linkman>
+</contacts>

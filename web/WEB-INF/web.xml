@@ -7,7 +7,7 @@
 
     <!--<filter>-->
     <!--<filter-name>day48_forwardfilter</filter-name>-->
-    <!--<filter-class>cn.ximcloud.itsource.day48_filter.homework.homework4.ForwardFilter</filter-class>-->
+    <!--<filter-class>cn.ximcloud.itsource.before.day48_filter.homework.homework4.ForwardFilter</filter-class>-->
     <!--</filter>-->
     <!--<filter-mapping>-->
     <!--<filter-name>day48_forwardfilter</filter-name>-->
@@ -18,7 +18,7 @@
     <!--Day48 过滤器-->
     <!--<filter>-->
     <!--<filter-name>AFilter</filter-name>-->
-    <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.AFilter</filter-class>-->
+    <!--<filter-class>cn.ximcloud.itsource.before.day48_filter._01filter_learning.AFilter</filter-class>-->
     <!--</filter>-->
     <!--<filter-mapping>-->
     <!--<filter-name>AFilter</filter-name>-->
@@ -27,7 +27,7 @@
 
     <!--<filter>-->
     <!--<filter-name>BFilter</filter-name>-->
-    <!--<filter-class>cn.ximcloud.itsource.day48_filter._01filter_learning.BFilter</filter-class>-->
+    <!--<filter-class>cn.ximcloud.itsource.before.day48_filter._01filter_learning.BFilter</filter-class>-->
     <!--</filter>-->
     <!--<filter-mapping>-->
     <!--<filter-name>BFilter</filter-name>-->
@@ -51,7 +51,7 @@
     <!--day42 MyServlet-->
     <!--<servlet>-->
     <!--<servlet-name>Day42-helloServlet</servlet-name>-->
-    <!--<servlet-class>cn.ximcloud.itsource.day1_day47.day42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
+    <!--<servlet-class>cn.ximcloud.itsource.before42_learning_servlet._01myfirstservlet.MyServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
     <!--<servlet-name>Day42-helloServlet</servlet-name>-->

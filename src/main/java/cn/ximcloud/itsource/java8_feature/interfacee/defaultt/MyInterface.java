@@ -1,13 +1,16 @@
-package cn.ximcloud.itsource.learning_lambda.list;
+package cn.ximcloud.itsource.java8_feature.interfacee.defaultt;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-07
- * Time: 19:51
- * ProjectName: itsource.cn.ximcloud.itsource.learning_lambda.StudentList
+ * @date: 2018-08-19
+ * Time: 15:17
+ * ProjectName: itsource.cn.ximcloud.itsource.java8_feature.interfacee.defaultt
  * To change this template use File | Settings | Editor | File and Code Templates.
+ * <p>
+ * you are not expected to understand this.
+ * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -32,28 +35,9 @@ package cn.ximcloud.itsource.learning_lambda.list;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class Persion {
-    String name;
-    Integer age;
-
-    public Persion(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+public interface MyInterface {
+//   接口的第二个特性就是可以使用default来修饰方法，使用default修饰的方法是必须带上主体的
+    default void method() {
+//        default方法的主体
     }
 }

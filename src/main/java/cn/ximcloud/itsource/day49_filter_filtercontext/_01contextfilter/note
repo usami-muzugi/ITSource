@@ -1,0 +1,12 @@
+过滤器
+    过滤文字,需要一个jsp来将前台传入的数据，
+    传入后台filter进行过滤，
+    之后是传入servlet进行处理，将数据保存到本地、数据库、application
+    之后是跳转到另一个jsp对数据进行展示
+
+这里我们选择
+
+    前台jsp filter.jsp
+    filter过滤器为ContextFilter，进行仅对文字的过滤
+    ShowServlet是将前台传入的文字进行处理后保存在application里
+    再进行页面跳转到show.jsp

@@ -71,7 +71,7 @@ public class SingleInstanceForJDBC {
     }
 
     /**
-     * Load Driver,Get a connection Instance,without username,password.not a good function.deprecated now.
+     * Load Driver,Get a connection Instance,without username,password.not a good functioninterface.deprecated now.
      *
      * @return a SingleInstanceForJDBC instance
      * @throws ClassNotFoundException com.mysql.jdbc.Driver not Found Exception

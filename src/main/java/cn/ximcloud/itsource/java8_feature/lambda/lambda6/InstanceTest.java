@@ -2,6 +2,8 @@ package cn.ximcloud.itsource.java8_feature.lambda.lambda6;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -87,12 +89,28 @@ public class InstanceTest {
         String str = "hello itsource";
         Function<String, Boolean> function = new Function<String, Boolean>() {
             @Override
-            public Boolean apply(String s) {
-                return str.endWith(s);
+            public Boolean apply(String suffix) {
+                return str.endsWith(suffix);
             }
         };
-        Boolean apply = function.apply("");
+        Boolean apply = function.apply("123");
+        System.out.println(apply);
 //        这里差一个String对象！！是谁来比较呢？
 
+    }
+
+
+    /**
+     * 使用Lambda表达式
+     *  简写实例方法引入
+     */
+    @Test
+    public void test3() {
+        //        被判断的字符串对象
+        String str = "hello itsource";
+//        卧槽！
+        Function<String, Boolean> function = str::endsWith;
+        Boolean itsource = function.apply("itsource");
+        System.out.println(itsource);
     }
 }

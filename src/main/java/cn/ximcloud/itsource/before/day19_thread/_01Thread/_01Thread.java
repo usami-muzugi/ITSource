@@ -1,5 +1,7 @@
 package cn.ximcloud.itsource.before.day19_thread._01Thread;
 
+import java.util.Arrays;
+
 /**
  * Created by IntelliJ IDEA.
  * Student: wzard
@@ -24,5 +26,8 @@ public class _01Thread {
         new Thread(() -> {
             System.out.println("可以这样");
         }).start();
+//        简写
+        new Thread(() -> Arrays.asList("a").forEach(System.out::println)).start();
+
     }
 }

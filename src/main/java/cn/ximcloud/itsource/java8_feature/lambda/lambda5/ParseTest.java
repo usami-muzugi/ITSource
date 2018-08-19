@@ -63,13 +63,22 @@ public class ParseTest {
         System.out.println(parseInterface.parse("666"));
     }
 
-
     /**
      * 使用Lambda表达式
-     * 简写
      */
     @Test
     public void testParse3() {
+        ParseInterface parseInterface = string -> Integer.parseInt(string);
+        System.out.println(parseInterface.parse("666"));
+    }
+
+
+    /**
+     * 使用Lambda表达式
+     * 简写，如果传入的值仅仅是这个被操作的值，就可以这么写
+     */
+    @Test
+    public void testParse4() {
 //        有点类是构造方法的引用
         ParseInterface parseInterface = Integer::parseInt;
         System.out.println(parseInterface.parse("666"));

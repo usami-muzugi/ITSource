@@ -2,6 +2,8 @@ package cn.ximcloud.itsource.before.day15_gui._03listen;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.
@@ -67,8 +69,12 @@ public class _03ListenTest {
         //最好自己实现接口覆写方法！
         MyActionListener myActionListener = new MyActionListener(jButton, textField);    //创建自己的事件监听实现类，并传入jbutton，textfield
 
-        jButton.addActionListener(myActionListener);    //添加事件监听的实现类的对象
+//        jButton.addActionListener(myActionListener);    //添加事件监听的实现类的对象
 
+        jButton.addActionListener((x) -> {
+            textField.setText(jButton.getText());
+            System.out.println("やめてくださいwwwww");
+        });
         /*
             result: やめてくださいwwwww
          */

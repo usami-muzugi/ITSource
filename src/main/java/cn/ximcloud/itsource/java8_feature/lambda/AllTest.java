@@ -1,21 +1,18 @@
-package cn.ximcloud.itsource.before.day46_rebuild._01rebuild.test;
+package cn.ximcloud.itsource.java8_feature.lambda;
 
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.dao.impl.StudentImpl;
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.domain.Admin;
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.domain.Student;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 20:53
- * ProjectName: itsource.cn.ximcloud.itsource.before.day45_javabean.homework.homework5.test
+ * @date: 2018-08-19
+ * Time: 22:35
+ * ProjectName: itsource.cn.ximcloud.itsource.java8_feature.lambda
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -44,38 +41,54 @@ import java.util.Collections;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class DaoTest {
-    /**
-     * passed
-     */
+public class AllTest {
+
     @Test
-    public void testSave() {
-        StudentImpl student = new StudentImpl();
-        student.save(new Student("彭睿", 20, "男", "JAVA0606"));
+    public void testThread() {
+//        常规
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("凉了呀，马飞飞");
+            }
+        };
+        new Thread(runnable).start();
+
+//        或者
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("JAVA8");
+            }
+        }).start();
+
+//        Lambda
+        new Thread(() -> System.out.println("????")).start();
     }
 
     @Test
-    public void testFind() {
-        StudentImpl student = new StudentImpl();
-        Student student1 = student.find(1);
-        System.out.println(student1);
-        ArrayList<Student> all = student.findAll();
-        System.out.println(Collections.singletonList(all));
-    }
+    public void testJButton() {
+//        普通操作
+        class MyActionListener implements ActionListener {
 
-    @Test
-    public void testUpdate() {
-        StudentImpl student = new StudentImpl();
-        Student student1 = student.find(1);
-        System.out.println(student1.getAge());
-        student1.setAge(666);
-        student.update(student1);
-        System.out.println(student.find(1).getAge());
-    }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("好麻烦的说！！");
+            }
+        }
+        ActionListener myActionListener = new MyActionListener();
+        new JButton().addActionListener(myActionListener);
 
-    @Test
-    public void testAdminLogin() {
-        AdminImpl admin = new AdminImpl();
-        Admin login = admin.login(1, "ourinsama");
+
+//        一般操作
+        new JButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("添加一个事件监听");
+            }
+        });
+
+//        秀
+        new JButton().addActionListener(x -> System.out.println("秀"));
     }
 }

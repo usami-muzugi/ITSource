@@ -63,6 +63,7 @@ public class FileUploadServlet extends HttpServlet {
             for (FileItem fileItem : fileItems) {
                 if (!fileItem.isFormField()) {
 //                    fileItem.write(new File("D:/","123.txt"));
+//                    下面这一行在某些环境下可能会遇到BUG也就是无法写入到比本地磁盘上。僵硬
                     fileItem.write(new File("D:/123.txt"));
                 } else {
                     String string = fileItem.getString();

@@ -1,21 +1,16 @@
-package cn.ximcloud.itsource.before.day46_rebuild._01rebuild.test;
+package cn.ximcloud.itsource.java8_feature.init;
 
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.dao.impl.AdminImpl;
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.dao.impl.StudentImpl;
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.domain.Admin;
-import cn.ximcloud.itsource.before.day46_rebuild._01rebuild.domain.Student;
+import cn.ximcloud.itsource.java8_feature.init.SubClass;
+import cn.ximcloud.itsource.java8_feature.init.SuperClass;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
- * @date: 2018-08-13
- * Time: 20:53
- * ProjectName: itsource.cn.ximcloud.itsource.before.day45_javabean.homework.homework5.test
+ * @date: 2018-08-20
+ * Time: 15:35
+ * ProjectName: itsource.cn.ximcloud.itsource.java8_feature
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -44,38 +39,37 @@ import java.util.Collections;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class DaoTest {
+public class InitTest {
     /**
-     * passed
+     * result:
+     * SuperClass init
+     * 123
+     * 结果是仅仅是父类的类被加载了，子类并没有被加载，被动引用
+     * <p>
+     * 因此，通过子类来引用父类的静态字段的时候，只会触发父类的初始化而不会触发子类的初始化
+     * 至于是否要触发子类的加载和验证，在虚拟机会犯中并未明确规定，这点取决于虚拟机的具体实现。
      */
     @Test
-    public void testSave() {
-        StudentImpl student = new StudentImpl();
-        student.save(new Student("彭睿", 20, "男", "JAVA0606"));
+    public void testInit1() {
+        System.out.println(SubClass.value);
+        SubClass.print();
     }
 
+    /**
+     * 被动使用类字段演示二
+     * 通过数组定义来引用类，不会触发此类的初始化
+     */
     @Test
-    public void testFind() {
-        StudentImpl student = new StudentImpl();
-        Student student1 = student.find(1);
-        System.out.println(student1);
-        ArrayList<Student> all = student.findAll();
-        System.out.println(Collections.singletonList(all));
+    public void testInit2() {
+        SuperClass[] superClasses = new SuperClass[10];
     }
 
+    /**
+     *
+     */
     @Test
-    public void testUpdate() {
-        StudentImpl student = new StudentImpl();
-        Student student1 = student.find(1);
-        System.out.println(student1.getAge());
-        student1.setAge(666);
-        student.update(student1);
-        System.out.println(student.find(1).getAge());
-    }
-
-    @Test
-    public void testAdminLogin() {
-        AdminImpl admin = new AdminImpl();
-        Admin login = admin.login(1, "ourinsama");
+    public void testInit3() {
+        System.out.println(ConstClass.HELLOWORD);
+        ConstClass.method();
     }
 }

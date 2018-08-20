@@ -1,11 +1,11 @@
 package cn.ximcloud.itsource.java8_feature;
 
 
-import java.util.ArrayList;
+import org.junit.Test;
+
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * Created by IntelliJ IDEA.
@@ -63,7 +63,46 @@ public class ForeachTest {
         String[] strs = {"1", "2"};
 //        注意数组没有这个foreach()方法
         System.out.println();
-        List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9 );
-        integerList.stream().filter(x -> x.intValue() > 1).forEach(System.out::print);
+        List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        integerList.stream().filter(x -> x > 1).forEach(System.out::print);
+    }
+
+    @Test
+    public void test() {
+//        普通操作来遍历一个List里面所有的元素
+//                咱们可以使用for循环进行遍历
+        List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        for (Iterator iterator = integerList.iterator(); iterator.hasNext(); ) {
+            System.out.print(iterator.next());
+        }
+
+//        使用增强型for循环
+        for (Integer integer : integerList) {
+            System.out.print(integer);
+        }
+
+//        使用Lambda表达式
+        integerList.forEach((Integer x) -> {
+            System.out.print(x);
+        });
+
+//        简化
+        integerList.forEach((x) -> System.out.print(x));
+
+//        简化到极致，一句话搞定。表白函数式编程
+        integerList.forEach(System.out::print);
+
+//        ---------------------------------滑稽的分割线-------------------------- -
+
+//                做些操作吧
+        for (Iterator<Integer> iterator = integerList.iterator(); iterator.hasNext(); ) {
+            int tempInt;
+            if ((tempInt = iterator.next()) > 5) {
+                System.out.print("没想到吧，" + tempInt + "比5大");
+            }
+        }
+
+//        简化
+        integerList.stream().filter(x -> x > 5).forEach(x -> System.out.println("没想到吧，" + x + "比5大"));
     }
 }

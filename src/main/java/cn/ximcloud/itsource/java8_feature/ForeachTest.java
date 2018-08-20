@@ -105,4 +105,36 @@ public class ForeachTest {
 //        简化
         integerList.stream().filter(x -> x > 5).forEach(x -> System.out.println("没想到吧，" + x + "比5大"));
     }
+
+    @Test
+    public void testFor() {
+        String[] strings = new String[]{"1", "2", "3", "4", "5", "6"};
+
+//        在没有增强型for循环的时候，遍历一个数组是否很难受呢？
+
+        for (int i = 0; i < strings.length; i++) {
+            System.out.println(strings[i]);
+        }
+
+//        自从学会了增强型for循环，妈妈再也不用担心我的JAVA学习辣
+
+        for (String string : strings) {
+            System.out.println(string);
+        }
+//        对List和Set进行迭代遍历
+        List<String> stringList = Arrays.asList("1", "2", "3", "4", "5", "6");
+        Iterator<String> iterator = stringList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        for (String s : stringList) {
+            System.out.println(s);
+        }
+
+        Class<?>[] interfaces = String[].class.getInterfaces();
+        for (Class<?> anInterface : interfaces) {
+            System.out.println(anInterface.getSimpleName());
+        }
+    }
 }

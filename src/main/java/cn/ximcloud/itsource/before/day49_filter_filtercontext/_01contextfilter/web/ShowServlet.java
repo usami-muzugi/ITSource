@@ -1,14 +1,12 @@
-package cn.ximcloud.itsource.day49_filter_filtercontext._01contextfilter.filter;
-
-import javax.servlet.annotation.WebFilter;
+package cn.ximcloud.itsource.before.day49_filter_filtercontext._01contextfilter.web;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-19
- * Time: 14:49
- * ProjectName: itsource.cn.ximcloud.itsource.day49_filter_filtercontext._01contextfilter.filter
+ * Time: 14:48
+ * ProjectName: itsource.cn.ximcloud.itsource.before.day49_filter_filtercontext._01contextfilter.web
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -37,6 +35,5 @@ import javax.servlet.annotation.WebFilter;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-@WebFilter(filterName = "过滤脏话")
-public class ContextFilter {
+public class ShowServlet {
 }

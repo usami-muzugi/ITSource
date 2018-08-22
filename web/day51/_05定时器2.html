@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器2</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     * 倒数多少秒之后执行这个函数
+     */
+    var id;
+    setTimeout(function () {
+        console.debug("哈哈哈声控函数牛逼！")
+    }, 3000);
+
+    /**
+     * 这里的id，可以看成是线程id
+     * 能够通过setInterval获取线程id
+     * @type {number}
+     */
+    id = setInterval(function () {
+        console.debug("雷猴！")
+    }, 1000);
+
+    /**
+     * 点击事件触发这个函数
+     */
+    function start() {
+        alert("点我干嘛！")
+    }
+
+    function stop() {
+        if (id) {
+            //这里只是把线程给停掉了，但是并没有清空id哟
+            clearInterval(id, 1000);
+            id = undefined;
+        }
+    }
+</script>
+<button onclick="start()">点我!</button>
+<button onclick="stop()">别！</button>
+</body>
+
+</html>

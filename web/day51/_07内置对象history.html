@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象history</title>
+</head>
+<script type="text/javascript">
+    /*
+        history.go(index); 在浏览器历史记录中跳转
+        history.back(); 返回浏览器之前的页面
+        history.forward();转发,前跳
+        history.length 属性 历史记录的长度
+     */
+
+    /**
+     * 在当前页面,用超链接跳到B去,这里必须是在当前页面跳转,而不是在一个新的空白页打开的这种
+     * 得到的才是相同的history内置独享
+     * 然后可以操作history.go()跳转到访问过的第N个页面
+     * 也可以操作back()函数往前一页跳转
+     * 也可以操作forward()函数往下一页跳转
+     * history.length 是一个属性,记录跳转了这么多次的长度(页面个数)
+     */
+</script>
+<body>
+<a href="_06location对象.html">history对象</a>
+<a href="javascript:void(0);" onclick="history.forward()">前进</a>
+</body>
+</html>

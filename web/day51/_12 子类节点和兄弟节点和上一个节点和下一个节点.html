@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如题</title>
+</head>
+<script type="text/javascript">
+    window.onload = function () {
+        //拿到ID为myDiv的节点
+        let elementById = document.getElementById("myDiv");
+        console.debug(elementById);
+
+        //获取她的父节点
+        let parentNode = elementById.parentNode;    //属性
+        console.debug(parentNode);
+
+        //再来获取她的节点的第一个节点
+        let firstChild = parentNode.firstChild;
+        console.debug(firstChild);
+        //这里获取的是文本节点，注意下,因为在下一个div之前是一段文字！！！
+
+        //获取她最后的一个子节点
+        let lastChild = parentNode.lastChild;
+        console.debug(lastChild);
+
+
+        //获取她的所有子节点
+        let childNodes = parentNode.childNodes;
+        console.debug(childNodes);
+
+        //通过id来获取一个元素
+        let elementById1 = document.getElementById("myLi");
+        console.debug(elementById);
+
+        //获取她上一个兄弟节点
+        //注意下li标签前后左右有空格的，这个获取到会得到一个textNode哟！！！
+        let previousSibling = elementById1.previousSibling;
+        console.debug(previousSibling);
+
+        //获取她下一个兄弟节点
+        let nextElementSibling = elementById1.nextElementSibling;
+        console.debug(nextElementSibling);
+
+    };
+
+</script>
+<body>
+<div>
+    <ul>
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+
+        <li>
+            菜单4
+            <ul>
+                <li>子类表1</li>
+                <li id="myLi">子类表2</li>
+                <li>子类表3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div>
+    你好测试一波
+    <div id="myDiv">
+        myDiv
+    </div>
+</div>
+</body>
+</html>

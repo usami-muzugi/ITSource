@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window的三个窗体</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    <!--窗体1-->
+    //一般开发的时候使用
+    //因为太丑了！！！
+    alert("你好呀！");
+
+    /*窗体2*/
+    var flag = confirm("你确定要删除吗？");
+    if (flag) {
+        console.debug("删除个咯！")
+    }
+
+    //    窗体三 ，用得更少了
+    var s = prompt("请输入合法的数字");
+    if (s typeof Number){
+        console.debug("数字" + s);
+    }else{
+        console.debug("字符" + s);
+    }
+</script>
+</body>
+</html>

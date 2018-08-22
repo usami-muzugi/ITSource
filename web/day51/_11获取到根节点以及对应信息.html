@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取根节点</title>
+</head>
+<script type="text/javascript">
+    <!--获取根节点-->
+    /**
+     * 通过document.documentElement 属性来获取root节点
+     * @type {HTMLElement}
+     */
+    let root = document.documentElement;
+    console.debug(root);
+
+    //获取内容节点body
+    window.onload = function () {
+        let body = document.body;
+        console.debug(body);
+    };
+
+    //获取网页内容的高
+    let clientHeight = root.clientHeight;
+
+    //获取网页内容的宽
+    let clientWidth = root.clientWidth;
+
+    console.debug(clientHeight);
+    console.debug(clientWidth);
+
+
+</script>
+<body>
+
+</body>
+</html>

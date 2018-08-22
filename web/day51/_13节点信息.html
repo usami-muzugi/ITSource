@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点信息</title>
+</head>
+<script type="text/javascript">
+    //要记住一定要在body之后才写JS代码
+    //或者是使用windows.onload()方法加载一下
+    window.onload = function()
+        //通过id来获取节点
+        {
+    elementById = document.getElementById("box");
+    console.debug(elementById.nodeName);//元素节点的名字
+    console.debug(elementById.nodeType);//元素节点的类型
+    console.debug(elementById.nodeValue);//元素节点得到的值永远是null
+
+    //通过这个节点的属性名来获取这个节点的属性值
+    let attribute = elementById.getAttribute("id");
+
+    console.debug(attribute);
+    //获取这个属性节点的名字
+    console.debug(attribute.nodeName);
+    //获取这个属性节点的对应的类型
+    console.debug(attribute.nodeType);
+    //获取这个属性节点的对饮的值，也就是这个id的值
+    console.debug(attribute.nodeValue);
+        }
+
+
+
+</script>
+<body>
+<div id="box">box</div>
+</body>
+</html>

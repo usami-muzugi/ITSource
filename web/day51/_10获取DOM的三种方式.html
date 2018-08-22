@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取DOM对象的三种方式</title>
+</head>
+<script type="text/javascript">
+    <!--需要用这种方法才能正常获取,或者是把脚本写在body下面-->
+    window.onload = function () {
+        //通过id获取元素节点
+        let elementById = document.getElementById("myDiv");
+        console.debug(elementById);
+
+        //通过name来获取元素节点
+        let elementsByTagName = document.getElementsByTagName("name");
+        console.debug(elementsByTagName);
+
+        //通过过Tag(标签名)来获取 标签名!!!!
+        let elementsByTagName1 = document.getElementsByTagName("input");
+        console.debug(elementsByTagName1);
+
+        //通过通配符来获取
+        let elementsByTagName2 = document.getElementsByTagName("*");
+        console.debug(elementsByTagName2);
+
+        //通过样式来获取
+        let elementsByClassName = document.getElementsByClassName("a1");
+        console.debug(elementsByClassName);
+    };
+
+    // let elementById = document.getElementById("mydiv");
+    // console.debug(elementById);
+
+</script>
+<body>
+<div id="myDiv">
+    <a class="a1"></a>
+    <a class="a1"></a>
+    <a class="a1"></a>
+    <input type="text" name="name">
+    <input type="password" name="password">
+    <input type="button" name="submit">
+    <input type="checkbox" name="hobby">
+
+
+</div>
+</body>
+</html>

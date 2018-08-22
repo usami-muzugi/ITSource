@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器位置和窗口大小</title>
+</head>
+<body>
+<script type="text/javascript">
+    <!--解决浏览器兼容性问题...-->
+    function  getWindowsSize() {
+        var x = window.screenX || x.window.screenLeft;
+        var y = window.screenY || y.window.screenTop;
+    }
+
+    console.debug(getWindowsSize().x + getWindowsSize().y);
+
+</script>
+</body>
+</html>

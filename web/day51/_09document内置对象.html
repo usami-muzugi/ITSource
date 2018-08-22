@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document内置对象</title>
+</head>
+<script type="text/javascript">
+    <!--这里是必须加在后面才能获取到body这些node-->
+    window.onload = function () {
+        //获取标题
+        let title = document.title;
+        console.debug(title);
+
+        //获取主体
+        let body = document.body;
+        console.debug(body);
+
+        //获取背景色
+        let bgColor = document.bgColor;
+        console.debug(bgColor);
+
+
+        //一个什么颜色呢...
+        let fgColor = document.fgColor;
+        console.debug(fgColor);
+
+
+        //写一行
+        document.write();
+
+        //写一行然后再换行
+        document.writeln();
+
+    };
+</script>
+<body>
+
+</body>
+</html>

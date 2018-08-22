@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器（掌握）</title>
+    <script type="text/javascript">
+        /**
+         * 第一个参数是定义我们的函数
+         * 第二个参数表示我们的毫秒时间
+         */
+        setInterval(function () {
+            console.debug("来啊！！！！！！！！快活呀！！！！！")
+        }, 1000);
+
+        function go() {
+            console.debug("go go go go!")
+        }
+
+        setInterval(go, 1000);
+
+        function gogogo(g) {
+            console.debug("go go" + g);
+        }
+
+        setInterval(gogogo(666), 10000);
+
+        //    翻译成人话就是，每隔1秒就执行function()函数
+    </script>
+</head>
+<body>
+</body>
+</html>

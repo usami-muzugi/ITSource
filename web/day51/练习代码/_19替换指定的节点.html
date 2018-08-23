@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点信息</title>
+</head>
+<script type="text/javascript">
+    function touchme() {
+        //替换子节点，这个只能替换它的子节点哟
+        document.getElementById("replace").parentNode.replaceChild(document.createElement("input"), document.getElementById("replace"));
+
+    }
+</script>
+<body>
+<input id="replace" type="button" value="替换" onclick="touchme()">
+</body>
+</html>

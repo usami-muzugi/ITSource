@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script type="text/javascript">
+        function fucktion() {
+            //获取元素
+            let in1 = document.getElementById('in1');
+            let in2 = document.getElementById('in2');
+            let run = document.getElementById('run');
+
+            //获取值
+            let var1 = in1.value;
+            let operation = run.value;
+            let var2 = in2.value;
+            let temp;
+            eval("            switch (operation) {\n" +
+                "                case \"+\" :\n" +
+                "                    temp = parseFloat(var1) + parseFloat(var2);\n" +
+                "                    break;\n" +
+                "                case \"-\" :\n" +
+                "                    temp = parseFloat(var1) - parseFloat(var2);\n" +
+                "                    break;\n" +
+                "                case \"*\" :\n" +
+                "                    temp = parseFloat(var1) * parseFloat(var2);\n" +
+                "                    break;\n" +
+                "                case \"/\" :\n" +
+                "                    temp = parseFloat(var1) / parseFloat(var2);\n" +
+                "                    break;\n" +
+                "            }");
+            // switch (operation) {
+            //     case "+" :
+            //         temp = parseFloat(var1) + parseFloat(var2);
+            //         break;
+            //     case "-" :
+            //         temp = parseFloat(var1) - parseFloat(var2);
+            //         break;
+            //     case "*" :
+            //         temp = parseFloat(var1) * parseFloat(var2);
+            //         break;
+            //     case "/" :
+            //         temp = parseFloat(var1) / parseFloat(var2);
+            //         break;
+            // }
+            let result = document.getElementById('result');
+            result.value = temp;
+
+        }
+    </script>
+</head>
+<body>
+<label for="in1"></label><input id="in1" type="number">
+<label for="run"></label><select id="run">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+</select>
+<label for="in2"></label><input id="in2" type="number">
+<input type="button" id="submit" value="=" onclick="fucktion()">
+<label>
+    <input type="text" readonly="readonly" id="result">
+</label>
+
+</body>
+</html>

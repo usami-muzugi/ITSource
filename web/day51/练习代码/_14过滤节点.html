@@ -10,11 +10,12 @@
     window.onload = function () {
         let elementById = document.getElementById("ul");
         let elementsByTagNames = elementById.getElementsByTagName("li");
+        for (var index in elementsByTagNames) {
+            if (elementsByTagNames[index]) {
+                console.debug(elementsByTagNames[index]);
+            }
+        }
     };
-
-
-
-
 </script>
 <body>
 <ul id="ul">

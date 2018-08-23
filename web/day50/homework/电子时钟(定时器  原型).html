@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>九九乘法表</title>
+    <title>电子时钟</title>
     <script type="text/javascript">
+        window.onload = function () {
+            setInterval(function () {
+                document.body.innerText = getTime();
+            }, 1000);
+        };
 
+        function getTime() {
+            var date = new Date();
+            return date.getFullYear() + '年' + (date.getMonth() + 1)
+                + '月' + date.getDate() + '日     ' + date.getHours() + "时"
+                + date.getMinutes() + '分' + date.getSeconds() + '秒';
+        }
     </script>
 </head>
 <body>

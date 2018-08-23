@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>这是title标签</title>
+		<script type="text/javascript">
+			
+			//注意：document.write能不用就不要用，因为这种方式太费内存了 ,它会把你文档之前的内容进行一个覆盖
+			window.onload = function(){
+					//获取当前页面的标题
+				console.debug(document.title);
+				//获取body节点
+				console.debug(document.body);
+				//获取当前页面的背景色
+				console.debug(document.bgColor);
+				
+				//修改标题
+				document.title="你被修改了。。";
+				//修改背景色
+				document.bgColor="green";
+				
+				document.write("嘿嘿嘿。。。");
+			}
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>哈哈哈哈
+	</body>
+</html>

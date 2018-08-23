@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function clickBtn(){
+				alert(222);
+			}
+		</script>
+	</head>
+	<body>
+		<!--注册事件方式1： 直接在html标签中注册-->
+		<input type="button" value="提交" onclick="clickBtn();"/>
+		
+		<!--注册事件方式2：通过dom对象加对应的事件进行注册-->
+		<input type="button" id="btn" value="注册方式2" />
+		
+		<script type="text/javascript">
+			/**
+			 * 语法格式： dom对象.on事件 = function(){
+			 * 		
+			 * 		  }
+			 */
+			
+			var ele = document.getElementById("btn");
+			/*
+			方式1：
+			ele.onclick = function(){
+				alert(333);
+			}
+			*/
+			ele.onclick = clickBtn2;
+			function clickBtn2(jj){
+				alert(444);
+			}
+		</script>
+	</body>
+</html>

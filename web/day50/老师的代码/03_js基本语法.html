@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			/*
+			 * js基本语法:
+				1.js申明变量的时候,严格区分大小写
+				2.js命名方式和java一样
+				3.js申明数据类型的时候,统一使用var来表示
+			*/
+		
+			/*
+			 * 
+			申明数据类型  var 的示例
+			var a = 2;
+			alert(a);
+			
+			*/
+			
+			//IsNaN():  判断是否   不是一个数字    是一个数字：false   不是一个数字：true
+			alert(isNaN("2"));
+			
+			alert(typeof  123);//判断数据为什么类型   打印效果是：number   在js中小数，整数都是number类型
+			alert(typeof  "123");//string  字符串类型
+			alert(typeof true);//boolean  布尔类型
+			var obj = new Object();
+			alert(typeof obj);//object  对象类型
+			//Number(数字类型)  把其它数据类型转为数字类型
+			var num =Number("123");
+			alert(typeof num);
+			num =Number("12.3");
+			alert(typeof num);
+			num =Number("1a");// NaN  NOT  a  Number   不是一个数字
+			alert("=========="+num);
+			
+		/*	Number转数字类型: 前提条件必须是数字类型的字符串,非数字类型的字符串是转不了的*/
+			
+			
+		// js里面的字符串要特殊一点，  单引号也表示是一个字符串   双引号也是表示一个字符串
+		//示例：  "a"  'a'  这2个效果是一样的都表示字符串     注意： 在定义字符串的时候，不要一单一双
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

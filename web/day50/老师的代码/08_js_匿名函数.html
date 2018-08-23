@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function show(a){
+				console.debug("show show");
+			}
+			show();
+			
+			/**
+			 * 匿名函数： 没有名字的函数就叫做匿名函数
+			 * 
+			 * 函数既是方法也是对象
+			 */
+			var show2 = function(a){
+				console.debug("hello 师姐"+a);
+			}
+			
+			show2();
+
+			show2(2);
+			
+			
+			var show3 = show2;
+			show3();			
+			
+			
+			/*
+			ReferenceError: a is not defined   a没有定义这个变量
+			console.debug(a);
+			
+			何时会打印undefined
+			申明了变量，没有赋值
+			*/
+		</script>
+		
+	</head>
+	<body>
+		
+		ddd
+	</body>
+</html>

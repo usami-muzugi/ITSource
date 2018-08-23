@@ -1,0 +1,110 @@
+1。定时器
+	setInterval(函数,毫秒)    每个指定的毫秒时间 执行一次函数，它会返回一个定时器的id，
+						          我们可以通过clearInterval(定时器id)清除指定的定时器
+						          
+	setTimeOut(函数,毫秒)     它在指定的毫秒时间执行1次函数
+	
+	
+					          
+2.location 对象
+  location.href 获取当前窗体的url地址
+  
+  location.href="url"  重定向到指定的url地址
+  
+  location.reload   刷新当前页面
+  
+3.history历史对象
+
+  history.back()  向后退
+  history.forward() 向前进
+  history.length()  获取所有的历史长度
+  history.go(数子)  向指定的数子前进历史    
+
+4.navigator:浏览器对象
+	navigator.userAgen  获取当前浏览器的信息
+	
+5.document 文档对象
+	document.title
+	document.body
+	document.bgColor
+	
+6.获取dom的几种方式
+	1.document.getElementById("id") 通过id获取dom对象
+	2.documen.getElementsByName("name") 通过名字获取dom列表，操作列表把它当成是一个数组操作就可以了
+	3.document.getElementsByTagName("tagName") 通过标签名获取元素列表
+	4.document.getElementsByTagName("*")用的不多，获取当前页面所有的标签元素
+	5.document.getElementsByClassName("className") 通过样式名获取元素列表
+	
+注意： Element可以循环使用对应的get...方法，如：
+     var bigDiv = document.getElementById(‘bigDiv’);
+     var allAelements = bigDiv.getElementsByTagName(‘a’);
+     
+7.获取根节点
+	var root = document.documentElement;
+	root.clientWidth() 获取浏览器的宽度
+	root.clientHeight() 获取浏览器的高度
+	
+8.获取节点列表
+	节点列表	
+		parentNode	父节点
+		firstChild	列表中的第一个节点
+		lastChild	列表中的最后一个节点
+		childNodes	所有子节点的列表
+		previousSibling	上一个兄弟节点
+		nextSibling	下一个兄弟节点
+		
+		每个节点都有以下信息
+			nodeName	节点名称
+			nodeValue	节点值
+			nodeType	节点类型
+			
+		元素节点
+		nodeName   元素标签名
+		nodeValue   null
+		nodeType    1
+		
+		属性节点
+		nodeName   属性名
+		nodeValue  属性值
+		nodeType    2
+		
+		文本节点
+		
+		nodeName   #text
+		nodeValue  文本内容
+		nodeType    3
+	
+9.操作dom节点的常用方法
+	1.appendChild   追加子节点
+	2.removeChild   删除子节点
+	3.replaceChild  替换子节点
+	4，insertBefore(newnode, refnode)
+	5.createElement  创建元素
+
+10.innerHTML和innerText的区别：
+	获取值：
+		innerHTML:获取所有的html代码
+		innerText：获取所有的纯文本内容
+		
+	设置值：
+		innerHTML： 如果你设置的值有html代码，它会被浏览器所解析
+		innerText： ： 如果你设置的值有html代码，它不会被浏览器所解析，它只会作为一个纯文本进行展示
+
+
+11.属性操作
+	1.内置属性（IDE工具自动提示出来的）
+		获取值：  dom对象.属性
+		设置值： dom对象.属性=xxx
+	
+	2.自定义属性
+		获取值： getAttribute()
+		设置值： setAttribute()
+		
+	3.特殊属性的操作
+		disabled     true/false   禁用 
+		readOnly     true/false   只读
+		checked      true/false   是否被选中
+		className    设置样式
+		style.width  设置宽度
+
+	

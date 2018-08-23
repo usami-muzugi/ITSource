@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*函数也可以看成是一个对象*/
+			function person(){
+				
+			}
+			//函数赋值
+			person.pname="张三";
+			person.page = 11;
+			person.sayHello = function(){
+				console.debug("hello 师姐");
+			}
+			
+			//对象取值
+			console.debug(person.pname);
+			console.debug(person.page);
+			
+			//对象调用函数
+			person.sayHello();
+			
+			console.debug(person);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.score{
+				border: 5px solid greenyellow;	
+				width: 70px;
+				height: 60px;		
+				text-align: center;
+				line-height: 60px;
+				font-size: 30px;	
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			
+			.letter{
+				width: 60px;
+				height: 60px;
+				border: 1px solid black;
+				text-align: center;
+				line-height: 60px;
+				background-color: black;
+				color: white;
+				font-size: 50px;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			
+			//定义一个letters数组，该数组是专门用来存储所有div标签的
+			var letters = [];
+			
+			/**
+			 * 产生的随机字符
+			 */
+			function randomLetter(){
+				//创建元素标签
+				var ele = document.createElement("div");//<div></div>
+				//设置对应的样式
+				ele.className = "letter";
+				
+				//A-Z对应的unicode（65-91）  产生的数字应该是65-91
+				var randomNum = Math.floor(Math.random()*26+65);
+				
+				//把unicode编码转为英文字符
+				var randomChar = String.fromCharCode(randomNum);
+				//设置一个对应的内容
+				ele.innerHTML=randomChar;
+				//距离左边的100
+				var left = 100;
+				//距离右边的
+				var right = document.documentElement.clientWidth - 120;
+				
+				var randomLeft = Math.random()*(right-left)+left;
+				//设置元素标签的位置
+				ele.style.left = randomLeft+"px";
+				
+				//把ele标签放到body标签内部
+				document.body.appendChild(ele);
+				//追加元素
+				letters.push(ele);
+			}
+			
+			/**
+			 * 把所有div组件向下偏移
+			 */
+			function moveLetter(){
+				var clientHeight = document.documentElement.clientHeight-80;
+				//循环所有的div元素标签
+				for(var k in letters){
+					//当前div元素标签距离顶部的距离
+					var offsetTop = letters[k].offsetTop;
+					//如果当前元素的偏移量大于了窗体的高度
+					if(offsetTop > clientHeight){
+						//删除dom里面的元素
+						document.body.removeChild(letters[k]);
+						//删除数组里面的元素
+						letters.splice(k,1);
+						//分数自减
+						document.getElementById("score").innerHTML--;
+					}else{
+						//得到每个div元素标签，给每个div标签重新设置距离上边的距离
+						//letters[k].offsetTop 当前元素距离顶部的距离
+						letters[k].style.top = (letters[k].offsetTop+2)+"px";
+					}
+				}
+			
+			}
+			/**
+			 * 给当前根节点加一个键盘事件
+			 */
+			
+			function addListener(){
+				var e = window.event||arguments[0];
+				//得到是unicode值
+				var keyCode = e.keyCode;
+				//把unicode转为字符
+				var charCode = String.fromCharCode(keyCode);
+				//把所有的小写字符转为大写字符
+				charCode = charCode.toUpperCase();
+				
+				//循环所有的div元素
+				for(var i=0;i<letters.length;i++){
+					if(charCode===letters[i].innerHTML){//如果输入的字符和数组里面的字符相等
+						//dom对象也要移除对应的元素
+						document.body.removeChild(letters[i])
+						//移除数组里面的元素
+						letters.splice(i,1);
+						//分数应该自增
+						document.getElementById("score").innerHTML++;
+						//结束循环
+						break;
+						
+					}
+				}
+			}
+			
+			//随机产生字符的id
+			var randomLetterID;
+			
+			//移动的id
+			var moveLetterID;
+			
+			function startGame(){
+				document.getElementById("start").disabled = true;
+				document.getElementById("pause").disabled = false;
+				randomLetterID = setInterval(randomLetter,500);
+			
+				moveLetterID = setInterval(moveLetter,100);
+				//添加监听事件
+				document.documentElement.addEventListener("keypress",addListener);
+				
+			}
+			
+			function pauseGame(){
+				document.getElementById("pause").disabled = true;
+				document.getElementById("start").disabled = false;
+				//清空定时器
+				clearInterval(randomLetterID);
+				clearInterval(moveLetterID);
+				//清空监听事件
+				document.documentElement.removeEventListener("keypress",addListener);
+				
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<input id="start" type="button" onclick="startGame()" value="开始游戏"/><br/>
+		<input id="pause" type="button" onclick="pauseGame()"   value="暂停游戏"/> <br/>
+		<div id="score" class="score">0</div>
+	</body>
+</html>

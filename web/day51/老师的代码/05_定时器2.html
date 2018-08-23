@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			setTimeout(function(){
+				console.debug("timeout...............延迟3s之后，执行function内部的函数，只会执行一次");
+			},3000);
+			
+
+			var id;
+			
+			function start(){
+				if(!id){
+					id = setInterval(function(){
+						console.debug("go go go");
+					},1000);
+				}
+			}
+			
+			function stop(){
+				if(id){
+					clearInterval(id);
+					id = null;
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<button onclick="start();">开始</button>
+		<button onclick="stop();">暂停</button>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<input id="btn" type="button" value="按钮" />
+		
+		<script type="text/javascript">
+			/*
+				优点: 简单，多浏览器支持
+				缺点: 不支持多个事件,不支持取消事件
+				var clickBtn = document.getElementById("btn");
+				clickBtn.onclick = function(){
+					console.debug("2222222");  
+				}
+				clickBtn.onclick = function(){
+					console.debug("333333333");
+				}
+			*/
+			var clickBtn = document.getElementById("btn");
+			/**
+			 * 第一个参数：  你具体添加的是什么事件（注意：不能加on）
+			 * 第二个参数： function的函数，当事件触发之后，它就会去执行该function函数
+			 * 
+			 * 添加事件监听器
+			 * 
+			 * 缺陷： 兼容性太差了
+			 * 
+			 */
+			
+			
+			//解决兼容性问题
+			if(clickBtn.attachEvent){
+				clickBtn.attachEvent("onclick",function(){
+					alert("1111111111");
+				});
+				
+				clickBtn.attachEvent("onclick",function(){
+					alert("2222222222");
+				});
+			}else{
+				clickBtn.addEventListener("click",function(){
+					console.debug("XXXXXXXXXXXXXXXX");
+				});
+				clickBtn.addEventListener("click",function(){
+					console.debug("YYYYYYYY");
+				});
+			}
+			
+			
+			
+			
+			//IE8以下就不支持了
+			/*clickBtn.addEventListener("click",function(){
+				console.debug("XXXXXXXXXXXXXXXX");
+			});
+			clickBtn.addEventListener("click",function(){
+				console.debug("YYYYYYYY");
+			});*/
+		</script>
+	</body>
+</html>

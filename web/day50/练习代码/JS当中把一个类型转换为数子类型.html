@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS当中把一个类型转换为数子类型</title>
+    <script type="text/javascript">
+        /*
+parseInt() 把字符串转为一个整数
+前提：前面第一个字符必须是数字型字符串，如果你的字符串中间才有数字，第一个不是数字，所以就得到最终结果值NaN
+
+parseFloat() 把字符串转为一个浮点数 和 parseInt原理一样
+*/
+
+        var P = "3.1";
+        let number = parseInt(P);
+        console.debug("3.1的值" + number);
+        console.debug("3.5的值" + parseInt(3.5));
+        console.debug("3.6的值" + parseInt(3.6));
+        //看来这个pareInt就是直接取它的整数部分
+        //这里可以看到只能转换的是数字在前字符在后的字符串
+        //其他的就现实为NaN Not a Number (不是个数字)
+        console.debug("a31的值" + parseInt('a31'));
+        console.debug("31a的值" + parseInt('31a'));
+
+        //同理，parseFloat()就是将一个字符串转换为一个float数字
+        console.debug("a31.11的值" + parseFloat('a31.11'));
+        console.debug("31.11a的值" + parseFloat('31.11111111111a'));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS当中函数重载的问题</title>
+    <script type="text/javascript">
+        <!--在JS当中,是没有JAVA的重载的,所有JS当中出现两个函数名相同的函数的时候,会使用最后的一个函数-->
+        function method(a, b, c) {
+            consol.defineProperties("show " + a + b + c);
+        }
+
+        function method() {
+            console.debug("show show show");
+        }
+
+        method(1, 2, 3);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

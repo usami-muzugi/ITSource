@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var li = document.getElementById("myli");
+				//获取上一个兄弟元素节点
+				console.debug(li.previousSibling);
+				
+				//获取到下一个兄弟元素节点
+				console.debug(li.nextSibling);
+			}
+		</script>
+	</head>
+	<body>
+	
+		<ul>
+			<li>菜单1</li>
+			<li id="myli">菜单2</li><li>菜单3</li>
+			<li>菜单4</li>
+		</ul>
+		
+	</body>
+</html>

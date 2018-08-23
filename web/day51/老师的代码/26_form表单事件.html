@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function checkForm(){
+				var username = document.getElementById("username").value;
+				if(!username){
+					alert("用户名必填。。。");
+					return false;
+				}
+				if(username.length>=7){
+					alert("用户名太长了。。。");
+					return false;
+				}
+				return true;
+			}
+			
+			//自定义重置
+			function resetForm(){
+				return false;
+			}
+			
+			function changeSelect(ele){
+				console.debug(ele.value);
+			}
+			function focusForm(){
+				console.debug("获取焦点了。。。。");
+			}
+			
+			function blurForm(){
+				console.debug("失去焦点。。。。。。。。。");
+			}
+		</script>
+	</head>
+	<body>
+		
+		<!--
+			onsubmit:在提交之间先执行onsubmit对应的函数
+			注意： onsubmit 对应的 函数必须要返回一个true或者false
+			
+			onreset: 在重置之前先执行该事件对应的函数
+			默认的重置一般不满足我们的现状了，我们需要自定义重置方式
+			
+			onchange:当值改变之后，就触发该事件
+		
+		-->
+		<form method="post" onreset="return resetForm();" onsubmit="return checkForm();" action="">
+			<input id="username" type="text" /><br />
+			
+			<!--获取焦点-->
+			<input type="text" onfocus="focusForm();" />
+			
+			<!--失去焦点-->
+			<input type="text" onblur="blurForm()" />
+			
+			
+			
+			<select onchange="changeSelect(this);">
+				<option value="zh">中国</option>
+				<option value="us">美国</option>
+				<option value="en">英国</option>
+			</select>
+			
+			<input type="submit" value="提交" />
+			<input type="reset"  value="重置"/>
+			
+		</form>
+		
+	</body>
+</html>

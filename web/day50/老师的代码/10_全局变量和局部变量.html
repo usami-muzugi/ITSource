@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 * java中的全局变量与局部变量
+			 * 	全局变量： 
+			 * 		1.申明在类中的变量就称为是全局变量
+			 * 		2.在整个类中都可以访问成员变量
+			 * 		3.成员变量如果没有赋予初始值，系统会给它一个初始化的默认值，不同的数据类型，默认值是不一样的
+			 * 
+			 *  局部变量：
+			 * 		1.申明在方法内部的变量都称为是局部变量
+			 * 		2.只能在局部范围才能访问
+			 * 		3.在使用局部变量之前，必须赋予值
+			 * 
+			 * 
+			 * js中全局变量：
+			 * 		1.在同一个页面中，申明在函数外的变量就称为是全局变量
+			 * 		2.全局变量是window级别的变量
+			 * 		3.如果在函数内部申明变量，没有加var申明，它会自动提升为window级别
+			 * 
+			 * window级别的变量，函数，是能在整个页面中都能访问的
+			 * 
+			 * window: 每个页面都有一个window对象，window对象是一个内置对象
+			 * 
+			 * js中局部变量：
+			 * 		1.申明在函数内部的变量就称为是局部变量(必须在函数内部申明var)
+			 * 
+			 * 	
+			 * 
+			 */
+			
+			/*
+				function show(){
+					var msg = "ddd";
+				}
+				show();
+				alert(msg);//   msg is not defined    msg没有定义
+						
+			*/
+			
+			var msg = "全局变量";
+			function show(){
+				var msg; 
+				msg = "局部变量";
+			}
+			alert(msg);
+			show();//全局变量
+						
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

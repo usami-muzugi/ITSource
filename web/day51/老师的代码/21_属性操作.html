@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			js操作属性
+				1.自定义属性的操作
+					自己定义的属性就叫做自定义属性
+					获取自定义属性的值： dom对象.getAttribute("属性名")
+					设置自定义属性的值： dom对象.setAttribute("属性名","值")
+				2.内置属性的操作
+					通过ide工具，会自动提示出来的，就叫做内置属性
+					获取内置属性的值：  dom对象.属性名
+					设置内置属性的值：  dom对象.属性名='xxxx';
+			*/
+			window.onload = function(){
+				//获取内置属性的值
+				var ele = document.getElementById("username");
+				console.debug(ele.value);
+				//设置内置属性的值
+				ele.value="你呗修了。。";
+				
+				console.debug("自定义属性："+ele.getAttribute("myAttr"));
+				//修改自定义属性的值
+				ele.setAttribute("myAttr","哈哈哈哈");
+			}
+		</script>
+	</head>
+	<body>
+		<input id="username" myAttr="自定义的" type="text" value="张三"/>
+	</body>
+</html>

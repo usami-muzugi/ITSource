@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的匿名函数</title>
+    <script type="text/javascript">
+        /*普通的函数*/
+        function method(){
+            console.debug("这个是普通的函数，是有函数名的")
+        }
+
+        //调用函数
+        method();
+
+        /*JS的匿名函数的学习
+        * 这个是匿名函数，发现没有，函数没有函数名，所以这个就是匿名函数嘛...*/
+        /*所以可以把这个函数赋值给一个变量，于是这个变量(对象)又是一个对象又是一个函数*/
+        var func = function () {
+            console.debug("匿名函数了解一下，要来一打吗？")
+
+        };
+        /*怎么调用呢？*/
+
+        func();
+
+        var func2 = function (a, b) {
+            console.debug(a, b);
+        };
+
+        /*undefined undefined
+        * 为什么会打印undefined呢？因为没有定义这个变量，所以...
+        *
+        * */
+        func2();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

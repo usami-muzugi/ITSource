@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS函数即对象</title>
+    <script type="text/javascript">
+        /*JS当中函数就是一个对象，这就有点牛逼了*/
+        function func() {
+            console.debug("我是有名的函数")
+        }
+
+        //给函数赋值
+        //对了对了忘记说了，name是函数的固有属pp性这个...很僵硬不能这么操作
+        func.pname = "usami";
+        func.age = 18;
+        func.get = function () {
+            //这个有点牛逼，要用this来调用
+            console.debug(this.pname + "---" + this.age);
+
+        };
+
+        /*测试一下*/
+        func();
+        //func().get()
+        //不能这么写，这样写就是函数调用函数
+        func.get();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

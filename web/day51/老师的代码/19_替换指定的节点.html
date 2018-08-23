@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="myDiv">mydiv</div>
+		
+		<input type="text" id="username" />
+		
+		<script type="text/javascript">
+			var myDiv = document.getElementById("myDiv");
+			var username = document.getElementById("username");
+			
+			//replaceChild  删除老节点，由新节点代替它
+			myDiv.parentNode.replaceChild(username,myDiv);
+			
+		</script>
+	</body>
+</html>

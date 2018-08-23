@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的URL的编码和解码以及深度编解码</title>
+    <script type="text/javascript">
+        var url = "https://www.ximcloud.cn?name=百度";
+
+        /*JS自带一个函数*/
+        var encodeUri = encodeURI(url);
+        console.debug("编码后URI" + encodeUri);
+
+        let s = decodeURI(encodeUri);
+        console.debug("解码后的URI" + s);
+
+        //    注意一下JS还有一个 深度编码
+        //意思就是说深度编码会把https://当中的://也给编码了
+        let s1 = encodeURIComponent(url);
+        console.debug("深度解码后的URI: " + s1);
+
+        // 解码一下
+        let s2 = decodeURIComponent(s1);
+        console.debug("深度解码后的URI: " + s2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

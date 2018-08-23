@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的基本语法2</title>
+    <script type="text/javascript">
+        var a = 0.1;
+        var b = 0.2;
+        //浮点型数据相加减，得到的也是一个不精确的浮点数
+        console.debug(a + b);
+    //    && || ！ 的用法
+
+        console.debug(true || true);
+        console.debug(true || false);
+        console.debug(true && false);
+        console.debug(true && true);
+        console.debug(1 && 0);
+    //    值得注意的地方就是，在JS里面，只有 0   false   null  undefined NaN,其它的值都为true
+
+        console.debug("1" == 1);
+    //    true,因为两个等号比较的是其值
+        console.debug("1" === 1);
+    //    false,应为三个等号先比较的是这两个对象的类型，之后才是值
+
+    //    简单的for循环
+        for (var i = 1;i<=10;i++) {
+            console.debug(i);
+        }
+
+    //    条件判断
+        if ("1"==1) {
+            console.debug("两个等号比较的是其值")
+        } else if ("1" === 1) {
+            console.debug("三个等号比较的是其类型，类型正确才是比较的其值")
+
+        } else {
+            console.debug("怎么可能")
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * java的重载：
+			 * 		1.必须在同一个类中
+			 * 		2.方法名相同，形参列表不同
+			 * 		3.和修饰符返回值类型无关
+			 * 
+			 * 好处： 减少程序员的记忆量
+			 * 
+			 * js重载： js没重载
+			 * 
+			 * 建议大家以后写js代码时候，不要写相同的函数名
+			 */
+			
+			function show(a,b){
+				console.debug("show 二波。。。。");
+			}
+			function show(){
+				console.debug("show 一波。。。");
+			}
+			
+			
+			show(1,2);//调用函数是和参数没有关系的，如果在一个文件内，
+					//有多个函数名相同的，它总是使用的最后一个函数，因为最后一个函数会把前面的函数进行覆盖
+		
+			
+			
+		
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+		
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			
+		
+		</title>
+		<!--
+			js存放的位置： 它除了title标签内部不可以放，其它地方都可以存放
+			官网推荐存放位置： 放到title结束标签后面，head标签内部
+		-->
+		<script type="text/javascript">
+			/*当页面内容加载完毕之后,执行function内部的代码*/
+			window.onload = function(){
+				var mydiv = document.getElementById("myDiv");
+				console.debug(mydiv);
+				var username = document.getElementById("username");
+				console.debug(username);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="myDiv">哈哈哈
+			<input type="text" id="username" />
+		</div>
+		<!--
+		<div style="width: 100%;height: 1000px;background-color: yellow;">
+			<div style="width: 100%;height: 200px;background-color: green;"></div>
+			<div style="width: 100%; height: 800px;background-color: violet;"></div>
+		</div>
+		-->
+	</body>
+	
+	
+</html>
+

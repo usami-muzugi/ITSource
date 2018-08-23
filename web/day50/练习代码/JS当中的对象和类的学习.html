@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS当中的类和对象</title>
+    <script type="text/javascript">
+        //在JS当中创建对象，仅仅是把函数名的首字母大写了就可以了，来，试一把
+        function Lu(Lname, Lage) {
+            this.Lname = Lname;
+            this.Lage = Lage;
+        }
+
+        var lu = new Lu("卢思颖", 25);
+
+        //给这个对象添加属性
+        lu.bf = "usami";//羞耻
+        lu.say = function () {
+            alert("hello!")
+        };
+        console.debug(lu);
+
+        //取对象的值
+        var age = lu.Lage;
+        var _name = lu.Lname;
+
+        console.debug("name: " + _name);
+        console.debug("age: " + age);
+
+        lu.say();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

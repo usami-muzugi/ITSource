@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+				click、                点击事件
+				dblclick、        双击事件
+				mousedown、     鼠标按下
+				mouseup、	鼠标释放
+				mouseout、	鼠标移出
+				mouseover、     鼠标移入
+				mousemove   鼠标移动
+			*/
+			function doIt(cle){
+				console.debug("事件："+cle);
+			}
+		</script>
+	</head>
+	<body>
+		
+		<!--点击事件-->
+		<input type="button" value="点击" onclick="doIt('click');" />
+		<!--双击事件-->
+		<input type="button" value="双击" ondblclick="doIt('db_click');" />
+		<!--按下与释放的事件-->
+		<input type="button" value="按下和释放" onmouseup="doIt('up_click')" onmousedown="doIt('down_click')" />
+		<!--鼠标移入和移除-->
+		<input type="button" value="移入和移除" onmouseover="doIt('鼠标移入')" onmouseout="doIt('鼠标移出')" />
+		
+		<!--鼠标移动-->
+		<input type="button" value="鼠标移动" onmousemove="doIt('鼠标移动')"  />
+	</body>
+</html>

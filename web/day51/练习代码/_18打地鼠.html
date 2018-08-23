@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打地鼠</title>
+    <style type="text/css">
+        .dp {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        setInterval(window.onload = function () {
+            let img = document.createElement("img");
+            img.src = "img/IMG_3036.JPG";
+            img.className = "dp";
+            var hight = Math.random() * document.documentElement.clientHeight;
+            var width = Math.random() * document.documentElement.clientWidth
+            img.style.top = hight + "px";
+            img.style.left = width + "px";
+            img.style.borderRadius = "45px";
+            document.body.appendChild(img)
+        }, 1000);
+    </script>
+</head>
+<body>
+</body>
+</html>

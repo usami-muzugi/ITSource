@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 * keydown、   键盘按下
+			 * keyup   键盘释放
+			 * keypress、 某个键盘按键被按下并松开。
+			 * 
+			 */
+			function doIt(ele){
+				console.debug("键盘："+ele);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<!--onkeydown="doIt('down...')" onkeyup="doIt('up')"--> 
+		<input type="text" onkeypress="doIt('测试')" />
+	</body>
+</html>

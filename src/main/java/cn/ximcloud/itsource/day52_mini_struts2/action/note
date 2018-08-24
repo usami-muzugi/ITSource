@@ -1,0 +1,1 @@
+一个思想，就是不在是一个Servlet了，专注业务处理不在继承或实现HttpSerevlet Servlet

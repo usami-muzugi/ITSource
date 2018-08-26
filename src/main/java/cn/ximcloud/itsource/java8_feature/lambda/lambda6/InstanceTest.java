@@ -2,8 +2,6 @@ package cn.ximcloud.itsource.java8_feature.lambda.lambda6;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -102,7 +100,7 @@ public class InstanceTest {
 
     /**
      * 使用Lambda表达式
-     *  简写实例方法引入
+     * 简写实例方法引入
      */
     @Test
     public void test3() {

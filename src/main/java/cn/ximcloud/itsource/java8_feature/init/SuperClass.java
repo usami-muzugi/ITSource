@@ -36,6 +36,8 @@ package cn.ximcloud.itsource.java8_feature.init;
  **/
 
 public class SuperClass {
+    public static int value = 123;
+
     static {
         System.out.println("SuperClass init");
     }
@@ -43,6 +45,4 @@ public class SuperClass {
     public static void print() {
         System.out.println("SuperClass staticMethod");
     }
-
-    public static int value = 123;
 }

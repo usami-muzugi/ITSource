@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		
-		<!--
-			方式3：使用外链接的方式，引入第三方的文件
-			使用场景： 
-				1.多个页面都需要引入该js文件（多个html页面共享同分js文件）
-				
-		-->
-		<script type="text/javascript" src="index.js">
-		
-		</script>
-		
-		<script type="text/javascript">
-			/*
-			 * 
-			 * 方式1：直接在script标签内部写js代码
-			 * 使用场景： 
-			 * 		1.该js代码只适合当前页面
-			 * 
-			 */
-			alert(2);
-		</script>
-	</head>
-	<body>
-		<!--
-			方式2：直接在html代码中编写js代码
-			使用场景：
-					1.只能编写非常简单的js代码
-		-->
-		<a href="javascript:alert(3);">点我一下</a>  <!--这种方式可以，当时官网不推荐-->
-		<div style="height: 1000px;background-color: red;"></div>
-		<a href="#" onclick="alert(555)">点我一下222</a>   <!--这种方式不推荐使用，因为你点击它之后，它会给你的url地址加一个#号，并且会跳到当前页面最上面-->
-		<a href="javascript:alert(33333);">点我一下33333</a> <!--这种方式可以，当时官网不推荐-->
-		<!--以下推荐方式使用-->
-		<a href="javascript:void(0);" onclick="alert('标准')">标准写法</a>
-		<!--简写方式-->
-		<a href="javascript:;" onclick="alert('标准2')">标准写法2</a>
-		
-		
-		<!--
-		js引入三种方式注意事项：
-			1.如果你是使用的方式3，直接用的外链接方式，那就不能在script标签内部写js代码
-			2.如果你是使用的方式3，直接用的外链接方式，你只能是双标签，不能是单标签
-		-->
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!--
+        方式3：使用外链接的方式，引入第三方的文件
+        使用场景：
+            1.多个页面都需要引入该js文件（多个html页面共享同分js文件）
+
+    -->
+    <script type="text/javascript" src="index.js">
+
+    </script>
+
+    <script type="text/javascript">
+        /*
+         *
+         * 方式1：直接在script标签内部写js代码
+         * 使用场景：
+         * 		1.该js代码只适合当前页面
+         *
+         */
+        alert(2);
+    </script>
+</head>
+<body>
+<!--
+    方式2：直接在html代码中编写js代码
+    使用场景：
+            1.只能编写非常简单的js代码
+-->
+<a href="javascript:alert(3);">点我一下</a>  <!--这种方式可以，当时官网不推荐-->
+<div style="height: 1000px;background-color: red;"></div>
+<a href="#" onclick="alert(555)">点我一下222</a>   <!--这种方式不推荐使用，因为你点击它之后，它会给你的url地址加一个#号，并且会跳到当前页面最上面-->
+<a href="javascript:alert(33333);">点我一下33333</a> <!--这种方式可以，当时官网不推荐-->
+<!--以下推荐方式使用-->
+<a href="javascript:void(0);" onclick="alert('标准')">标准写法</a>
+<!--简写方式-->
+<a href="javascript:;" onclick="alert('标准2')">标准写法2</a>
+
+
+<!--
+js引入三种方式注意事项：
+    1.如果你是使用的方式3，直接用的外链接方式，那就不能在script标签内部写js代码
+    2.如果你是使用的方式3，直接用的外链接方式，你只能是双标签，不能是单标签
+-->
+</body>
 </html>

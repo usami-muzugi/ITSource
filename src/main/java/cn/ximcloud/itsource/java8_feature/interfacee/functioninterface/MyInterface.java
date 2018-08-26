@@ -37,11 +37,10 @@ package cn.ximcloud.itsource.java8_feature.interfacee.functioninterface;
 //    加上函数式接口的注解可以判定其是否是一个函数式接口，有点类似@Override的性质
 @FunctionalInterface
 public interface MyInterface {
-//    函数式接口的定义就是，在一个接口的里面，仅仅只能有一个抽象方法，其他的方法数量不限定的
-    void method();
     static void method1() {
 
     }
+
     static void method1(String s) {
 
     }
@@ -49,6 +48,10 @@ public interface MyInterface {
     static void method1(Integer id) {
 
     }
+
+    //    函数式接口的定义就是，在一个接口的里面，仅仅只能有一个抽象方法，其他的方法数量不限定的
+    void method();
+
     default void method2() {
 
     }

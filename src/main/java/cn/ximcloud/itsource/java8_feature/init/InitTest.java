@@ -1,7 +1,5 @@
 package cn.ximcloud.itsource.java8_feature.init;
 
-import cn.ximcloud.itsource.java8_feature.init.SubClass;
-import cn.ximcloud.itsource.java8_feature.init.SuperClass;
 import org.junit.Test;
 
 /**

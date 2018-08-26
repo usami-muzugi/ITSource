@@ -1,8 +1,8 @@
-package cn.ximcloud.itsource.day52_mini_struts2.filter;
+package cn.ximcloud.itsource.before.day52_mini_struts2.filter;
 
-import cn.ximcloud.itsource.day52_mini_struts2.config.ActionConfig;
-import cn.ximcloud.itsource.day52_mini_struts2.config.ResultConfig;
-import cn.ximcloud.itsource.day52_mini_struts2.context.ActionContext;
+import cn.ximcloud.itsource.before.day52_mini_struts2.config.ActionConfig;
+import cn.ximcloud.itsource.before.day52_mini_struts2.config.ResultConfig;
+import cn.ximcloud.itsource.before.day52_mini_struts2.context.ActionContext;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -29,7 +29,7 @@ import java.util.Map;
  * @author: wzard
  * @date: 2018-08-24
  * Time: 19:18
- * ProjectName: itsource.cn.ximcloud.itsource.day52_mini_struts2.filter
+ * ProjectName: itsource.cn.ximcloud.itsource.before.day52_mini_struts2.filter
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -59,7 +59,7 @@ import java.util.Map;
  **/
 
 public class CoreFilter extends HttpFilter {
-    private Map<String, ActionConfig> actionConfigMap = new HashMap<>();
+    private Map<String, ActionConfig> actionConfigMap;
     private ActionConfig actionConfig;
     private Map<String, ResultConfig> resultConfigMap;
 
@@ -70,13 +70,14 @@ public class CoreFilter extends HttpFilter {
         try {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             Document document = documentBuilder.parse(destXML);
-            NodeList actiones = document.getElementsByTagName("action");
-            for (int i = 0; i < actiones.getLength(); i++) {
-                Element action = (Element) actiones.item(i);
+            NodeList actions = document.getElementsByTagName("action");
+            actionConfigMap = new HashMap<>(actions.getLength());
+            for (int i = 0; i < actions.getLength(); i++) {
+                Element action = (Element) actions.item(i);
                 String name = action.getAttribute("name");
                 String aClass = action.getAttribute("class");
                 String method = action.getAttribute("method");
-                ActionConfig actionConfig = new ActionConfig(name, aClass, method);
+                actionConfig = new ActionConfig(name, aClass, method);
 
                 NodeList results = action.getElementsByTagName("result");
                 for (int j = 0; j < results.getLength(); j++) {
@@ -91,7 +92,6 @@ public class CoreFilter extends HttpFilter {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-        System.out.println(actionConfigMap);
     }
 
     @Override
@@ -118,7 +118,6 @@ public class CoreFilter extends HttpFilter {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("放行了");
             chain.doFilter(request, response);
         }
     }

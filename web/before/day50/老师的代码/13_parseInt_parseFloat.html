@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			/*
-			parseInt()  把字符串转为一个整数
-						前提：前面第一个字符必须是数字型字符串，如果你的字符串中间才有数字，第一个不是数字，所以就得到最终结果值NaN
-			
-			parseFloat()  把字符串转为一个浮点数  和  parseInt原理一样
-			*/
-			var num = parseInt("123");
-			console.debug(num,typeof num);
-			num = parseInt("125.9999");// 把小数型字符串转为整数，它没有四舍五入
-			console.debug(num,typeof num);//125
-			num = parseInt("12abc");
-			console.debug(num,typeof num);//12
-			
-			num = parseInt("a12bc");
-			console.debug(num);//NaN   Not a Number
-			console.debug("============================================");
-			
-			num = parseFloat("b55.22a");
-			console.debug(num);
-			
-		</script>
-	</head>
-	<body>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*
+        parseInt()  把字符串转为一个整数
+                    前提：前面第一个字符必须是数字型字符串，如果你的字符串中间才有数字，第一个不是数字，所以就得到最终结果值NaN
+
+        parseFloat()  把字符串转为一个浮点数  和  parseInt原理一样
+        */
+        var num = parseInt("123");
+        console.debug(num, typeof num);
+        num = parseInt("125.9999");// 把小数型字符串转为整数，它没有四舍五入
+        console.debug(num, typeof num);//125
+        num = parseInt("12abc");
+        console.debug(num, typeof num);//12
+
+        num = parseInt("a12bc");
+        console.debug(num);//NaN   Not a Number
+        console.debug("============================================");
+
+        num = parseFloat("b55.22a");
+        console.debug(num);
+
+    </script>
+</head>
+<body>
+</body>
 </html>

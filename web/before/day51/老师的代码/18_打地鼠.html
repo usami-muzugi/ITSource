@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			.ds{
-				width: 50px;
-				height: 50px;
-				/*绝对定位 ，通过js去动态的修改它的top和left*/
-				position: absolute;
-			}
-			
-		</style>
-		
-		<script type="text/javascript">
-			
-			window.onload = function(){
-				setInterval(function(){
-					//创建img标签
-					var ele = document.createElement("img");//<img>
-					//设置属性
-					ele.src = "1.jpg";//<img src="1.jpg"/>
-					//给我们标签设置样式
-					ele.className = "ds";//<img src="1.jpg" class="ds"/>
-					//获取浏览器的宽度 和高度
-					var width = document.documentElement.clientWidth; // 1300 
-					var height = document.documentElement.clientHeight;//270
-					//随机产生的宽度和高度
-					width = Math.random()*width;// 910
-					height = Math.random()*height;//27
-					
-					//设置具体顶部和左边的距离
-					ele.style.left = width+"px";//910px
-					ele.style.top = height+"px";//27px
-					//<img src="1.jpg" class="ds" style="top:27px;left:910px"/> 
-					//添加元素
-					document.body.appendChild(ele);
-					//给当前标签注册一个点击事件
-					ele.onclick = function(){
-						//先拿到父节点再删除子节点
-						this.parentNode.removeChild(this);
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .ds {
+            width: 50px;
+            height: 50px;
+            /*绝对定位 ，通过js去动态的修改它的top和left*/
+            position: absolute;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            setInterval(function () {
+                //创建img标签
+                var ele = document.createElement("img");//<img>
+                //设置属性
+                ele.src = "1.jpg";//<img src="1.jpg"/>
+                //给我们标签设置样式
+                ele.className = "ds";//<img src="1.jpg" class="ds"/>
+                //获取浏览器的宽度 和高度
+                var width = document.documentElement.clientWidth; // 1300
+                var height = document.documentElement.clientHeight;//270
+                //随机产生的宽度和高度
+                width = Math.random() * width;// 910
+                height = Math.random() * height;//27
+
+                //设置具体顶部和左边的距离
+                ele.style.left = width + "px";//910px
+                ele.style.top = height + "px";//27px
+                //<img src="1.jpg" class="ds" style="top:27px;left:910px"/>
+                //添加元素
+                document.body.appendChild(ele);
+                //给当前标签注册一个点击事件
+                ele.onclick = function () {
+                    //先拿到父节点再删除子节点
+                    this.parentNode.removeChild(this);
 //						document.body.removeChild(ele);
 //						document.body.removeChild(this);
-					}
-				},500);
-			}
-			
-		</script>
-	</head>
-	<body>
-	</body>
+                }
+            }, 500);
+        }
+
+    </script>
+</head>
+<body>
+</body>
 </html>

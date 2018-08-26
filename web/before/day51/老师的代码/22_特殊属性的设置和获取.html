@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			window.onload = function(){
-				var ele = document.getElementById("btn");
-				//该按钮没有被禁用   建议大家就使用true或者false来处理
-				ele.disabled = false;
-				ele.disabled = true;
-				
-				var elehobby = document.getElementById("hobby");
-				elehobby.checked=true;
-				console.debug(elehobby.checked);
-				
-				var textEle = document.getElementById("text");
-				textEle.readOnly = false;
-				console.debug(textEle.readOnly);
-				
-				
-			}
-			
-		</script>
-	</head>
-	<body>
-		<!--disabled="disabled"  表示禁用的意思-->
-		<input id="btn" type="button"  disabled="disabled" value="按钮" />
-		
-		<input type="checkbox" id="hobby" />
-		
-		<!--readonly="readonly" 只读，不能写-->
-		<input type="text" id="text" readonly="readonly" />
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var ele = document.getElementById("btn");
+            //该按钮没有被禁用   建议大家就使用true或者false来处理
+            ele.disabled = false;
+            ele.disabled = true;
+
+            var elehobby = document.getElementById("hobby");
+            elehobby.checked = true;
+            console.debug(elehobby.checked);
+
+            var textEle = document.getElementById("text");
+            textEle.readOnly = false;
+            console.debug(textEle.readOnly);
+
+
+        }
+
+    </script>
+</head>
+<body>
+<!--disabled="disabled"  表示禁用的意思-->
+<input id="btn" type="button" disabled="disabled" value="按钮"/>
+
+<input type="checkbox" id="hobby"/>
+
+<!--readonly="readonly" 只读，不能写-->
+<input type="text" id="text" readonly="readonly"/>
+</body>
 </html>

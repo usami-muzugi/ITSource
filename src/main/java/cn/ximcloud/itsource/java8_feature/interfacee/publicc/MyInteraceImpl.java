@@ -37,7 +37,7 @@ package cn.ximcloud.itsource.java8_feature.interfacee.publicc;
 
 public class MyInteraceImpl implements MyInterface {
 
-//    其实现类必须对其抽象方法，如果不想覆写这个抽象方法，就只能继续对这个实现类保持抽象
+    //    其实现类必须对其抽象方法，如果不想覆写这个抽象方法，就只能继续对这个实现类保持抽象
     @Override
     public void method() {
 

@@ -1,0 +1,7 @@
+<struts>
+    <action name="user" class="cn.ximcloud.itsource.before.day52_mini_struts2.action.UserAction" method="execute">
+        <result name="success" type="Dispatcher">/success.jsp</result>
+        <result name="error" type="Redirect">/error.jsp</result>
+    </action>
+    <action name="dept" class="cn.ximcloud.itsource.before.day52_mini_struts2.action.DeptmentAction" method="execute"/>
+</struts>

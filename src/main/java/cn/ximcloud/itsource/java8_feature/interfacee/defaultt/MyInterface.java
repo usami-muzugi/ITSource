@@ -36,7 +36,7 @@ package cn.ximcloud.itsource.java8_feature.interfacee.defaultt;
  **/
 
 public interface MyInterface {
-//   接口的第二个特性就是可以使用default来修饰方法，使用default修饰的方法是必须带上主体的
+    //   接口的第二个特性就是可以使用default来修饰方法，使用default修饰的方法是必须带上主体的
     default void method() {
 //        default方法的主体
     }

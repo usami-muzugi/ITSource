@@ -1,4 +1,4 @@
-package cn.ximcloud.itsource.day52_mini_struts2.config;
+package cn.ximcloud.itsource.before.day52_mini_struts2.action;
 
 /**
  * Created by IntelliJ IDEA.
@@ -6,7 +6,7 @@ package cn.ximcloud.itsource.day52_mini_struts2.config;
  * @author: wzard
  * @date: 2018-08-24
  * Time: 19:20
- * ProjectName: itsource.cn.ximcloud.itsource.day52_mini_struts2.config
+ * ProjectName: itsource.cn.ximcloud.itsource.before.day52_mini_struts2.action
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -35,50 +35,10 @@ package cn.ximcloud.itsource.day52_mini_struts2.config;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ResultConfig {
-    private String name;
-    private String type;
-    private String url;
+public class DeptmentAction {
 
-    public ResultConfig(String name, String type, String url) {
-        this.name = name;
-        this.type = type;
-        this.url = url;
-    }
-
-    public ResultConfig() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    @Override
-    public String toString() {
-        return "ResultConfig{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", url='" + url + '\'' +
-                '}';
+    public String execute() {
+        System.out.println(66666);
+        return "";
     }
 }

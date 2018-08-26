@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			/*类: 函数首字母大写就是一个类*/
-			
-			//在js中类与对象，构造方法都是模糊的，它仅仅只是一种标志而已
-			function Person(sname,sage){
-				this.sname = sname;
-				this.sage = sage;
-				this.sayHello = function(msg){
-					console.debug("您好师兄："+msg);
-				}
-			}
-			
-			//创建对象   通过构造方法进行赋值
-			var p = new Person("张三",22);
-			//加属性
-			p.sex = "男";
-			console.debug(p);
-			//加函数
-			p.show = function(){
-				console.debug("show 一把。。。");
-			}
-			
-			//取对象中的值
-			console.debug("姓名："+p.sname+"  年龄："+p.sage);
-			
-			p.sayHello("测试一波");
-			console.debug(p);
-			
-			
-	
-		</script>
-	</head>
-	<body>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*类: 函数首字母大写就是一个类*/
+
+        //在js中类与对象，构造方法都是模糊的，它仅仅只是一种标志而已
+        function Person(sname, sage) {
+            this.sname = sname;
+            this.sage = sage;
+            this.sayHello = function (msg) {
+                console.debug("您好师兄：" + msg);
+            }
+        }
+
+        //创建对象   通过构造方法进行赋值
+        var p = new Person("张三", 22);
+        //加属性
+        p.sex = "男";
+        console.debug(p);
+        //加函数
+        p.show = function () {
+            console.debug("show 一把。。。");
+        }
+
+        //取对象中的值
+        console.debug("姓名：" + p.sname + "  年龄：" + p.sage);
+
+        p.sayHello("测试一波");
+        console.debug(p);
+
+
+    </script>
+</head>
+<body>
+</body>
 </html>

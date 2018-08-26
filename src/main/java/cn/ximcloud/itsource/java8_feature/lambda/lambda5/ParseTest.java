@@ -2,8 +2,6 @@ package cn.ximcloud.itsource.java8_feature.lambda.lambda5;
 
 import org.junit.Test;
 
-import java.util.function.IntConsumer;
-
 /**
  * Created by IntelliJ IDEA.
  *

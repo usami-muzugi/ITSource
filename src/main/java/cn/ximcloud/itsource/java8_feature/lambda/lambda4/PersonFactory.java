@@ -39,5 +39,5 @@ package cn.ximcloud.itsource.java8_feature.lambda.lambda4;
 @FunctionalInterface
 public interface PersonFactory {
     //    获得Persion对象
-    Person createPerson(String fisrstName,String lastName);
+    Person createPerson(String fisrstName, String lastName);
 }

@@ -37,7 +37,7 @@ package cn.ximcloud.itsource.java8_feature.interfacee.staticc;
 
 public interface MyInterface {
 
-//    在java1.8之后，新特新可以允许java接口出现静态方法
+    //    在java1.8之后，新特新可以允许java接口出现静态方法
 //    静态方法需要带上静态修饰符，返回值类型，方法名和方法参数列表，当然还要有主体
     static void method() {
 //        接口中的静态方法是必须带上方法主体的

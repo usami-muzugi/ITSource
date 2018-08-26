@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			/**
-			 * 第一个参数是定义我们的函数
-			 * 第二个参数表示我们的毫秒时间
-			 */
-			//用法1：
-			setInterval(function(){
-				console.debug("来啊。。。。。快活啊");
-			},1000);// 每隔1s就执行function函数
-			
-			
-			//用法2：
-			function go(){
-				console.debug("go go go");
-			}
-			setInterval(go,1000);
-			
-			//用法3：它可以传递参数   
-			function goto(g){
-				console.debug("gggg："+g);
-			}
-			setInterval("goto(22)",1000);
-		</script>
-	</head>
-	<body>
-		
-		<div id="myDiv">这是我的内容</div>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /**
+         * 第一个参数是定义我们的函数
+         * 第二个参数表示我们的毫秒时间
+         */
+        //用法1：
+        setInterval(function () {
+            console.debug("来啊。。。。。快活啊");
+        }, 1000);// 每隔1s就执行function函数
+
+
+        //用法2：
+        function go() {
+            console.debug("go go go");
+        }
+
+        setInterval(go, 1000);
+
+        //用法3：它可以传递参数
+        function goto(g) {
+            console.debug("gggg：" + g);
+        }
+
+        setInterval("goto(22)", 1000);
+    </script>
+</head>
+<body>
+
+<div id="myDiv">这是我的内容</div>
+</body>
 </html>

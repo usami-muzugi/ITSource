@@ -53,7 +53,8 @@ public class MyInterfaceTest {
         my2.test();
 
 //        合法的一种写法
-        MyInterface my3 = () -> {};
+        MyInterface my3 = () -> {
+        };
         my3.test();
 
 

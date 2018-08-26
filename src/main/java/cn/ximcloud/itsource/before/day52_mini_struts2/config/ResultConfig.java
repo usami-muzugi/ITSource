@@ -1,15 +1,12 @@
-package cn.ximcloud.itsource.day52_mini_struts2.context;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+package cn.ximcloud.itsource.before.day52_mini_struts2.config;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-24
- * Time: 21:27
- * ProjectName: itsource.cn.ximcloud.itsource.day52_mini_struts2.context
+ * Time: 19:20
+ * ProjectName: itsource.cn.ximcloud.itsource.before.day52_mini_struts2.config
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,47 +35,50 @@ import javax.servlet.http.HttpServletResponse;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ActionContext {
-    private HttpServletRequest httpServletRequest;
-    private HttpServletResponse httpServletResponse;
-    //    线程安全
-    private static ThreadLocal<ActionContext> actionContextThreadLocal;
-//    private static ActionContext actionContext;
+public class ResultConfig {
+    private String name;
+    private String type;
+    private String url;
 
-    static {
-        actionContextThreadLocal = new ThreadLocal<>();
+    public ResultConfig(String name, String type, String url) {
+        this.name = name;
+        this.type = type;
+        this.url = url;
     }
 
-    public static ActionContext getActionContext() {
-        return actionContextThreadLocal.get();
+    public ResultConfig() {
     }
 
-    public static void setActionContext(ActionContext actionContext) {
-        actionContextThreadLocal.set(actionContext);
+    public String getName() {
+        return name;
     }
 
-    public HttpServletRequest getHttpServletRequest() {
-        return httpServletRequest;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setHttpServletRequest(HttpServletRequest httpServletRequest) {
-        this.httpServletRequest = httpServletRequest;
+    public String getType() {
+        return type;
     }
 
-    public HttpServletResponse getHttpServletResponse() {
-        return httpServletResponse;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setHttpServletResponse(HttpServletResponse httpServletResponse) {
-        this.httpServletResponse = httpServletResponse;
+    public String getUrl() {
+        return url;
     }
 
-    public ActionContext(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        this.httpServletRequest = httpServletRequest;
-        this.httpServletResponse = httpServletResponse;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public ActionContext() {
-
+    @Override
+    public String toString() {
+        return "ResultConfig{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }

@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			//createElement(“元素名称”)
-			function addBtn(){
-				//创建了一个元素标签 
-				var input = document.createElement("input");
-				//定义属性
-				input.type="button";
-				input.value="自定义按钮";
-				
-				var myDiv = document.getElementById("myDiv");
-				myDiv.appendChild(input);
-			}
-		</script>
-	</head>
-	<body>
-		<input type="button" onclick="addBtn();" value="动态添加按钮" />
-		<div id="myDiv">
-			<input type="button" value="按钮" />
-		</div>
-		
-		
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //createElement(“元素名称”)
+        function addBtn() {
+            //创建了一个元素标签
+            var input = document.createElement("input");
+            //定义属性
+            input.type = "button";
+            input.value = "自定义按钮";
+
+            var myDiv = document.getElementById("myDiv");
+            myDiv.appendChild(input);
+        }
+    </script>
+</head>
+<body>
+<input type="button" onclick="addBtn();" value="动态添加按钮"/>
+<div id="myDiv">
+    <input type="button" value="按钮"/>
+</div>
+
+
+</body>
 </html>

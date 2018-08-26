@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		
-	</head>
-	<body>
-		<!--注意： 整个页面中id必须得独一无二，不能重复的-->
-		<div id="myDiv">
-			<input type="checkbox" name="hobby" value="java" /><br>
-			<input type="checkbox" name="hobby" value="c" /><br>
-			<input type="checkbox" name="hobby" value="c++" /><br>
-			<input type="checkbox" name="hobby" value="php" /><br>
-		</div>
-		<input type="checkbox" name="hobby" value="美女" /><br>
-		<input type="text" id="username" />
-		
-		
-		<a class="a1">超链接1</a>
-		<a class="a1">超链接2</a>
-		<a class="a1">超链接3</a>
-		<a class="a1">超链接4</a>
-		
-		
-		<script type="text/javascript">
-			/*获取dom的三种方式*/
-			//通过ID获取 (用的最多的)
-			var myDiv = document.getElementById("myDiv");
-			//它只能通过getElementsByTagName进行一个循环获取
-			console.debug(myDiv);
-			var inputs = myDiv.getElementsByTagName("input");
-			console.debug(inputs);
-			console.debug("================================");
-			var username = document.getElementById("username");
-			console.debug(username);
-			console.debug("===================================");
-			//通过NAME获取
-			var hobbys = document.getElementsByName("hobby");
-			console.debug(hobbys);
-			//获取第一个元素对象---》数组怎么操作，你就怎么操作它
-			console.debug(hobbys[0]);
-			console.debug("===============================");
-			//通过Tag（标签名）获取
-			var inputs = document.getElementsByTagName("input");
-			console.debug(inputs);
-			
-			//通过统配符来获取(了解)
-			var tags = document.getElementsByTagName("*");
-			console.debug(tags);
-			
-			//通过样式来获取dom节点
-			var classes = document.getElementsByClassName("a1");
-			console.debug(classes);
-		</script>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<!--注意： 整个页面中id必须得独一无二，不能重复的-->
+<div id="myDiv">
+    <input type="checkbox" name="hobby" value="java"/><br>
+    <input type="checkbox" name="hobby" value="c"/><br>
+    <input type="checkbox" name="hobby" value="c++"/><br>
+    <input type="checkbox" name="hobby" value="php"/><br>
+</div>
+<input type="checkbox" name="hobby" value="美女"/><br>
+<input type="text" id="username"/>
+
+
+<a class="a1">超链接1</a>
+<a class="a1">超链接2</a>
+<a class="a1">超链接3</a>
+<a class="a1">超链接4</a>
+
+
+<script type="text/javascript">
+    /*获取dom的三种方式*/
+    //通过ID获取 (用的最多的)
+    var myDiv = document.getElementById("myDiv");
+    //它只能通过getElementsByTagName进行一个循环获取
+    console.debug(myDiv);
+    var inputs = myDiv.getElementsByTagName("input");
+    console.debug(inputs);
+    console.debug("================================");
+    var username = document.getElementById("username");
+    console.debug(username);
+    console.debug("===================================");
+    //通过NAME获取
+    var hobbys = document.getElementsByName("hobby");
+    console.debug(hobbys);
+    //获取第一个元素对象---》数组怎么操作，你就怎么操作它
+    console.debug(hobbys[0]);
+    console.debug("===============================");
+    //通过Tag（标签名）获取
+    var inputs = document.getElementsByTagName("input");
+    console.debug(inputs);
+
+    //通过统配符来获取(了解)
+    var tags = document.getElementsByTagName("*");
+    console.debug(tags);
+
+    //通过样式来获取dom节点
+    var classes = document.getElementsByClassName("a1");
+    console.debug(classes);
+</script>
+</body>
 </html>

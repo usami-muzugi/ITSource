@@ -39,7 +39,7 @@ public class MyInterfaceImpl implements MyInterface {
 
 //    实现类并没有提示要强制覆写接口的方法，因为接口中的方法是静态方法，并且是有方法主体的
 
-//    @Override 加上@Override注解对其进行覆写判定，结果是子类是不能覆写接口的静态方法的。
+    //    @Override 加上@Override注解对其进行覆写判定，结果是子类是不能覆写接口的静态方法的。
 //    但是子类是可以自己写一个和父接口的静态方法一样的方法
     static void method() {
 

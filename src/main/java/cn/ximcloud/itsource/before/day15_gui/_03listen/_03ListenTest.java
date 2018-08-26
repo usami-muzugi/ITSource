@@ -2,8 +2,6 @@ package cn.ximcloud.itsource.before.day15_gui._03listen;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.

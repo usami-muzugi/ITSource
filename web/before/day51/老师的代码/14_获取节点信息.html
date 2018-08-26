@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			window.onload = function(){
-				/**
-				 * 节点信息：主要是用来区分，它到底是一个元素或者文本或者属性节点
-				 * 不同的节点，它的信息是不一样的
-				 */
-				var ele = document.getElementById("box");
-				console.debug(ele.nodeName);//获取节点名     ===》对应的 标签名
-				console.debug(ele.nodeType);//获取节点类型====》1
-				console.debug(ele.nodeValue);//获取节点值=====》元素节点对应的值永远是null
-				console.debug("====================");
-				//获取属性节点
-				var attr = ele.getAttributeNode("id");
-				console.debug(attr.nodeName);// 获取到的是属性名===id
-				console.debug(attr.nodeType);//获取到的节点类型====2
-				console.debug(attr.nodeValue);//获取到的节点值====属性名对应的值
-				console.debug("===========================");
-				var text = ele.firstChild;
-				console.debug(text.nodeName);//只要是文本节点  #text
-				console.debug(text.nodeType);//获取到的节点类型====3
-				console.debug(text.nodeValue);//获取到的节点值====文本的值
-			}
-		</script>
-	</head>
-	<body>
-	
-		<div id="box">box</div>
-		
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /**
+             * 节点信息：主要是用来区分，它到底是一个元素或者文本或者属性节点
+             * 不同的节点，它的信息是不一样的
+             */
+            var ele = document.getElementById("box");
+            console.debug(ele.nodeName);//获取节点名     ===》对应的 标签名
+            console.debug(ele.nodeType);//获取节点类型====》1
+            console.debug(ele.nodeValue);//获取节点值=====》元素节点对应的值永远是null
+            console.debug("====================");
+            //获取属性节点
+            var attr = ele.getAttributeNode("id");
+            console.debug(attr.nodeName);// 获取到的是属性名===id
+            console.debug(attr.nodeType);//获取到的节点类型====2
+            console.debug(attr.nodeValue);//获取到的节点值====属性名对应的值
+            console.debug("===========================");
+            var text = ele.firstChild;
+            console.debug(text.nodeName);//只要是文本节点  #text
+            console.debug(text.nodeType);//获取到的节点类型====3
+            console.debug(text.nodeValue);//获取到的节点值====文本的值
+        }
+    </script>
+</head>
+<body>
+
+<div id="box">box</div>
+
+</body>
 </html>

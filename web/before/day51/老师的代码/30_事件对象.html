@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			document.documentElement.onmousemove = function(){
-				//火狐就是这样获取事件对象arguments[0]
-				/**
-				 * event:事件对象，它封装了关于该事件的一些信息
-				 * 比如：坐标   事件源
-				 */
-				//获取事件对象
-				var e = window.event || arguments[0];
-				alert(e);
-			}
-		</script>
-	</head>
-	<body>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        document.documentElement.onmousemove = function () {
+            //火狐就是这样获取事件对象arguments[0]
+            /**
+             * event:事件对象，它封装了关于该事件的一些信息
+             * 比如：坐标   事件源
+             */
+                //获取事件对象
+            var e = window.event || arguments[0];
+            alert(e);
+        }
+    </script>
+</head>
+<body>
+</body>
 </html>

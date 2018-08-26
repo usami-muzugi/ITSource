@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			var a = 2;
-			var b = 4;
-			//简单理解就是我们Java中的打印语句
-			var c = a+b;
-			console.debug(c)
-		/*	
-			算术(+  -  *  /  %  ++   --)
-			赋值(=  +=  -=  *=  /=  %= )
-			比较(>,<,>=,<=,==,!=，===)
-			逻辑(&&  ||  !)
-			流程控制(if,while,for)
-			== : 只比较值 
-			===:先比较类型，再比较值
-			|| ：返回第一个为true的值(0,null,””,...)
-			
-		*/
-		
-		/*逻辑(&&  ||  !)*/
-		console.debug("&&用法："+(true&&true));
-		console.debug("&&用法："+(true&&false));
-		
-		//在js中认为为false的值有：  ""   0   false   null  undefined NaN,其它的值都为true
-		console.debug(true&&"你好");
-		console.debug(false&&"你好");
-		console.debug(1&&2&&3&&4);// 所有的条件都满足的话，它永远返回的是最后一个值
-		console.debug(0&&2);
-		console.debug("=========================================");
-		console.debug(1||2);	//1	
-		console.debug(0||""||2);	//永远返回第一个为true的值
-		console.debug("=========================================");
-		console.debug(!-1);// ！它只会返回2个值，要么为true，要么为false
-		
-		/*
-		== : 相对等，只比较值，不比较类型 
-		===:绝对等，不仅仅比较值，还要比较类型
-		*/
-		console.debug("1"==1);//true
-		console.debug("1"===1);//false
-		
-		//请算出1-10的和
-		var sum = 0;
-		for(var i=1;i<=10;i++){
-			sum+=i;
-		}
-		console.debug("sum="+sum);
-		
-		if(0){
-			console.debug("这是真的!!!");
-		}else if(1){
-			console.debug("AAAAAAAAAAAAAAAAAA");
-		}else{
-			console.debug("这是假的");
-		}
-		
-		</script>
-		
-	</head>
-	<body>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var a = 2;
+        var b = 4;
+        //简单理解就是我们Java中的打印语句
+        var c = a + b;
+        console.debug(c)
+        /*
+            算术(+  -  *  /  %  ++   --)
+            赋值(=  +=  -=  *=  /=  %= )
+            比较(>,<,>=,<=,==,!=，===)
+            逻辑(&&  ||  !)
+            流程控制(if,while,for)
+            == : 只比较值
+            ===:先比较类型，再比较值
+            || ：返回第一个为true的值(0,null,””,...)
+
+        */
+
+        /*逻辑(&&  ||  !)*/
+        console.debug("&&用法：" + (true && true));
+        console.debug("&&用法：" + (true && false));
+
+        //在js中认为为false的值有：  ""   0   false   null  undefined NaN,其它的值都为true
+        console.debug(true && "你好");
+        console.debug(false && "你好");
+        console.debug(1 && 2 && 3 && 4);// 所有的条件都满足的话，它永远返回的是最后一个值
+        console.debug(0 && 2);
+        console.debug("=========================================");
+        console.debug(1 || 2);	//1
+        console.debug(0 || "" || 2);	//永远返回第一个为true的值
+        console.debug("=========================================");
+        console.debug(!-1);// ！它只会返回2个值，要么为true，要么为false
+
+        /*
+        == : 相对等，只比较值，不比较类型
+        ===:绝对等，不仅仅比较值，还要比较类型
+        */
+        console.debug("1" == 1);//true
+        console.debug("1" === 1);//false
+
+        //请算出1-10的和
+        var sum = 0;
+        for (var i = 1; i <= 10; i++) {
+            sum += i;
+        }
+        console.debug("sum=" + sum);
+
+        if (0) {
+            console.debug("这是真的!!!");
+        } else if (1) {
+            console.debug("AAAAAAAAAAAAAAAAAA");
+        } else {
+            console.debug("这是假的");
+        }
+
+    </script>
+
+</head>
+<body>
+</body>
 </html>

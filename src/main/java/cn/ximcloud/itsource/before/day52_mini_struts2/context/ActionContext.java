@@ -1,15 +1,15 @@
-package cn.ximcloud.itsource.day52_mini_struts2.config;
+package cn.ximcloud.itsource.before.day52_mini_struts2.context;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: wzard
  * @date: 2018-08-24
- * Time: 19:20
- * ProjectName: itsource.cn.ximcloud.itsource.day52_mini_struts2.config
+ * Time: 21:27
+ * ProjectName: itsource.cn.ximcloud.itsource.before.day52_mini_struts2.context
  * To change this template use File | Settings | Editor | File and Code Templates.
  * <p>
  * you are not expected to understand this.
@@ -38,71 +38,48 @@ import java.util.Map;
  * ////////////////////////////////////////////////////////////////////
  **/
 
-public class ActionConfig {
-    private final String DEFAULT_EXECUTE = "execute";
-    private String name;
-    private String className;
-    private String methodName;
-    private Map<String, ResultConfig> resultConfigMap;
+public class ActionContext {
+    //    线程安全
+    private static ThreadLocal<ActionContext> actionContextThreadLocal;
 
-
-    {
-        resultConfigMap = new HashMap<>();
+    static {
+        actionContextThreadLocal = new ThreadLocal<>();
     }
 
-    @Override
-    public String toString() {
-        return "ActionConfig{" +
-                "DEFAULT_EXECUTE='" + DEFAULT_EXECUTE + '\'' +
-                ", name='" + name + '\'' +
-                ", className='" + className + '\'' +
-                ", methodName='" + methodName + '\'' +
-                ", resultConfigMap=" + resultConfigMap +
-                '}';
+    private HttpServletRequest httpServletRequest;
+    //    private static ActionContext actionContext;
+    private HttpServletResponse httpServletResponse;
+
+    public ActionContext(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        this.httpServletRequest = httpServletRequest;
+        this.httpServletResponse = httpServletResponse;
     }
 
-    public String getDEFAULT_EXECUTE() {
-        return DEFAULT_EXECUTE;
+    public ActionContext() {
+
     }
 
-    public String getName() {
-        return name;
+    public static ActionContext getActionContext() {
+        return actionContextThreadLocal.get();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public static void setActionContext(ActionContext actionContext) {
+        actionContextThreadLocal.set(actionContext);
     }
 
-    public String getClassName() {
-        return className;
+    public HttpServletRequest getHttpServletRequest() {
+        return httpServletRequest;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+    public void setHttpServletRequest(HttpServletRequest httpServletRequest) {
+        this.httpServletRequest = httpServletRequest;
     }
 
-    public String getMethodName() {
-        return methodName;
+    public HttpServletResponse getHttpServletResponse() {
+        return httpServletResponse;
     }
 
-    public void setMethodName(String methodName) {
-        this.methodName = methodName;
-    }
-
-    public Map<String, ResultConfig> getResultConfigMap() {
-        return resultConfigMap;
-    }
-
-    public void setResultConfigMap(Map<String, ResultConfig> resultConfigMap) {
-        this.resultConfigMap = resultConfigMap;
-    }
-
-    public ActionConfig() {
-    }
-
-    public ActionConfig(String name, String className, String methodName) {
-        this.name = name;
-        this.className = className;
-        this.methodName = methodName;
+    public void setHttpServletResponse(HttpServletResponse httpServletResponse) {
+        this.httpServletResponse = httpServletResponse;
     }
 }

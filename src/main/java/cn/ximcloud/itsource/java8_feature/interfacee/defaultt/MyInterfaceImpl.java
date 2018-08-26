@@ -40,7 +40,11 @@ public class MyInterfaceImpl implements MyInterface {
 //    但是default和static修饰的方法是不同的，static修饰的方法子接口和实现类是无法对其进行覆写的
 //    但是default修饰的方法子接口和其实现的类是可以对其进行覆写的
 
-//    加上了@Override标签，没有报错，说明实现类是可以覆写其接口的default方法的
+    public static void main(String[] args) {
+//        MyInterface.super.method();
+    }
+
+    //    加上了@Override标签，没有报错，说明实现类是可以覆写其接口的default方法的
     @Override
     public void method() {
 //        但是如何调用接口的方法呢
@@ -49,9 +53,5 @@ public class MyInterfaceImpl implements MyInterface {
 //        答案是通过这样的形式对其进行调用,当然这个是在类的设计当中才能调用这个方法，在main方法内是不能这样
 //        被调用的
         System.out.println("hello default method");
-    }
-
-    public static void main(String[] args) {
-//        MyInterface.super.method();
     }
 }

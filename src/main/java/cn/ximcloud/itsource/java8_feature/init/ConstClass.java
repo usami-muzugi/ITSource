@@ -36,11 +36,11 @@ package cn.ximcloud.itsource.java8_feature.init;
  **/
 
 public class ConstClass {
+    public static final String HELLOWORD = "hello world!";
+
     static {
         System.out.println("ConstClass init!");
     }
-
-    public static final String HELLOWORD = "hello world!";
 
     public static final void method() {
         System.out.println("public static final void Method");

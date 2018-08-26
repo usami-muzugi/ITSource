@@ -36,7 +36,7 @@ package cn.ximcloud.itsource.java8_feature.interfacee.publicc;
  **/
 
 public interface MyInterface {
-//    一个普普通通的接口，接口中只能由一个返回值类型和一个方法名和一个参数列表构成
+    //    一个普普通通的接口，接口中只能由一个返回值类型和一个方法名和一个参数列表构成
 //    并不能有方法主体，也就是说这是一个抽象方法
     void method();
 }

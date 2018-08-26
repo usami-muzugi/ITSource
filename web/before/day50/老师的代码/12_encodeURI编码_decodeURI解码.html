@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-            var url = "http://www.baidu.com?百度";
-			
-			//对指定的url地址进行一个编码(掌握)
-			var encodeUri = encodeURI(url);
-            console.debug("编码后：" + encodeUri);//编码后：http://www.baidu.com?%E7%99%BE%E5%BA%A6   对?后面的中文字符进行一个编码
-			
-			//对指定的字符串进行一个解码
-			var decodeUri = decodeURI(encodeUri);
-            console.debug("解码后：" + decodeUri);
-			
-			/**
-			 * encodeURI,decodeURI 使用场景：
-			 * 	1. 在页面传递中文参数的时候，防止页面乱码
-			 */
-			
-			
-			//深度编码  它会对特殊字符也会进行一个编码(了解)
-			var encodeURIComponent = encodeURIComponent(url);
-			console.debug("深度编码："+encodeURIComponent)
-			
-			var decodeURIComponent = decodeURIComponent(encodeURIComponent);
-			console.debug("深度解码："+decodeURIComponent)
-			
-			
-			/*encodeURIComponent与decodeURIComponent使用场景: 我们有些时候,可能会把一个url地址当为一个参数进行一个传递*/
-		</script>
-		
-	</head>
-	<body>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var url = "http://www.baidu.com?百度";
+
+        //对指定的url地址进行一个编码(掌握)
+        var encodeUri = encodeURI(url);
+        console.debug("编码后：" + encodeUri);//编码后：http://www.baidu.com?%E7%99%BE%E5%BA%A6   对?后面的中文字符进行一个编码
+
+        //对指定的字符串进行一个解码
+        var decodeUri = decodeURI(encodeUri);
+        console.debug("解码后：" + decodeUri);
+
+        /**
+         * encodeURI,decodeURI 使用场景：
+         *    1. 在页面传递中文参数的时候，防止页面乱码
+         */
+
+
+            //深度编码  它会对特殊字符也会进行一个编码(了解)
+        var encodeURIComponent = encodeURIComponent(url);
+        console.debug("深度编码：" + encodeURIComponent)
+
+        var decodeURIComponent = decodeURIComponent(encodeURIComponent);
+        console.debug("深度解码：" + decodeURIComponent)
+
+
+        /*encodeURIComponent与decodeURIComponent使用场景: 我们有些时候,可能会把一个url地址当为一个参数进行一个传递*/
+    </script>
+
+</head>
+<body>
+</body>
 </html>

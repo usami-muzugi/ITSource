@@ -1,16 +1,19 @@
-package cn.ximcloud.itsource.test;
+package cn.ximcloud.itsource.算法学习._01选择排序法.uitls;
+
+import org.junit.Test;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.stream.IntStream;
+
+import static org.junit.Assert.*;
 
 /**
  * Created by IntelliJ IDEA.
- *
- * @author: wzard
- * @date: 2018-08-26
- * Time: 16:49
- * ProjectName: itsource.cn.ximcloud.itsource.test
- * To change this template use File | Settings | Editor | File and Code Templates.
- * <p>
- * you are not expected to understand this.
- * <p>
+ * User: Wizard
+ * Date: 2018-09-04
+ * Time: 22:31
+ * ProjectName: itsource
+ * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -31,26 +34,19 @@ package cn.ximcloud.itsource.test;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑          永无BUG     永不修改                  //
+ * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
+public class RandomArrayUtilTest {
 
-public class IntegerTest {
-    public static void main(String[] args) {
-        Integer a = 1;
-        Integer b = 2;
-        Integer c = 3;
-        Integer d = 3;
-        Integer e = 321;
-        Integer f = 321;
-        Long g = 3L;
+    @Test
+    public void getRandomArrayUtil() {
+            int[] randomArrayUtil = RandomArrayUtil.getRandomArrayUtil(100, 20, 50);
+            IntStream.of(randomArrayUtil).forEach(x -> System.out.print(x + " "));
+    }
 
-        System.out.println(c == d);
-        System.out.println(e == f);
-        System.out.println(c == (a + b));
-        System.out.println(c.equals(a + b));
-        System.out.println(g == (a + b));
-        System.out.println(g.equals(a + b));
-
+    @Test
+    public void testSort() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        RandomArrayUtil.testSort("Test--1", RandomArrayUtil.class, "getRandomArrayUtil", 100000, 0, 20);
     }
 }

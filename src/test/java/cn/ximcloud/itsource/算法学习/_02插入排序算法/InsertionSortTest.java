@@ -1,15 +1,17 @@
-package cn.ximcloud.itsource.算法学习._01选择排序法.uitls;
+package cn.ximcloud.itsource.算法学习._02插入排序算法;
 
+import cn.ximcloud.itsource.算法学习._01选择排序法.SelectionSort;
+import cn.ximcloud.itsource.算法学习._01选择排序法.uitls.RandomArrayUtil;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.stream.IntStream;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
- * Date: 2018-09-04
- * Time: 22:31
+ * Date: 2018-09-05
+ * Time: 15:38
  * ProjectName: itsource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
@@ -35,16 +37,31 @@ import java.util.stream.IntStream;
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
  **/
-public class RandomArrayUtilTest {
+public class InsertionSortTest {
+    private int[] randomArrayUtil;
 
-    @Test
-    public void getRandomArrayUtil() {
-            int[] randomArrayUtil = RandomArrayUtil.getRandomArrayUtil(100, 20, 50);
-            IntStream.of(randomArrayUtil).forEach(x -> System.out.print(x + " "));
+    @Before
+    public void doBefore() {
+        randomArrayUtil = RandomArrayUtil.getRandomArrayUtil(100000, 0, 1000000);
     }
 
     @Test
-    public void testSort() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, ClassNotFoundException {
-        RandomArrayUtil.testSort("Test--1", "cn.ximcloud.itsource.算法学习._01选择排序法.uitls.RandomArrayUtil", "getRandomArrayUtil", 100000, 0, 20);
+    public void insertSortPlus() {
+        int[] randomArrayUtil = RandomArrayUtil.getRandomArrayUtil(1000000, 0, 1000000);
+        InsertionSortPlus.insertSort(randomArrayUtil);
+        IntStream.of(randomArrayUtil).forEach(x -> System.out.print(x + " "));
+    }
+
+    @Test
+    public void insertSort() {
+        InsertionSort.insertSort(randomArrayUtil);
+        IntStream.of(randomArrayUtil).forEach(x -> System.out.print(x + " "));
+    }
+
+    @Test
+    public void selectSort() {
+        int[] randomArrayUtil = RandomArrayUtil.getRandomArrayUtil(100000, 0, 1000000);
+        SelectionSort.selectionSort(randomArrayUtil);
+        IntStream.of(randomArrayUtil).forEach(x -> System.out.print(x + " "));
     }
 }

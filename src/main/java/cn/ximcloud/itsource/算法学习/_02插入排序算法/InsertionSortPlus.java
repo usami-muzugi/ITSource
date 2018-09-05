@@ -1,15 +1,10 @@
-package cn.ximcloud.itsource.算法学习._01选择排序法;
-
-import cn.ximcloud.itsource.算法学习._01选择排序法.uitls.RandomArrayUtil;
-import org.junit.Test;
-
-import java.util.stream.IntStream;
+package cn.ximcloud.itsource.算法学习._02插入排序算法;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Wizard
- * Date: 2018-09-04
- * Time: 20:56
+ * Date: 2018-09-05
+ * Time: 13:32
  * ProjectName: itsource
  * To change this template use File | Settings | File Templates.
  * ////////////////////////////////////////////////////////////////////
@@ -34,51 +29,33 @@ import java.util.stream.IntStream;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
- * <p>
- * 选择排序
  **/
-public class selectionSort {
-    /**
-     * 选择排序
-     * 思路:
-     * 1.确定这个数组的长度。
-     * 2.使用for循环进行循环遍历，找出最小的值，然后将其和i进行交换
-     */
-    void selectionSort(int[] arr) {
-        //获取数组的长度
-        int length = arr.length;
+public class InsertionSortPlus {
 
-        //外层for循环控制将要循环的次数
-        for (int i = 0; i < length; i++) {
-//            拿索引，拿索引！！！！
-            int minIndex = i;
-            for (int j = i + 1; j < length; j++) {
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
+    public static void insertSort(int[] arr) {
+        int length = arr.length;
+        for (int i = 1; i < length; i++) {
+//            存储这个需要被排序的元素的值
+            int tempVar = arr[i];
+//            存储这个需要被排序的元素的索引(在外面能取到这个j)
+            int j;
+            for (j = i; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+//                  做的操作就仅仅是把前一个元素往后面移动而已了，不再是之前的需要进行三次赋值操作
+                    arr[j] = arr[j - 1];
+                } else {
+                    break;
                 }
             }
-//            for循环结束，将会拿到这次遍历得到的最小值的索引！！
-//            进行交换
-            if (i != minIndex) {
-                int temp = arr[i];
-                arr[i] = arr[minIndex];
-                arr[minIndex] = temp;
-            }
+//            排序进行到这里，该被排序的元素的正确的位置已经找到了，但是没有值
+//            这里进行一次赋值操作，完成当前列排序
+            arr[j] = tempVar;
         }
     }
 
-
-    @Test
-    public void testSelectSort() {
-        int[] ints = {9, 8, 7, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 1, 1, 12, 6, 5, 4, 3, 2, 1};
-        selectionSort(ints);
-        IntStream.of(ints).forEach(x -> System.out.print(x + " "));
-    }
-
-    @Test
-    public void testRandomArray() {
-        int[] randomArrayUtil = RandomArrayUtil.getRandomArrayUtil(1000000, 0, 65535);
-        selectionSort(randomArrayUtil);
-        IntStream.of(randomArrayUtil).forEach(x -> System.out.print(x + " "));
+    private static void swap(int[] arr, int indexA, int indexB) {
+        int tempVar = arr[indexA];
+        arr[indexA] = arr[indexB];
+        arr[indexB] = tempVar;
     }
 }

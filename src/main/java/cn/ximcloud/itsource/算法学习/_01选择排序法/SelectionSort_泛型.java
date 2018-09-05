@@ -33,8 +33,10 @@ import java.util.stream.Stream;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG          永不修改             //
  * ////////////////////////////////////////////////////////////////////
+ * <p>
+ * 选择排序 <泛型>
  **/
-public class selectionSort_自定义类 {
+public class SelectionSort_泛型 {
     /**
      * 选择排序
      * 思路:
@@ -63,45 +65,15 @@ public class selectionSort_自定义类 {
             }
         }
     }
-    class Student implements Comparable<Student>{
-        private String name;
-        private int score;
-
-        public Student() {
-        }
-
-        public Student(String name, int score) {
-            this.name = name;
-            this.score = score;
-        }
-
-        @Override
-        public String toString() {
-            return "Student{" +
-                    "name='" + name + '\'' +
-                    ", score=" + score +
-                    '}';
-        }
-
-        @Override
-        public int compareTo(Student o) {
-            return score > o.score ? score : name.compareTo(o.name);
-//            if (score > o.score) {
-//                return 1;
-//            } else if (score < o.score) {
-//                return -1;
-//            } else {
-//                return 0;
-//            }
-        }
-    }
 
 
     @Test
     public void testSelectSort() {
-        Student[] students = new Student[]{new Student("time",78),
-                new Student("ourinsama",78),new Student("jestom",23),new Student("lu",95)};
-        selectionSort(students);
-        Stream.of(students).forEach(System.out::println);
+        Integer[] ints = {9, 8, 7, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 1, 1, 12, 6, 5, 4, 3, 2, 1};
+        selectionSort(ints);
+        Stream.of(ints).forEach(x -> System.out.print(x + " "));
+        System.out.println();
+        System.out.println(ints.length);
+        System.out.println(Stream.of(ints).count());
     }
 }

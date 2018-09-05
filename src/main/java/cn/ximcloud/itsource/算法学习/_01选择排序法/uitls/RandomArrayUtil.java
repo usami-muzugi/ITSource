@@ -41,15 +41,15 @@ public class RandomArrayUtil {
      */
     public static int[] getRandomArrayUtil(int size, int rangeS, int rangeE) {
         Random random = new Random();
-        return IntStream.of(new int[size]).map(x -> x = random.nextInt(rangeE - rangeS - 1) + rangeS).toArray();
+        return IntStream.of(new int[size]).map(x -> x = random.nextInt((rangeE - rangeS) + 1) + rangeS).toArray();
     }
 
 
     /**
      * 测试一个方法的执行时间
      *
-     * @param sortName   测试名
-     * @param tClass     类名
+     * @param testName   测试名
+     * @param className     类名
      * @param methodName 方法名
      * @param pars       方法参数列表
      * @throws NoSuchMethodException
@@ -57,17 +57,19 @@ public class RandomArrayUtil {
      * @throws InvocationTargetException
      * @throws InstantiationException
      */
-    public static void testSort(String sortName, Class tClass, String methodName, Object... pars) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Arrays.stream(tClass.getDeclaredMethods()).map(x -> x.getName().equals(methodName) ? x : null).findFirst().ifPresentOrElse(x -> {
+    public static void testSort(String testName, String className, String methodName, Object... pars) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, ClassNotFoundException {
+        Class<?> aClass = Class.forName(className);
+        Arrays.stream(aClass.getDeclaredMethods()).map(x -> x.getName().equals(methodName) ? x : null)
+                .findAny().ifPresentOrElse(x -> {
             x.setAccessible(true);
             long l = 0;
-            try {
                 l = System.currentTimeMillis();
-                x.invoke(tClass.newInstance(), pars);
+            try {
+                x.invoke(aClass.newInstance(), pars);
             } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();
             }
-            System.out.println(sortName + ": used time -->" + (System.currentTimeMillis() - l));
-        }, () -> System.out.println(sortName + ": Error"));
+            System.out.println(testName + ": used time -->" + (System.currentTimeMillis() - l));
+        }, () -> System.out.println(testName + ": Error! method not found!"));
     }
 }

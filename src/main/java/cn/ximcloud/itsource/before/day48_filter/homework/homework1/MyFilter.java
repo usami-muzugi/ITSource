@@ -56,4 +56,9 @@ public class MyFilter extends HttpFilter {
 //        放行操作
         chain.doFilter(request, response);
     }
+
+    @Override
+    public void destroy() {
+
+    }
 }

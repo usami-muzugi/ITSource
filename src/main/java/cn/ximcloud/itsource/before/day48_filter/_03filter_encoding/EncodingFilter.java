@@ -50,4 +50,9 @@ public class EncodingFilter extends HttpFilter {
         chain.doFilter(request, response);
 
     }
+
+    @Override
+    public void destroy() {
+
+    }
 }

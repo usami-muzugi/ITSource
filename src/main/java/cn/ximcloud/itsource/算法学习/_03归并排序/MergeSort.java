@@ -34,6 +34,13 @@ import java.util.Arrays;
  **/
 public class MergeSort {
     /**
+     * 我们的算法不提供任何实例
+     */
+    private MergeSort() {
+
+    }
+
+    /**
      * 提供给公共访问的方法
      *
      * @param arr 需要被排序的数组
@@ -114,5 +121,4 @@ public class MergeSort {
             }
         }
     }
-
 }

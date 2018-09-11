@@ -67,4 +67,9 @@ public class GetConfigFilter extends HttpFilter {
 //        获取过滤器的名字，xml或者是注解设置的
         String filterName = filterConfig.getFilterName();
     }
+
+    @Override
+    public void destroy() {
+
+    }
 }

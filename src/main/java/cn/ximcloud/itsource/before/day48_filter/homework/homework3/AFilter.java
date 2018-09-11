@@ -39,10 +39,20 @@ import java.io.IOException;
  **/
 public class AFilter implements Filter {
     @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("Before A");
 //        放行
         filterChain.doFilter(servletRequest, servletResponse);
         System.out.println("After A");
+    }
+
+    @Override
+    public void destroy() {
+
     }
 }

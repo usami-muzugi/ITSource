@@ -1,23 +1,11 @@
-package cn.ximcloud.itsource.before.day48_filter.homework.homework5;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+package cn.ximcloud.itsource.java8_feature;
 
 /**
- * Created by IntelliJ IDEA.
- *
- * @author: wzard
- * @date: 2018-08-17
- * Time: 16:02
- * ProjectName: itsource.cn.ximcloud.itsource.before.day48_filter._03filter_encoding
+ * Author: wzard
+ * Date: 2018-09-08
+ * Time: 22:48
+ * ProjectName:  itsource.cn.ximcloud.itsource.java8_feature
  * To change this template use File | Settings | Editor | File and Code Templates.
- * <p>
- * you are not expected to understand this.
- * <p>
  * ////////////////////////////////////////////////////////////////////
  * //                          _ooOoo_                               //
  * //                         o8888888o                              //
@@ -40,19 +28,22 @@ import java.io.IOException;
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
  * //         佛祖保佑          永无BUG     永不修改                  //
  * ////////////////////////////////////////////////////////////////////
- **/
+ * YOU ARE NOT EXPECTED TO UNDERSTAND THIS CODE.
+ */
+public class SubClass extends SuperClass{
 
-public class EncodingFilter extends HttpFilter {
-    @Override
-    protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        chain.doFilter(request, response);
-
+    static{
+        System.out.println("我是子类静态代码块儿");
     }
 
-    @Override
-    public void destroy() {
+    {
+        System.out.println("我是子类构造代码块儿");
+    }
+    public SubClass(){
+        System.out.println("我是子类构造方法");
+    }
 
+    public static void main(String[] args) {
+        new SubClass();
     }
 }

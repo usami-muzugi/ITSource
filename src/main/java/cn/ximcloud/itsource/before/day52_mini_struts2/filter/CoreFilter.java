@@ -121,4 +121,9 @@ public class CoreFilter extends HttpFilter {
             chain.doFilter(request, response);
         }
     }
+
+    @Override
+    public void destroy() {
+
+    }
 }

@@ -62,4 +62,9 @@ public class AuthFilter extends HttpFilter {
             }
         }
     }
+
+    @Override
+    public void destroy() {
+
+    }
 }

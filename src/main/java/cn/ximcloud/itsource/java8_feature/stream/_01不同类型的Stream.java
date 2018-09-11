@@ -51,7 +51,7 @@ public class _01不同类型的Stream {
     @Test
     public void test1() {
 //        list有stream()方法
-        Stream<Integer> stream = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9).stream();
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
         stream.forEach(System.out::print);
 //        set有
         Set hashSet = new HashSet<>();
@@ -115,13 +115,49 @@ public class _01不同类型的Stream {
     }
 
     /**
-     *
+     * 打开Stream流，然后过滤出大于100的然后再找到第一个，然后如果存在就打印
      */
     @Test
     public void test5() {
         Stream<Integer> integerStream = Stream.of(1, 3, 5, 4, 2, 2, 1, 2, 2, 2123, 123, 6, 7, 82, 1, 3, 34, 123123, 56, 25, 234, 23);
         integerStream.filter(x -> x > 100).findFirst().ifPresent(System.out::print);
 //        ifPresent的意思就是是否存在
+        System.out.println();
+        integerStream = Stream.of(1, 3, 5, 4, 2, 2, 1, 2, 2, 2123, 123, 6, 7, 82, 1, 3, 34, 123123, 56, 25, 234, 23);
+        integerStream.filter(x -> x.toString().startsWith("1")).findFirst().ifPresentOrElse(System.out::println,() -> System.out.println("没得！"));
+//        ifPresentOrElse
+//        这个方法是如果存在就执行前面的表达式，如果不存在就执行后面的这个表达式
+    }
+
+    /**
+     * 匹配所有，并且看是否存在已a开头的数字.....
+     *
+     */
+    @Test
+    public void testAnyMatch() {
+        Stream<Integer> integerStream = Stream.of(1, 3, 5, 4, 2, 2, 1, 2, 2, 2123, 123, 6, 7, 82, 1, 3, 34, 123123, 56, 25, 234, 23);
+        boolean a = integerStream.anyMatch(x -> x.toString().startsWith("a"));
+        System.out.println(a);
+    }
+
+    /**
+     * 匹配所有，并且是否每一个都是以a开头的
+     */
+    @Test
+    public void testAllMatch() {
+        Stream<Integer> integerStream = Stream.of(1, 3, 5, 4, 2, 2, 1, 2, 2, 2123, 123, 6, 7, 82, 1, 3, 34, 123123, 56, 25, 234, 23);
+        boolean a = integerStream.allMatch(x -> x.toString().startsWith("a"));
+        System.out.println(a);
+    }
+
+    /**
+     * 匹配是否有a结尾的
+     */
+    @Test
+    public void testNoneMatch() {
+        Stream<Integer> integerStream = Stream.of(1, 3, 5, 4, 2, 2, 1, 2, 2, 2123, 123, 6, 7, 82, 1, 3, 34, 123123, 56, 25, 234, 23);
+        boolean a = integerStream.noneMatch(x -> x.toString().endsWith("a"));
+        System.out.println(a);
     }
 
     /**
@@ -206,5 +242,14 @@ public class _01不同类型的Stream {
     @Test
     public void test12() {
         Stream.of(1.0, 2.0, 3.0, 4.0).mapToInt(Double::intValue).mapToObj(x -> "test12-" + x).forEach(System.out::println);
+    }
+    /**
+     * 组合reduce
+     * 先map成一个int然后再map成一个字符串对象
+     */
+    @Test
+    public void test13() {
+        Stream<Integer> integerStream = Stream.of(1, 3, 5, 4, 2, 2, 1, 2, 2, 2123, 123, 6, 7, 82, 1, 3, 34, 123123, 56, 25, 234, 23);
+//        integerStream.map(x -> x).reduce(() ->{});
     }
 }

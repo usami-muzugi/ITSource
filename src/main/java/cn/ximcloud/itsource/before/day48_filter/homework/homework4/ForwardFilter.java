@@ -58,4 +58,9 @@ public class ForwardFilter extends HttpFilter {
         System.out.println("过滤了一下");
         chain.doFilter(request, response);
     }
+
+    @Override
+    public void destroy() {
+
+    }
 }
